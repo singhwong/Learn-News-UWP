@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="The_Paper.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:The_Paper"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local2="using:The_Paper.Models"
+    mc:Ignorable="d"
+    Loaded="Page_Loaded">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <SplitView Name="splitView" DisplayMode="CompactInline" 
+                   OpenPaneLength="100"
+                   CompactPaneLength="{Binding Path=ActualWidth,ElementName=Ham}">
+            <SplitView.Pane>
+                <StackPanel Background="#F5F5F5">
+                    <Button Background="Transparent" FontSize="20"
+                            Name="Ham" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" Click="Ham_Click"/>
+                    <ListView ItemsSource="{Binding ChannelList}" Background="#F5F5F5"
+                              Name="Menu"
+                             SelectionChanged="ListBox_SelectionChanged">
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="local2:Channel">
+                                <StackPanel Orientation="Horizontal">
+                                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="{x:Bind icon}" Margin="-2,0,0,0"/>
+                                    <TextBlock Text="{x:Bind name}" Margin="15,0,0,0" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </SplitView.Pane>
+            <SplitView.Content>
+                    <Frame Name="mainFrame"/>
+            </SplitView.Content>
+        </SplitView>
+    </Grid>
+</Page>

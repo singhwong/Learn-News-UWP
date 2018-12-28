@@ -1,0 +1,264 @@
+﻿<Page
+    x:Class="The_Paper.Views.NewsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:The_Paper.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local2="using:The_Paper.Models"
+    xmlns:local3="using:The_Paper.Controls"
+    xmlns:local4="using:The_Paper.Converters"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <local4:BoolToVisibilityConverter x:Key="BTVC" />
+            <local4:BoolInvertConverter x:Key="BIC" />
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid Name="Grid">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Narrow">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                        <StateTrigger IsActive="{Binding IsOpen}" x:Name="Trigger" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="topNewsPanel.Height" Value="150" />
+                        <Setter Target="topNewsImage.(RelativePanel.AlignLeftWithPanel)" Value="True" />
+                        <Setter Target="topNewsHL.FontSize" Value="16" />
+                        <Setter Target="topNewsHL.(RelativePanel.RightOf)" Value="topNewsImage" />
+                        <Setter Target="topNewsHL.(RelativePanel.AlignTopWithPanel)" Value="True" />
+                        <Setter Target="topNewsMC.FontSize" Value="12" />
+                        <Setter Target="topNewsMC.(RelativePanel.Below)" Value="topNewsHL" />
+                        <Setter Target="topNewsMC.(RelativePanel.RightOf)" Value="topNewsImage" />
+                        <Setter Target="topNewsMC.(RelativePanel.Above)" Value="topNewsTag" />
+                        <Setter Target="topNewsTag.FontSize" Value="10" />
+                        <Setter Target="topNewsTag.(RelativePanel.RightOf)" Value="topNewsImage" />
+                        <Setter Target="topNewsTag.(RelativePanel.AlignBottomWithPanel)" Value="True" />
+                        <Setter Target="topNewsSplit.FontSize" Value="10" />
+                        <Setter Target="topNewsSplit.(RelativePanel.RightOf)" Value="topNewsTag" />
+                        <Setter Target="topNewsSplit.(RelativePanel.AlignBottomWithPanel)" Value="True" />
+                        <Setter Target="topNewsTime.FontSize" Value="10" />
+                        <Setter Target="topNewsTime.(RelativePanel.RightOf)" Value="topNewsSplit" />
+                        <Setter Target="topNewsTime.(RelativePanel.AlignBottomWithPanel)" Value="True" />
+                        <!--<Setter Target="topNewsIcon.FontSize" Value="10" />
+                        <Setter Target="topNewsIcon.(RelativePanel.LeftOf)" Value="topNewsCT" />
+                        <Setter Target="topNewsIcon.(RelativePanel.AlignBottomWithPanel)" Value="True" />
+                        <Setter Target="topNewsCT.FontSize" Value="10" />
+                        <Setter Target="topNewsCT.(RelativePanel.AlignRightWithPanel)" Value="True" />
+                        <Setter Target="topNewsCT.(RelativePanel.AlignBottomWithPanel)" Value="True" />-->
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Wide">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="topNewsPanel.Height" Value="300" />
+                        <Setter Target="topNewsImage.(RelativePanel.AlignLeftWithPanel)" Value="True" />
+                        <Setter Target="topNewsHL.FontSize" Value="22" />
+                        <Setter Target="topNewsHL.(RelativePanel.RightOf)" Value="topNewsImage" />
+                        <Setter Target="topNewsHL.(RelativePanel.AlignTopWithPanel)" Value="True" />
+                        <Setter Target="topNewsMC.FontSize" Value="16" />
+                        <Setter Target="topNewsMC.(RelativePanel.Below)" Value="topNewsHL" />
+                        <Setter Target="topNewsMC.(RelativePanel.RightOf)" Value="topNewsImage" />
+                        <Setter Target="topNewsMC.(RelativePanel.Above)" Value="topNewsTag" />
+                        <Setter Target="topNewsTag.FontSize" Value="12" />
+                        <Setter Target="topNewsTag.(RelativePanel.RightOf)" Value="topNewsImage" />
+                        <Setter Target="topNewsTag.(RelativePanel.AlignBottomWithPanel)" Value="True" />
+                        <Setter Target="topNewsSplit.FontSize" Value="12" />
+                        <Setter Target="topNewsSplit.(RelativePanel.RightOf)" Value="topNewsTag" />
+                        <Setter Target="topNewsSplit.(RelativePanel.AlignBottomWithPanel)" Value="True" />
+                        <Setter Target="topNewsTime.FontSize" Value="12" />
+                        <Setter Target="topNewsTime.(RelativePanel.RightOf)" Value="topNewsSplit" />
+                        <Setter Target="topNewsTime.(RelativePanel.AlignBottomWithPanel)" Value="True" />
+                        <!--<Setter Target="topNewsIcon.FontSize" Value="12" />
+                        <Setter Target="topNewsIcon.(RelativePanel.LeftOf)" Value="topNewsCT" />
+                        <Setter Target="topNewsIcon.(RelativePanel.AlignBottomWithPanel)" Value="True" />
+                        <Setter Target="topNewsCT.FontSize" Value="12" />
+                        <Setter Target="topNewsCT.(RelativePanel.AlignRightWithPanel)" Value="True" />
+                        <Setter Target="topNewsCT.(RelativePanel.AlignBottomWithPanel)" Value="True" />-->
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        
+        <local3:TabView x:Name="TabView"
+            TabSwitch="TabView_TabSwitch"
+            TabNameList="{Binding TabNameList}">
+            <local3:TabView.View>
+                <ScrollViewer Name="scrollViewer" ViewChanged="ScrollViewer_ViewChanged">
+                    <RelativePanel Background="#F0F0F0">
+                        <GridViewItem Name="topNews" Style="{StaticResource NewsListItemStyle}"
+                                      Visibility="{Binding Path=HasTopNews,Converter={StaticResource BTVC}}"
+                                      Tapped="topNews_Tapped">
+                            <RelativePanel
+                                           Name="topNewsPanel"
+                                        Margin="10,10,10,10"
+                                        Background="Transparent" >
+                                <Image Name="topNewsImage" 
+                                        Source="{Binding TopNews.image}"
+                                        Margin="10,10,10,10"  />
+                                <TextBlock Name="topNewsHL"
+                                        TextTrimming="WordEllipsis"
+                                        Margin="10,10,10,10"
+                                           FontWeight="Bold"
+                                        TextWrapping="WrapWholeWords"
+                                        Text="{Binding TopNews.headLine}" />
+                                <TextBlock Name="topNewsMC" Margin="10,10,10,10"
+                                        TextWrapping="WrapWholeWords"
+                                           TextTrimming="WordEllipsis"
+                                        Text="{Binding TopNews.mainContent}"/>
+                                <TextBlock Name="topNewsTag" Margin="5,10,5,10"
+                                        Text="{Binding TopNews.tag}" />
+                                <TextBlock Name="topNewsSplit" Margin="5,9,5,10" Text="|" />
+                                <TextBlock Name="topNewsTime" Margin="5,10,5,10" Text="{Binding TopNews.time}" />
+                                <!--<FontIcon FontFamily="Segoe MDL2 Assets"
+                                          Margin="0,5,0,10"
+                                          Name="topNewsIcon"
+                                          Glyph="&#xE206;" />
+                                <TextBlock Name="topNewsCT"
+                                        Margin="5,10,5,10"
+                                        Text="{Binding TopNews.commentCount}" />-->
+                            </RelativePanel>
+                        </GridViewItem>
+                        <GridView Name="NewsCards" ItemsSource="{Binding NewsList}"
+                                SelectionChanged="NewsCards_SelectionChanged"
+                                ItemContainerStyle="{StaticResource NewsListItemStyle}"
+                                Background="#F0F0F0" RelativePanel.Below="topNews">
+                            <GridView.ItemTemplate>
+                                <DataTemplate x:DataType="local2:News">
+                                    <!--<UserControl>-->
+                                        <Grid Name="NewsCard" Margin="5" Background="Transparent"                                
+                                                    Height="300">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                            <!--<VisualStateManager.VisualStateGroups>
+                                                <VisualStateGroup>
+                                                    <VisualState x:Name="CardWide">
+                                                        <VisualState.StateTriggers>
+                                                            <AdaptiveTrigger MinWindowWidth="600" />
+                                                        </VisualState.StateTriggers>
+                                                        <VisualState.Setters>
+                                                            <Setter Target="NewsCard.Width" Value="220" />
+                                                            <Setter Target="image.(RelativePanel.AlignTopWithPanel)" Value="True" />
+                                                            <Setter Target="headLine.(RelativePanel.Below)" Value="image" />
+                                                            <Setter Target="headLine.FontSize" Value="18" />
+                                                            <Setter Target="mainContent.(RelativePanel.Below)" Value="headLine" />
+                                                            <Setter Target="mainContent.FontSize" Value="12"/>
+                                                            <Setter Target="tag.(RelativePanel.Below)" Value="mainContent" />
+                                                            <Setter Target="tag.(RelativePanel.AlignLeftWithPanel)" Value="True" />
+                                                            <Setter Target="tag.(RelativePanel.AlignBottomWithPanel)" Value="True" />
+                                                            <Setter Target="tag.(RelativePanel.Below)" Value="mainContent" />
+                                                            <Setter Target="tag.FontSize" Value="10" />
+                                                            <Setter Target="split.(RelativePanel.Below)" Value="mainContent" />
+                                                            <Setter Target="split.(RelativePanel.RightOf)" Value="tag" />
+                                                            <Setter Target="split.(RelativePanel.AlignBottomWithPanel)" Value="True" />
+                                                            <Setter Target="split.FontSize" Value="10" />
+                                                            <Setter Target="time.(RelativePanel.Below)" Value="mainContent" />
+                                                            <Setter Target="time.(RelativePanel.RightOf)" Value="split" />
+                                                            <Setter Target="time.(RelativePanel.AlignBottomWithPanel)" Value="True" />
+                                                            <Setter Target="time.FontSize" Value="10" />
+                                                            <Setter Target="icon.(RelativePanel.Below)" Value="mainContent" />
+                                                            <Setter Target="icon.(RelativePanel.LeftOf)" Value="commentCount" />
+                                                            <Setter Target="icon.(RelativePanel.AlignBottomWithPanel)" Value="True" />
+                                                            <Setter Target="icon.Margin" Value="0,6,0,4" />
+                                                            <Setter Target="icon.FontSize" Value="10" />
+                                                            <Setter Target="commentCount.(RelativePanel.Below)" Value="mainContent" />
+                                                            <Setter Target="commentCount.(RelativePanel.AlignRightWithPanel)" Value="True" />
+                                                            <Setter Target="commentCount.(RelativePanel.AlignBottomWithPanel)" Value="True" />
+                                                            <Setter Target="commentCount.FontSize" Value="10" />
+                                                            </VisualState.Setters>
+                                                    </VisualState>
+                                                    <VisualState x:Name="CardNarrow">
+                                                        <VisualState.StateTriggers>
+                                                            <AdaptiveTrigger MinWindowWidth="0" />
+                                                            <StateTrigger IsActive="{Binding Path=IsActive,ElementName=Trigger}" />
+                                                        </VisualState.StateTriggers>
+                                                        <VisualState.Setters>
+                                                            <Setter Target="NewsCard.Height" Value="150" />
+                                                            <Setter Target="image.(RelativePanel.AlignLeftWithPanel)" Value="True" />
+                                                            <Setter Target="headLine.FontSize" Value="14" />
+                                                            <Setter Target="headLine.(RelativePanel.RightOf)" Value="image" />
+                                                            <Setter Target="headLine.(RelativePanel.AlignTopWithPanel)" Value="True" />
+                                                            <Setter Target="mainContent.FontSize" Value="12" />
+                                                            <Setter Target="mainContent.(RelativePanel.Below)" Value="headLine" />
+                                                            <Setter Target="mainContent.(RelativePanel.RightOf)" Value="image" />
+                                                            <Setter Target="mainContent.(RelativePanel.Above)" Value="tag" />
+                                                            <Setter Target="tag.FontSize" Value="10" />
+                                                            <Setter Target="tag.(RelativePanel.RightOf)" Value="image" />
+                                                            <Setter Target="tag.(RelativePanel.AlignBottomWithPanel)" Value="True" />
+                                                            <Setter Target="split.FontSize" Value="10" />
+                                                            <Setter Target="split.(RelativePanel.RightOf)" Value="tag" />
+                                                            <Setter Target="split.(RelativePanel.AlignBottomWithPanel)" Value="True" />
+                                                            <Setter Target="time.FontSize" Value="10" />
+                                                            <Setter Target="time.(RelativePanel.RightOf)" Value="split" />
+                                                            <Setter Target="time.(RelativePanel.AlignBottomWithPanel)" Value="True" />
+                                                            <Setter Target="icon.FontSize" Value="10" />
+                                                            <Setter Target="icon.(RelativePanel.LeftOf)" Value="commentCount" />
+                                                            <Setter Target="icon.(RelativePanel.AlignBottomWithPanel)" Value="True" />
+                                                            <Setter Target="icon.Margin" Value="0,5,0,10" />
+                                                            <Setter Target="commentCount.FontSize" Value="10" />
+                                                            <Setter Target="commentCount.(RelativePanel.AlignRightWithPanel)" Value="True" />
+                                                            <Setter Target="commentCount.(RelativePanel.AlignBottomWithPanel)" Value="True" />
+                                                        </VisualState.Setters>
+                                                    </VisualState>
+                                                </VisualStateGroup>
+                                            </VisualStateManager.VisualStateGroups>-->
+                                            <Image Source="{x:Bind image}" Name="image"
+                                                   Height="120"
+                                                   Width="200"/>
+                                            <TextBlock Text="{x:Bind headLine}" Name="headLine" FontWeight="Bold" TextWrapping="WrapWholeWords" 
+                                                       Width="200"
+                                                       Grid.Row="1"/>
+                                            <TextBlock Text="{x:Bind mainContent}" 
+                                                       Width="200"
+                                                       Height="70"
+                                                       Grid.Row="2"
+                                                       FontSize="13"
+                                                       Name="mainContent" TextWrapping="WrapWholeWords" TextTrimming="WordEllipsis"/>
+                                            <!--<FontIcon FontFamily="Segoe MDL2 Assets" Name="icon"
+                                                        Glyph="&#xE206;"
+                                                        Visibility="Visible"/>
+                                            <TextBlock Text="{x:Bind commentCount}"
+                                                       Name="commentCount"
+                                                        Margin="5,10,5,10"
+                                                       Visibility="Visible"/>-->
+                                        <StackPanel Orientation="Horizontal"
+                                                    Grid.Row="3"
+                                                    VerticalAlignment="Bottom">
+                                            <TextBlock Text="{x:Bind tag}" Name="tag" 
+                                                       FontSize="12"/>
+                                            <TextBlock Name="split" Text="|" Margin="5,0,5,0"
+                                                       FontSize="12"/>
+                                            <TextBlock Text="{x:Bind time}" Name="time"
+                                                       FontSize="12"/>
+                                        </StackPanel>
+                                            
+                                        </Grid>
+                                    <!--</UserControl>-->
+                                </DataTemplate>
+                            </GridView.ItemTemplate>
+                        </GridView>
+                        <TextBlock
+                                FontSize="14" 
+                                RelativePanel.AlignHorizontalCenterWithPanel="True"
+                                RelativePanel.Below="NewsCards"
+                                Text="{Binding LoadStatus}" 
+                                Margin="0,0,0,10"
+                                Foreground="Gray"/>
+                    </RelativePanel>
+                </ScrollViewer>
+            </local3:TabView.View>
+        </local3:TabView>
+        <Frame Name="NewsDetail" Visibility="Collapsed"/>
+        <ProgressRing Width="75" Height="75" IsActive="{Binding Path=Loaded,Converter={StaticResource BIC}}" />
+    </Grid>
+</Page>
