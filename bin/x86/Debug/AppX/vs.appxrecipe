@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\wang\source\Learn-News-UWP\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>59071DDE2A0EBE0EB9761753ADF7C118EFE87DBB826689595C5073BE7B2569A0</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>C83D3799126B63E9549F4A06B0ED826950197CB49742C4AAA446A6C61B8D2971</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>d84f2a53-a5eb-4ec0-9b23-cff6113ed359_1.0.0.0_x86__6x7861r46jccp</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>d84f2a53-a5eb-4ec0-9b23-cff6113ed359_6x7861r46jccp!App</RegisteredUserModeAppID>
     <RegisteredPackageID>d84f2a53-a5eb-4ec0-9b23-cff6113ed359</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\wang\source\Learn-News-UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-12-29T07:57:31.945</Modified>
+      <Modified>2018-12-29T09:33:23.533</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\wang\source\Learn-News-UWP\bin\x86\Debug\The Paper.exe">
       <PackagePath>entrypoint\The Paper.exe</PackagePath>
-      <Modified>2018-12-29T07:57:30.743</Modified>
+      <Modified>2018-12-29T09:24:00.221</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\wang\.nuget\packages\htmlagilitypack\1.6.11\lib\uap10.0\HtmlAgilityPack.dll">
       <PackagePath>HtmlAgilityPack.dll</PackagePath>
@@ -555,6 +555,26 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-12-28T09:26:07.567</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\wang\source\Learn-News-UWP\Assets\Square150x150Logo.scale-100.png">
+      <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-12-29T09:23:48.582</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\wang\source\Learn-News-UWP\Assets\Square150x150Logo.scale-125.png">
+      <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-12-29T09:23:48.609</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\wang\source\Learn-News-UWP\Assets\Square150x150Logo.scale-150.png">
+      <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-12-29T09:23:48.639</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\wang\source\Learn-News-UWP\Assets\Square150x150Logo.scale-400.png">
+      <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-12-29T09:23:48.740</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\wang\source\Learn-News-UWP\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
@@ -632,7 +652,7 @@
     <AppxPackagedFile Include="C:\Users\wang\source\Learn-News-UWP\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-12-28T09:26:07.569</Modified>
+      <Modified>2018-12-29T09:23:48.669</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\wang\source\Learn-News-UWP\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
@@ -672,7 +692,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\wang\source\Learn-News-UWP\bin\x86\Debug\Views\buttonStyle.xbf">
       <PackagePath>Views\buttonStyle.xbf</PackagePath>
-      <Modified>2018-12-29T07:57:30.361</Modified>
+      <Modified>2018-12-29T09:33:21.976</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\wang\source\Learn-News-UWP\bin\x86\Debug\Views\LoginPage.xbf">
       <PackagePath>Views\LoginPage.xbf</PackagePath>
@@ -684,11 +704,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\wang\source\Learn-News-UWP\bin\x86\Debug\Resources\ControlStyle.xbf">
       <PackagePath>Resources\ControlStyle.xbf</PackagePath>
-      <Modified>2018-12-29T07:57:30.360</Modified>
+      <Modified>2018-12-29T09:33:21.978</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\wang\source\Learn-News-UWP\bin\x86\Debug\Themes\Generic.xbf">
       <PackagePath>Themes\Generic.xbf</PackagePath>
-      <Modified>2018-12-29T07:57:30.361</Modified>
+      <Modified>2018-12-29T09:33:21.978</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\wang\source\Learn-News-UWP\bin\x86\Debug\UserControls\CommentControl.xbf">
       <PackagePath>UserControls\CommentControl.xbf</PackagePath>
@@ -720,11 +740,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\wang\source\Learn-News-UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2018-12-29T07:51:44.514</Modified>
+      <Modified>2018-12-29T09:33:23.071</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\wang\source\Learn-News-UWP\bin\x86\Debug\Core\The Paper.exe">
       <PackagePath>The Paper.exe</PackagePath>
-      <Modified>2018-12-29T07:57:31.927</Modified>
+      <Modified>2018-12-29T09:33:23.522</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

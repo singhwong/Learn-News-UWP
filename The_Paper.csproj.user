@@ -4,4 +4,7 @@
     <DeviceId>30F105C9-681E-420b-A277-7C086EAD8A4E</DeviceId>
     <UseEmulator>true</UseEmulator>
   </PropertyGroup>
+  <PropertyGroup>
+    <MediumTileSource>C:\Users\wang\source\Learn-News-UWP\Assets\Square44x44Logo.scale-400.png</MediumTileSource>
+  </PropertyGroup>
 </Project>
