@@ -20,7 +20,8 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ScrollViewer>
-            <RelativePanel Background="#F5F5F5">
+            <RelativePanel Name="newsContent_relativePanel"
+                           Background="#F5F5F5">
                 <TextBlock Name="headLine" 
                            TextWrapping="WrapWholeWords"
                            RelativePanel.AlignTopWithPanel="True"

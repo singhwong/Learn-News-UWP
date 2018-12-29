@@ -46,14 +46,17 @@ namespace The_Paper.Views
         {
             if ((sender as GridView).SelectedItem == null)
                 return;
-            Grid.ColumnDefinitions.Clear();
-            Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
-            Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(2, GridUnitType.Star) });
+            //Grid.ColumnDefinitions.Clear();
+            //Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
+            //Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
             NewsDetail.SetValue(Grid.ColumnProperty, 1);
+            row_1.Height = new GridLength(30);
+            colume_2.Width = new GridLength(2, GridUnitType.Star);
             NewsDetail.Visibility = Visibility.Visible;
             newsPageVM.IsOpen = true;
-            NewsDetail.Navigate(typeof(NewsDetailPage), 
+            NewsDetail.Navigate(typeof(NewsDetailPage),
                 ((News)((sender as GridView).SelectedItem))?.uri);
+
         }
 
         private void topNews_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
@@ -66,6 +69,13 @@ namespace The_Paper.Views
             newsPageVM.IsOpen = true;
             NewsDetail.Navigate(typeof(NewsDetailPage),
                 (newsPageVM.TopNews.uri));
+        }
+
+        private void Back_button_Click(object sender, RoutedEventArgs e)
+        {
+            colume_2.Width = new GridLength(0);
+            row_1.Height = new GridLength(0);
+
         }
     }
 }

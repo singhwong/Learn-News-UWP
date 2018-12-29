@@ -27312,11 +27312,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\wang\\source\\repos\\ThePaper\\The Paper\\The_Paper.csproj",
+      "projectUniqueName": "C:\\Users\\wang\\source\\Learn-News-UWP\\The_Paper.csproj",
       "projectName": "The_Paper",
-      "projectPath": "C:\\Users\\wang\\source\\repos\\ThePaper\\The Paper\\The_Paper.csproj",
+      "projectPath": "C:\\Users\\wang\\source\\Learn-News-UWP\\The_Paper.csproj",
       "packagesPath": "C:\\Users\\wang\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\wang\\source\\repos\\ThePaper\\The Paper\\obj\\",
+      "outputPath": "C:\\Users\\wang\\source\\Learn-News-UWP\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [

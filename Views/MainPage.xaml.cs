@@ -2,6 +2,7 @@
 using The_Paper.Data;
 using The_Paper.ViewModels;
 using The_Paper.Views;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -19,6 +20,8 @@ namespace The_Paper
         public MainPage()
         {
             this.InitializeComponent();
+
+           
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -26,7 +29,7 @@ namespace The_Paper
             base.OnNavigatedTo(e);
             mainPageVM = new MainPageVM();
             this.DataContext = mainPageVM;
-        }
+    }
 
         private void Ham_Click(object sender, RoutedEventArgs e)
         {
@@ -46,11 +49,6 @@ namespace The_Paper
                     break;
             }
             
-        }
-
-        private void Ham_Click(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
-        {
-            splitView.IsPaneOpen = !splitView.IsPaneOpen;
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
