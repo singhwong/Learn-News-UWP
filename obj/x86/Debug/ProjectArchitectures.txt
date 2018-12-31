@@ -1,1 +1,1 @@
-C:\Users\wang\source\Learn-News-UWP\The_Paper.csproj;x86
+C:\Users\Administrator\source\repos\Learn-News-UWP\The_Paper.csproj;x86

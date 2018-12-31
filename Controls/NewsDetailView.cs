@@ -51,7 +51,7 @@ namespace The_Paper.Controls
         {
             base.OnApplyTemplate();
             Grid = GetTemplateChild("Grid") as Grid;
-            Grid.Background = new SolidColorBrush(Color.FromArgb(255, 245, 245, 245));
+            Grid.Background = new SolidColorBrush(Colors.Black);
         }
 
         private static void NewsDetailChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)

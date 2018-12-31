@@ -21,7 +21,7 @@
         </ResourceDictionary>
     </Page.Resources>
     <Grid Name="Grid"
-          Background="#F5F5F5">
+          RequestedTheme="Dark">
         <Grid.RowDefinitions>
             <RowDefinition x:Name="row_1"
                            Height="0"/>
@@ -102,24 +102,27 @@
         </VisualStateManager.VisualStateGroups>
         <Button Name="back_button"
         Content="关闭"
-                Grid.ColumnSpan="2"
-                HorizontalAlignment="Right"
+               Grid.Column="1"
+                HorizontalAlignment="Left"
+                FontWeight="Thin"
                 Style="{StaticResource CustomButtonStyle}"
         Click="Back_button_Click"/>
         <local3:TabView x:Name="TabView"
                         Grid.Row="1"
+                        Background="Black"
             TabSwitch="TabView_TabSwitch"
             TabNameList="{Binding TabNameList}">
             <local3:TabView.View>
-                <ScrollViewer Name="scrollViewer" ViewChanged="ScrollViewer_ViewChanged">
-                    <RelativePanel Background="#F0F0F0">
+                <ScrollViewer Name="scrollViewer" ViewChanged="ScrollViewer_ViewChanged"
+                              Background="Black">
+                    <RelativePanel>
                         <GridViewItem Name="topNews" Style="{StaticResource NewsListItemStyle}"
+                                      Background="Black"
                                       Visibility="{Binding Path=HasTopNews,Converter={StaticResource BTVC}}"
                                       Tapped="topNews_Tapped">
                             <RelativePanel
                                            Name="topNewsPanel"
-                                        Margin="10,10,10,10"
-                                        Background="Transparent" >
+                                Background="Black">
                                 <Image Name="topNewsImage" 
                                         Source="{Binding TopNews.image}"
                                         Margin="10,10,10,10"  />
@@ -147,13 +150,12 @@
                             </RelativePanel>
                         </GridViewItem>
                         <GridView Name="NewsCards" ItemsSource="{Binding NewsList}"
-                                SelectionChanged="NewsCards_SelectionChanged"
-                                ItemContainerStyle="{StaticResource NewsListItemStyle}"
-                                Background="#F0F0F0" RelativePanel.Below="topNews">
+                                  Background="Black"
+                                SelectionChanged="NewsCards_SelectionChanged" RelativePanel.Below="topNews">
                             <GridView.ItemTemplate>
                                 <DataTemplate x:DataType="local2:News">
                                     <!--<UserControl>-->
-                                    <Grid Name="NewsCard" Margin="5" Background="Transparent"                                
+                                    <Grid Name="NewsCard" Margin="5"    
                                                     Height="300">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto"/>
@@ -237,10 +239,10 @@
                                                    Height="120"
                                                    Width="200"/>
                                         <TextBlock Text="{x:Bind headLine}" Name="headLine" FontWeight="Bold" TextWrapping="WrapWholeWords" 
-                                                       Width="200"
+                                                       Width="195"
                                                        Grid.Row="1"/>
                                         <TextBlock Text="{x:Bind mainContent}" 
-                                                       Width="200"
+                                                       Width="195"
                                                        Height="70"
                                                        Grid.Row="2"
                                                        FontSize="13"

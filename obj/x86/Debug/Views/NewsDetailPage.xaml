@@ -18,10 +18,9 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ScrollViewer>
-            <RelativePanel x:ConnectionId='1' Name="newsContent_relativePanel"
-                           Background="#F5F5F5">
+    <Grid RequestedTheme="Dark">
+        <ScrollViewer Background="Black">
+            <RelativePanel x:ConnectionId='1' Name="newsContent_relativePanel">
                 <TextBlock x:ConnectionId='2' Name="headLine" 
                            TextWrapping="WrapWholeWords"
                            RelativePanel.AlignTopWithPanel="True"
@@ -44,7 +43,6 @@
                            Text="{Binding NewsDetail.time}" />
                 <Border x:ConnectionId='5' Name="newsContentBorder"
                         RelativePanel.Below="Time"
-                        Margin="20,0,20,0"
                         BorderBrush="Gray"
                         BorderThickness="0,1,0,1">
                     <local2:NewsDetailView x:ConnectionId='7' x:Name="newsContent"
@@ -56,10 +54,9 @@
                            Name="Editor" 
                            FontSize="14"
                            Margin="20,10,20,20"
-                           Foreground="Gray"
                            RelativePanel.Below="newsContentBorder"
                            Text="{Binding NewsDetail.editor}" />
-                <!--<uc:CommentControl RelativePanel.Below="Editor" Margin="20,10,20,10" />-->
+                <uc:CommentControl RelativePanel.Below="Editor" Margin="20,10,20,10" />
             </RelativePanel>
         </ScrollViewer>
         <ProgressRing Background="Transparent" IsActive="{Binding Path=Loaded,Converter={StaticResource BIC}}"

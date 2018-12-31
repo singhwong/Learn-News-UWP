@@ -86,8 +86,8 @@ namespace The_Paper.ViewModels
 
         public async void Load(string uri)
         {
-            //if (uri == string.Empty || uri == null)
-            //    return;
+            if (uri == string.Empty || uri == null)
+                return;
             try
             {
                 Loaded = false;

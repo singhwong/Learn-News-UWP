@@ -9,16 +9,21 @@
     mc:Ignorable="d"
                         >
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid RequestedTheme="Dark">
         <SplitView x:ConnectionId='2' Name="splitView" DisplayMode="CompactInline" 
                    OpenPaneLength="100"
                    CompactPaneLength="{Binding Path=ActualWidth,ElementName=Ham}">
             <SplitView.Pane>
-                <StackPanel Background="#F5F5F5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
                     <Button x:ConnectionId='3' Background="Transparent" FontSize="20"
                             Name="Ham" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"                  />
-                    <ListView x:ConnectionId='4' ItemsSource="{Binding ChannelList}" Background="#F5F5F5"
+                    <ListView x:ConnectionId='4' ItemsSource="{Binding ChannelList}" 
                               Name="Menu"
+                              Grid.Row="1"
                                                                         >
                         <ListView.ItemTemplate>
                             <DataTemplate                            >
@@ -29,10 +34,13 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
-                </StackPanel>
+                </Grid>
             </SplitView.Pane>
             <SplitView.Content>
+                <Grid Background="Black">
                     <Frame x:ConnectionId='8' Name="mainFrame"/>
+                </Grid>
+                    
             </SplitView.Content>
         </SplitView>
     </Grid>

@@ -21,7 +21,7 @@
         </ResourceDictionary>
     </Page.Resources>
     <Grid x:ConnectionId='1' Name="Grid"
-          Background="#F5F5F5">
+          RequestedTheme="Dark">
         <Grid.RowDefinitions>
             <RowDefinition x:ConnectionId='2' x:Name="row_1"
                            Height="0"/>
@@ -102,24 +102,27 @@
         </VisualStateManager.VisualStateGroups>
         <Button x:ConnectionId='9' Name="back_button"
         Content="关闭"
-                Grid.ColumnSpan="2"
-                HorizontalAlignment="Right"
+               Grid.Column="1"
+                HorizontalAlignment="Left"
+                FontWeight="Thin"
                 Style="{StaticResource CustomButtonStyle}"
                                  />
         <local3:TabView x:ConnectionId='10' x:Name="TabView"
                         Grid.Row="1"
+                        Background="Black"
                                          
             TabNameList="{Binding TabNameList}">
             <local3:TabView.View>
-                <ScrollViewer x:ConnectionId='12' Name="scrollViewer"                                       >
-                    <RelativePanel Background="#F0F0F0">
+                <ScrollViewer x:ConnectionId='12' Name="scrollViewer"                                       
+                              Background="Black">
+                    <RelativePanel>
                         <GridViewItem x:ConnectionId='13' Name="topNews" Style="{StaticResource NewsListItemStyle}"
+                                      Background="Black"
                                       Visibility="{Binding Path=HasTopNews,Converter={StaticResource BTVC}}"
                                                              >
                             <RelativePanel x:ConnectionId='21'
                                            Name="topNewsPanel"
-                                        Margin="10,10,10,10"
-                                        Background="Transparent" >
+                                Background="Black">
                                 <Image x:ConnectionId='22' Name="topNewsImage" 
                                         Source="{Binding TopNews.image}"
                                         Margin="10,10,10,10"  />
@@ -147,13 +150,12 @@
                             </RelativePanel>
                         </GridViewItem>
                         <GridView x:ConnectionId='14' Name="NewsCards" ItemsSource="{Binding NewsList}"
-                                                                             
-                                ItemContainerStyle="{StaticResource NewsListItemStyle}"
-                                Background="#F0F0F0" RelativePanel.Below="topNews">
+                                  Background="Black"
+                                                                              RelativePanel.Below="topNews">
                             <GridView.ItemTemplate>
                                 <DataTemplate                         >
                                     <!--<UserControl>-->
-                                    <Grid x:ConnectionId='15' Name="NewsCard" Margin="5" Background="Transparent"                                
+                                    <Grid x:ConnectionId='15' Name="NewsCard" Margin="5"    
                                                     Height="300">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto"/>
@@ -237,10 +239,10 @@
                                                    Height="120"
                                                    Width="200"/>
                                         <TextBlock x:ConnectionId='17'                          Name="headLine" FontWeight="Bold" TextWrapping="WrapWholeWords" 
-                                                       Width="200"
+                                                       Width="195"
                                                        Grid.Row="1"/>
                                         <TextBlock x:ConnectionId='18'                             
-                                                       Width="200"
+                                                       Width="195"
                                                        Height="70"
                                                        Grid.Row="2"
                                                        FontSize="13"

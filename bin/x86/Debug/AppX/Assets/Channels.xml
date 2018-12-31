@@ -6,7 +6,7 @@
     <Channel-Url>http://www.thepaper.cn/</Channel-Url>
     <Channel-Icon>
       <Icon-Font>Segoe MDL2 Assets</Icon-Font>
-      <Icon-Text>&#xE18B;</Icon-Text>
+      <Icon-Text>&#xE734;</Icon-Text>
     </Channel-Icon>
     <Channel-More>
       <Url>http://www.thepaper.cn/load_chosen.jsp?</Url>
@@ -120,7 +120,7 @@
     <Channel-Url>http://www.thepaper.cn/25950</Channel-Url>
     <Channel-Icon>
       <Icon-Font>Segoe MDL2 Assets</Icon-Font>
-      <Icon-Text>&#xE774;</Icon-Text>
+      <Icon-Text>&#xE909;</Icon-Text>
     </Channel-Icon>
     <Channel-More>
       <Url>http://www.thepaper.cn/load_index.jsp?</Url>
@@ -258,7 +258,7 @@
     <Channel-Url>http://www.thepaper.cn/25951</Channel-Url>
     <Channel-Icon>
       <Icon-Font>Segoe MDL2 Assets</Icon-Font>
-      <Icon-Text>&#xE825;</Icon-Text>
+      <Icon-Text>&#xEC59;</Icon-Text>
     </Channel-Icon>
     <Channel-More>
       <Url>http://www.thepaper.cn/load_index.jsp?</Url>
@@ -423,13 +423,13 @@
       </Column>
     </Channel-Colums>
   </Channel>
-  <Channel>
+  <!--<Channel>
     <Channel-Name>问政</Channel-Name>
     <Channel-Id></Channel-Id>
     <Channel-Url>http://www.thepaper.cn/gov_publish.jsp</Channel-Url>
     <Channel-Icon>
       <Icon-Font>Segoe MDL2 Assets</Icon-Font>
-      <Icon-Text>&#xE774;</Icon-Text>
+      <Icon-Text>&#xEC08;</Icon-Text>
     </Channel-Icon>
     <Channel-Colums>
       <Column>
@@ -458,14 +458,14 @@
         <Column-Id>http://www.thepaper.cn/myGovAttention.jsp</Column-Id>
       </Column>
     </Channel-Colums>
-  </Channel>
+  </Channel>-->
   <Channel>
     <Channel-Name>生活</Channel-Name>
     <Channel-Id>25953</Channel-Id>
     <Channel-Url>http://www.thepaper.cn/25953</Channel-Url>
     <Channel-Icon>
       <Icon-Font>Segoe MDL2 Assets</Icon-Font>
-      <Icon-Text>&#xE10F;</Icon-Text>
+      <Icon-Text>&#xE899;</Icon-Text>
     </Channel-Icon>
     <Channel-More>
       <Url>http://www.thepaper.cn/load_index.jsp?</Url>
@@ -547,7 +547,7 @@
       </Column>
     </Channel-Colums>
   </Channel>
-  <Channel>
+  <!--<Channel>
     <Channel-Name>问吧</Channel-Name>
     <Channel-Id></Channel-Id>
     <Channel-Url>http://www.thepaper.cn/ask_index.jsp</Channel-Url>
@@ -578,5 +578,5 @@
         <Column-Id>-1</Column-Id>
       </Column>
     </Channel-Colums>
-  </Channel>
+  </Channel>-->
 </Channels>
