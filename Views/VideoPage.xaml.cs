@@ -59,13 +59,13 @@ namespace The_Paper.Views
         private void mediaElement_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
             EnterAnim.Begin();
-            EnterAnim.Completed += (sender1, e1) => VideoInfo.Visibility = Visibility.Visible;
+            //EnterAnim.Completed += (sender1, e1) => VideoInfo.Visibility = Visibility.Visible;
         }
 
         private void mediaElement_PointerExited(object sender, PointerRoutedEventArgs e)
         {
             ExitAnim.Begin();
-            EnterAnim.Completed += (sender1, e1) => VideoInfo.Visibility = Visibility.Collapsed;
+            //EnterAnim.Completed += (sender1, e1) => VideoInfo.Visibility = Visibility.Collapsed;
         }
 
         private void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChangedEventArgs e)

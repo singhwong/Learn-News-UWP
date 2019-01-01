@@ -19,7 +19,7 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Background="#F0F0F0" Name="RootGrid">
+    <Grid Name="RootGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="*" />
@@ -52,7 +52,7 @@
         <local3:TabView Name="TabView"
                         TabNameList="{Binding TabNameList}" TabSwitch="TabView_TabSwitch">
             <local3:TabView.View>
-                <RelativePanel>
+                <RelativePanel Background="Black">
                     <Grid Name="TopVideo" >
                         <Grid Margin="10,10,10,10"  Name="TopThumb" Visibility="{Binding Path=HasTopVideo,Converter={StaticResource BTVC}}">
                             <Image Source="{Binding TopVideo.imageSrc}"
@@ -123,42 +123,51 @@
                         <RelativePanel>
                             <GridView SelectionChanged="GridView_SelectionChanged"
                                       Name="VideoCards"
+                                      Background="Black"
                               ItemContainerStyle="{StaticResource NewsListItemStyle}"
                               ItemsSource="{Binding VideoList}">
                                 <GridView.ItemTemplate>
                                     <DataTemplate x:DataType="local2:Video">
-                                        <RelativePanel Width="220" Margin="10,10,10,10">
-                                            <Image Name="image" Source="{x:Bind imageSrc}"
-                                   Margin="5,5,5,5"
-                                   RelativePanel.AlignTopWithPanel="True"/>
+                                        <Grid Background="Black">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                        <Image Name="image" 
+                                               Source="{x:Bind imageSrc}"
+                                               Margin="5,5,5,5"
+                                               Height="120"
+                                               Width="200"/>
                                             <TextBlock Name="headLine" Text="{x:Bind headLine}"
-                                       FontSize="16"
-                                       FontWeight="Bold"
-                                       Margin="5,5,5,5"
-                                       TextWrapping="WrapWholeWords"
-                                       RelativePanel.Below="image"/>
-                                            <TextBlock Name="mainContent" Text="{x:Bind mainContent}" 
-                                                       FontSize="14"
-                                                       Margin="5,5,5,5"
+                                                       Width="195"
+                                                       Grid.Row="1"
+                                                       FontWeight="Bold"
+                                                       TextWrapping="WrapWholeWords"/>
+                                            <TextBlock Name="mainContent" 
+                                                       Text="{x:Bind mainContent}" 
+                                                       FontSize="13"
+                                                       Width="195"
+                                                       Height="70"
+                                                       Grid.Row="2"
                                                        TextWrapping="WrapWholeWords"
-                                                       RelativePanel.Above="tag"
-                                                       TextTrimming="WordEllipsis"
-                                                       RelativePanel.Below="headLine"/>
-                                            <TextBlock Name="tag" Text="{x:Bind tag}" 
-                                                       FontSize="10"
-                                                       Margin="5,5,5,5"
-                                                       RelativePanel.AlignBottomWithPanel="True"
-                                                       RelativePanel.AlignLeftWithPanel="True"/>
-                                            <TextBlock FontSize="10" Text="|" Name="split"
-                                                       Margin="5,5,5,5"
-                                                       RelativePanel.AlignBottomWithPanel="True"
-                                                       RelativePanel.RightOf="tag" />
-                                            <TextBlock Name="time" Text="{x:Bind time}"
-                                                       FontSize="10"
-                                                       Margin="5,5,5,5"
-                                                       RelativePanel.AlignBottomWithPanel="True"
-                                                       RelativePanel.RightOf="split"/>
-                                            <FontIcon FontSize="10" FontFamily="Segoe MDL2 Assets"
+                                                       TextTrimming="WordEllipsis"/>
+                                            <StackPanel Orientation="Horizontal"
+                                                        Grid.Row="3"
+                                                        VerticalAlignment="Bottom">
+                                                <TextBlock Name="tag" 
+                                                           Text="{x:Bind tag}" 
+                                                           FontSize="12"/>
+                                                <TextBlock FontSize="12" 
+                                                           Text="|" Name="split"
+                                                           Margin="5,0,5,0" />
+                                                <TextBlock Name="time" 
+                                                           Text="{x:Bind time}"
+                                                           FontSize="12"/>
+                                            </StackPanel>
+                                            
+                                            <!--<FontIcon FontSize="10" FontFamily="Segoe MDL2 Assets"
                                                       Margin="5,7,0,6"
                                                       RelativePanel.AlignBottomWithPanel="True"
                                                       RelativePanel.LeftOf="commentCount"
@@ -168,8 +177,8 @@
                                                        FontSize="10"
                                                        Margin="5,5,5,5"
                                                        RelativePanel.AlignRightWithPanel="True"
-                                                       RelativePanel.AlignBottomWithPanel="True"/>
-                                        </RelativePanel>
+                                                       RelativePanel.AlignBottomWithPanel="True"/>-->
+                                        </Grid>
                                     </DataTemplate>
                                 </GridView.ItemTemplate>
                             </GridView>
@@ -182,7 +191,7 @@
                                 Foreground="Gray"/>
                         </RelativePanel>
                     </ScrollViewer>
-                    <Grid Background="#F5F5F5" RelativePanel.Below="TopVideo" Visibility="Collapsed"
+                    <!--<Grid Background="Black"  Visibility="Collapsed"
                           Width="{Binding Path=ActualWidth,ElementName=mediaElement}"
                           Name="VideoInfo">
                         <Grid.ColumnDefinitions>
@@ -233,7 +242,7 @@
                             <TextBlock Text="{Binding VideoDetail.editor}" FontSize="12"
                                            Name="VideoEditor" RelativePanel.Below="VideoSource" RelativePanel.RightOf="VideoAbout" Margin="5,5,5,0" />
                         </RelativePanel>
-                    </Grid>
+                    </Grid>-->
                     <RelativePanel.Resources>
                         <Storyboard x:Name="EnterAnim">
                             <FadeInThemeAnimation Storyboard.TargetName="VideoInfo"/>
