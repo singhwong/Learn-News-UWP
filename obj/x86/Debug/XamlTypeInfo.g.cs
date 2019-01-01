@@ -13,7 +13,7 @@ namespace The_Paper
 {
     public partial class App : global::Windows.UI.Xaml.Markup.IXamlMetadataProvider
     {
-    private global::The_Paper.The_Paper_XamlTypeInfo.XamlTypeInfoProvider _provider;
+    private global::The_Paper.thePaper_XamlTypeInfo.XamlTypeInfoProvider _provider;
 
         /// <summary>
         /// GetXamlType(Type)
@@ -22,7 +22,7 @@ namespace The_Paper
         {
             if(_provider == null)
             {
-                _provider = new global::The_Paper.The_Paper_XamlTypeInfo.XamlTypeInfoProvider();
+                _provider = new global::The_Paper.thePaper_XamlTypeInfo.XamlTypeInfoProvider();
             }
             return _provider.GetXamlTypeByType(type);
         }
@@ -34,7 +34,7 @@ namespace The_Paper
         {
             if(_provider == null)
             {
-                _provider = new global::The_Paper.The_Paper_XamlTypeInfo.XamlTypeInfoProvider();
+                _provider = new global::The_Paper.thePaper_XamlTypeInfo.XamlTypeInfoProvider();
             }
             return _provider.GetXamlTypeByName(fullName);
         }
@@ -49,7 +49,7 @@ namespace The_Paper
     }
 }
 
-namespace The_Paper.The_Paper_XamlTypeInfo
+namespace The_Paper.thePaper_XamlTypeInfo
 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -254,8 +254,8 @@ namespace The_Paper.The_Paper_XamlTypeInfo
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
-            global::The_Paper.The_Paper_XamlTypeInfo.XamlSystemBaseType xamlType = null;
-            global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType userType;
+            global::The_Paper.thePaper_XamlTypeInfo.XamlSystemBaseType xamlType = null;
+            global::The_Paper.thePaper_XamlTypeInfo.XamlUserType userType;
             string typeName = _typeNameTable[typeIndex];
             global::System.Type type = _typeTable[typeIndex];
 
@@ -263,29 +263,29 @@ namespace The_Paper.The_Paper_XamlTypeInfo
             {
 
             case 0:   //  The_Paper.Views.LoginPage
-                userType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_0_LoginPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 1:   //  Windows.UI.Xaml.Controls.Page
-                xamlType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::The_Paper.thePaper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 2:   //  Windows.UI.Xaml.Controls.UserControl
-                xamlType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::The_Paper.thePaper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 3:   //  The_Paper.MainPage
-                userType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_3_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 4:   //  The_Paper.Controls.TabView
-                userType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
+                userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
                 userType.Activator = Activate_4_TabView;
                 userType.AddMemberName("previousIndex");
                 userType.AddMemberName("currentIndex");
@@ -296,41 +296,41 @@ namespace The_Paper.The_Paper_XamlTypeInfo
                 break;
 
             case 5:   //  Windows.UI.Xaml.Controls.Control
-                xamlType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::The_Paper.thePaper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 6:   //  Int32
-                xamlType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::The_Paper.thePaper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 7:   //  System.Collections.ObjectModel.ObservableCollection`1<String>
-                userType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<String>"));
+                userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<String>"));
                 userType.CollectionAdd = VectorAdd_7_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
             case 8:   //  System.Collections.ObjectModel.Collection`1<String>
-                userType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_8_Collection;
                 userType.CollectionAdd = VectorAdd_8_Collection;
                 xamlType = userType;
                 break;
 
             case 9:   //  Object
-                xamlType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::The_Paper.thePaper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 10:   //  String
-                xamlType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::The_Paper.thePaper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 11:   //  Windows.UI.Xaml.UIElement
-                xamlType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::The_Paper.thePaper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 12:   //  The_Paper.Controls.NewsDetailView
-                userType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
+                userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
                 userType.Activator = Activate_12_NewsDetailView;
                 userType.AddMemberName("NewsDetail");
                 userType.SetIsLocalType();
@@ -338,14 +338,14 @@ namespace The_Paper.The_Paper_XamlTypeInfo
                 break;
 
             case 13:   //  The_Paper.Models.NewsDetail
-                userType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 14:   //  The_Paper.Controls.CommentControl
-                userType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
+                userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
                 userType.Activator = Activate_14_CommentControl;
                 userType.AddMemberName("Comment");
                 userType.AddMemberName("MaxContentLine");
@@ -355,74 +355,74 @@ namespace The_Paper.The_Paper_XamlTypeInfo
                 break;
 
             case 15:   //  The_Paper.Models.Comment
-                userType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 16:   //  Windows.UI.Xaml.Media.Brush
-                xamlType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::The_Paper.thePaper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 17:   //  The_Paper.UserControls.CommentControl
-                userType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
+                userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
                 userType.Activator = Activate_17_CommentControl;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 18:   //  The_Paper.Views.CommentPage
-                userType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_18_CommentPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 19:   //  The_Paper.Converters.BoolToVisibilityInvertConverter
-                userType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_19_BoolToVisibilityInvertConverter;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 20:   //  The_Paper.Converters.BoolToVisibilityConverter
-                userType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_20_BoolToVisibilityConverter;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 21:   //  The_Paper.Converters.BoolInvertConverter
-                userType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_21_BoolInvertConverter;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 22:   //  The_Paper.Views.NewsDetailPage
-                userType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_22_NewsDetailPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 23:   //  The_Paper.Views.NewsPage
-                userType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_23_NewsPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 24:   //  The_Paper.Views.VideoDetailPage
-                userType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_24_VideoDetailPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 25:   //  The_Paper.Views.VideoPage
-                userType = new global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_25_VideoPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
@@ -515,61 +515,61 @@ namespace The_Paper.The_Paper_XamlTypeInfo
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
-            global::The_Paper.The_Paper_XamlTypeInfo.XamlMember xamlMember = null;
-            global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType userType;
+            global::The_Paper.thePaper_XamlTypeInfo.XamlMember xamlMember = null;
+            global::The_Paper.thePaper_XamlTypeInfo.XamlUserType userType;
 
             switch (longMemberName)
             {
             case "The_Paper.Controls.TabView.previousIndex":
-                userType = (global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("The_Paper.Controls.TabView");
-                xamlMember = new global::The_Paper.The_Paper_XamlTypeInfo.XamlMember(this, "previousIndex", "Int32");
+                userType = (global::The_Paper.thePaper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("The_Paper.Controls.TabView");
+                xamlMember = new global::The_Paper.thePaper_XamlTypeInfo.XamlMember(this, "previousIndex", "Int32");
                 xamlMember.Getter = get_0_TabView_previousIndex;
                 xamlMember.Setter = set_0_TabView_previousIndex;
                 break;
             case "The_Paper.Controls.TabView.currentIndex":
-                userType = (global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("The_Paper.Controls.TabView");
-                xamlMember = new global::The_Paper.The_Paper_XamlTypeInfo.XamlMember(this, "currentIndex", "Int32");
+                userType = (global::The_Paper.thePaper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("The_Paper.Controls.TabView");
+                xamlMember = new global::The_Paper.thePaper_XamlTypeInfo.XamlMember(this, "currentIndex", "Int32");
                 xamlMember.Getter = get_1_TabView_currentIndex;
                 xamlMember.Setter = set_1_TabView_currentIndex;
                 break;
             case "The_Paper.Controls.TabView.TabNameList":
-                userType = (global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("The_Paper.Controls.TabView");
-                xamlMember = new global::The_Paper.The_Paper_XamlTypeInfo.XamlMember(this, "TabNameList", "System.Collections.ObjectModel.ObservableCollection`1<String>");
+                userType = (global::The_Paper.thePaper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("The_Paper.Controls.TabView");
+                xamlMember = new global::The_Paper.thePaper_XamlTypeInfo.XamlMember(this, "TabNameList", "System.Collections.ObjectModel.ObservableCollection`1<String>");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_2_TabView_TabNameList;
                 xamlMember.Setter = set_2_TabView_TabNameList;
                 break;
             case "The_Paper.Controls.TabView.View":
-                userType = (global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("The_Paper.Controls.TabView");
-                xamlMember = new global::The_Paper.The_Paper_XamlTypeInfo.XamlMember(this, "View", "Windows.UI.Xaml.UIElement");
+                userType = (global::The_Paper.thePaper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("The_Paper.Controls.TabView");
+                xamlMember = new global::The_Paper.thePaper_XamlTypeInfo.XamlMember(this, "View", "Windows.UI.Xaml.UIElement");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_3_TabView_View;
                 xamlMember.Setter = set_3_TabView_View;
                 break;
             case "The_Paper.Controls.NewsDetailView.NewsDetail":
-                userType = (global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("The_Paper.Controls.NewsDetailView");
-                xamlMember = new global::The_Paper.The_Paper_XamlTypeInfo.XamlMember(this, "NewsDetail", "The_Paper.Models.NewsDetail");
+                userType = (global::The_Paper.thePaper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("The_Paper.Controls.NewsDetailView");
+                xamlMember = new global::The_Paper.thePaper_XamlTypeInfo.XamlMember(this, "NewsDetail", "The_Paper.Models.NewsDetail");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_4_NewsDetailView_NewsDetail;
                 xamlMember.Setter = set_4_NewsDetailView_NewsDetail;
                 break;
             case "The_Paper.Controls.CommentControl.Comment":
-                userType = (global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("The_Paper.Controls.CommentControl");
-                xamlMember = new global::The_Paper.The_Paper_XamlTypeInfo.XamlMember(this, "Comment", "The_Paper.Models.Comment");
+                userType = (global::The_Paper.thePaper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("The_Paper.Controls.CommentControl");
+                xamlMember = new global::The_Paper.thePaper_XamlTypeInfo.XamlMember(this, "Comment", "The_Paper.Models.Comment");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_5_CommentControl_Comment;
                 xamlMember.Setter = set_5_CommentControl_Comment;
                 break;
             case "The_Paper.Controls.CommentControl.MaxContentLine":
-                userType = (global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("The_Paper.Controls.CommentControl");
-                xamlMember = new global::The_Paper.The_Paper_XamlTypeInfo.XamlMember(this, "MaxContentLine", "Int32");
+                userType = (global::The_Paper.thePaper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("The_Paper.Controls.CommentControl");
+                xamlMember = new global::The_Paper.thePaper_XamlTypeInfo.XamlMember(this, "MaxContentLine", "Int32");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_6_CommentControl_MaxContentLine;
                 xamlMember.Setter = set_6_CommentControl_MaxContentLine;
                 break;
             case "The_Paper.Controls.CommentControl.FloorBackground":
-                userType = (global::The_Paper.The_Paper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("The_Paper.Controls.CommentControl");
-                xamlMember = new global::The_Paper.The_Paper_XamlTypeInfo.XamlMember(this, "FloorBackground", "Windows.UI.Xaml.Media.Brush");
+                userType = (global::The_Paper.thePaper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("The_Paper.Controls.CommentControl");
+                xamlMember = new global::The_Paper.thePaper_XamlTypeInfo.XamlMember(this, "FloorBackground", "Windows.UI.Xaml.Media.Brush");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_7_CommentControl_FloorBackground;
                 xamlMember.Setter = set_7_CommentControl_FloorBackground;
@@ -628,9 +628,9 @@ namespace The_Paper.The_Paper_XamlTypeInfo
 
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    internal class XamlUserType : global::The_Paper.The_Paper_XamlTypeInfo.XamlSystemBaseType
+    internal class XamlUserType : global::The_Paper.thePaper_XamlTypeInfo.XamlSystemBaseType
     {
-        global::The_Paper.The_Paper_XamlTypeInfo.XamlTypeInfoProvider _provider;
+        global::The_Paper.thePaper_XamlTypeInfo.XamlTypeInfoProvider _provider;
         global::Windows.UI.Xaml.Markup.IXamlType _baseType;
         bool _isArray;
         bool _isMarkupExtension;
@@ -644,7 +644,7 @@ namespace The_Paper.The_Paper_XamlTypeInfo
         global::System.Collections.Generic.Dictionary<string, string> _memberNames;
         global::System.Collections.Generic.Dictionary<string, object> _enumValues;
 
-        public XamlUserType(global::The_Paper.The_Paper_XamlTypeInfo.XamlTypeInfoProvider provider, string fullName, global::System.Type fullType, global::Windows.UI.Xaml.Markup.IXamlType baseType)
+        public XamlUserType(global::The_Paper.thePaper_XamlTypeInfo.XamlTypeInfoProvider provider, string fullName, global::System.Type fullType, global::Windows.UI.Xaml.Markup.IXamlType baseType)
             :base(fullName, fullType)
         {
             _provider = provider;
@@ -836,7 +836,7 @@ namespace The_Paper.The_Paper_XamlTypeInfo
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     internal class XamlMember : global::Windows.UI.Xaml.Markup.IXamlMember
     {
-        global::The_Paper.The_Paper_XamlTypeInfo.XamlTypeInfoProvider _provider;
+        global::The_Paper.thePaper_XamlTypeInfo.XamlTypeInfoProvider _provider;
         string _name;
         bool _isAttachable;
         bool _isDependencyProperty;
@@ -845,7 +845,7 @@ namespace The_Paper.The_Paper_XamlTypeInfo
         string _typeName;
         string _targetTypeName;
 
-        public XamlMember(global::The_Paper.The_Paper_XamlTypeInfo.XamlTypeInfoProvider provider, string name, string typeName)
+        public XamlMember(global::The_Paper.thePaper_XamlTypeInfo.XamlTypeInfoProvider provider, string name, string typeName)
         {
             _name = name;
             _typeName = typeName;

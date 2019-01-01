@@ -192,12 +192,12 @@
       <RootMethod Name="SetRightOf" />
       <RootMethod Name="GetBelow" />
       <RootMethod Name="SetBelow" />
-      <RootMethod Name="GetAlignLeftWithPanel" />
-      <RootMethod Name="SetAlignLeftWithPanel" />
       <RootMethod Name="GetAlignTopWithPanel" />
       <RootMethod Name="SetAlignTopWithPanel" />
       <RootMethod Name="GetAlignHorizontalCenterWithPanel" />
       <RootMethod Name="SetAlignHorizontalCenterWithPanel" />
+      <RootMethod Name="GetAlignLeftWithPanel" />
+      <RootMethod Name="SetAlignLeftWithPanel" />
       <RootMethod Name="GetLeftOf" />
       <RootMethod Name="SetLeftOf" />
       <RootMethod Name="GetAlignRightWithPanel" />

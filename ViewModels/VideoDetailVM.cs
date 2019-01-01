@@ -142,7 +142,7 @@ namespace The_Paper.ViewModels
             commentService = new CommentService();
             TabNameList = new ObservableCollection<string>()
             {
-                "直播",
+                //"直播",
                 "评论"
             };
         }

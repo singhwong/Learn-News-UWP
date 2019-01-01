@@ -50,6 +50,7 @@ namespace The_Paper.Views
                 videoPageVM.Play((Video)(sender as GridView).SelectedItem);
                 VideoDetail.Navigate(typeof(VideoDetailPage), ((sender as GridView).SelectedItem as Video).uri);
                 colume_2.Width = new GridLength(1,GridUnitType.Star);
+                back_button.Visibility = Visibility.Visible;
             }
         }
 
@@ -75,6 +76,12 @@ namespace The_Paper.Views
             if ((sender as ScrollViewer).VerticalOffset + (sender as ScrollViewer).ViewportHeight
                 == (sender as ScrollViewer).ExtentHeight)
                 videoPageVM.LoadMore();
+        }
+
+        private void Back_button_Click(object sender, RoutedEventArgs e)
+        {
+            colume_2.Width = new GridLength(0);
+            back_button.Visibility = Visibility.Collapsed;
         }
     }
 }

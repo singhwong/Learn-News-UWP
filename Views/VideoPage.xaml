@@ -16,10 +16,18 @@
         <ResourceDictionary>
             <local4:BoolInvertConverter x:Key="BIC" />
             <local4:BoolToVisibilityConverter x:Key="BTVC" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="buttonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
 
     <Grid Name="RootGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="row_1"
+                           Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
             <ColumnDefinition x:Name="colume_2"
@@ -50,7 +58,16 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
+        <Button Name="back_button"
+        Content="关闭"
+               Grid.Column="1"
+                HorizontalAlignment="Left"
+                FontWeight="Thin"
+                Visibility="Collapsed"
+                Style="{StaticResource CustomButtonStyle}"
+                Click="Back_button_Click"/>
         <local3:TabView Name="TabView"
+                        Grid.Row="1"
                         TabNameList="{Binding TabNameList}" TabSwitch="TabView_TabSwitch">
             <local3:TabView.View>
                 <RelativePanel Background="Black">
@@ -257,6 +274,7 @@
         </local3:TabView>
         <ProgressRing Name="ProgressRing"
                       Width="75" Height="75" IsActive="{Binding Path=Loaded,Converter={StaticResource BIC}}" />
-        <Frame Name="VideoDetail" Visibility="{Binding IsOpen}" />
+        <Frame Name="VideoDetail" Visibility="{Binding IsOpen}" 
+               Grid.Row="1"/>
     </Grid>
 </Page>

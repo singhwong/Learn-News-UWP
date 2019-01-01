@@ -36,7 +36,7 @@
                         <TextBlock x:ConnectionId='14'                      Name="HotTime" FontSize="12" RelativePanel.RightOf="HotUserName" Margin="10,0,0,0" />
                         <ListView x:ConnectionId='15' Background="LightGray"                                     
                                   Visibility="Collapsed"
-                            IsItemClickEnabled="False" Name="HotFloor" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="HotAvator">
+                            IsItemClickEnabled="False" Name="HotFloor" RelativePanel.RightOf="HotAvator" RelativePanel.Below="HotAvator">
                             <ListView.ItemTemplate>
                                 <DataTemplate                                 >
                                     <StackPanel Orientation="Vertical" >
@@ -46,7 +46,7 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                        <TextBlock x:ConnectionId='16'                         FontSize="13" RelativePanel.Below="HotFloor" RelativePanel.AlignLeftWithPanel="True"
+                        <TextBlock x:ConnectionId='16'                         FontSize="13" RelativePanel.Below="HotFloor" RelativePanel.RightOf="HotAvator"
                                    TextWrapping="Wrap"/>
                     </RelativePanel>
                 </DataTemplate>
@@ -74,14 +74,14 @@
                             <ListView.ItemTemplate>
                                 <DataTemplate                                 >
                                     <StackPanel Orientation="Vertical" >
-                                        <!--<TextBlock Text="{x:Bind userName}" FontSize="12" Foreground="Blue" Margin="5,5,5,5"/>-->
-                                        <!--<TextBlock Text="{x:Bind content}" FontSize="14" MaxLines="2" TextWrapping="WrapWholeWords" Margin="5,5,5,5"/>-->
+                                        <!--<TextBlock Text="{x:Bind userName}" FontSize="12" Foreground="Blue" Margin="5,5,5,5"/>
+                                        <TextBlock Text="{x:Bind content}" FontSize="12" MaxLines="2" TextWrapping="WrapWholeWords" Margin="5,5,5,5"/>-->
                                     </StackPanel>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                        <TextBlock x:ConnectionId='10'                         FontSize="13"  RelativePanel.AlignLeftWithPanel="True"
-                                   RelativePanel.Below="Floor"
+                        <TextBlock x:ConnectionId='10'                         FontSize="13"  RelativePanel.RightOf="Avator"
+                                   RelativePanel.Below="Avator"
                                    TextWrapping="Wrap"/>
                     </RelativePanel>
                 </DataTemplate>

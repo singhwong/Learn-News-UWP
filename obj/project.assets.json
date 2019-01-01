@@ -27422,9 +27422,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\gitUWP\\Learn-News-UWP\\The_Paper.csproj",
-      "projectName": "The_Paper",
-      "projectPath": "D:\\gitUWP\\Learn-News-UWP\\The_Paper.csproj",
+      "projectUniqueName": "D:\\gitUWP\\Learn-News-UWP\\thePaper.csproj",
+      "projectName": "thePaper",
+      "projectPath": "D:\\gitUWP\\Learn-News-UWP\\thePaper.csproj",
       "packagesPath": "C:\\Users\\singh\\.nuget\\packages\\",
       "outputPath": "D:\\gitUWP\\Learn-News-UWP\\obj\\",
       "projectStyle": "PackageReference",
@@ -27489,7 +27489,7 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "检测到包降级: System.Net.NameResolution 从 4.3.0 降级到 4.0.0。直接从项目引用包以选择不同版本。 \r\n The_Paper -> Microsoft.NETCore.UniversalWindowsPlatform 6.0.5 -> System.Net.Sockets 4.1.0 -> runtime.win.System.Net.Sockets 4.3.0 -> System.Net.NameResolution (>= 4.3.0) \r\n The_Paper -> Microsoft.NETCore.UniversalWindowsPlatform 6.0.5 -> System.Net.NameResolution (>= 4.0.0)",
+      "message": "检测到包降级: System.Net.NameResolution 从 4.3.0 降级到 4.0.0。直接从项目引用包以选择不同版本。 \r\n thePaper -> Microsoft.NETCore.UniversalWindowsPlatform 6.0.5 -> System.Net.Sockets 4.1.0 -> runtime.win.System.Net.Sockets 4.3.0 -> System.Net.NameResolution (>= 4.3.0) \r\n thePaper -> Microsoft.NETCore.UniversalWindowsPlatform 6.0.5 -> System.Net.NameResolution (>= 4.0.0)",
       "libraryId": "System.Net.NameResolution",
       "targetGraphs": [
         "UAP,Version=v10.0.10240/win10-arm",

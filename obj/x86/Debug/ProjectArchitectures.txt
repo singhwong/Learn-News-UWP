@@ -1,1 +1,1 @@
-D:\gitUWP\Learn-News-UWP\The_Paper.csproj;x86
+D:\gitUWP\Learn-News-UWP\thePaper.csproj;x86

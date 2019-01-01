@@ -9,10 +9,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
         <local2:TabView TabNameList="{Binding TabNameList}">
             <local2:TabView.View>
-                <ScrollViewer x:ConnectionId='1'                                       >
+                <ScrollViewer x:ConnectionId='1'                                       
+                              Background="Black">
                     <RelativePanel>
                         <local3:CommentControl  Margin="10,10,10,10" Name="cc"/>
                         <TextBlock Text="{Binding LoadCommentStatus}"
