@@ -24,7 +24,7 @@
           RequestedTheme="Dark">
         <Grid.RowDefinitions>
             <RowDefinition x:ConnectionId='2' x:Name="row_1"
-                           Height="0"/>
+                           Height="30"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -105,6 +105,7 @@
                Grid.Column="1"
                 HorizontalAlignment="Left"
                 FontWeight="Thin"
+                Visibility="Collapsed"
                 Style="{StaticResource CustomButtonStyle}"
                                  />
         <local3:TabView x:ConnectionId='10' x:Name="TabView"

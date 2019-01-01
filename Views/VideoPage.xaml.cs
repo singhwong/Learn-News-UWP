@@ -40,6 +40,7 @@ namespace The_Paper.Views
         private void playButton_Tapped(object sender, TappedRoutedEventArgs e)
         {
             videoPageVM.PlayTop();
+            colume_2.Width = new GridLength(0);
         }
 
         private void GridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -48,6 +49,7 @@ namespace The_Paper.Views
             {
                 videoPageVM.Play((Video)(sender as GridView).SelectedItem);
                 VideoDetail.Navigate(typeof(VideoDetailPage), ((sender as GridView).SelectedItem as Video).uri);
+                colume_2.Width = new GridLength(1,GridUnitType.Star);
             }
         }
 
@@ -59,13 +61,13 @@ namespace The_Paper.Views
         private void mediaElement_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
             EnterAnim.Begin();
-            //EnterAnim.Completed += (sender1, e1) => VideoInfo.Visibility = Visibility.Visible;
+            EnterAnim.Completed += (sender1, e1) => VideoInfo.Visibility = Visibility.Visible;
         }
 
         private void mediaElement_PointerExited(object sender, PointerRoutedEventArgs e)
         {
             ExitAnim.Begin();
-            //EnterAnim.Completed += (sender1, e1) => VideoInfo.Visibility = Visibility.Collapsed;
+            EnterAnim.Completed += (sender1, e1) => VideoInfo.Visibility = Visibility.Collapsed;
         }
 
         private void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChangedEventArgs e)

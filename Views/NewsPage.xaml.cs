@@ -50,7 +50,8 @@ namespace The_Paper.Views
             //Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
             //Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
             //NewsDetail.SetValue(Grid.ColumnProperty, 1);
-            row_1.Height = new GridLength(30);
+            //row_1.Height = new GridLength(30);
+            back_button.Visibility = Visibility.Visible;
             colume_2.Width = new GridLength(3, GridUnitType.Star);
             NewsDetail.Visibility = Visibility.Visible;
             newsPageVM.IsOpen = true;
@@ -76,7 +77,8 @@ namespace The_Paper.Views
         private void Back_button_Click(object sender, RoutedEventArgs e)
         {
             colume_2.Width = new GridLength(0);
-            row_1.Height = new GridLength(0);
+            //row_1.Height = new GridLength(0);
+            back_button.Visibility = Visibility.Collapsed;
 
         }
     }

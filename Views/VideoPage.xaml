@@ -22,7 +22,8 @@
     <Grid Name="RootGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition x:Name="colume_2"
+                              Width="0" />
         </Grid.ColumnDefinitions>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup1">
@@ -191,8 +192,8 @@
                                 Foreground="Gray"/>
                         </RelativePanel>
                     </ScrollViewer>
-                    <!--<Grid Background="Black"  Visibility="Collapsed"
-                          Width="{Binding Path=ActualWidth,ElementName=mediaElement}"
+                    <Grid Background="Black" RelativePanel.Below="TopVideo" Visibility="Collapsed"
+                          Width="{Binding Path=ActualWidth,ElementName=mediaElement}"                        
                           Name="VideoInfo">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
@@ -242,7 +243,7 @@
                             <TextBlock Text="{Binding VideoDetail.editor}" FontSize="12"
                                            Name="VideoEditor" RelativePanel.Below="VideoSource" RelativePanel.RightOf="VideoAbout" Margin="5,5,5,0" />
                         </RelativePanel>
-                    </Grid>-->
+                    </Grid>
                     <RelativePanel.Resources>
                         <Storyboard x:Name="EnterAnim">
                             <FadeInThemeAnimation Storyboard.TargetName="VideoInfo"/>
