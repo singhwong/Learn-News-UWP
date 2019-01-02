@@ -155,7 +155,6 @@
                                             </Grid.RowDefinitions>
                                         <Image Name="image" 
                                                Source="{x:Bind imageSrc}"
-                                               Margin="5,5,5,5"
                                                Height="120"
                                                Width="200"/>
                                             <TextBlock Name="headLine" Text="{x:Bind headLine}"
@@ -167,7 +166,7 @@
                                                        Text="{x:Bind mainContent}" 
                                                        FontSize="13"
                                                        Width="195"
-                                                       Height="70"
+                                                       Height="100"
                                                        Grid.Row="2"
                                                        TextWrapping="WrapWholeWords"
                                                        TextTrimming="WordEllipsis"/>

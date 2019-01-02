@@ -257,7 +257,7 @@
                                                    Grid.Row="1"/>
                                         <TextBlock Text="{x:Bind mainContent}" 
                                                    Width="195"
-                                                   Height="70"
+                                                   Height="100"
                                                    Grid.Row="2"
                                                    FontSize="13"
                                                    Name="mainContent" 

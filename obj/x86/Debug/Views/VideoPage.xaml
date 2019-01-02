@@ -155,7 +155,6 @@
                                             </Grid.RowDefinitions>
                                         <Image x:ConnectionId='22' Name="image" 
                                                                          
-                                               Margin="5,5,5,5"
                                                Height="120"
                                                Width="200"/>
                                             <TextBlock x:ConnectionId='23' Name="headLine"                         
@@ -167,7 +166,7 @@
                                                                                    
                                                        FontSize="13"
                                                        Width="195"
-                                                       Height="70"
+                                                       Height="100"
                                                        Grid.Row="2"
                                                        TextWrapping="WrapWholeWords"
                                                        TextTrimming="WordEllipsis"/>

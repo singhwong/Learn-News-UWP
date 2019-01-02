@@ -257,7 +257,7 @@
                                                    Grid.Row="1"/>
                                         <TextBlock x:ConnectionId='18'                             
                                                    Width="195"
-                                                   Height="70"
+                                                   Height="100"
                                                    Grid.Row="2"
                                                    FontSize="13"
                                                    Name="mainContent" 
