@@ -30,13 +30,13 @@
     <AppXManifest Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-01-02T17:38:32.963</Modified>
+      <Modified>2019-01-02T18:20:44.792</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\The Paper.exe">
       <PackagePath>entrypoint\The Paper.exe</PackagePath>
-      <Modified>2019-01-02T17:38:32.584</Modified>
+      <Modified>2019-01-02T18:20:44.415</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\singh\.nuget\packages\htmlagilitypack\1.8.11\lib\uap10.0\HtmlAgilityPack.dll">
       <PackagePath>HtmlAgilityPack.dll</PackagePath>
@@ -684,7 +684,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\The Paper.xr.xml">
       <PackagePath>The Paper.xr.xml</PackagePath>
-      <Modified>2019-01-02T17:35:20.091</Modified>
+      <Modified>2019-01-02T18:18:05.779</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
@@ -696,7 +696,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Views\buttonStyle.xbf">
       <PackagePath>Views\buttonStyle.xbf</PackagePath>
-      <Modified>2019-01-02T17:38:32.391</Modified>
+      <Modified>2019-01-02T18:20:44.222</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Views\LoginPage.xbf">
       <PackagePath>Views\LoginPage.xbf</PackagePath>
@@ -708,11 +708,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Resources\ControlStyle.xbf">
       <PackagePath>Resources\ControlStyle.xbf</PackagePath>
-      <Modified>2019-01-02T17:38:32.390</Modified>
+      <Modified>2019-01-02T18:20:44.216</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Themes\Generic.xbf">
       <PackagePath>Themes\Generic.xbf</PackagePath>
-      <Modified>2019-01-02T17:38:32.392</Modified>
+      <Modified>2019-01-02T18:20:44.223</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\UserControls\CommentControl.xbf">
       <PackagePath>UserControls\CommentControl.xbf</PackagePath>
@@ -728,7 +728,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Views\NewsPage.xbf">
       <PackagePath>Views\NewsPage.xbf</PackagePath>
-      <Modified>2019-01-02T16:53:44.283</Modified>
+      <Modified>2019-01-02T18:20:44.222</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Views\VideoDetailPage.xbf">
       <PackagePath>Views\VideoDetailPage.xbf</PackagePath>
@@ -736,7 +736,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Views\VideoPage.xbf">
       <PackagePath>Views\VideoPage.xbf</PackagePath>
-      <Modified>2019-01-02T16:53:44.293</Modified>
+      <Modified>2019-01-02T18:15:20.140</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -748,7 +748,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Core\The Paper.exe">
       <PackagePath>The Paper.exe</PackagePath>
-      <Modified>2019-01-02T17:38:32.961</Modified>
+      <Modified>2019-01-02T18:20:44.790</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
