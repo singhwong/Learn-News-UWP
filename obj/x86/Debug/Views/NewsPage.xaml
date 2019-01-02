@@ -17,7 +17,6 @@
             </ResourceDictionary.MergedDictionaries>
             <local4:BoolToVisibilityConverter x:Key="BTVC" />
             <local4:BoolInvertConverter x:Key="BIC" />
-            
         </ResourceDictionary>
     </Page.Resources>
     <Grid x:ConnectionId='1' Name="Grid"
@@ -38,7 +37,8 @@
                 <VisualState x:ConnectionId='6' x:Name="Narrow">
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="0"/>
-                        <StateTrigger x:ConnectionId='8' IsActive="{Binding IsOpen}" x:Name="Trigger" />
+                        <StateTrigger x:ConnectionId='8' IsActive="{Binding IsOpen}" 
+                                      x:Name="Trigger" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="topNewsPanel.Height" Value="150" />
@@ -101,46 +101,53 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <Button x:ConnectionId='9' Name="back_button"
-        Content="关闭"
-               Grid.Column="1"
+                Content="关闭"
+                Grid.Column="1"
                 HorizontalAlignment="Left"
                 FontWeight="Thin"
                 Visibility="Collapsed"
                 Style="{StaticResource CustomButtonStyle}"
-                                 />
+                                         />
         <local3:TabView x:ConnectionId='10' x:Name="TabView"
                         Grid.Row="1"
                         Background="Black"
-                                         
-            TabNameList="{Binding TabNameList}">
+                                                     
+                        TabNameList="{Binding TabNameList}">
             <local3:TabView.View>
-                <ScrollViewer x:ConnectionId='12' Name="scrollViewer"                                       
+                <ScrollViewer x:ConnectionId='12' Name="scrollViewer" 
+                                                                    
                               Background="Black">
                     <RelativePanel>
-                        <GridViewItem x:ConnectionId='13' Name="topNews" Style="{StaticResource NewsListItemStyle}"
+                        <GridViewItem x:ConnectionId='13' Name="topNews"
+                                      Style="{StaticResource NewsListItemStyle}"
                                       Background="Black"
                                       Visibility="{Binding Path=HasTopNews,Converter={StaticResource BTVC}}"
                                                              >
-                            <RelativePanel x:ConnectionId='21'
-                                           Name="topNewsPanel"
-                                Background="Black">
+                            <RelativePanel x:ConnectionId='21' Name="topNewsPanel"
+                                           Background="Black">
                                 <Image x:ConnectionId='22' Name="topNewsImage" 
-                                        Source="{Binding TopNews.image}"
-                                        Margin="10,10,10,10"  />
+                                       Margin="0,3,0,0"
+                                       Source="{Binding TopNews.image}"/>
                                 <TextBlock x:ConnectionId='23' Name="topNewsHL"
-                                        TextTrimming="WordEllipsis"
-                                        Margin="10,10,10,10"
-                                           FontWeight="Bold"
-                                        TextWrapping="WrapWholeWords"
-                                        Text="{Binding TopNews.headLine}" />
-                                <TextBlock x:ConnectionId='24' Name="topNewsMC" Margin="10,10,10,10"
-                                        TextWrapping="WrapWholeWords"
                                            TextTrimming="WordEllipsis"
-                                        Text="{Binding TopNews.mainContent}"/>
-                                <TextBlock x:ConnectionId='25' Name="topNewsTag" Margin="5,10,5,10"
-                                        Text="{Binding TopNews.tag}" />
-                                <TextBlock x:ConnectionId='26' Name="topNewsSplit" Margin="5,9,5,10" Text="|" />
-                                <TextBlock x:ConnectionId='27' Name="topNewsTime" Margin="5,10,5,10" Text="{Binding TopNews.time}" />
+                                           Margin="10,10,10,10"
+                                           FontWeight="Bold"
+                                           TextWrapping="WrapWholeWords"
+                                           Text="{Binding TopNews.headLine}" />
+                                <TextBlock x:ConnectionId='24' Name="topNewsMC" 
+                                           Margin="10,10,10,10"
+                                           TextWrapping="WrapWholeWords"
+                                           TextTrimming="WordEllipsis"
+                                           Text="{Binding TopNews.mainContent}"/>
+                                <TextBlock x:ConnectionId='25' Name="topNewsTag" 
+                                           Margin="5,10,5,10"
+                                           Text="{Binding TopNews.tag}" />
+                                <TextBlock x:ConnectionId='26' Name="topNewsSplit" 
+                                           Margin="5,9,5,10" 
+                                           Text="|" />
+                                <TextBlock x:ConnectionId='27' Name="topNewsTime" 
+                                           Margin="5,10,5,10" 
+                                           Text="{Binding TopNews.time}" />
                                 <!--<FontIcon FontFamily="Segoe MDL2 Assets"
                                           Margin="0,5,0,10"
                                           Name="topNewsIcon"
@@ -150,14 +157,16 @@
                                         Text="{Binding TopNews.commentCount}" />-->
                             </RelativePanel>
                         </GridViewItem>
-                        <GridView x:ConnectionId='14' Name="NewsCards" ItemsSource="{Binding NewsList}"
+                        <GridView x:ConnectionId='14' Name="NewsCards"
+                                  ItemsSource="{Binding NewsList}"
                                   Background="Black"
-                                                                              RelativePanel.Below="topNews">
+                                                                               
+                                  RelativePanel.Below="topNews">
                             <GridView.ItemTemplate>
                                 <DataTemplate                         >
                                     <!--<UserControl>-->
-                                    <Grid x:ConnectionId='15' Name="NewsCard" Margin="5"    
-                                                    Height="300">
+                                    <Grid x:ConnectionId='15' Name="NewsCard"     
+                                          Height="300">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto"/>
                                             <RowDefinition Height="Auto"/>
@@ -236,18 +245,24 @@
                                                     </VisualState>
                                                 </VisualStateGroup>
                                             </VisualStateManager.VisualStateGroups>-->
-                                        <Image x:ConnectionId='16'                         Name="image"
-                                                   Height="120"
-                                                   Width="200"/>
-                                        <TextBlock x:ConnectionId='17'                          Name="headLine" FontWeight="Bold" TextWrapping="WrapWholeWords" 
-                                                       Width="195"
-                                                       Grid.Row="1"/>
+                                        <Image x:ConnectionId='16'                         
+                                               Name="image"
+                                               Height="120"
+                                               Width="200"/>
+                                        <TextBlock x:ConnectionId='17'                          
+                                                   Name="headLine"
+                                                   FontWeight="Bold" 
+                                                   TextWrapping="WrapWholeWords" 
+                                                   Width="195"
+                                                   Grid.Row="1"/>
                                         <TextBlock x:ConnectionId='18'                             
-                                                       Width="195"
-                                                       Height="70"
-                                                       Grid.Row="2"
-                                                       FontSize="13"
-                                                       Name="mainContent" TextWrapping="WrapWholeWords" TextTrimming="WordEllipsis"/>
+                                                   Width="195"
+                                                   Height="70"
+                                                   Grid.Row="2"
+                                                   FontSize="13"
+                                                   Name="mainContent" 
+                                                   TextWrapping="WrapWholeWords" 
+                                                   TextTrimming="WordEllipsis"/>
                                         <!--<FontIcon FontFamily="Segoe MDL2 Assets" Name="icon"
                                                         Glyph="&#xE206;"
                                                         Visibility="Visible"/>
@@ -258,26 +273,28 @@
                                         <StackPanel Orientation="Horizontal"
                                                     Grid.Row="3"
                                                     VerticalAlignment="Bottom">
-                                            <TextBlock x:ConnectionId='19'                     Name="tag" 
+                                            <TextBlock x:ConnectionId='19'                     
+                                                       Name="tag" 
                                                        FontSize="12"/>
-                                            <TextBlock Name="split" Text="|" Margin="5,0,5,0"
+                                            <TextBlock Name="split" 
+                                                       Text="|" 
+                                                       Margin="5,0,5,0"
                                                        FontSize="12"/>
-                                            <TextBlock x:ConnectionId='20'                      Name="time"
+                                            <TextBlock x:ConnectionId='20'                     
+                                                       Name="time"
                                                        FontSize="12"/>
                                         </StackPanel>
-
                                     </Grid>
                                     <!--</UserControl>-->
                                 </DataTemplate>
                             </GridView.ItemTemplate>
                         </GridView>
-                        <TextBlock
-                                FontSize="14" 
-                                RelativePanel.AlignHorizontalCenterWithPanel="True"
-                                RelativePanel.Below="NewsCards"
-                                Text="{Binding LoadStatus}" 
-                                Margin="0,0,0,10"
-                                Foreground="Gray"/>
+                        <TextBlock FontSize="14" 
+                                   RelativePanel.AlignHorizontalCenterWithPanel="True"
+                                   RelativePanel.Below="NewsCards"
+                                   Text="{Binding LoadStatus}" 
+                                   Margin="0,0,0,10"
+                                   Foreground="Gray"/>
                     </RelativePanel>
                 </ScrollViewer>
             </local3:TabView.View>
@@ -286,7 +303,9 @@
                Grid.Row="1"
                Grid.Column="1"
                Visibility="Collapsed"/>
-        <ProgressRing Width="75" Height="75" IsActive="{Binding Path=Loaded,Converter={StaticResource BIC}}" />
+        <ProgressRing Width="75"
+                      Height="75" 
+                      IsActive="{Binding Path=Loaded,Converter={StaticResource BIC}}" />
     </Grid>
 </Page>
 

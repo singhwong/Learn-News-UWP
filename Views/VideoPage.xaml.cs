@@ -40,7 +40,10 @@ namespace The_Paper.Views
         private void playButton_Tapped(object sender, TappedRoutedEventArgs e)
         {
             videoPageVM.PlayTop();
-            colume_2.Width = new GridLength(0);
+            //colume_2.Width = new GridLength(0);
+            //colume_2.Width = new GridLength(1, GridUnitType.Star);
+            //back_button.Visibility = Visibility.Visible;
+            mediaElement.Visibility = Visibility.Visible;
         }
 
         private void GridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -51,6 +54,8 @@ namespace The_Paper.Views
                 VideoDetail.Navigate(typeof(VideoDetailPage), ((sender as GridView).SelectedItem as Video).uri);
                 colume_2.Width = new GridLength(1,GridUnitType.Star);
                 back_button.Visibility = Visibility.Visible;
+                mediaElement.Visibility = Visibility.Visible;
+                //mediaElement.Play();
             }
         }
 
@@ -82,6 +87,8 @@ namespace The_Paper.Views
         {
             colume_2.Width = new GridLength(0);
             back_button.Visibility = Visibility.Collapsed;
+            mediaElement.Visibility = Visibility.Collapsed;
+            mediaElement.Stop();
         }
     }
 }

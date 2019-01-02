@@ -84,6 +84,7 @@ namespace The_Paper.Views
             colume_2.Width = new GridLength(0);
             //row_1.Height = new GridLength(0);
             back_button.Visibility = Visibility.Collapsed;
+            newsPageVM.IsOpen = false;
         }
     }
 }

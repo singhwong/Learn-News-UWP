@@ -33,7 +33,7 @@
             <ColumnDefinition x:Name="colume_2"
                               Width="0" />
         </Grid.ColumnDefinitions>
-        <VisualStateManager.VisualStateGroups>
+        <!--<VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup1">
                 <VisualState x:Name="Wide">
                     <VisualState.StateTriggers>
@@ -57,7 +57,7 @@
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
+        </VisualStateManager.VisualStateGroups>-->
         <Button Name="back_button"
         Content="关闭"
                Grid.Column="1"
@@ -72,11 +72,12 @@
             <local3:TabView.View>
                 <RelativePanel Background="Black">
                     <Grid Name="TopVideo" >
-                        <Grid Margin="10,10,10,10"  Name="TopThumb" Visibility="{Binding Path=HasTopVideo,Converter={StaticResource BTVC}}">
+                        <Grid Name="TopThumb" 
+                              Height="300" Visibility="{Binding Path=HasTopVideo,Converter={StaticResource BTVC}}">
                             <Image Source="{Binding TopVideo.imageSrc}"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"
-                       Grid.Row="0" Stretch="UniformToFill"/>
+                                   Stretch="UniformToFill"/>
                             <Canvas>
                                 <Canvas.Background>
                                     <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
@@ -128,8 +129,7 @@
                                       Visibility="{Binding IsOpen, Converter={StaticResource BTVC}}"
                                       PointerExited="mediaElement_PointerExited"
                                       PointerEntered="mediaElement_PointerEntered"
-                                      Margin="10,10,10,10" 
-                                      Height="400"
+                                      Height="300"
                                       Name="mediaElement" AreTransportControlsEnabled="True">
                                 <MediaElement.TransportControls>
                                     <MediaTransportControls IsCompact="True" />
@@ -275,6 +275,7 @@
         <ProgressRing Name="ProgressRing"
                       Width="75" Height="75" IsActive="{Binding Path=Loaded,Converter={StaticResource BIC}}" />
         <Frame Name="VideoDetail" Visibility="{Binding IsOpen}" 
-               Grid.Row="1"/>
+               Grid.Row="1"
+               Grid.Column="1"/>
     </Grid>
 </Page>

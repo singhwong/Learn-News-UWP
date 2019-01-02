@@ -110,7 +110,6 @@
       <RootProperty Name="RenderTransform" />
       <RootProperty Name="Name" />
       <RootProperty Name="ColumnDefinitions" />
-      <RootProperty Name="Margin" />
       <RootProperty Name="Height" />
       <RootProperty Name="Visibility" />
       <RootProperty Name="Width" />
@@ -443,7 +442,6 @@
       <RootProperty Name="Name" />
       <RootProperty Name="Source" />
       <RootProperty Name="Visibility" />
-      <RootProperty Name="Margin" />
       <RootProperty Name="Height" />
       <RootProperty Name="AreTransportControlsEnabled" />
       <RootProperty Name="TransportControls" />

@@ -10,7 +10,8 @@
                         >
 
     <Grid RequestedTheme="Dark">
-        <SplitView x:ConnectionId='2' Name="splitView" DisplayMode="CompactInline" 
+        <SplitView x:ConnectionId='2' Name="splitView"
+                   DisplayMode="CompactInline" 
                    OpenPaneLength="100"
                    CompactPaneLength="{Binding Path=ActualWidth,ElementName=Ham}">
             <SplitView.Pane>
@@ -19,17 +20,24 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Button x:ConnectionId='3' Background="Transparent" FontSize="20"
-                            Name="Ham" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"                  />
+                    <Button x:ConnectionId='3' Background="Transparent" 
+                            FontSize="20"
+                            Name="Ham"
+                            FontFamily="Segoe MDL2 Assets"
+                            Content="&#xE700;" 
+                                             />
                     <ListView x:ConnectionId='4' ItemsSource="{Binding ChannelList}" 
                               Name="Menu"
                               Grid.Row="1"
-                                                                        >
+                                                                         >
                         <ListView.ItemTemplate>
                             <DataTemplate                            >
                                 <StackPanel x:ConnectionId='5' Orientation="Horizontal">
-                                    <FontIcon x:ConnectionId='6' FontFamily="Segoe MDL2 Assets"                       Margin="-2,0,0,0"/>
-                                    <TextBlock x:ConnectionId='7'                      Margin="15,0,0,0" />
+                                    <FontIcon x:ConnectionId='6' FontFamily="Segoe MDL2 Assets"
+                                                                    
+                                              Margin="-2,0,0,0"/>
+                                    <TextBlock x:ConnectionId='7'                     
+                                               Margin="15,0,0,0" />
                                 </StackPanel>
                             </DataTemplate>
                         </ListView.ItemTemplate>
@@ -40,7 +48,6 @@
                 <Grid Background="Black">
                     <Frame x:ConnectionId='8' Name="mainFrame"/>
                 </Grid>
-                    
             </SplitView.Content>
         </SplitView>
     </Grid>
