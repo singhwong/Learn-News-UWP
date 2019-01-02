@@ -38,6 +38,7 @@ Resources\ControlStyle.xbf
 The Paper.xr.xml
 Themes\Generic.xbf
 UserControls\CommentControl.xbf
+Views\BlankPage.xbf
 Views\buttonStyle.xbf
 Views\CommentPage.xbf
 Views\LoginPage.xbf

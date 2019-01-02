@@ -82,9 +82,10 @@ namespace The_Paper.Views
         private void Back_button_Click(object sender, RoutedEventArgs e)
         {
             colume_2.Width = new GridLength(0);
-            //row_1.Height = new GridLength(0);
             back_button.Visibility = Visibility.Collapsed;
             newsPageVM.IsOpen = false;
+            NewsDetail.Navigate(typeof(BlankPage));//导航到一个空白页，使非video页面，播放video时click关闭按钮，视频播放停止
+            //(未找到该mediaElement控件，暂时用该方法实现停止播放)
         }
     }
 }

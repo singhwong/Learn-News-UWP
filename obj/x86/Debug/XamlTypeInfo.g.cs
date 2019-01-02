@@ -132,61 +132,63 @@ namespace The_Paper.thePaper_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[26];
-            _typeNameTable[0] = "The_Paper.Views.LoginPage";
+            _typeNameTable = new string[27];
+            _typeNameTable[0] = "The_Paper.Views.BlankPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "The_Paper.MainPage";
-            _typeNameTable[4] = "The_Paper.Controls.TabView";
-            _typeNameTable[5] = "Windows.UI.Xaml.Controls.Control";
-            _typeNameTable[6] = "Int32";
-            _typeNameTable[7] = "System.Collections.ObjectModel.ObservableCollection`1<String>";
-            _typeNameTable[8] = "System.Collections.ObjectModel.Collection`1<String>";
-            _typeNameTable[9] = "Object";
-            _typeNameTable[10] = "String";
-            _typeNameTable[11] = "Windows.UI.Xaml.UIElement";
-            _typeNameTable[12] = "The_Paper.Controls.NewsDetailView";
-            _typeNameTable[13] = "The_Paper.Models.NewsDetail";
-            _typeNameTable[14] = "The_Paper.Controls.CommentControl";
-            _typeNameTable[15] = "The_Paper.Models.Comment";
-            _typeNameTable[16] = "Windows.UI.Xaml.Media.Brush";
-            _typeNameTable[17] = "The_Paper.UserControls.CommentControl";
-            _typeNameTable[18] = "The_Paper.Views.CommentPage";
-            _typeNameTable[19] = "The_Paper.Converters.BoolToVisibilityInvertConverter";
-            _typeNameTable[20] = "The_Paper.Converters.BoolToVisibilityConverter";
-            _typeNameTable[21] = "The_Paper.Converters.BoolInvertConverter";
-            _typeNameTable[22] = "The_Paper.Views.NewsDetailPage";
-            _typeNameTable[23] = "The_Paper.Views.NewsPage";
-            _typeNameTable[24] = "The_Paper.Views.VideoDetailPage";
-            _typeNameTable[25] = "The_Paper.Views.VideoPage";
+            _typeNameTable[3] = "The_Paper.Views.LoginPage";
+            _typeNameTable[4] = "The_Paper.MainPage";
+            _typeNameTable[5] = "The_Paper.Controls.TabView";
+            _typeNameTable[6] = "Windows.UI.Xaml.Controls.Control";
+            _typeNameTable[7] = "Int32";
+            _typeNameTable[8] = "System.Collections.ObjectModel.ObservableCollection`1<String>";
+            _typeNameTable[9] = "System.Collections.ObjectModel.Collection`1<String>";
+            _typeNameTable[10] = "Object";
+            _typeNameTable[11] = "String";
+            _typeNameTable[12] = "Windows.UI.Xaml.UIElement";
+            _typeNameTable[13] = "The_Paper.Controls.NewsDetailView";
+            _typeNameTable[14] = "The_Paper.Models.NewsDetail";
+            _typeNameTable[15] = "The_Paper.Controls.CommentControl";
+            _typeNameTable[16] = "The_Paper.Models.Comment";
+            _typeNameTable[17] = "Windows.UI.Xaml.Media.Brush";
+            _typeNameTable[18] = "The_Paper.UserControls.CommentControl";
+            _typeNameTable[19] = "The_Paper.Views.CommentPage";
+            _typeNameTable[20] = "The_Paper.Converters.BoolToVisibilityInvertConverter";
+            _typeNameTable[21] = "The_Paper.Converters.BoolToVisibilityConverter";
+            _typeNameTable[22] = "The_Paper.Converters.BoolInvertConverter";
+            _typeNameTable[23] = "The_Paper.Views.NewsDetailPage";
+            _typeNameTable[24] = "The_Paper.Views.NewsPage";
+            _typeNameTable[25] = "The_Paper.Views.VideoDetailPage";
+            _typeNameTable[26] = "The_Paper.Views.VideoPage";
 
-            _typeTable = new global::System.Type[26];
-            _typeTable[0] = typeof(global::The_Paper.Views.LoginPage);
+            _typeTable = new global::System.Type[27];
+            _typeTable[0] = typeof(global::The_Paper.Views.BlankPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::The_Paper.MainPage);
-            _typeTable[4] = typeof(global::The_Paper.Controls.TabView);
-            _typeTable[5] = typeof(global::Windows.UI.Xaml.Controls.Control);
-            _typeTable[6] = typeof(global::System.Int32);
-            _typeTable[7] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::System.String>);
-            _typeTable[8] = typeof(global::System.Collections.ObjectModel.Collection<global::System.String>);
-            _typeTable[9] = typeof(global::System.Object);
-            _typeTable[10] = typeof(global::System.String);
-            _typeTable[11] = typeof(global::Windows.UI.Xaml.UIElement);
-            _typeTable[12] = typeof(global::The_Paper.Controls.NewsDetailView);
-            _typeTable[13] = typeof(global::The_Paper.Models.NewsDetail);
-            _typeTable[14] = typeof(global::The_Paper.Controls.CommentControl);
-            _typeTable[15] = typeof(global::The_Paper.Models.Comment);
-            _typeTable[16] = typeof(global::Windows.UI.Xaml.Media.Brush);
-            _typeTable[17] = typeof(global::The_Paper.UserControls.CommentControl);
-            _typeTable[18] = typeof(global::The_Paper.Views.CommentPage);
-            _typeTable[19] = typeof(global::The_Paper.Converters.BoolToVisibilityInvertConverter);
-            _typeTable[20] = typeof(global::The_Paper.Converters.BoolToVisibilityConverter);
-            _typeTable[21] = typeof(global::The_Paper.Converters.BoolInvertConverter);
-            _typeTable[22] = typeof(global::The_Paper.Views.NewsDetailPage);
-            _typeTable[23] = typeof(global::The_Paper.Views.NewsPage);
-            _typeTable[24] = typeof(global::The_Paper.Views.VideoDetailPage);
-            _typeTable[25] = typeof(global::The_Paper.Views.VideoPage);
+            _typeTable[3] = typeof(global::The_Paper.Views.LoginPage);
+            _typeTable[4] = typeof(global::The_Paper.MainPage);
+            _typeTable[5] = typeof(global::The_Paper.Controls.TabView);
+            _typeTable[6] = typeof(global::Windows.UI.Xaml.Controls.Control);
+            _typeTable[7] = typeof(global::System.Int32);
+            _typeTable[8] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::System.String>);
+            _typeTable[9] = typeof(global::System.Collections.ObjectModel.Collection<global::System.String>);
+            _typeTable[10] = typeof(global::System.Object);
+            _typeTable[11] = typeof(global::System.String);
+            _typeTable[12] = typeof(global::Windows.UI.Xaml.UIElement);
+            _typeTable[13] = typeof(global::The_Paper.Controls.NewsDetailView);
+            _typeTable[14] = typeof(global::The_Paper.Models.NewsDetail);
+            _typeTable[15] = typeof(global::The_Paper.Controls.CommentControl);
+            _typeTable[16] = typeof(global::The_Paper.Models.Comment);
+            _typeTable[17] = typeof(global::Windows.UI.Xaml.Media.Brush);
+            _typeTable[18] = typeof(global::The_Paper.UserControls.CommentControl);
+            _typeTable[19] = typeof(global::The_Paper.Views.CommentPage);
+            _typeTable[20] = typeof(global::The_Paper.Converters.BoolToVisibilityInvertConverter);
+            _typeTable[21] = typeof(global::The_Paper.Converters.BoolToVisibilityConverter);
+            _typeTable[22] = typeof(global::The_Paper.Converters.BoolInvertConverter);
+            _typeTable[23] = typeof(global::The_Paper.Views.NewsDetailPage);
+            _typeTable[24] = typeof(global::The_Paper.Views.NewsPage);
+            _typeTable[25] = typeof(global::The_Paper.Views.VideoDetailPage);
+            _typeTable[26] = typeof(global::The_Paper.Views.VideoPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -221,31 +223,32 @@ namespace The_Paper.thePaper_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_LoginPage() { return new global::The_Paper.Views.LoginPage(); }
-        private object Activate_3_MainPage() { return new global::The_Paper.MainPage(); }
-        private object Activate_4_TabView() { return new global::The_Paper.Controls.TabView(); }
-        private object Activate_7_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::System.String>(); }
-        private object Activate_8_Collection() { return new global::System.Collections.ObjectModel.Collection<global::System.String>(); }
-        private object Activate_12_NewsDetailView() { return new global::The_Paper.Controls.NewsDetailView(); }
-        private object Activate_13_NewsDetail() { return new global::The_Paper.Models.NewsDetail(); }
-        private object Activate_14_CommentControl() { return new global::The_Paper.Controls.CommentControl(); }
-        private object Activate_15_Comment() { return new global::The_Paper.Models.Comment(); }
-        private object Activate_17_CommentControl() { return new global::The_Paper.UserControls.CommentControl(); }
-        private object Activate_18_CommentPage() { return new global::The_Paper.Views.CommentPage(); }
-        private object Activate_19_BoolToVisibilityInvertConverter() { return new global::The_Paper.Converters.BoolToVisibilityInvertConverter(); }
-        private object Activate_20_BoolToVisibilityConverter() { return new global::The_Paper.Converters.BoolToVisibilityConverter(); }
-        private object Activate_21_BoolInvertConverter() { return new global::The_Paper.Converters.BoolInvertConverter(); }
-        private object Activate_22_NewsDetailPage() { return new global::The_Paper.Views.NewsDetailPage(); }
-        private object Activate_23_NewsPage() { return new global::The_Paper.Views.NewsPage(); }
-        private object Activate_24_VideoDetailPage() { return new global::The_Paper.Views.VideoDetailPage(); }
-        private object Activate_25_VideoPage() { return new global::The_Paper.Views.VideoPage(); }
-        private void VectorAdd_7_ObservableCollection(object instance, object item)
+        private object Activate_0_BlankPage() { return new global::The_Paper.Views.BlankPage(); }
+        private object Activate_3_LoginPage() { return new global::The_Paper.Views.LoginPage(); }
+        private object Activate_4_MainPage() { return new global::The_Paper.MainPage(); }
+        private object Activate_5_TabView() { return new global::The_Paper.Controls.TabView(); }
+        private object Activate_8_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::System.String>(); }
+        private object Activate_9_Collection() { return new global::System.Collections.ObjectModel.Collection<global::System.String>(); }
+        private object Activate_13_NewsDetailView() { return new global::The_Paper.Controls.NewsDetailView(); }
+        private object Activate_14_NewsDetail() { return new global::The_Paper.Models.NewsDetail(); }
+        private object Activate_15_CommentControl() { return new global::The_Paper.Controls.CommentControl(); }
+        private object Activate_16_Comment() { return new global::The_Paper.Models.Comment(); }
+        private object Activate_18_CommentControl() { return new global::The_Paper.UserControls.CommentControl(); }
+        private object Activate_19_CommentPage() { return new global::The_Paper.Views.CommentPage(); }
+        private object Activate_20_BoolToVisibilityInvertConverter() { return new global::The_Paper.Converters.BoolToVisibilityInvertConverter(); }
+        private object Activate_21_BoolToVisibilityConverter() { return new global::The_Paper.Converters.BoolToVisibilityConverter(); }
+        private object Activate_22_BoolInvertConverter() { return new global::The_Paper.Converters.BoolInvertConverter(); }
+        private object Activate_23_NewsDetailPage() { return new global::The_Paper.Views.NewsDetailPage(); }
+        private object Activate_24_NewsPage() { return new global::The_Paper.Views.NewsPage(); }
+        private object Activate_25_VideoDetailPage() { return new global::The_Paper.Views.VideoDetailPage(); }
+        private object Activate_26_VideoPage() { return new global::The_Paper.Views.VideoPage(); }
+        private void VectorAdd_8_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::System.String>)instance;
             var newItem = (global::System.String)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_8_Collection(object instance, object item)
+        private void VectorAdd_9_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::System.String>)instance;
             var newItem = (global::System.String)item;
@@ -262,9 +265,9 @@ namespace The_Paper.thePaper_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  The_Paper.Views.LoginPage
+            case 0:   //  The_Paper.Views.BlankPage
                 userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_LoginPage;
+                userType.Activator = Activate_0_BlankPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -277,16 +280,23 @@ namespace The_Paper.thePaper_XamlTypeInfo
                 xamlType = new global::The_Paper.thePaper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  The_Paper.MainPage
+            case 3:   //  The_Paper.Views.LoginPage
                 userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_MainPage;
+                userType.Activator = Activate_3_LoginPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 4:   //  The_Paper.Controls.TabView
+            case 4:   //  The_Paper.MainPage
+                userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_4_MainPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 5:   //  The_Paper.Controls.TabView
                 userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
-                userType.Activator = Activate_4_TabView;
+                userType.Activator = Activate_5_TabView;
                 userType.AddMemberName("previousIndex");
                 userType.AddMemberName("currentIndex");
                 userType.AddMemberName("TabNameList");
@@ -295,58 +305,58 @@ namespace The_Paper.thePaper_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 5:   //  Windows.UI.Xaml.Controls.Control
+            case 6:   //  Windows.UI.Xaml.Controls.Control
                 xamlType = new global::The_Paper.thePaper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 6:   //  Int32
+            case 7:   //  Int32
                 xamlType = new global::The_Paper.thePaper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 7:   //  System.Collections.ObjectModel.ObservableCollection`1<String>
+            case 8:   //  System.Collections.ObjectModel.ObservableCollection`1<String>
                 userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<String>"));
-                userType.CollectionAdd = VectorAdd_7_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_8_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 8:   //  System.Collections.ObjectModel.Collection`1<String>
+            case 9:   //  System.Collections.ObjectModel.Collection`1<String>
                 userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_8_Collection;
-                userType.CollectionAdd = VectorAdd_8_Collection;
+                userType.Activator = Activate_9_Collection;
+                userType.CollectionAdd = VectorAdd_9_Collection;
                 xamlType = userType;
                 break;
 
-            case 9:   //  Object
+            case 10:   //  Object
                 xamlType = new global::The_Paper.thePaper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 10:   //  String
+            case 11:   //  String
                 xamlType = new global::The_Paper.thePaper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 11:   //  Windows.UI.Xaml.UIElement
+            case 12:   //  Windows.UI.Xaml.UIElement
                 xamlType = new global::The_Paper.thePaper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 12:   //  The_Paper.Controls.NewsDetailView
+            case 13:   //  The_Paper.Controls.NewsDetailView
                 userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
-                userType.Activator = Activate_12_NewsDetailView;
+                userType.Activator = Activate_13_NewsDetailView;
                 userType.AddMemberName("NewsDetail");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 13:   //  The_Paper.Models.NewsDetail
+            case 14:   //  The_Paper.Models.NewsDetail
                 userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 14:   //  The_Paper.Controls.CommentControl
+            case 15:   //  The_Paper.Controls.CommentControl
                 userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
-                userType.Activator = Activate_14_CommentControl;
+                userType.Activator = Activate_15_CommentControl;
                 userType.AddMemberName("Comment");
                 userType.AddMemberName("MaxContentLine");
                 userType.AddMemberName("FloorBackground");
@@ -354,76 +364,76 @@ namespace The_Paper.thePaper_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 15:   //  The_Paper.Models.Comment
+            case 16:   //  The_Paper.Models.Comment
                 userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 16:   //  Windows.UI.Xaml.Media.Brush
+            case 17:   //  Windows.UI.Xaml.Media.Brush
                 xamlType = new global::The_Paper.thePaper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 17:   //  The_Paper.UserControls.CommentControl
+            case 18:   //  The_Paper.UserControls.CommentControl
                 userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_17_CommentControl;
+                userType.Activator = Activate_18_CommentControl;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 18:   //  The_Paper.Views.CommentPage
+            case 19:   //  The_Paper.Views.CommentPage
                 userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_18_CommentPage;
+                userType.Activator = Activate_19_CommentPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 19:   //  The_Paper.Converters.BoolToVisibilityInvertConverter
+            case 20:   //  The_Paper.Converters.BoolToVisibilityInvertConverter
                 userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_19_BoolToVisibilityInvertConverter;
+                userType.Activator = Activate_20_BoolToVisibilityInvertConverter;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 20:   //  The_Paper.Converters.BoolToVisibilityConverter
+            case 21:   //  The_Paper.Converters.BoolToVisibilityConverter
                 userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_20_BoolToVisibilityConverter;
+                userType.Activator = Activate_21_BoolToVisibilityConverter;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 21:   //  The_Paper.Converters.BoolInvertConverter
+            case 22:   //  The_Paper.Converters.BoolInvertConverter
                 userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_21_BoolInvertConverter;
+                userType.Activator = Activate_22_BoolInvertConverter;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 22:   //  The_Paper.Views.NewsDetailPage
+            case 23:   //  The_Paper.Views.NewsDetailPage
                 userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_22_NewsDetailPage;
+                userType.Activator = Activate_23_NewsDetailPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 23:   //  The_Paper.Views.NewsPage
+            case 24:   //  The_Paper.Views.NewsPage
                 userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_23_NewsPage;
+                userType.Activator = Activate_24_NewsPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 24:   //  The_Paper.Views.VideoDetailPage
+            case 25:   //  The_Paper.Views.VideoDetailPage
                 userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_24_VideoDetailPage;
+                userType.Activator = Activate_25_VideoDetailPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 25:   //  The_Paper.Views.VideoPage
+            case 26:   //  The_Paper.Views.VideoPage
                 userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_25_VideoPage;
+                userType.Activator = Activate_26_VideoPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

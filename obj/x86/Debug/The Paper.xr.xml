@@ -50,6 +50,32 @@
       <RootProperty Name="MergedDictionaries" />
       <RootProperty Name="Source" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Page">
+      <RootProperty Name="Background" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="Resources" />
+      <RootEvent Name="Loaded" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Grid">
+      <RootProperty Name="Background" />
+      <RootProperty Name="Children" />
+      <RootProperty Name="RequestedTheme" />
+      <RootProperty Name="RowDefinitions" />
+      <RootProperty Name="BorderThickness" />
+      <RootProperty Name="Resources" />
+      <RootProperty Name="RenderTransform" />
+      <RootProperty Name="Name" />
+      <RootProperty Name="ColumnDefinitions" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Visibility" />
+      <RootProperty Name="Width" />
+      <RootMethod Name="GetRow" />
+      <RootMethod Name="SetRow" />
+      <RootMethod Name="GetColumn" />
+      <RootMethod Name="SetColumn" />
+    </RootType>
+    <RootType FullName="The_Paper.Views.BlankPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Name" />
       <RootProperty Name="Background" />
@@ -100,24 +126,6 @@
       <RootProperty Name="TargetType" />
       <RootProperty Name="Template" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Grid">
-      <RootProperty Name="Background" />
-      <RootProperty Name="Children" />
-      <RootProperty Name="RequestedTheme" />
-      <RootProperty Name="RowDefinitions" />
-      <RootProperty Name="BorderThickness" />
-      <RootProperty Name="Resources" />
-      <RootProperty Name="RenderTransform" />
-      <RootProperty Name="Name" />
-      <RootProperty Name="ColumnDefinitions" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Visibility" />
-      <RootProperty Name="Width" />
-      <RootMethod Name="GetRow" />
-      <RootMethod Name="SetRow" />
-      <RootMethod Name="GetColumn" />
-      <RootMethod Name="SetColumn" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.VisualStateManager">
       <RootMethod Name="GetVisualStateGroups" />
     </RootType>
@@ -145,7 +153,6 @@
       <RootProperty Name="KeyTime" />
       <RootProperty Name="Value" />
     </RootType>
-    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Media.Animation.PointerDownThemeAnimation">
       <RootProperty Name="TargetName" />
     </RootType>
@@ -174,11 +181,6 @@
     <RootType FullName="Windows.UI.Xaml.Automation.AutomationProperties">
       <RootMethod Name="GetAccessibilityView" />
       <RootMethod Name="SetAccessibilityView" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Page">
-      <RootProperty Name="Content" />
-      <RootProperty Name="Resources" />
-      <RootEvent Name="Loaded" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RelativePanel">
       <RootProperty Name="Children" />
