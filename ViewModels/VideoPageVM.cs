@@ -237,10 +237,15 @@ namespace The_Paper.ViewModels
 
         public async Task LoadColumn(int colIndex)
         {
+            int index = 0;
+            if (colIndex >= 3)
+            {
+                index = colIndex + 1;
+            }
             Loaded = false;
             HasTopVideo = false;
             videoListModel?.videoList?.Clear();
-            videoListModel = await videoPageService.Load(channel, colIndex);
+            videoListModel = await videoPageService.Load(channel, index);
             VideoList = videoListModel.videoList;
             TopVideo = videoListModel.topVideo;
             if (colIndex == 0)

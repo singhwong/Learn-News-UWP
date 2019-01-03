@@ -95,8 +95,25 @@ namespace The_Paper.Controls
             stackPanel.Children.Clear();
             if (TabNameList == null || TabNameList.Count == 0)
                 return;
-            foreach (string name in TabNameList)
-                stackPanel.Children.Add(generateTabItem(name));
+            //foreach (string name in TabNameList)
+            //{
+            //    if (name == "中国政前方")
+            //    {
+            //        return;
+            //    }
+            //    else
+            //    {
+            //        stackPanel.Children.Add(generateTabItem(name));
+            //    }
+                
+            //}
+            for (int i = 0; i < TabNameList.Count; i++)
+            {
+                if (i != 3)
+                {
+                    stackPanel.Children.Add(generateTabItem(TabNameList[i]));
+                }
+            }
             (stackPanel.Children[0] as TextBlock).FontWeight = Windows.UI.Text.FontWeights.Bold;
             (stackPanel.Children[0] as TextBlock).Foreground = new SolidColorBrush(Colors.Black);
         }

@@ -59,7 +59,7 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>-->
         <Button x:ConnectionId='4' Name="back_button"
-        Content="关闭"
+        Content="CLOSE"
                Grid.Column="1"
                 HorizontalAlignment="Left"
                 FontWeight="Thin"
