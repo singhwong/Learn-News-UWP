@@ -304,8 +304,9 @@
                Grid.Row="1"
                Grid.Column="1"
                Visibility="Collapsed"/>
-        <ProgressRing Width="75"
-                      Height="75" 
+        <ProgressRing Width="100"
+                      Height="100" 
+                      Grid.RowSpan="2"                     
                       IsActive="{Binding Path=Loaded,Converter={StaticResource BIC}}" />
     </Grid>
 </Page>

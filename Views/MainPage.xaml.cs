@@ -2,7 +2,9 @@
 using The_Paper.Data;
 using The_Paper.ViewModels;
 using The_Paper.Views;
+using Windows.UI;
 using Windows.UI.Core;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -20,8 +22,16 @@ namespace The_Paper
         public MainPage()
         {
             this.InitializeComponent();
+            SetTitleBarColor();
+        }
 
-           
+        private void SetTitleBarColor()
+        {
+            var view = ApplicationView.GetForCurrentView();
+            view.TitleBar.BackgroundColor = Colors.Black;
+            view.TitleBar.ForegroundColor = Colors.White;
+            view.TitleBar.ButtonBackgroundColor = Colors.Black;
+            view.TitleBar.ButtonForegroundColor = Colors.White;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -54,6 +64,7 @@ namespace The_Paper
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+           
             mainFrame.Navigate(typeof(NewsPage), ChannelsData.Channels[0]);
         }
     }

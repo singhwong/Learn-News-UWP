@@ -74,6 +74,8 @@
       <RootMethod Name="SetRow" />
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
+      <RootMethod Name="GetRowSpan" />
+      <RootMethod Name="SetRowSpan" />
     </RootType>
     <RootType FullName="The_Paper.Views.BlankPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.Button">

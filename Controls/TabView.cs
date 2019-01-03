@@ -84,8 +84,8 @@ namespace The_Paper.Controls
             stackPanel.SetValue(Grid.RowProperty, 0);
             stackPanel.Orientation = Orientation.Horizontal;
             View.SetValue(Grid.RowProperty, 1);
-            grid.Background = new SolidColorBrush(Color.FromArgb(255, 245, 245, 245)); 
-            stackPanel.Background = new SolidColorBrush(Color.FromArgb(255, 245, 245, 245));
+            //grid.Background = new SolidColorBrush(Color.FromArgb(255, 245, 245, 245));
+            //stackPanel.Background = new SolidColorBrush(Color.FromArgb(255, 245, 245, 245));
             grid.Children.Add(View);
             updateTab();
         }
@@ -95,27 +95,14 @@ namespace The_Paper.Controls
             stackPanel.Children.Clear();
             if (TabNameList == null || TabNameList.Count == 0)
                 return;
-            //foreach (string name in TabNameList)
-            //{
-            //    if (name == "中国政前方")
-            //    {
-            //        return;
-            //    }
-            //    else
-            //    {
-            //        stackPanel.Children.Add(generateTabItem(name));
-            //    }
-                
-            //}
-            for (int i = 0; i < TabNameList.Count; i++)
+            foreach (string name in TabNameList)
             {
-                if (i != 3)
-                {
-                    stackPanel.Children.Add(generateTabItem(TabNameList[i]));
-                }
+                stackPanel.Children.Add(generateTabItem(name));
             }
-            (stackPanel.Children[0] as TextBlock).FontWeight = Windows.UI.Text.FontWeights.Bold;
-            (stackPanel.Children[0] as TextBlock).Foreground = new SolidColorBrush(Colors.Black);
+
+            //(stackPanel.Children[0] as TextBlock).FontWeight = Windows.UI.Text.FontWeights.Bold;
+            //(stackPanel.Children[0] as TextBlock).Foreground = new SolidColorBrush(Colors.Black);
+            stackPanel.Background = new SolidColorBrush(Colors.Black);
         }
 
         private TextBlock generateTabItem(string name)
@@ -136,7 +123,7 @@ namespace The_Paper.Controls
             (stackPanel.Children[previousIndex] as TextBlock).FontWeight = Windows.UI.Text.FontWeights.Normal;
             (stackPanel.Children[previousIndex] as TextBlock).Foreground = new SolidColorBrush(Color.FromArgb(255, 150, 150, 150));
             (stackPanel.Children[currentIndex] as TextBlock).FontWeight = Windows.UI.Text.FontWeights.Bold;
-            (stackPanel.Children[currentIndex] as TextBlock).Foreground = new SolidColorBrush(Colors.Black);
+            (stackPanel.Children[currentIndex] as TextBlock).Foreground = new SolidColorBrush(Colors.White);
             TabSwitch?.Invoke(this, new TabSwitchEventArgs(currentIndex));
         }
     }

@@ -240,7 +240,7 @@ namespace The_Paper.ViewModels
             int index = 0;
             if (colIndex >= 3)
             {
-                index = colIndex + 1;
+                index = colIndex;
             }
             Loaded = false;
             HasTopVideo = false;

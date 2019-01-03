@@ -275,7 +275,7 @@
             </local3:TabView.View>
         </local3:TabView>
         <ProgressRing x:ConnectionId='6' Name="ProgressRing"
-                      Width="75" Height="75" IsActive="{Binding Path=Loaded,Converter={StaticResource BIC}}" />
+                      Width="100" Height="100" Grid.RowSpan="2" IsActive="{Binding Path=Loaded,Converter={StaticResource BIC}}" />
         <Frame x:ConnectionId='7' Name="VideoDetail" Visibility="{Binding IsOpen}" 
                Grid.Row="1"
                Grid.Column="1"/>

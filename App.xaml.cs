@@ -33,7 +33,6 @@ namespace The_Paper
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-
         }
 
         /// <summary>
