@@ -237,15 +237,10 @@ namespace The_Paper.ViewModels
 
         public async Task LoadColumn(int colIndex)
         {
-            int index = 0;
-            if (colIndex >= 3)
-            {
-                index = colIndex;
-            }
+            VideoList?.Clear();
             Loaded = false;
             HasTopVideo = false;
-            videoListModel?.videoList?.Clear();
-            videoListModel = await videoPageService.Load(channel, index);
+            videoListModel = await videoPageService.Load(channel, colIndex);
             VideoList = videoListModel.videoList;
             TopVideo = videoListModel.topVideo;
             if (colIndex == 0)
@@ -259,7 +254,7 @@ namespace The_Paper.ViewModels
             VideoDetail = await videoDetailService.Load(TopVideo.uri);
             await commentService.InitAsync(TopVideo.uri);
             HotComments = commentService.LoadHot();
-            NewComments =   commentService.LoadNew();
+            NewComments = commentService.LoadNew();
         }
 
         public async void Play(Video video)

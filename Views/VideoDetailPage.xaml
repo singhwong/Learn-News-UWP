@@ -10,8 +10,8 @@
     mc:Ignorable="d">
 
     <Grid>
-        <local2:TabView TabNameList="{Binding TabNameList}">
-            <local2:TabView.View>
+        <!--<local2:TabView TabNameList="{Binding TabNameList}">
+            <local2:TabView.View>-->
                 <ScrollViewer ViewChanged="ScrollViewer_ViewChanged"
                               Background="Black">
                     <RelativePanel>
@@ -25,7 +25,7 @@
                     </RelativePanel>
                     
                 </ScrollViewer>
-            </local2:TabView.View>
-        </local2:TabView>
+            <!--</local2:TabView.View>
+        </local2:TabView>-->
     </Grid>
 </Page>

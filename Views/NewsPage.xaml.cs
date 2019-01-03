@@ -55,12 +55,12 @@ namespace The_Paper.Views
             //Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
             //NewsDetail.SetValue(Grid.ColumnProperty, 1);
             //row_1.Height = new GridLength(30);
-            back_button.Visibility = Visibility.Visible;
-            colume_2.Width = new GridLength(3, GridUnitType.Star);
-            NewsDetail.Visibility = Visibility.Visible;
-            newsPageVM.IsOpen = true;
-            NewsDetail.Navigate(typeof(NewsDetailPage),
-                ((News)((sender as GridView).SelectedItem))?.uri);
+            //back_button.Visibility = Visibility.Visible;
+            //colume_2.Width = new GridLength(3, GridUnitType.Star);
+            //NewsDetail.Visibility = Visibility.Visible;
+            //newsPageVM.IsOpen = true;
+            //NewsDetail.Navigate(typeof(NewsDetailPage),
+            //    ((News)((sender as GridView).SelectedItem))?.uri);
 
         }
 
@@ -70,13 +70,16 @@ namespace The_Paper.Views
             //Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
             //Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(2, GridUnitType.Star) });
             //NewsDetail.SetValue(Grid.ColumnProperty, 1);
-            back_button.Visibility = Visibility.Visible;
-            row_1.Height = new GridLength(30);
-            colume_2.Width = new GridLength(3, GridUnitType.Star);
-            NewsDetail.Visibility = Visibility.Visible;
-            newsPageVM.IsOpen = true;
-            NewsDetail.Navigate(typeof(NewsDetailPage),
-                (newsPageVM.TopNews.uri));
+
+
+
+            //back_button.Visibility = Visibility.Visible;
+            //row_1.Height = new GridLength(30);
+            //colume_2.Width = new GridLength(3, GridUnitType.Star);
+            //NewsDetail.Visibility = Visibility.Visible;
+            //newsPageVM.IsOpen = true;
+            //NewsDetail.Navigate(typeof(NewsDetailPage),
+            //    (newsPageVM.TopNews.uri));
         }
 
         private void Back_button_Click(object sender, RoutedEventArgs e)
@@ -86,6 +89,16 @@ namespace The_Paper.Views
             newsPageVM.IsOpen = false;
             NewsDetail.Navigate(typeof(BlankPage));//导航到一个空白页，使非video页面，播放video时click关闭按钮，视频播放停止
             //(未找到该mediaElement控件，暂时用该方法实现停止播放)
+        }
+
+        private void NewsCards_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            back_button.Visibility = Visibility.Visible;
+            colume_2.Width = new GridLength(3, GridUnitType.Star);
+            NewsDetail.Visibility = Visibility.Visible;
+            newsPageVM.IsOpen = true;
+            NewsDetail.Navigate(typeof(NewsDetailPage),
+                ((News)(e.ClickedItem))?.uri);
         }
     }
 }

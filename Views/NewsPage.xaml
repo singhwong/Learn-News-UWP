@@ -46,17 +46,17 @@
                         <Setter Target="topNewsHL.FontSize" Value="13" />
                         <Setter Target="topNewsHL.(RelativePanel.RightOf)" Value="topNewsImage" />
                         <Setter Target="topNewsHL.(RelativePanel.AlignTopWithPanel)" Value="True" />
-                        <Setter Target="topNewsMC.FontSize" Value="10" />
+                        <Setter Target="topNewsMC.FontSize" Value="13" />
                         <Setter Target="topNewsMC.(RelativePanel.Below)" Value="topNewsHL" />
                         <Setter Target="topNewsMC.(RelativePanel.RightOf)" Value="topNewsImage" />
                         <Setter Target="topNewsMC.(RelativePanel.Above)" Value="topNewsTag" />
-                        <Setter Target="topNewsTag.FontSize" Value="10" />
+                        <Setter Target="topNewsTag.FontSize" Value="12" />
                         <Setter Target="topNewsTag.(RelativePanel.RightOf)" Value="topNewsImage" />
                         <Setter Target="topNewsTag.(RelativePanel.AlignBottomWithPanel)" Value="True" />
-                        <Setter Target="topNewsSplit.FontSize" Value="10" />
+                        <Setter Target="topNewsSplit.FontSize" Value="12" />
                         <Setter Target="topNewsSplit.(RelativePanel.RightOf)" Value="topNewsTag" />
                         <Setter Target="topNewsSplit.(RelativePanel.AlignBottomWithPanel)" Value="True" />
-                        <Setter Target="topNewsTime.FontSize" Value="10" />
+                        <Setter Target="topNewsTime.FontSize" Value="12" />
                         <Setter Target="topNewsTime.(RelativePanel.RightOf)" Value="topNewsSplit" />
                         <Setter Target="topNewsTime.(RelativePanel.AlignBottomWithPanel)" Value="True" />
                         <!--<Setter Target="topNewsIcon.FontSize" Value="10" />
@@ -160,6 +160,8 @@
                                   ItemsSource="{Binding NewsList}"
                                   Background="Black"
                                   SelectionChanged="NewsCards_SelectionChanged"
+                                  IsItemClickEnabled="True"
+                                  ItemClick="NewsCards_ItemClick"
                                   RelativePanel.Below="topNews">
                             <GridView.ItemTemplate>
                                 <DataTemplate x:DataType="local2:News">

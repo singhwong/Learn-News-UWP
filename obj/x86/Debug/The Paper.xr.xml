@@ -292,9 +292,11 @@
       <RootProperty Name="Name" />
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="Background" />
+      <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="ItemTemplate" />
       <RootProperty Name="ItemContainerStyle" />
       <RootEvent Name="SelectionChanged" />
+      <RootEvent Name="ItemClick" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.GridViewItem">
       <RootProperty Name="Name" />

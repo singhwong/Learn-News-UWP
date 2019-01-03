@@ -48,15 +48,15 @@ namespace The_Paper.Views
 
         private void GridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if ((sender as GridView).SelectedItem != null)
-            {
-                videoPageVM.Play((Video)(sender as GridView).SelectedItem);
-                VideoDetail.Navigate(typeof(VideoDetailPage), ((sender as GridView).SelectedItem as Video).uri);
-                colume_2.Width = new GridLength(1,GridUnitType.Star);
-                back_button.Visibility = Visibility.Visible;
-                mediaElement.Visibility = Visibility.Visible;
-                //mediaElement.Play();
-            }
+            //if ((sender as GridView).SelectedItem != null)
+            //{
+            //    videoPageVM.Play((Video)(sender as GridView).SelectedItem);
+            //    VideoDetail.Navigate(typeof(VideoDetailPage), ((sender as GridView).SelectedItem as Video).uri);
+            //    colume_2.Width = new GridLength(1, GridUnitType.Star);
+            //    back_button.Visibility = Visibility.Visible;
+            //    mediaElement.Visibility = Visibility.Visible;
+            //    //mediaElement.Play();
+            //}
         }
 
         private async void TabView_TabSwitch(object sender, EventArgs e)
@@ -89,6 +89,19 @@ namespace The_Paper.Views
             back_button.Visibility = Visibility.Collapsed;
             mediaElement.Visibility = Visibility.Collapsed;
             mediaElement.Stop();
+        }
+
+        private void VideoCards_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            videoPageVM.Play((Video)(e.ClickedItem));
+            VideoDetail.Navigate(typeof(VideoDetailPage), ((Video)(e.ClickedItem)).uri);
+            colume_2.Width = new GridLength(1, GridUnitType.Star);
+            back_button.Visibility = Visibility.Visible;
+            mediaElement.Visibility = Visibility.Visible;
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
         }
     }
 }
