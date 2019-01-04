@@ -30,8 +30,12 @@ namespace The_Paper
             var view = ApplicationView.GetForCurrentView();
             view.TitleBar.BackgroundColor = Colors.Black;
             view.TitleBar.ForegroundColor = Colors.White;
+            view.TitleBar.InactiveBackgroundColor = Colors.Black;
+            view.TitleBar.InactiveForegroundColor = Colors.White;
             view.TitleBar.ButtonBackgroundColor = Colors.Black;
             view.TitleBar.ButtonForegroundColor = Colors.White;
+            view.TitleBar.ButtonInactiveBackgroundColor = Colors.Black;
+            view.TitleBar.ButtonInactiveForegroundColor = Colors.White;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

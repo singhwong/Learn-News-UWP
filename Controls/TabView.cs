@@ -79,7 +79,7 @@ namespace The_Paper.Controls
         protected override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
-            grid = GetTemplateChild("grid") as Grid;
+            grid = GetTemplateChild("grid") as Grid;           
             stackPanel = GetTemplateChild("stackPanel") as StackPanel;
             stackPanel.SetValue(Grid.RowProperty, 0);
             stackPanel.Orientation = Orientation.Horizontal;

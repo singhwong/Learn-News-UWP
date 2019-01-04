@@ -14,7 +14,6 @@ namespace The_Paper.Services
         {
 
         }
-
         public async Task<VideoList> Load(Channel channel, int columnIdx)
         {
             VideoList videoList = new VideoList();
@@ -32,11 +31,11 @@ namespace The_Paper.Services
                     "http://www.thepaper.cn/video_list_masonry.jsp?",
                     videoList.channelID,
                     channel.channel_id,
-                    (long)((DateTime.Now - new DateTime(1970,1,1)).TotalMilliseconds)));
+                    (long)((DateTime.Now - new DateTime(1970, 1, 1)).TotalMilliseconds)));
             }
             var topVideoNode = htmlDoc.DocumentNode.SelectSingleNode("//div[@class='slide_container']");
             Video topVideo = new Video();
-            if(topVideoNode != null)
+            if (topVideoNode != null)
             {
                 string imgSrc = topVideoNode.GetAttributeValue("style", string.Empty);
                 int index1 = imgSrc.IndexOf('(');
@@ -53,13 +52,13 @@ namespace The_Paper.Services
                 //Debug.WriteLine("headLine:" + topVideo.headLine);
                 //Debug.WriteLine("lenght:" + topVideo.length);
                 var SourceL = topVideoNode.SelectSingleNode(".//div[@class='t_source_1']");
-                if(SourceL != null)
+                if (SourceL != null)
                 {
                     topVideo.tag = SourceL.SelectSingleNode(".//span[@class='source_bk']")?.InnerText;
                     topVideo.time = SourceL.SelectNodes(".//span")?[1].InnerText;
                     topVideo.type = SourceL.SelectSingleNode(".//div[@class='video_top_corner']")?.InnerText;
                 }
-                topVideo.uri = ChannelsData.main 
+                topVideo.uri = ChannelsData.main
                     + htmlDoc.DocumentNode.SelectSingleNode(".//div[@class='video_txt_l']/p/a")?
                     .GetAttributeValue("href", string.Empty);
                 //Debug.WriteLine("uri:" + topVideo.uri);
@@ -67,45 +66,84 @@ namespace The_Paper.Services
                 //Debug.WriteLine("time:" + topVideo.time);
                 //Debug.WriteLine("type:" + topVideo.type);
             }
-            ParseVideoList(htmlDoc, videoList);
+            if (columnIdx != 0)
+            {
+                ParseVideoList(htmlDoc, videoList);
+            }
+            else
+            {
+                ParseVideoList_index0(htmlDoc, videoList);
+            }
             videoList.topVideo = topVideo;
             return videoList;
         }
-
-        public void ParseVideoList(HtmlDocument htmlDoc, VideoList videoList)
+        public void ParseVideoList_index0(HtmlDocument htmlDoc, VideoList videoList)
         {
             var videoListNodes = htmlDoc.DocumentNode.SelectNodes("//li[@class='video_news']");
             if (videoListNodes != null)
             {
                 foreach (var videoNode in videoListNodes)
                 {
-                    Video video = new Video();
-                    video.uri = ChannelsData.main + videoNode.SelectSingleNode("./div[@class='video_list_pic']/a")?
-                        .GetAttributeValue("href", string.Empty);
-                    video.length = videoNode.SelectSingleNode("./div[@class='video_list_pic']/span[@class='p_time']")?
-                        .InnerText;
-                    video.imageSrc = videoNode.SelectSingleNode("./div[@class='video_list_pic']/img")?
-                        .GetAttributeValue("src", string.Empty);
-                    if (!video.imageSrc.StartsWith("http:"))
-                        video.imageSrc = "http:" + video.imageSrc;
-                    video.headLine = videoNode.SelectSingleNode(".//div[@class='video_title']")?
-                        .InnerText.TrimStart();
-                    if (video.headLine == null)
-                        video.headLine = videoNode.SelectSingleNode(".//h2[@class='video_title']")?
-                            .InnerText.TrimStart();
-                    video.mainContent = videoNode.SelectSingleNode(".//p")?
-                        .InnerText.TrimStart();
-                    var tSource = videoNode.SelectSingleNode("./div[@class='t_source']");
-                    if (tSource != null)
-                    {
-                        video.tag = tSource.SelectSingleNode("./a")?.InnerText;
-                        video.time = tSource.SelectNodes("./span")?[0].InnerText;
-                        video.commentCount = tSource.SelectSingleNode("./span[@class='reply']")?.InnerText;
-                        string cid = string.Empty;
-                    }
+                    Video video =  SameCodeMethod(videoNode);
                     videoList.videoList.Add(video);
                 }
             }
+        }
+
+        private string str = "";
+        public void ParseVideoList(HtmlDocument htmlDoc, VideoList videoList)
+        {
+
+
+            var videoListNodes = htmlDoc.DocumentNode.SelectNodes("//li[@class='video_news']");
+            if (videoListNodes != null)
+            {
+                foreach (var videoNode in videoListNodes)
+                {
+                    Video video = SameCodeMethod(videoNode);
+                    try
+                    {
+                        str = videoList.videoList[0].tag;
+                        if (video.tag == str)
+                        {
+                            videoList.videoList.Add(video);
+                        }
+                    }
+                    catch
+                    {
+                        videoList.videoList.Add(video);
+                    }
+                }
+            }
+        }
+
+        private Video SameCodeMethod(HtmlNode videoNode)
+        {
+            Video video = new Video();
+            video.uri = ChannelsData.main + videoNode.SelectSingleNode("./div[@class='video_list_pic']/a")?
+                .GetAttributeValue("href", string.Empty);
+            video.length = videoNode.SelectSingleNode("./div[@class='video_list_pic']/span[@class='p_time']")?
+                .InnerText;
+            video.imageSrc = videoNode.SelectSingleNode("./div[@class='video_list_pic']/img")?
+                .GetAttributeValue("src", string.Empty);
+            if (!video.imageSrc.StartsWith("http:"))
+                video.imageSrc = "http:" + video.imageSrc;
+            video.headLine = videoNode.SelectSingleNode(".//div[@class='video_title']")?
+                .InnerText.TrimStart();
+            if (video.headLine == null)
+                video.headLine = videoNode.SelectSingleNode(".//h2[@class='video_title']")?
+                    .InnerText.TrimStart();
+            video.mainContent = videoNode.SelectSingleNode(".//p")?
+                .InnerText.TrimStart();
+            var tSource = videoNode.SelectSingleNode("./div[@class='t_source']");
+            if (tSource != null)
+            {
+                video.tag = tSource.SelectSingleNode("./a")?.InnerText;
+                video.time = tSource.SelectNodes("./span")?[0].InnerText;
+                video.commentCount = tSource.SelectSingleNode("./span[@class='reply']")?.InnerText;
+                string cid = string.Empty;
+            }
+            return video;
         }
 
         public async Task<bool> LoadMore(VideoList videoList)
