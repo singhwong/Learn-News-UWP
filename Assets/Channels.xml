@@ -52,11 +52,11 @@
         <Column-Url>http://www.thepaper.cn/list_26918</Column-Url>
         <Column-Id>26918</Column-Id>
       </Column>
-      <Column>
+      <!--<Column>
         <Column-Name>中国政前方</Column-Name>
         <Column-Url>http://www.thepaper.cn/list_26919</Column-Url>
         <Column-Id>26919</Column-Id>
-      </Column>
+      </Column>-->
       <Column>
         <Column-Name>温度计</Column-Name>
         <Column-Url>http://www.thepaper.cn/list_26965</Column-Url>

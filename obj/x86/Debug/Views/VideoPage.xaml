@@ -73,7 +73,7 @@
             <local3:TabView.View>
                 <RelativePanel Background="Black">
                     <Grid x:ConnectionId='9' Name="TopVideo" >
-                        <Grid x:ConnectionId='28' Name="TopThumb" 
+                        <Grid x:ConnectionId='29' Name="TopThumb" 
                               Height="300" Visibility="{Binding Path=HasTopVideo,Converter={StaticResource BTVC}}">
                             <Image Source="{Binding TopVideo.imageSrc}"
                        VerticalAlignment="Center"
@@ -91,21 +91,21 @@
                                 </Canvas.Background>
                             </Canvas>
                             <RelativePanel VerticalAlignment="Center">
-                                <FontIcon x:ConnectionId='30' Name="playButton" FontFamily="Segoe MDL2 Assets" 
+                                <FontIcon x:ConnectionId='31' Name="playButton" FontFamily="Segoe MDL2 Assets" 
                                                         
                               Margin="5,5,5,5"
                               RelativePanel.AlignHorizontalCenterWithPanel="True"
                               RelativePanel.AlignVerticalCenterWithPanel="True"
                               Foreground="White"
                               FontSize="40" Glyph="&#xE102;" />
-                                <TextBlock x:ConnectionId='31' Name="topVideoHeadLine" Text="{Binding TopVideo.headLine}" 
+                                <TextBlock x:ConnectionId='32' Name="topVideoHeadLine" Text="{Binding TopVideo.headLine}" 
                                Margin="5,5,5,5"
                                Foreground="White"
                                FontWeight="Bold"
                                FontSize="30"
                                RelativePanel.AlignHorizontalCenterWithPanel="True"
                                RelativePanel.Below="playButton"/>
-                                <TextBlock x:ConnectionId='32' Name="topVideoLength" Text="{Binding TopVideo.length}"
+                                <TextBlock x:ConnectionId='33' Name="topVideoLength" Text="{Binding TopVideo.length}"
                                FontWeight="Medium"
                                Margin="5,5,5,5"
                                Foreground="White"
@@ -115,18 +115,18 @@
                                 Margin="5,5,5,5"
                                 RelativePanel.AlignHorizontalCenterWithPanel="True"
                                 RelativePanel.Below="topVideoLength">
-                                    <TextBlock x:ConnectionId='33' Name="topVideoTag" Text="{Binding TopVideo.tag}"
+                                    <TextBlock x:ConnectionId='34' Name="topVideoTag" Text="{Binding TopVideo.tag}"
                                    FontWeight="Medium"
                                    Margin="5,0,5,0"
                                    Foreground="White"/>
-                                    <TextBlock x:ConnectionId='34' Name="topVideoTime" Text="{Binding TopVideo.time}"
+                                    <TextBlock x:ConnectionId='35' Name="topVideoTime" Text="{Binding TopVideo.time}"
                                    FontWeight="Medium"
                                    Margin="5,0,5,0"
                                    Foreground="White"/>
                                 </StackPanel>
                             </RelativePanel>
                         </Grid>
-                        <MediaElement x:ConnectionId='29' Source="{Binding VideoDetail.playURL}" 
+                        <MediaElement x:ConnectionId='30' Source="{Binding VideoDetail.playURL}" 
                                       Visibility="{Binding IsOpen, Converter={StaticResource BTVC}}"
                                                                                 
                                                                                   
@@ -140,12 +140,6 @@
                     <ScrollViewer x:ConnectionId='10'                                       
                                   Name="ScrollViewer" RelativePanel.Below="TopVideo">
                         <RelativePanel>
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="Auto"/>
-                                </Grid.RowDefinitions>
-                            
                             <GridView x:ConnectionId='21'                                             
                                       Name="VideoCards"
                                       Background="Black"
@@ -155,7 +149,7 @@
                                                                       >
                                 <GridView.ItemTemplate>
                                     <DataTemplate                          >
-                                        <Grid x:ConnectionId='22' Background="Black"
+                                        <Grid x:ConnectionId='23' Background="Black"
                                               Height="315"
                                               Width="220">
                                             <Grid.RowDefinitions>
@@ -164,16 +158,16 @@
                                                 <RowDefinition Height="Auto"/>
                                                 <RowDefinition Height="*"/>
                                             </Grid.RowDefinitions>
-                                            <Image x:ConnectionId='23' Name="image" 
+                                            <Image x:ConnectionId='24' Name="image" 
                                                                          
                                                Height="135"
                                                Width="220"/>
-                                            <TextBlock x:ConnectionId='24' Name="headLine"                         
+                                            <TextBlock x:ConnectionId='25' Name="headLine"                         
                                                        Width="210"
                                                        Grid.Row="1"
                                                        FontWeight="Bold"
                                                        TextWrapping="WrapWholeWords"/>
-                                            <TextBlock x:ConnectionId='25' Name="mainContent" 
+                                            <TextBlock x:ConnectionId='26' Name="mainContent" 
                                                                                    
                                                        FontSize="13"
                                                        Width="210"
@@ -185,13 +179,13 @@
                                             <StackPanel Orientation="Horizontal"
                                                         Grid.Row="3"
                                                         VerticalAlignment="Bottom">
-                                                <TextBlock x:ConnectionId='26' Name="tag" 
+                                                <TextBlock x:ConnectionId='27' Name="tag" 
                                                                                
                                                            FontSize="12"/>
                                                 <TextBlock FontSize="12" 
                                                            Text="|" Name="split"
                                                            Margin="5,0,5,0" />
-                                                <TextBlock x:ConnectionId='27' Name="time" 
+                                                <TextBlock x:ConnectionId='28' Name="time" 
                                                                                
                                                            FontSize="12"/>
                                             </StackPanel>
@@ -211,13 +205,13 @@
                                     </DataTemplate>
                                 </GridView.ItemTemplate>
                             </GridView>
-                                <TextBlock Grid.Row="1"
+                                <TextBlock x:ConnectionId='22' Name="videoStatus_textblock"
+                                           RelativePanel.Below="VideoCards"
+                                           RelativePanel.AlignHorizontalCenterWithPanel="True"
                                            FontSize="14" 
-                                           HorizontalAlignment="Center"
                                            Text="{Binding LoadMoreStatus}" 
                                            Margin="0,0,0,10"
                                            Foreground="Gray"/>
-                            </Grid>
                         </RelativePanel>
                     </ScrollViewer>
                     <Grid x:ConnectionId='11' Background="Black" RelativePanel.Below="TopVideo" Visibility="Collapsed"
@@ -273,10 +267,10 @@
                         </RelativePanel>
                     </Grid>
                     <RelativePanel.Resources>
-                        <Storyboard x:ConnectionId='35' x:Name="EnterAnim">
+                        <Storyboard x:ConnectionId='36' x:Name="EnterAnim">
                             <FadeInThemeAnimation Storyboard.TargetName="VideoInfo"/>
                         </Storyboard>
-                        <Storyboard x:ConnectionId='36' x:Name="ExitAnim">
+                        <Storyboard x:ConnectionId='37' x:Name="ExitAnim">
                             <FadeOutThemeAnimation Storyboard.TargetName="VideoInfo"/>
                         </Storyboard>
                     </RelativePanel.Resources>

@@ -73,13 +73,13 @@ namespace The_Paper.Views
 
 
 
-            //back_button.Visibility = Visibility.Visible;
-            //row_1.Height = new GridLength(30);
-            //colume_2.Width = new GridLength(3, GridUnitType.Star);
-            //NewsDetail.Visibility = Visibility.Visible;
-            //newsPageVM.IsOpen = true;
-            //NewsDetail.Navigate(typeof(NewsDetailPage),
-            //    (newsPageVM.TopNews.uri));
+            back_button.Visibility = Visibility.Visible;
+            row_1.Height = new GridLength(30);
+            colume_2.Width = new GridLength(3, GridUnitType.Star);
+            NewsDetail.Visibility = Visibility.Visible;
+            newsPageVM.IsOpen = true;
+            NewsDetail.Navigate(typeof(NewsDetailPage),
+                (newsPageVM.TopNews.uri));
         }
 
         private void Back_button_Click(object sender, RoutedEventArgs e)

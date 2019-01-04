@@ -140,12 +140,6 @@
                     <ScrollViewer ViewChanged="ScrollViewer_ViewChanged"
                                   Name="ScrollViewer" RelativePanel.Below="TopVideo">
                         <RelativePanel>
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="Auto"/>
-                                </Grid.RowDefinitions>
-                            
                             <GridView SelectionChanged="GridView_SelectionChanged"
                                       Name="VideoCards"
                                       Background="Black"
@@ -211,13 +205,13 @@
                                     </DataTemplate>
                                 </GridView.ItemTemplate>
                             </GridView>
-                                <TextBlock Grid.Row="1"
+                                <TextBlock Name="videoStatus_textblock"
+                                           RelativePanel.Below="VideoCards"
+                                           RelativePanel.AlignHorizontalCenterWithPanel="True"
                                            FontSize="14" 
-                                           HorizontalAlignment="Center"
                                            Text="{Binding LoadMoreStatus}" 
                                            Margin="0,0,0,10"
                                            Foreground="Gray"/>
-                            </Grid>
                         </RelativePanel>
                     </ScrollViewer>
                     <Grid Background="Black" RelativePanel.Below="TopVideo" Visibility="Collapsed"
