@@ -20,7 +20,7 @@
         </ResourceDictionary>
     </Page.Resources>
     <Grid Name="Grid"
-          RequestedTheme="Dark">
+          Background="Tan">
         <Grid.RowDefinitions>
             <RowDefinition x:Name="row_1"
                            Height="30"/>
@@ -103,28 +103,28 @@
         <Button Name="back_button"
                 Content="CLOSE"
                 Grid.Column="1"
-                HorizontalAlignment="Left"
+                HorizontalAlignment="Stretch"
                 FontWeight="Thin"
                 Visibility="Collapsed"
                 Style="{StaticResource CustomButtonStyle}"
                 Click="Back_button_Click"/>
         <local3:TabView x:Name="TabView"
                         Grid.Row="1"
-                        Background="Black"
+                        Background="Tan"
                         TabSwitch="TabView_TabSwitch"
                         TabNameList="{Binding TabNameList}">
             <local3:TabView.View>
                 <ScrollViewer Name="scrollViewer" 
                               ViewChanged="ScrollViewer_ViewChanged"
-                              Background="Black">
+                              Background="Tan">
                     <RelativePanel>
                         <GridViewItem Name="topNews"
                                       Style="{StaticResource NewsListItemStyle}"
-                                      Background="Black"
+                                      Background="Tan"
                                       Visibility="{Binding Path=HasTopNews,Converter={StaticResource BTVC}}"
                                       Tapped="topNews_Tapped">
                             <RelativePanel Name="topNewsPanel"
-                                           Background="Black">
+                                           Background="Tan">
                                 <Image Name="topNewsImage" 
                                        Source="{Binding TopNews.image}"/>
                                 <TextBlock Name="topNewsHL"
@@ -158,7 +158,7 @@
                         </GridViewItem>
                         <GridView Name="NewsCards"
                                   ItemsSource="{Binding NewsList}"
-                                  Background="Black"
+                                  Background="Tan"
                                   SelectionChanged="NewsCards_SelectionChanged"
                                   IsItemClickEnabled="True"
                                   ItemClick="NewsCards_ItemClick"

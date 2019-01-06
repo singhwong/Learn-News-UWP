@@ -63,6 +63,7 @@ namespace The_Paper.Controls
         private void LoadNewsDetail()
         {
             StackPanel panel = new StackPanel();
+            panel.Background = new SolidColorBrush(Colors.Tan);
             panel.Orientation = Orientation.Vertical;
             RichTextBlock richTextBlock = new RichTextBlock();
             richTextBlock.CharacterSpacing = 100;
@@ -93,7 +94,7 @@ namespace The_Paper.Controls
                     TextBlock textBlock = new TextBlock();
                     textBlock.Text = newsVideo.desc;
                     textBlock.TextAlignment = TextAlignment.Center;
-                    textBlock.Foreground = new SolidColorBrush(Colors.Gray);
+                    textBlock.Foreground = new SolidColorBrush(Colors.Black);
                     textBlock.Margin = new Thickness(0, 10, 0, 10);
                     textBlock.FontSize = 12;
                     mediaElement.AreTransportControlsEnabled = true;
@@ -126,7 +127,7 @@ namespace The_Paper.Controls
                     image.Source = bitMap;
                     textBlock.Text = newsImage.desc;
                     textBlock.TextAlignment = TextAlignment.Center;
-                    textBlock.Foreground = new SolidColorBrush(Colors.Gray);
+                    textBlock.Foreground = new SolidColorBrush(Colors.Black);
                     textBlock.FontSize = 12;
                     textBlock.Margin = new Thickness(0, 10, 0, 10);
                     stackPanel.Orientation = Orientation.Vertical;

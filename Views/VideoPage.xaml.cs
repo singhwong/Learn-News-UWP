@@ -25,6 +25,7 @@ namespace The_Paper.Views
     public sealed partial class VideoPage : Page
     {
         VideoPageVM videoPageVM;
+        private bool IsProgressRingActive_bool = false;
         public VideoPage()
         {
             this.InitializeComponent();
@@ -61,7 +62,12 @@ namespace The_Paper.Views
 
         private async void TabView_TabSwitch(object sender, EventArgs e)
         {
+            videoStatus_textblock.Visibility = Visibility.Collapsed;//优化切换视频类别时，内容加载过程中，
+            mediaElement.Visibility = Visibility.Collapsed;
+            mediaElement.Stop();
+            //右上角显示videoStatus_textblock文本bug
             await videoPageVM.LoadColumn((e as TabSwitchEventArgs).tabIndex);
+            videoStatus_textblock.Visibility = Visibility.Visible;
         }
 
         private void mediaElement_PointerEntered(object sender, PointerRoutedEventArgs e)

@@ -20,7 +20,7 @@
         </ResourceDictionary>
     </Page.Resources>
     <Grid x:ConnectionId='1' Name="Grid"
-          RequestedTheme="Dark">
+          Background="Tan">
         <Grid.RowDefinitions>
             <RowDefinition x:ConnectionId='2' x:Name="row_1"
                            Height="30"/>
@@ -103,28 +103,28 @@
         <Button x:ConnectionId='9' Name="back_button"
                 Content="CLOSE"
                 Grid.Column="1"
-                HorizontalAlignment="Left"
+                HorizontalAlignment="Stretch"
                 FontWeight="Thin"
                 Visibility="Collapsed"
                 Style="{StaticResource CustomButtonStyle}"
                                          />
         <local3:TabView x:ConnectionId='10' x:Name="TabView"
                         Grid.Row="1"
-                        Background="Black"
+                        Background="Tan"
                                                      
                         TabNameList="{Binding TabNameList}">
             <local3:TabView.View>
                 <ScrollViewer x:ConnectionId='12' Name="scrollViewer" 
                                                                     
-                              Background="Black">
+                              Background="Tan">
                     <RelativePanel>
                         <GridViewItem x:ConnectionId='13' Name="topNews"
                                       Style="{StaticResource NewsListItemStyle}"
-                                      Background="Black"
+                                      Background="Tan"
                                       Visibility="{Binding Path=HasTopNews,Converter={StaticResource BTVC}}"
                                                              >
                             <RelativePanel x:ConnectionId='21' Name="topNewsPanel"
-                                           Background="Black">
+                                           Background="Tan">
                                 <Image x:ConnectionId='22' Name="topNewsImage" 
                                        Source="{Binding TopNews.image}"/>
                                 <TextBlock x:ConnectionId='23' Name="topNewsHL"
@@ -158,7 +158,7 @@
                         </GridViewItem>
                         <GridView x:ConnectionId='14' Name="NewsCards"
                                   ItemsSource="{Binding NewsList}"
-                                  Background="Black"
+                                  Background="Tan"
                                                                                
                                   IsItemClickEnabled="True"
                                                                  

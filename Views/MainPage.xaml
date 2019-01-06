@@ -9,13 +9,13 @@
     mc:Ignorable="d"
     Loaded="Page_Loaded">
 
-    <Grid RequestedTheme="Dark">
+    <Grid>
         <SplitView Name="splitView"
                    DisplayMode="CompactInline" 
                    OpenPaneLength="100"
                    CompactPaneLength="{Binding Path=ActualWidth,ElementName=Ham}">
             <SplitView.Pane>
-                <Grid>
+                <Grid Background="Tan">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>

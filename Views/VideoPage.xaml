@@ -23,7 +23,8 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Name="RootGrid">
+    <Grid Name="RootGrid"
+          Background="Tan">
         <Grid.RowDefinitions>
             <RowDefinition x:Name="row_1"
                            Height="30"/>
@@ -62,7 +63,7 @@
         <Button Name="back_button"
         Content="CLOSE"
                Grid.Column="1"
-                HorizontalAlignment="Left"
+                HorizontalAlignment="Stretch"
                 FontWeight="Thin"
                 Visibility="Collapsed"
                 Style="{StaticResource CustomButtonStyle}"
@@ -71,8 +72,9 @@
                         Grid.Row="1"
                         TabNameList="{Binding TabNameList}" TabSwitch="TabView_TabSwitch">
             <local3:TabView.View>
-                <RelativePanel Background="Black">
-                    <Grid Name="TopVideo" >
+                <RelativePanel Background="Tan">
+                    <Grid Name="TopVideo"
+                         RelativePanel.AlignHorizontalCenterWithPanel="True">
                         <Grid Name="TopThumb" 
                               Height="300" Visibility="{Binding Path=HasTopVideo,Converter={StaticResource BTVC}}">
                             <Image Source="{Binding TopVideo.imageSrc}"
@@ -142,14 +144,14 @@
                         <RelativePanel>
                             <GridView SelectionChanged="GridView_SelectionChanged"
                                       Name="VideoCards"
-                                      Background="Black"
+                                      Background="Tan"
                               ItemContainerStyle="{StaticResource NewsListItemStyle}"
                               ItemsSource="{Binding VideoList}"
                                       IsItemClickEnabled="True"
                                       ItemClick="VideoCards_ItemClick">
                                 <GridView.ItemTemplate>
                                     <DataTemplate x:DataType="local2:Video">
-                                        <Grid Background="Black"
+                                        <Grid Background="Tan"
                                               Height="315"
                                               Width="220">
                                             <Grid.RowDefinitions>
@@ -214,7 +216,7 @@
                                            Foreground="Gray"/>
                         </RelativePanel>
                     </ScrollViewer>
-                    <Grid Background="Black" RelativePanel.Below="TopVideo" Visibility="Collapsed"
+                    <Grid RelativePanel.Below="TopVideo" Visibility="Collapsed"
                           Width="{Binding Path=ActualWidth,ElementName=mediaElement}"                        
                           Name="VideoInfo">
                         <Grid.ColumnDefinitions>
@@ -278,7 +280,7 @@
             </local3:TabView.View>
         </local3:TabView>
         
-        <ProgressRing Name="ProgressRing"
+        <ProgressRing Name="main_ProgressRing"
                       Width="100" Height="100" Grid.RowSpan="2" IsActive="{Binding Path=Loaded,Converter={StaticResource BIC}}" />
         <Frame Name="VideoDetail" Visibility="{Binding IsOpen}" 
                Grid.Row="1"

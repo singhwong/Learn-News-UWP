@@ -100,8 +100,8 @@ namespace The_Paper.Controls
                 stackPanel.Children.Add(generateTabItem(name));
             }
 
-            //(stackPanel.Children[0] as TextBlock).FontWeight = Windows.UI.Text.FontWeights.Bold;
-            //(stackPanel.Children[0] as TextBlock).Foreground = new SolidColorBrush(Colors.Black);
+            (stackPanel.Children[0] as TextBlock).FontWeight = Windows.UI.Text.FontWeights.Bold;
+            (stackPanel.Children[0] as TextBlock).Foreground = new SolidColorBrush(Colors.White);
             stackPanel.Background = new SolidColorBrush(Colors.Black);
         }
 

@@ -42,11 +42,11 @@
         <Column-Url>http://www.thepaper.cn/channel_26916</Column-Url>
         <Column-Id>26916</Column-Id>
       </Column>
-      <Column>
+      <!--<Column>
         <Column-Name>上直播</Column-Name>
         <Column-Url>http://www.thepaper.cn/list_26912</Column-Url>
         <Column-Id>26912</Column-Id>
-      </Column>
+      </Column>-->
       <Column>
         <Column-Name>@所有人</Column-Name>
         <Column-Url>http://www.thepaper.cn/list_26918</Column-Url>
@@ -235,21 +235,21 @@
         <Column-Url>http://www.thepaper.cn/list_25487</Column-Url>
         <Column-Id>25487</Column-Id>
       </Column>
-      <Column>
+      <!--<Column>
         <Column-Name>全景现场</Column-Name>
         <Column-Url>http://www.thepaper.cn/list_25634</Column-Url>
         <Column-Id>25634</Column-Id>
-      </Column>
-      <Column>
+      </Column>-->
+      <!--<Column>
         <Column-Name>美数课</Column-Name>
         <Column-Url>http://www.thepaper.cn/list_25635</Column-Url>
         <Column-Id>25635</Column-Id>
-      </Column>
-      <Column>
+      </Column>-->
+      <!--<Column>
         <Column-Name>快看</Column-Name>
         <Column-Url>http://www.thepaper.cn/list_25600</Column-Url>
         <Column-Id>25600</Column-Id>
-      </Column>
+      </Column>-->
     </Channel-Colums>
   </Channel>
   <Channel>
@@ -341,21 +341,21 @@
         <Column-Url>http://www.thepaper.cn/channel_25952</Column-Url>
         <Column-Id>25444,27224,26525,26878,25483,25457,25574,25455,26937,25450,25482,25445,25456,25446,25536,26506,</Column-Id>
       </Column>
-      <Column>
+      <!--<Column>
         <Column-Name>社论</Column-Name>
         <Column-Url>http://www.thepaper.cn/list_25444</Column-Url>
         <Column-Id>25444</Column-Id>
-      </Column>
+      </Column>-->
       <Column>
         <Column-Name>澎湃评论</Column-Name>
         <Column-Url>http://www.thepaper.cn/list_27224</Column-Url>
         <Column-Id>27224</Column-Id>
       </Column>
-      <Column>
+      <!--<Column>
         <Column-Name>思想湃</Column-Name>
         <Column-Url>http://www.thepaper.cn/list_26525</Column-Url>
         <Column-Id>26525</Column-Id>
-      </Column>
+      </Column>-->
       <Column>
         <Column-Name>上海书评</Column-Name>
         <Column-Url>http://www.thepaper.cn/list_26878</Column-Url>

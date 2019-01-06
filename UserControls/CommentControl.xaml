@@ -13,7 +13,8 @@
     <UserControl.Resources>
         <ResourceDictionary Source="/Resources/ControlStyle.xaml" />
     </UserControl.Resources>
-    <StackPanel Orientation="Vertical" Name="RelativePanel">
+    <StackPanel Orientation="Vertical" Name="RelativePanel"     
+                Background="Tan">
         <!--<TextBox Name="EditBox" PlaceholderText="说点什么呢~"
                  Margin="0,0,0,10" Height="100" Width="{Binding Path=ActualWidth,ElementName=HotCommentBox}" />
         <Button Name="ReplyBtn" Margin="0,0,0,10" RelativePanel.AlignRightWithPanel="True" RelativePanel.Below="EditBox">回复</Button>-->
@@ -21,10 +22,11 @@
                    Visibility="{Binding HasHotComments}"
                    FontWeight="Bold"/>
         <ListBox Name="HotCommentBox" ItemsSource="{Binding HotComments}" 
-                  ItemContainerStyle="{StaticResource CommentListBoxStyle}" >
+                  ItemContainerStyle="{StaticResource CommentListBoxStyle}"
+                 Background="Tan">
             <ListBox.ItemTemplate>
                 <DataTemplate x:DataType="local2:Comment">
-                    <RelativePanel Name="HotCommentPanel" Margin="10,10,10,10" Background="Transparent">
+                    <RelativePanel Name="HotCommentPanel" Margin="10,10,10,10" Background="Tan">
                         <StackPanel Name="HotAvator">
                             <Ellipse Width="50" Height="50">
                                 <Ellipse.Fill>
@@ -32,9 +34,9 @@
                                 </Ellipse.Fill>
                             </Ellipse>
                         </StackPanel>
-                        <TextBlock Text="{x:Bind userName}" Name="HotUserName" FontSize="12" Foreground="LightBlue" RelativePanel.RightOf="HotAvator" Margin="5,0,0,0"/>
+                        <TextBlock Text="{x:Bind userName}" Name="HotUserName" FontSize="12" Foreground="Blue" RelativePanel.RightOf="HotAvator" Margin="5,0,0,0"/>
                         <TextBlock Text="{x:Bind time}" Name="HotTime" FontSize="12" RelativePanel.RightOf="HotUserName" Margin="10,0,0,0" />
-                        <ListView Background="LightGray" ItemsSource="{x:Bind commentFloors}"
+                        <ListView ItemsSource="{x:Bind commentFloors}"
                                   Visibility="Collapsed"
                             IsItemClickEnabled="False" Name="HotFloor" RelativePanel.RightOf="HotAvator" RelativePanel.Below="HotAvator">
                             <ListView.ItemTemplate>
@@ -55,10 +57,11 @@
         <TextBlock Name="New" Text="按时间" FontSize="14" FontWeight="Bold" 
                    Visibility="{Binding HasNewComments}"/>
         <ListBox Name="CommentBox" ItemContainerStyle="{StaticResource CommentListBoxStyle}"
+                 Background="Tan"
                  ItemsSource="{Binding NewComments}">
             <ListBox.ItemTemplate>
                 <DataTemplate x:DataType="local2:Comment">
-                    <RelativePanel Name="CommentPanel" Margin="10,10,10,10" Background="Transparent">
+                    <RelativePanel Name="CommentPanel" Margin="10,10,10,10" Background="Tan">
                         <StackPanel Name="Avator">
                             <Ellipse Width="50" Height="50">
                                 <Ellipse.Fill>
@@ -66,9 +69,9 @@
                                 </Ellipse.Fill>
                             </Ellipse>
                         </StackPanel>
-                        <TextBlock Text="{x:Bind userName}" Name="UserName" FontSize="12" Foreground="LightBlue" RelativePanel.RightOf="Avator" Margin="5,0,0,0"/>
+                        <TextBlock Text="{x:Bind userName}" Name="UserName" FontSize="12" Foreground="Blue" RelativePanel.RightOf="Avator" Margin="5,0,0,0"/>
                         <TextBlock Text="{x:Bind time}" Name="Time" FontSize="12" RelativePanel.RightOf="UserName" Margin="10,0,0,0" />
-                        <ListView Background="LightGray"  Margin="30,5,5,5" ItemsSource="{x:Bind commentFloors}"
+                        <ListView  Margin="30,5,5,5" ItemsSource="{x:Bind commentFloors}"
                                   Visibility="Collapsed"
                             IsItemClickEnabled="False" Name="Floor" RelativePanel.RightOf="Avator" RelativePanel.Below="UserName">
                             <ListView.ItemTemplate>
