@@ -184,7 +184,7 @@
                                                 <TextBlock Name="tag" 
                                                            Text="{x:Bind tag}" 
                                                            FontSize="12"/>
-                                                <TextBlock FontSize="12" 
+                                                <TextBlock FontSize="10" 
                                                            Text="|" Name="split"
                                                            Margin="5,0,5,0" />
                                                 <TextBlock Name="time" 

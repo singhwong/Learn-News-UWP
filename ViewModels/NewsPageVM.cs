@@ -7,6 +7,7 @@ using The_Paper.Data;
 using The_Paper.Models;
 using The_Paper.Services;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 
 namespace The_Paper.ViewModels
 {
@@ -142,10 +143,28 @@ namespace The_Paper.ViewModels
             tabNameList = new ObservableCollection<string>();
             newsPageService = new NewsPageService();
             this.channel = channel;
-            Load(0);
+            try
+            {
+                Load(0);
+            }
+            catch
+            {
+                SetNoVideoContendDialog();
+            }           
         }
 
-        public async void Load(int columnIdx)
+        public async void SetNoVideoContendDialog()
+        {
+            ContentDialog content = new ContentDialog
+            {
+                Content = "获取数据异常，请稍后再次尝试",
+                IsPrimaryButtonEnabled = true,
+                PrimaryButtonText = "OK",
+            };
+            await content.ShowAsync();
+        }
+
+        public async Task  Load(int columnIdx)
         {
             TabNameList.Clear();
             foreach (var column in channel.columns)

@@ -42,7 +42,7 @@
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="topNewsPanel.Height" Value="126" />
-                        <Setter Target="topNewsImage.(RelativePanel.AlignLeftWithPanel)" Value="True" />
+                        <Setter Target="topNewsImage.(RelativePanel.AlignLeftWithPanel)" Value="True"/>
                         <Setter Target="topNewsHL.FontSize" Value="13" />
                         <Setter Target="topNewsHL.(RelativePanel.RightOf)" Value="topNewsImage" />
                         <Setter Target="topNewsHL.(RelativePanel.AlignTopWithPanel)" Value="True" />
@@ -142,7 +142,7 @@
                                            Margin="5,10,5,10"
                                            Text="{Binding TopNews.tag}" />
                                 <TextBlock Name="topNewsSplit" 
-                                           Margin="5,9,5,10" 
+                                           Margin="5,9,5,11" 
                                            Text="|" />
                                 <TextBlock Name="topNewsTime" 
                                            Margin="5,10,5,10" 
@@ -282,7 +282,7 @@
                                             <TextBlock Name="split" 
                                                        Text="|" 
                                                        Margin="5,0,5,0"
-                                                       FontSize="12"/>
+                                                       FontSize="10"/>
                                             <TextBlock Text="{x:Bind time}"
                                                        Name="time"
                                                        FontSize="12"/>
