@@ -61,9 +61,10 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>-->
         <Button Name="back_button"
-        Content="CLOSE"
-               Grid.Column="1"
-                HorizontalAlignment="Stretch"
+                FontFamily="Segoe MDL2 Assets"
+                Content="&#xE72B;"
+                Grid.Column="1"
+                HorizontalAlignment="Left"
                 FontWeight="Thin"
                 Visibility="Collapsed"
                 Style="{StaticResource CustomButtonStyle}"
@@ -72,7 +73,7 @@
                         Grid.Row="1"
                         TabNameList="{Binding TabNameList}" TabSwitch="TabView_TabSwitch">
             <local3:TabView.View>
-                <RelativePanel Background="Tan">
+                <RelativePanel>
                     <Grid Name="TopVideo"
                          RelativePanel.AlignHorizontalCenterWithPanel="True">
                         <Grid Name="TopThumb" 
@@ -144,16 +145,16 @@
                         <RelativePanel>
                             <GridView SelectionChanged="GridView_SelectionChanged"
                                       Name="VideoCards"
-                                      Background="Tan"
-                              ItemContainerStyle="{StaticResource NewsListItemStyle}"
-                              ItemsSource="{Binding VideoList}"
+                                      ItemsSource="{Binding VideoList}"
                                       IsItemClickEnabled="True"
                                       ItemClick="VideoCards_ItemClick">
                                 <GridView.ItemTemplate>
                                     <DataTemplate x:DataType="local2:Video">
-                                        <Grid Background="Tan"
-                                              Height="315"
-                                              Width="220">
+                                        <Grid Height="315"
+                                              Width="220"
+                                              BorderBrush="White"
+                                              BorderThickness="1"
+                                              CornerRadius="5">
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="Auto"/>
                                                 <RowDefinition Height="Auto"/>

@@ -2,6 +2,8 @@
 using System.Diagnostics;
 using The_Paper.Models;
 using The_Paper.ViewModels;
+using Windows.UI.Core;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -24,9 +26,10 @@ namespace The_Paper.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            Window.Current.CoreWindow.KeyDown += CoreWindow_KeyDown;
             base.OnNavigatedTo(e);
             newsPageVM = new NewsPageVM((Channel)e.Parameter);
-            this.DataContext = newsPageVM;
+            this.DataContext = newsPageVM;           
         }
 
         private async void TabView_TabSwitch(object sender, EventArgs e)
@@ -71,10 +74,13 @@ namespace The_Paper.Views
             //Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(2, GridUnitType.Star) });
             //NewsDetail.SetValue(Grid.ColumnProperty, 1);
 
-
+            //if (News_Page.Width < 700)
+            //{
+                colume_1.Width = new GridLength(0);
+            //}
 
             back_button.Visibility = Visibility.Visible;
-            row_1.Height = new GridLength(30);
+            row_1.Height = new GridLength(45);
             colume_2.Width = new GridLength(3, GridUnitType.Star);
             NewsDetail.Visibility = Visibility.Visible;
             newsPageVM.IsOpen = true;
@@ -84,6 +90,7 @@ namespace The_Paper.Views
 
         private void Back_button_Click(object sender, RoutedEventArgs e)
         {
+            colume_1.Width = new GridLength(1,GridUnitType.Star);
             colume_2.Width = new GridLength(0);
             back_button.Visibility = Visibility.Collapsed;
             newsPageVM.IsOpen = false;
@@ -93,12 +100,23 @@ namespace The_Paper.Views
 
         private void NewsCards_ItemClick(object sender, ItemClickEventArgs e)
         {
+            colume_1.Width = new GridLength(0);
             back_button.Visibility = Visibility.Visible;
             colume_2.Width = new GridLength(3, GridUnitType.Star);
             NewsDetail.Visibility = Visibility.Visible;
             newsPageVM.IsOpen = true;
             NewsDetail.Navigate(typeof(NewsDetailPage),
                 ((News)(e.ClickedItem))?.uri);
+        }
+
+        private void CoreWindow_KeyDown(CoreWindow sender, KeyEventArgs args)
+
+        {
+            if (args.VirtualKey == Windows.System.VirtualKey.Escape)
+
+            {//启用ESC键退出
+                colume_1.Width = new GridLength(0);
+            }
         }
     }
 }

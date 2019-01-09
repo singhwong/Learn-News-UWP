@@ -8,10 +8,17 @@
     xmlns:local2="using:The_Paper.Models"
     mc:Ignorable="d"
     Loaded="Page_Loaded">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="buttonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
 
     <Grid>
         <SplitView Name="splitView"
-                   DisplayMode="CompactInline" 
+                   DisplayMode="CompactOverlay"
                    OpenPaneLength="100"
                    CompactPaneLength="{Binding Path=ActualWidth,ElementName=Ham}">
             <SplitView.Pane>
@@ -20,11 +27,12 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Button Background="Transparent" 
-                            FontSize="20"
+                    <Button FontSize="20"
                             Name="Ham"
+                            Height="45"
                             FontFamily="Segoe MDL2 Assets"
                             Content="&#xE700;" 
+                            Style="{StaticResource CustomButtonStyle}"
                             Click="Ham_Click"/>
                     <ListView ItemsSource="{Binding ChannelList}" 
                               Name="Menu"
