@@ -27225,7 +27225,7 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "检测到包降级: System.Net.NameResolution 从 4.3.0 降级到 4.0.0。直接从项目引用包以选择不同版本。 \r\n thePaper -> Microsoft.NETCore.UniversalWindowsPlatform 6.1.9 -> System.Net.Sockets 4.1.0 -> runtime.win.System.Net.Sockets 4.3.0 -> System.Net.NameResolution (>= 4.3.0) \r\n thePaper -> Microsoft.NETCore.UniversalWindowsPlatform 6.1.9 -> System.Net.NameResolution (>= 4.0.0)",
+      "message": "Detected package downgrade: System.Net.NameResolution from 4.3.0 to 4.0.0. Reference the package directly from the project to select a different version. \r\n thePaper -> Microsoft.NETCore.UniversalWindowsPlatform 6.1.9 -> System.Net.Sockets 4.1.0 -> runtime.win.System.Net.Sockets 4.3.0 -> System.Net.NameResolution (>= 4.3.0) \r\n thePaper -> Microsoft.NETCore.UniversalWindowsPlatform 6.1.9 -> System.Net.NameResolution (>= 4.0.0)",
       "libraryId": "System.Net.NameResolution",
       "targetGraphs": [
         "UAP,Version=v10.0.10240/win10-arm",

@@ -9,7 +9,6 @@
     mc:Ignorable="d"
     d:DesignHeight="300"
     d:DesignWidth="400">
-
     <UserControl.Resources>
         <ResourceDictionary Source="/Resources/ControlStyle.xaml" />
     </UserControl.Resources>
@@ -26,7 +25,7 @@
                  Background="Tan">
             <ListBox.ItemTemplate>
                 <DataTemplate x:DataType="local2:Comment">
-                    <RelativePanel Name="HotCommentPanel" Margin="10,10,10,10" Background="Tan">
+                    <RelativePanel Name="HotCommentPanel" Background="Tan">
                         <StackPanel Name="HotAvator">
                             <Ellipse Width="50" Height="50">
                                 <Ellipse.Fill>
@@ -35,7 +34,9 @@
                             </Ellipse>
                         </StackPanel>
                         <TextBlock Text="{x:Bind userName}" Name="HotUserName" FontSize="12" Foreground="Blue" RelativePanel.RightOf="HotAvator" Margin="5,0,0,0"/>
-                        <TextBlock Text="{x:Bind time}" Name="HotTime" FontSize="12" RelativePanel.RightOf="HotUserName" Margin="10,0,0,0" />
+                        <TextBlock Text="{x:Bind time}" Name="HotTime" FontSize="12" RelativePanel.Below="HotUserName" 
+                                   RelativePanel.RightOf="HotAvator"
+                                   Margin="5,0,0,0" />
                         <ListView ItemsSource="{x:Bind commentFloors}"
                                   Visibility="Collapsed"
                             IsItemClickEnabled="False" Name="HotFloor" RelativePanel.RightOf="HotAvator" RelativePanel.Below="HotAvator">
@@ -48,7 +49,9 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                        <TextBlock Text="{x:Bind content}" FontSize="13" RelativePanel.Below="HotFloor" RelativePanel.RightOf="HotAvator"
+                        <TextBlock Text="{x:Bind content}" FontSize="13"
+                                   Width="150"
+                                   RelativePanel.Below="HotFloor" RelativePanel.RightOf="HotAvator"
                                    TextWrapping="Wrap"/>
                     </RelativePanel>
                 </DataTemplate>
@@ -61,7 +64,7 @@
                  ItemsSource="{Binding NewComments}">
             <ListBox.ItemTemplate>
                 <DataTemplate x:DataType="local2:Comment">
-                    <RelativePanel Name="CommentPanel" Margin="10,10,10,10" Background="Tan">
+                    <RelativePanel Name="CommentPanel" Background="Tan">
                         <StackPanel Name="Avator">
                             <Ellipse Width="50" Height="50">
                                 <Ellipse.Fill>
@@ -70,7 +73,9 @@
                             </Ellipse>
                         </StackPanel>
                         <TextBlock Text="{x:Bind userName}" Name="UserName" FontSize="12" Foreground="Blue" RelativePanel.RightOf="Avator" Margin="5,0,0,0"/>
-                        <TextBlock Text="{x:Bind time}" Name="Time" FontSize="12" RelativePanel.RightOf="UserName" Margin="10,0,0,0" />
+                        <TextBlock Text="{x:Bind time}" Name="Time" FontSize="12" RelativePanel.Below="UserName" 
+                                   RelativePanel.RightOf="Avator"
+                                   Margin="5,0,0,0" />
                         <ListView  Margin="30,5,5,5" ItemsSource="{x:Bind commentFloors}"
                                   Visibility="Collapsed"
                             IsItemClickEnabled="False" Name="Floor" RelativePanel.RightOf="Avator" RelativePanel.Below="UserName">
@@ -83,7 +88,9 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                        <TextBlock Text="{x:Bind content}" FontSize="13"  RelativePanel.RightOf="Avator"
+                        <TextBlock Text="{x:Bind content}" FontSize="13"
+                                   Width="150"
+                                   RelativePanel.RightOf="Avator"
                                    RelativePanel.Below="Avator"
                                    TextWrapping="Wrap"/>
                     </RelativePanel>

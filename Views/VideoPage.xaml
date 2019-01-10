@@ -30,32 +30,49 @@
                            Height="30"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition x:Name="colume_2"
-                              Width="0" />
-        </Grid.ColumnDefinitions>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="VideoDetail_grid.(Grid.Column)" Value="0"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="700"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="VideoDetail_grid.(Grid.Column)" Value="1"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <!--<VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup1">
                 <VisualState x:Name="Wide">
                     <VisualState.StateTriggers>
-                        <StateTrigger IsActive="{Binding IsOpen}" />
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                        --><!--<StateTrigger IsActive="{Binding IsOpen}" />--><!--
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="TopThumb.(Grid.Height)" Value="400" />
+                        --><!--<Setter Target="TopThumb.(Grid.Height)" Value="400" />
                         <Setter Target="TabView.(Grid.ColumnSpan)" Value="1" />
                         <Setter Target="VideoDetail.(Grid.Column)" Value="1" />
-                        <Setter Target="ProgressRing.(Grid.ColumnSpan)" Value="1" />
+                        <Setter Target="ProgressRing.(Grid.ColumnSpan)" Value="1" />--><!--
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Narrow">
                     <VisualState.StateTriggers>
-                        <StateTrigger IsActive="{Binding Path=IsOpen,Converter={StaticResource BIC}}" />
+                        <AdaptiveTrigger MinWindowWidth="600"/>
+                        --><!--<StateTrigger IsActive="{Binding Path=IsOpen,Converter={StaticResource BIC}}" />--><!--
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="TopThumb.(Grid.Height)" Value="300" />
+                        --><!--<Setter Target="TopThumb.(Grid.Height)" Value="300" />
                         <Setter Target="TabView.(Grid.ColumnSpan)" Value="2" />
-                        <Setter Target="ProgressRing.(Grid.ColumnSpan)" Value="2" />
+                        <Setter Target="ProgressRing.(Grid.ColumnSpan)" Value="2" />--><!--
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
@@ -71,16 +88,30 @@
                 Click="Back_button_Click"/>
         <local3:TabView Name="TabView"
                         Grid.Row="1"
-                        TabNameList="{Binding TabNameList}" TabSwitch="TabView_TabSwitch">
+                        TabNameList="{Binding TabNameList}" 
+                        TabSwitch="TabView_TabSwitch">
             <local3:TabView.View>
-                <RelativePanel>
+                <Grid>
+                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition x:Name="colume_2"
+                              Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                   
                     <Grid Name="TopVideo"
+                          Grid.ColumnSpan="2"
                          RelativePanel.AlignHorizontalCenterWithPanel="True">
                         <Grid Name="TopThumb" 
-                              Height="300" Visibility="{Binding Path=HasTopVideo,Converter={StaticResource BTVC}}">
+                              Height="300"                               
+                              Visibility="{Binding Path=HasTopVideo,Converter={StaticResource BTVC}}">
                             <Image Source="{Binding TopVideo.imageSrc}"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
                                    Stretch="UniformToFill"/>
                             <Canvas>
                                 <Canvas.Background>
@@ -94,38 +125,43 @@
                                 </Canvas.Background>
                             </Canvas>
                             <RelativePanel VerticalAlignment="Center">
-                                <FontIcon Name="playButton" FontFamily="Segoe MDL2 Assets" 
-                              Tapped="playButton_Tapped"
-                              Margin="5,5,5,5"
-                              RelativePanel.AlignHorizontalCenterWithPanel="True"
-                              RelativePanel.AlignVerticalCenterWithPanel="True"
-                              Foreground="White"
-                              FontSize="40" Glyph="&#xE102;" />
-                                <TextBlock Name="topVideoHeadLine" Text="{Binding TopVideo.headLine}" 
-                               Margin="5,5,5,5"
-                               Foreground="White"
-                               FontWeight="Bold"
-                               FontSize="30"
-                               RelativePanel.AlignHorizontalCenterWithPanel="True"
-                               RelativePanel.Below="playButton"/>
+                                <FontIcon Name="playButton" 
+                                          FontFamily="Segoe MDL2 Assets" 
+                                          Tapped="playButton_Tapped"
+                                          Margin="5,5,5,5"
+                                          RelativePanel.AlignHorizontalCenterWithPanel="True"
+                                          RelativePanel.AlignVerticalCenterWithPanel="True"
+                                          Foreground="White"
+                                          FontSize="40" 
+                                          Glyph="&#xE102;" />
+                                <TextBlock Name="topVideoHeadLine"
+                                           Text="{Binding TopVideo.headLine}" 
+                                           Margin="5,5,5,5"
+                                           Foreground="White"
+                                           FontWeight="Bold"
+                                           FontSize="30"
+                                           RelativePanel.AlignHorizontalCenterWithPanel="True"
+                                           RelativePanel.Below="playButton"/>
                                 <TextBlock Name="topVideoLength" Text="{Binding TopVideo.length}"
-                               FontWeight="Medium"
-                               Margin="5,5,5,5"
-                               Foreground="White"
-                               RelativePanel.AlignHorizontalCenterWithPanel="True"
-                               RelativePanel.Below="topVideoHeadLine"/>
+                                           FontWeight="Medium"
+                                           Margin="5,5,5,5"
+                                           Foreground="White"
+                                           RelativePanel.AlignHorizontalCenterWithPanel="True"
+                                           RelativePanel.Below="topVideoHeadLine"/>
                                 <StackPanel Orientation="Horizontal" 
-                                Margin="5,5,5,5"
-                                RelativePanel.AlignHorizontalCenterWithPanel="True"
-                                RelativePanel.Below="topVideoLength">
-                                    <TextBlock Name="topVideoTag" Text="{Binding TopVideo.tag}"
-                                   FontWeight="Medium"
-                                   Margin="5,0,5,0"
-                                   Foreground="White"/>
-                                    <TextBlock Name="topVideoTime" Text="{Binding TopVideo.time}"
-                                   FontWeight="Medium"
-                                   Margin="5,0,5,0"
-                                   Foreground="White"/>
+                                            Margin="5,5,5,5"
+                                            RelativePanel.AlignHorizontalCenterWithPanel="True"
+                                            RelativePanel.Below="topVideoLength">
+                                    <TextBlock Name="topVideoTag" 
+                                               Text="{Binding TopVideo.tag}"
+                                               FontWeight="Medium"
+                                               Margin="5,0,5,0"
+                                               Foreground="White"/>
+                                    <TextBlock Name="topVideoTime"
+                                               Text="{Binding TopVideo.time}"
+                                               FontWeight="Medium"
+                                               Margin="5,0,5,0"
+                                               Foreground="White"/>
                                 </StackPanel>
                             </RelativePanel>
                         </Grid>
@@ -134,14 +170,17 @@
                                       PointerExited="mediaElement_PointerExited"
                                       PointerEntered="mediaElement_PointerEntered"
                                       Height="300"
-                                      Name="mediaElement" AreTransportControlsEnabled="True">
+                                      Name="mediaElement" 
+                                      AreTransportControlsEnabled="True">
                                 <MediaElement.TransportControls>
                                     <MediaTransportControls IsCompact="True" />
                                 </MediaElement.TransportControls>
                          </MediaElement>
                     </Grid>
                     <ScrollViewer ViewChanged="ScrollViewer_ViewChanged"
-                                  Name="ScrollViewer" RelativePanel.Below="TopVideo">
+                                  Name="ScrollViewer"
+                                  Grid.Row="1"
+                                  RelativePanel.Below="TopVideo">
                         <RelativePanel>
                             <GridView SelectionChanged="GridView_SelectionChanged"
                                       Name="VideoCards"
@@ -165,7 +204,8 @@
                                                Source="{x:Bind imageSrc}"
                                                Height="135"
                                                Width="220"/>
-                                            <TextBlock Name="headLine" Text="{x:Bind headLine}"
+                                            <TextBlock Name="headLine" 
+                                                       Text="{x:Bind headLine}"
                                                        Width="210"
                                                        Grid.Row="1"
                                                        FontWeight="Bold"
@@ -217,7 +257,7 @@
                                            Foreground="Gray"/>
                         </RelativePanel>
                     </ScrollViewer>
-                    <Grid RelativePanel.Below="TopVideo" Visibility="Collapsed"
+                    <!--<Grid RelativePanel.Below="TopVideo" Visibility="Collapsed"
                           Width="{Binding Path=ActualWidth,ElementName=mediaElement}"                        
                           Name="VideoInfo">
                         <Grid.ColumnDefinitions>
@@ -268,23 +308,42 @@
                             <TextBlock Text="{Binding VideoDetail.editor}" FontSize="12"
                                            Name="VideoEditor" RelativePanel.Below="VideoSource" RelativePanel.RightOf="VideoAbout" Margin="5,5,5,0" />
                         </RelativePanel>
-                    </Grid>
-                    <RelativePanel.Resources>
+                    </Grid>-->
+                    <!--<Grid.Resources>
                         <Storyboard x:Name="EnterAnim">
                             <FadeInThemeAnimation Storyboard.TargetName="VideoInfo"/>
                         </Storyboard>
                         <Storyboard x:Name="ExitAnim">
                             <FadeOutThemeAnimation Storyboard.TargetName="VideoInfo"/>
                         </Storyboard>
-                    </RelativePanel.Resources>
-                </RelativePanel>
+                    </Grid.Resources>-->
+                    <Grid Name="VideoDetail_grid"
+                                Width="300"
+                                Grid.Row="1"
+                                 Grid.Column="1"
+                          Visibility="Collapsed">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Button Name="close_button"
+                                Content="close"
+                                Background="Tan"
+                                Height="30"
+                                FontWeight="Bold"
+                                FontStyle="Italic"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Click="Close_button_Click"/>
+                        <Frame Name="VideoDetail"
+                               Grid.Row="1"/>
+                    </Grid>
+                </Grid>
             </local3:TabView.View>
         </local3:TabView>
         
         <ProgressRing Name="main_ProgressRing"
                       Width="100" Height="100" Grid.RowSpan="2" IsActive="{Binding Path=Loaded,Converter={StaticResource BIC}}" />
-        <Frame Name="VideoDetail" Visibility="{Binding IsOpen}" 
-               Grid.Row="1"
-               Grid.Column="1"/>
+        
     </Grid>
 </Page>

@@ -72,14 +72,14 @@ namespace The_Paper.Views
 
         private void mediaElement_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
-            EnterAnim.Begin();
-            EnterAnim.Completed += (sender1, e1) => VideoInfo.Visibility = Visibility.Visible;
+            //EnterAnim.Begin();
+            //EnterAnim.Completed += (sender1, e1) => VideoInfo.Visibility = Visibility.Visible;
         }
 
         private void mediaElement_PointerExited(object sender, PointerRoutedEventArgs e)
         {
-            ExitAnim.Begin();
-            EnterAnim.Completed += (sender1, e1) => VideoInfo.Visibility = Visibility.Collapsed;
+            //ExitAnim.Begin();
+            //EnterAnim.Completed += (sender1, e1) => VideoInfo.Visibility = Visibility.Collapsed;
         }
 
         private void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChangedEventArgs e)
@@ -91,23 +91,32 @@ namespace The_Paper.Views
 
         private void Back_button_Click(object sender, RoutedEventArgs e)
         {
-            colume_2.Width = new GridLength(0);
+            //colume_2.Width = new GridLength(0);
             back_button.Visibility = Visibility.Collapsed;
             mediaElement.Visibility = Visibility.Collapsed;
             mediaElement.Stop();
+            VideoDetail_grid.Visibility = Visibility.Collapsed;
+            //ScrollViewer.Visibility = Visibility.Visible;
         }
 
         private void VideoCards_ItemClick(object sender, ItemClickEventArgs e)
         {
             videoPageVM.Play((Video)(e.ClickedItem));
             VideoDetail.Navigate(typeof(VideoDetailPage), ((Video)(e.ClickedItem)).uri);
-            colume_2.Width = new GridLength(1, GridUnitType.Star);
+            //colume_2.Width = new GridLength(1, GridUnitType.Star);
             back_button.Visibility = Visibility.Visible;
             mediaElement.Visibility = Visibility.Visible;
+            VideoDetail_grid.Visibility = Visibility.Visible;
+            //ScrollViewer.Visibility = Visibility.Collapsed;
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+        }
+
+        private void Close_button_Click(object sender, RoutedEventArgs e)
+        {
+            VideoDetail_grid.Visibility = Visibility.Collapsed;
         }
     }
 }
