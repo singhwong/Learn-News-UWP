@@ -152,7 +152,7 @@
                                     <!--<UserControl>-->
                                     <Grid x:ConnectionId='15' Name="NewsCard"     
                                           Height="315"
-                                          Width="220"
+                                          Width="280"
                                           BorderBrush="White"
                                           BorderThickness="1"
                                           CornerRadius="5">
@@ -164,17 +164,17 @@
                                         </Grid.RowDefinitions>
                                         <Image x:ConnectionId='16'                         
                                                Name="image"
-                                               Height="135"
-                                               Width="220"/>
+                                               Height="170"
+                                               Width="280"/>
                                         <TextBlock x:ConnectionId='17'                          
                                                    Name="headLine"
                                                    FontWeight="Bold" 
                                                    TextWrapping="WrapWholeWords" 
-                                                   Width="210"
+                                                   Width="280"
                                                    Grid.Row="1"/>
                                         <TextBlock x:ConnectionId='18'                             
-                                                   Width="210"
-                                                   Height="100"
+                                                   Width="280"
+                                                   Height="70"
                                                    Grid.Row="2"
                                                    FontSize="13"
                                                    Name="mainContent" 
