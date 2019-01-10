@@ -38,6 +38,13 @@
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="VideoDetail_grid.(Grid.Column)" Value="0"/>
+                        <!--<Setter Target="image.(Grid.RowSpan)" Value="4"/>
+                        <Setter Target="headLine.(Grid.Row)" Value="0"/>
+                        <Setter Target="headLine.(Grid.Column)" Value="1"/>
+                        <Setter Target="mainContent.(Grid.Row)" Value="1"/>
+                        <Setter Target="mainContent.(Grid.Column)" Value="1"/>
+                        <Setter Target="mainContent.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="tag_stackPanel.(Grid.Column)" Value="1"/>-->
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState>
@@ -139,7 +146,7 @@
                                            Margin="5,5,5,5"
                                            Foreground="White"
                                            FontWeight="Bold"
-                                           FontSize="30"
+                                           FontSize="20"
                                            RelativePanel.AlignHorizontalCenterWithPanel="True"
                                            RelativePanel.Below="playButton"/>
                                 <TextBlock x:ConnectionId='25' Name="topVideoLength" Text="{Binding TopVideo.length}"
@@ -189,38 +196,44 @@
                                                                       >
                                 <GridView.ItemTemplate>
                                     <DataTemplate                          >
-                                        <Grid x:ConnectionId='15' Height="315"
-                                              Width="220"
+                                        <Grid x:ConnectionId='15' Height="137"
                                               BorderBrush="White"
                                               BorderThickness="1"
                                               CornerRadius="5">
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="Auto"/>
-                                                <RowDefinition Height="Auto"/>
-                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="2*"/>
+                                                <RowDefinition Height="4*"/>
                                                 <RowDefinition Height="*"/>
                                             </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
                                             <Image x:ConnectionId='16' Name="image" 
                                                                          
-                                               Height="135"
-                                               Width="220"/>
+                                               Width="220"
+                                                   Grid.RowSpan="3"/>
                                             <TextBlock x:ConnectionId='17' Name="headLine" 
                                                                                
-                                                       Width="210"
-                                                       Grid.Row="1"
+                                                       Margin="5,0,0,0"
+                                                       FontSize="13"
+                                                       Grid.Column="1"
                                                        FontWeight="Bold"
                                                        TextWrapping="WrapWholeWords"/>
                                             <TextBlock x:ConnectionId='18' Name="mainContent" 
                                                                                    
                                                        FontSize="13"
                                                        Width="210"
-                                                       Height="100"
-                                                       Grid.Row="2"
-                                                       Margin="2,0,0,0"
+                                                       Grid.Row="1"
+                                                       Grid.Column="1"
+                                                       Margin="5,0,0,0"
                                                        TextWrapping="WrapWholeWords"
                                                        TextTrimming="WordEllipsis"/>
-                                            <StackPanel Orientation="Horizontal"
+                                            <StackPanel Name="tag_stackPanel"
+                                                        Orientation="Horizontal"
+                                                        Margin="5,0,0,0"
                                                         Grid.Row="3"
+                                                        Grid.Column="1"
                                                         VerticalAlignment="Bottom">
                                                 <TextBlock x:ConnectionId='19' Name="tag" 
                                                                                
