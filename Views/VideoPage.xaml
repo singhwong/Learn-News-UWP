@@ -27,8 +27,8 @@
           Background="Tan">
         <Grid.RowDefinitions>
             <RowDefinition x:Name="row_1"
-                           Height="30"/>
-            <RowDefinition Height="*"/>
+                           Height="45"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
@@ -54,6 +54,8 @@
                 FontFamily="Segoe MDL2 Assets"
                 Content="&#xE72B;"
                 Grid.Column="1"
+                FontSize="20"
+                Height="45"
                 HorizontalAlignment="Left"
                 FontWeight="Thin"
                 Visibility="Collapsed"
@@ -180,6 +182,7 @@
                                                        Text="{x:Bind headLine}"
                                                        Margin="5,0"
                                                        Grid.Row="1"
+                                                       FontSize="14"
                                                        Width="270"
                                                        FontWeight="Bold"
                                                        TextWrapping="WrapWholeWords"/>

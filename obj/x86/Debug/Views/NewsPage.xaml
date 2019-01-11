@@ -169,6 +169,7 @@
                                                    FontWeight="Bold" 
                                                    TextWrapping="WrapWholeWords" 
                                                    Width="270"
+                                                   FontSize="14"
                                                    Margin="5,0"
                                                    Grid.Row="1"/>
                                         <TextBlock x:ConnectionId='18'                             
