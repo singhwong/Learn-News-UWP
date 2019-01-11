@@ -36,10 +36,10 @@ namespace The_Paper.Views
         {
             scrollViewer.ChangeView(null, 0, null);
             await newsPageVM.LoadTab((e as TabSwitchEventArgs).tabIndex);
-            //#region 优化点击顶部标题烂选项，右边会出现 NewsDetail Page bug,尚不知为何会出现这种情况
-            //colume_2.Width = new GridLength(0);
-            //back_button.Visibility = Visibility.Collapsed;
-            //#endregion
+            #region 优化点击顶部标题烂选项，右边会出现 NewsDetail Page bug,尚不知为何会出现这种情况
+            colume_2.Width = new GridLength(0);
+            back_button.Visibility = Visibility.Collapsed;
+            #endregion
         }
 
         private void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChangedEventArgs e)

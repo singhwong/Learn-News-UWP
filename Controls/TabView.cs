@@ -101,15 +101,15 @@ namespace The_Paper.Controls
             }
 
             (stackPanel.Children[0] as TextBlock).FontWeight = Windows.UI.Text.FontWeights.Bold;
-            (stackPanel.Children[0] as TextBlock).Foreground = new SolidColorBrush(Colors.White);
-            stackPanel.Background = new SolidColorBrush(Colors.Black);
+            //(stackPanel.Children[0] as TextBlock).Foreground = new SolidColorBrush(Colors.Black);
+            stackPanel.Background = new SolidColorBrush(Colors.Tan);
         }
 
         private TextBlock generateTabItem(string name)
         {
             TextBlock textBlock = new TextBlock();
             textBlock.Text = name;
-            textBlock.Foreground = new SolidColorBrush(Color.FromArgb(255, 150, 150, 150));
+            //textBlock.Foreground = new SolidColorBrush(Colors.Black);
             textBlock.Margin = new Thickness(10, 5, 10, 0);
             textBlock.AddHandler(PointerPressedEvent, onTabSwitchEvent, false);
             //Debug.WriteLine("Created");
@@ -120,10 +120,10 @@ namespace The_Paper.Controls
         {
             previousIndex = currentIndex;
             currentIndex = stackPanel.Children.IndexOf(sender as TextBlock);
-            (stackPanel.Children[previousIndex] as TextBlock).FontWeight = Windows.UI.Text.FontWeights.Normal;
-            (stackPanel.Children[previousIndex] as TextBlock).Foreground = new SolidColorBrush(Color.FromArgb(255, 150, 150, 150));
+            (stackPanel.Children[previousIndex] as TextBlock).FontWeight = Windows.UI.Text.FontWeights.Thin;
+            //(stackPanel.Children[previousIndex] as TextBlock).Foreground = new SolidColorBrush(Colors.Black);
             (stackPanel.Children[currentIndex] as TextBlock).FontWeight = Windows.UI.Text.FontWeights.Bold;
-            (stackPanel.Children[currentIndex] as TextBlock).Foreground = new SolidColorBrush(Colors.White);
+            //(stackPanel.Children[currentIndex] as TextBlock).Foreground = new SolidColorBrush(Colors.Black);
             TabSwitch?.Invoke(this, new TabSwitchEventArgs(currentIndex));
         }
     }

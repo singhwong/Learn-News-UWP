@@ -69,7 +69,7 @@
                 <Grid>
                     
                     <Grid.RowDefinitions>
-                        <RowDefinition/>
+                        <RowDefinition x:Name="videoRow_1"/>
                         <RowDefinition Height="2*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
@@ -79,8 +79,11 @@
                     </Grid.ColumnDefinitions>
                    
                     <Grid Name="TopVideo"
-                          Grid.ColumnSpan="2"
-                         RelativePanel.AlignHorizontalCenterWithPanel="True">
+                          Grid.ColumnSpan="2"    
+                          BorderBrush="White"
+                          BorderThickness="1"
+                          CornerRadius="5"
+                          RelativePanel.AlignHorizontalCenterWithPanel="True">
                         <Grid Name="TopThumb" 
                               Height="300"                               
                               Visibility="{Binding Path=HasTopVideo,Converter={StaticResource BTVC}}">

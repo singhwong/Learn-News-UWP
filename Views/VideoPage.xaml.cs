@@ -65,6 +65,11 @@ namespace The_Paper.Views
             videoStatus_textblock.Visibility = Visibility.Collapsed;//优化切换视频类别时，内容加载过程中，
             mediaElement.Visibility = Visibility.Collapsed;
             mediaElement.Stop();
+            #region 优化点击顶部标题烂选项，右边会出现 NewsDetail Page bug,尚不知为何会出现这种情况
+            colume_2.Width = new GridLength(0);
+            back_button.Visibility = Visibility.Collapsed;
+            #endregion
+            videoRow_1.Height = new GridLength(1,GridUnitType.Auto);
             //右上角显示videoStatus_textblock文本bug
             await videoPageVM.LoadColumn((e as TabSwitchEventArgs).tabIndex);
             videoStatus_textblock.Visibility = Visibility.Visible;
@@ -105,6 +110,8 @@ namespace The_Paper.Views
             VideoDetail.Navigate(typeof(VideoDetailPage), ((Video)(e.ClickedItem)).uri);
             //colume_2.Width = new GridLength(1, GridUnitType.Star);
             back_button.Visibility = Visibility.Visible;
+            colume_2.Width = new GridLength(1,GridUnitType.Auto);
+            videoRow_1.Height = new GridLength(1, GridUnitType.Star);
             mediaElement.Visibility = Visibility.Visible;
             VideoDetail_grid.Visibility = Visibility.Visible;
             //ScrollViewer.Visibility = Visibility.Collapsed;

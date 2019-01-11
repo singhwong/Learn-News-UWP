@@ -86,6 +86,9 @@
                                       Visibility="{Binding Path=HasTopNews,Converter={StaticResource BTVC}}"
                                       Tapped="topNews_Tapped">
                             <Grid Name="topNews_grid"
+                                  BorderBrush="White"
+                                          BorderThickness="1"
+                                          CornerRadius="5"
                                            Background="Tan">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
