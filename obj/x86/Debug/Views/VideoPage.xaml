@@ -80,12 +80,8 @@
                    
                     <Grid x:ConnectionId='9' Name="TopVideo"
                           Grid.ColumnSpan="2"    
-                          BorderBrush="White"
-                          BorderThickness="1"
-                          CornerRadius="5"
                           RelativePanel.AlignHorizontalCenterWithPanel="True">
-                        <Grid x:ConnectionId='22' Name="TopThumb" 
-                              Height="300"                               
+                        <Grid x:ConnectionId='22' Name="TopThumb"                                
                               Visibility="{Binding Path=HasTopVideo,Converter={StaticResource BTVC}}">
                             <Image Source="{Binding TopVideo.imageSrc}"
                                    VerticalAlignment="Center"

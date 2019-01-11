@@ -21,11 +21,11 @@
         <Setter Property="MinHeight" Value="{ThemeResource GridViewItemMinHeight}" />
         <Setter Property="AllowDrop" Value="False" />
         <Setter Property="UseSystemFocusVisuals" Value="True" />
-        <Setter Property="FocusVisualMargin" Value="-2" />
+        <!--<Setter Property="FocusVisualMargin" Value="-2" />
         <Setter Property="FocusVisualPrimaryBrush" Value="{ThemeResource SystemControlFocusVisualPrimaryBrush}" />
         <Setter Property="FocusVisualPrimaryThickness" Value="2" />
         <Setter Property="FocusVisualSecondaryBrush" Value="{ThemeResource SystemControlFocusVisualSecondaryBrush}" />
-        <Setter Property="FocusVisualSecondaryThickness" Value="1" />
+        <Setter Property="FocusVisualSecondaryThickness" Value="1" />-->
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="GridViewItem">

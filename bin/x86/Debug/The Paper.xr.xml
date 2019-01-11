@@ -116,11 +116,6 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="MinWidth" />
       <RootProperty Name="MinHeight" />
-      <RootProperty Name="FocusVisualMargin" />
-      <RootProperty Name="FocusVisualPrimaryBrush" />
-      <RootProperty Name="FocusVisualPrimaryThickness" />
-      <RootProperty Name="FocusVisualSecondaryBrush" />
-      <RootProperty Name="FocusVisualSecondaryThickness" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Setter">
       <RootProperty Name="Property" />
