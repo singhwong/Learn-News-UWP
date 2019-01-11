@@ -38,13 +38,6 @@
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="VideoDetail_grid.(Grid.Column)" Value="0"/>
-                        <!--<Setter Target="image.(Grid.RowSpan)" Value="4"/>
-                        <Setter Target="headLine.(Grid.Row)" Value="0"/>
-                        <Setter Target="headLine.(Grid.Column)" Value="1"/>
-                        <Setter Target="mainContent.(Grid.Row)" Value="1"/>
-                        <Setter Target="mainContent.(Grid.Column)" Value="1"/>
-                        <Setter Target="mainContent.(Grid.RowSpan)" Value="2"/>
-                        <Setter Target="tag_stackPanel.(Grid.Column)" Value="1"/>-->
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState>
@@ -57,33 +50,6 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        <!--<VisualStateManager.VisualStateGroups>
-            <VisualStateGroup x:Name="VisualStateGroup1">
-                <VisualState x:Name="Wide">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="0"/>
-                        --><!--<StateTrigger IsActive="{Binding IsOpen}" />--><!--
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        --><!--<Setter Target="TopThumb.(Grid.Height)" Value="400" />
-                        <Setter Target="TabView.(Grid.ColumnSpan)" Value="1" />
-                        <Setter Target="VideoDetail.(Grid.Column)" Value="1" />
-                        <Setter Target="ProgressRing.(Grid.ColumnSpan)" Value="1" />--><!--
-                    </VisualState.Setters>
-                </VisualState>
-                <VisualState x:Name="Narrow">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="600"/>
-                        --><!--<StateTrigger IsActive="{Binding Path=IsOpen,Converter={StaticResource BIC}}" />--><!--
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        --><!--<Setter Target="TopThumb.(Grid.Height)" Value="300" />
-                        <Setter Target="TabView.(Grid.ColumnSpan)" Value="2" />
-                        <Setter Target="ProgressRing.(Grid.ColumnSpan)" Value="2" />--><!--
-                    </VisualState.Setters>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>-->
         <Button x:ConnectionId='4' Name="back_button"
                 FontFamily="Segoe MDL2 Assets"
                 Content="&#xE72B;"
@@ -101,8 +67,8 @@
                 <Grid>
                     
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="2*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="2*" />
@@ -176,7 +142,6 @@
                                       Visibility="{Binding IsOpen, Converter={StaticResource BTVC}}"
                                                                                 
                                                                                   
-                                      Height="300"
                                       Name="mediaElement" 
                                       AreTransportControlsEnabled="True">
                                 <MediaElement.TransportControls>
@@ -196,44 +161,41 @@
                                                                       >
                                 <GridView.ItemTemplate>
                                     <DataTemplate                          >
-                                        <Grid x:ConnectionId='15' Height="137"
+                                        <Grid x:ConnectionId='15' Height="315"
+                                              Width="280"
                                               BorderBrush="White"
                                               BorderThickness="1"
                                               CornerRadius="5">
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="2*"/>
-                                                <RowDefinition Height="4*"/>
-                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition/>
                                             </Grid.RowDefinitions>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto"/>
-                                                <ColumnDefinition Width="*"/>
-                                            </Grid.ColumnDefinitions>
                                             <Image x:ConnectionId='16' Name="image" 
                                                                          
-                                               Width="220"
-                                                   Grid.RowSpan="3"/>
+                                                Height="170"
+                                               Width="280"/>
                                             <TextBlock x:ConnectionId='17' Name="headLine" 
                                                                                
-                                                       Margin="5,0,0,0"
-                                                       FontSize="13"
-                                                       Grid.Column="1"
+                                                       Margin="5,0"
+                                                       Grid.Row="1"
+                                                       Width="270"
                                                        FontWeight="Bold"
                                                        TextWrapping="WrapWholeWords"/>
                                             <TextBlock x:ConnectionId='18' Name="mainContent" 
                                                                                    
                                                        FontSize="13"
-                                                       Width="210"
-                                                       Grid.Row="1"
-                                                       Grid.Column="1"
-                                                       Margin="5,0,0,0"
+                                                       Width="270"
+                                                       Height="70"
+                                                       Grid.Row="2"
+                                                       Margin="5,0"
                                                        TextWrapping="WrapWholeWords"
                                                        TextTrimming="WordEllipsis"/>
                                             <StackPanel Name="tag_stackPanel"
                                                         Orientation="Horizontal"
-                                                        Margin="5,0,0,0"
+                                                        Margin="5,0"
                                                         Grid.Row="3"
-                                                        Grid.Column="1"
                                                         VerticalAlignment="Bottom">
                                                 <TextBlock x:ConnectionId='19' Name="tag" 
                                                                                

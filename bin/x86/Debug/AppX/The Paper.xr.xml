@@ -428,8 +428,8 @@
       <RootProperty Name="Source" />
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
-      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Stretch" />
     </RootType>
     <RootType FullName="The_Paper.Views.NewsPage" />
@@ -438,7 +438,6 @@
       <RootProperty Name="Name" />
       <RootProperty Name="Source" />
       <RootProperty Name="Visibility" />
-      <RootProperty Name="Height" />
       <RootProperty Name="AreTransportControlsEnabled" />
       <RootProperty Name="TransportControls" />
       <RootEvent Name="PointerExited" />
