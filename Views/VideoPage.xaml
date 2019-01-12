@@ -30,35 +30,7 @@
                            Height="45"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup>
-                <VisualState>
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="0"/>
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="VideoDetail_grid.(Grid.Column)" Value="0"/>
-                        <Setter Target="topVideoHeadLine.FontSize" Value="13"/>
-                        <Setter Target="topVideoHeadLine.Margin" Value="5,0"/>
-                        <Setter Target="topVideoLength.FontSize" Value="12"/>
-                        <!--<Setter Target="topVideo_stackPanel.(RelativePanel.LeftOf)" Value="topVideoLength"/>-->
-                        <Setter Target="topVideo_stackPanel.(RelativePanel.AlignTopWithPanel)" Value="true"/>
-                        <Setter Target="topVideoTag.FontSize" Value="12"/>
-                        <Setter Target="topVideoTime.FontSize" Value="12"/>
-                        <Setter Target="topVideo_stackPanel.Margin" Value="5,0"/>
-                        <Setter Target="playButton.FontSize" Value="20"/>
-                    </VisualState.Setters>
-                </VisualState>
-                <VisualState>
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="500"/>
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="VideoDetail_grid.(Grid.Column)" Value="1"/>
-                    </VisualState.Setters>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
+        
         <Button Name="back_button"
                 FontFamily="Segoe MDL2 Assets"
                 Content="&#xE72B;"
@@ -76,7 +48,34 @@
                         TabSwitch="TabView_TabSwitch">
             <local3:TabView.View>
                 <Grid>
-                    
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup>
+                            <VisualState>
+                                <VisualState.StateTriggers>
+                                    <AdaptiveTrigger MinWindowWidth="0"/>
+                                </VisualState.StateTriggers>
+                                <VisualState.Setters>
+                                    <Setter Target="VideoDetail_grid.(Grid.Column)" Value="0"/>
+                                    <Setter Target="topVideoHeadLine.FontSize" Value="13"/>
+                                    <Setter Target="topVideoHeadLine.Margin" Value="5,0"/>
+                                    <Setter Target="topVideoLength.FontSize" Value="12"/>
+                                    <Setter Target="topVideo_stackPanel.(RelativePanel.AlignTopWithPanel)" Value="true"/>
+                                    <Setter Target="topVideoTag.FontSize" Value="12"/>
+                                    <Setter Target="topVideoTime.FontSize" Value="12"/>
+                                    <Setter Target="topVideo_stackPanel.Margin" Value="5,0"/>
+                                    <Setter Target="playButton.FontSize" Value="20"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState>
+                                <VisualState.StateTriggers>
+                                    <AdaptiveTrigger MinWindowWidth="500"/>
+                                </VisualState.StateTriggers>
+                                <VisualState.Setters>
+                                    <Setter Target="VideoDetail_grid.(Grid.Column)" Value="1"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
                     <Grid.RowDefinitions>
                         <RowDefinition x:Name="videoRow_1"/>
                         <RowDefinition/>
@@ -166,8 +165,7 @@
                                   Grid.Row="1"
                                   RelativePanel.Below="TopVideo">
                         <RelativePanel>
-                            <GridView SelectionChanged="GridView_SelectionChanged"
-                                      Name="VideoCards"
+                            <GridView Name="VideoCards"
                                       ItemsSource="{Binding VideoList}"
                                       IsItemClickEnabled="True"
                                       ItemClick="VideoCards_ItemClick">
@@ -319,8 +317,8 @@
                                 Background="Tan"
                                 Height="30"
                                 FontWeight="Thin"
-                                FontStyle="Italic"
-                                FontSize="13"
+                                FontSize="12"
+                                Style="{StaticResource CustomButtonStyle}"
                                 Click="Close_button_Click">
                         </Button>
                         <Frame Name="VideoDetail"

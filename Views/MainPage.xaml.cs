@@ -28,14 +28,14 @@ namespace The_Paper
         private void SetTitleBarColor()
         {
             var view = ApplicationView.GetForCurrentView();
-            view.TitleBar.BackgroundColor = Colors.Black;
-            view.TitleBar.ForegroundColor = Colors.White;
-            view.TitleBar.InactiveBackgroundColor = Colors.Black;
-            view.TitleBar.InactiveForegroundColor = Colors.White;
-            view.TitleBar.ButtonBackgroundColor = Colors.Black;
-            view.TitleBar.ButtonForegroundColor = Colors.White;
-            view.TitleBar.ButtonInactiveBackgroundColor = Colors.Black;
-            view.TitleBar.ButtonInactiveForegroundColor = Colors.White;
+            view.TitleBar.BackgroundColor = Colors.Tan;
+            view.TitleBar.ForegroundColor = Colors.Black;
+            view.TitleBar.InactiveBackgroundColor = Colors.Tan;
+            view.TitleBar.InactiveForegroundColor = Colors.Black;
+            view.TitleBar.ButtonBackgroundColor = Colors.Tan;
+            view.TitleBar.ButtonForegroundColor = Colors.Black;
+            view.TitleBar.ButtonInactiveBackgroundColor = Colors.Tan;
+            view.TitleBar.ButtonInactiveForegroundColor = Colors.Black;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

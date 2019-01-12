@@ -24,8 +24,8 @@ namespace The_Paper.Views
     /// </summary>
     public sealed partial class VideoPage : Page
     {
+        private int index;
         VideoPageVM videoPageVM;
-        private bool IsProgressRingActive_bool = false;
         public VideoPage()
         {
             this.InitializeComponent();
@@ -41,28 +41,12 @@ namespace The_Paper.Views
         private void playButton_Tapped(object sender, TappedRoutedEventArgs e)
         {
             videoPageVM.PlayTop();
-            //colume_2.Width = new GridLength(0);
-            //colume_2.Width = new GridLength(1, GridUnitType.Star);
-            //back_button.Visibility = Visibility.Visible;
             mediaElement.Visibility = Visibility.Visible;
-        }
-
-        private void GridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //if ((sender as GridView).SelectedItem != null)
-            //{
-            //    videoPageVM.Play((Video)(sender as GridView).SelectedItem);
-            //    VideoDetail.Navigate(typeof(VideoDetailPage), ((sender as GridView).SelectedItem as Video).uri);
-            //    colume_2.Width = new GridLength(1, GridUnitType.Star);
-            //    back_button.Visibility = Visibility.Visible;
-            //    mediaElement.Visibility = Visibility.Visible;
-            //    //mediaElement.Play();
-            //}
         }
 
         private async void TabView_TabSwitch(object sender, EventArgs e)
         {
-            int index = (e as TabSwitchEventArgs).tabIndex;
+            index = (e as TabSwitchEventArgs).tabIndex;
             videoStatus_textblock.Visibility = Visibility.Collapsed;//优化切换视频类别时，内容加载过程中，
             mediaElement.Visibility = Visibility.Collapsed;
             mediaElement.Stop();
@@ -78,7 +62,6 @@ namespace The_Paper.Views
             {
                 videoRow_1.Height = new GridLength(1, GridUnitType.Auto);
             }
-            //videoRow_1.Height = new GridLength(1,GridUnitType.Auto);
             VideoDetail_grid.Visibility = Visibility.Collapsed;
             //右上角显示videoStatus_textblock文本bug
             await videoPageVM.LoadColumn(index);
@@ -106,26 +89,29 @@ namespace The_Paper.Views
 
         private void Back_button_Click(object sender, RoutedEventArgs e)
         {
-            //colume_2.Width = new GridLength(0);
             back_button.Visibility = Visibility.Collapsed;
             mediaElement.Visibility = Visibility.Collapsed;
             mediaElement.Stop();
             VideoDetail_grid.Visibility = Visibility.Collapsed;
-            videoRow_1.Height = new GridLength(1, GridUnitType.Auto);
-            //ScrollViewer.Visibility = Visibility.Visible;
+            if (index == 0)
+            {
+                videoRow_1.Height = new GridLength(1, GridUnitType.Star);
+            }
+            else
+            {
+                videoRow_1.Height = new GridLength(1, GridUnitType.Auto);
+            }
         }
 
         private void VideoCards_ItemClick(object sender, ItemClickEventArgs e)
         {
             videoPageVM.Play((Video)(e.ClickedItem));
             VideoDetail.Navigate(typeof(VideoDetailPage), ((Video)(e.ClickedItem)).uri);
-            //colume_2.Width = new GridLength(1, GridUnitType.Star);
             back_button.Visibility = Visibility.Visible;
             colume_2.Width = new GridLength(1,GridUnitType.Auto);
             videoRow_1.Height = new GridLength(1, GridUnitType.Star);
             mediaElement.Visibility = Visibility.Visible;
             VideoDetail_grid.Visibility = Visibility.Visible;
-            //ScrollViewer.Visibility = Visibility.Collapsed;
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)

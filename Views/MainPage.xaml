@@ -53,7 +53,7 @@
                 </Grid>
             </SplitView.Pane>
             <SplitView.Content>
-                <Grid Background="Black">
+                <Grid Background="Tan">
                     <Frame Name="mainFrame"/>
                 </Grid>
             </SplitView.Content>
