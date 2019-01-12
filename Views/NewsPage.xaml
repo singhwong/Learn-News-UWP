@@ -141,7 +141,6 @@
                         </GridViewItem>
                         <GridView Name="NewsCards"
                                   ItemsSource="{Binding NewsList}"
-                                  SelectionChanged="NewsCards_SelectionChanged"
                                   IsItemClickEnabled="True"
                                   ItemClick="NewsCards_ItemClick"
                                   RelativePanel.Below="topNews">

@@ -90,7 +90,6 @@
       <RootProperty Name="Visibility" />
       <RootProperty Name="Background" />
       <RootProperty Name="FontStyle" />
-      <RootProperty Name="VerticalAlignment" />
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Control">
@@ -286,8 +285,8 @@
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="ItemTemplate" />
-      <RootEvent Name="SelectionChanged" />
       <RootEvent Name="ItemClick" />
+      <RootEvent Name="SelectionChanged" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.GridViewItem">
       <RootProperty Name="Name" />

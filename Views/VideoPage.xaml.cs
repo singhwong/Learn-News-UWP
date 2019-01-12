@@ -62,6 +62,7 @@ namespace The_Paper.Views
 
         private async void TabView_TabSwitch(object sender, EventArgs e)
         {
+            int index = (e as TabSwitchEventArgs).tabIndex;
             videoStatus_textblock.Visibility = Visibility.Collapsed;//优化切换视频类别时，内容加载过程中，
             mediaElement.Visibility = Visibility.Collapsed;
             mediaElement.Stop();
@@ -69,9 +70,18 @@ namespace The_Paper.Views
             colume_2.Width = new GridLength(0);
             back_button.Visibility = Visibility.Collapsed;
             #endregion
-            videoRow_1.Height = new GridLength(1,GridUnitType.Auto);
+            if (index == 0)
+            {
+                videoRow_1.Height = new GridLength(1, GridUnitType.Star);
+            }
+            else
+            {
+                videoRow_1.Height = new GridLength(1, GridUnitType.Auto);
+            }
+            //videoRow_1.Height = new GridLength(1,GridUnitType.Auto);
+            VideoDetail_grid.Visibility = Visibility.Collapsed;
             //右上角显示videoStatus_textblock文本bug
-            await videoPageVM.LoadColumn((e as TabSwitchEventArgs).tabIndex);
+            await videoPageVM.LoadColumn(index);
             videoStatus_textblock.Visibility = Visibility.Visible;
         }
 
@@ -101,6 +111,7 @@ namespace The_Paper.Views
             mediaElement.Visibility = Visibility.Collapsed;
             mediaElement.Stop();
             VideoDetail_grid.Visibility = Visibility.Collapsed;
+            videoRow_1.Height = new GridLength(1, GridUnitType.Auto);
             //ScrollViewer.Visibility = Visibility.Visible;
         }
 
@@ -123,7 +134,7 @@ namespace The_Paper.Views
 
         private void Close_button_Click(object sender, RoutedEventArgs e)
         {
-            VideoDetail_grid.Visibility = Visibility.Collapsed;
+            VideoDetail_grid.Visibility = Visibility.Collapsed;           
         }
     }
 }

@@ -38,11 +38,20 @@
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="VideoDetail_grid.(Grid.Column)" Value="0"/>
+                        <Setter Target="topVideoHeadLine.FontSize" Value="13"/>
+                        <Setter Target="topVideoHeadLine.Margin" Value="5,0"/>
+                        <Setter Target="topVideoLength.FontSize" Value="12"/>
+                        <!--<Setter Target="topVideo_stackPanel.(RelativePanel.LeftOf)" Value="topVideoLength"/>-->
+                        <Setter Target="topVideo_stackPanel.(RelativePanel.AlignTopWithPanel)" Value="true"/>
+                        <Setter Target="topVideoTag.FontSize" Value="12"/>
+                        <Setter Target="topVideoTime.FontSize" Value="12"/>
+                        <Setter Target="topVideo_stackPanel.Margin" Value="5,0"/>
+                        <Setter Target="playButton.FontSize" Value="20"/>
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState>
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="700"/>
+                        <AdaptiveTrigger MinWindowWidth="500"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="VideoDetail_grid.(Grid.Column)" Value="1"/>
@@ -70,7 +79,7 @@
                     
                     <Grid.RowDefinitions>
                         <RowDefinition x:ConnectionId='7' x:Name="videoRow_1"/>
-                        <RowDefinition Height="2*"/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="2*" />
@@ -114,6 +123,7 @@
                                            Foreground="White"
                                            FontWeight="Bold"
                                            FontSize="20"
+                                           TextWrapping="Wrap"
                                            RelativePanel.AlignHorizontalCenterWithPanel="True"
                                            RelativePanel.Below="playButton"/>
                                 <TextBlock x:ConnectionId='26' Name="topVideoLength" Text="{Binding TopVideo.length}"
@@ -122,16 +132,17 @@
                                            Foreground="White"
                                            RelativePanel.AlignHorizontalCenterWithPanel="True"
                                            RelativePanel.Below="topVideoHeadLine"/>
-                                <StackPanel Orientation="Horizontal" 
+                                <StackPanel x:ConnectionId='27' Name="topVideo_stackPanel"
+                                            Orientation="Horizontal" 
                                             Margin="5,5,5,5"
                                             RelativePanel.AlignHorizontalCenterWithPanel="True"
                                             RelativePanel.Below="topVideoLength">
-                                    <TextBlock x:ConnectionId='27' Name="topVideoTag" 
+                                    <TextBlock x:ConnectionId='28' Name="topVideoTag" 
                                                Text="{Binding TopVideo.tag}"
                                                FontWeight="Medium"
                                                Margin="5,0,5,0"
                                                Foreground="White"/>
-                                    <TextBlock x:ConnectionId='28' Name="topVideoTime"
+                                    <TextBlock x:ConnectionId='29' Name="topVideoTime"
                                                Text="{Binding TopVideo.time}"
                                                FontWeight="Medium"
                                                Margin="5,0,5,0"
@@ -295,7 +306,7 @@
                         </Storyboard>
                     </Grid.Resources>-->
                     <Grid x:ConnectionId='11' Name="VideoDetail_grid"
-                                Width="300"
+                                Width="240"
                                 Grid.Row="1"
                                  Grid.Column="1"
                           Visibility="Collapsed">
@@ -304,14 +315,14 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Button x:ConnectionId='12' Name="close_button"
-                                Content="close"
+                                Content="关闭评论"
                                 Background="Tan"
                                 Height="30"
-                                FontWeight="Bold"
+                                FontWeight="Thin"
                                 FontStyle="Italic"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                                          />
+                                FontSize="13"
+                                                          >
+                        </Button>
                         <Frame x:ConnectionId='13' Name="VideoDetail"
                                Grid.Row="1"/>
                     </Grid>
