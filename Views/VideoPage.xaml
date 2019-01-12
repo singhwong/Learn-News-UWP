@@ -166,7 +166,7 @@
                                   Grid.Row="1"
                                   RelativePanel.Below="TopVideo">
                         <RelativePanel>
-                            <GridView Name="VideoCards"
+                            <GridView Name="VideoCards"    
                                       ItemsSource="{Binding VideoList}"
                                       IsItemClickEnabled="True"
                                       ItemClick="VideoCards_ItemClick">

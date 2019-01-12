@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="14523wongsoft.6397904DAF804" Publisher="CN=142C2F57-E79D-408C-83F9-E14BC50B8D43" Version="1.0.10.0" />
+  <Identity Name="14523wongsoft.6397904DAF804" Publisher="CN=142C2F57-E79D-408C-83F9-E14BC50B8D43" Version="1.0.17.0" />
   <mp:PhoneIdentity PhoneProductId="53fce329-063f-4e18-b7c4-c3c6f10f1af5" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>澎湃新闻速览版</DisplayName>
