@@ -73,13 +73,12 @@ namespace The_Paper
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                if (e.PreviousExecutionState != ApplicationExecutionState.Running)
+                if (e.PreviousExecutionState != ApplicationExecutionState.Terminated)
                 {
                     //TODO: 从之前挂起的应用程序加载状态
-                    bool loadState = (e.PreviousExecutionState == ApplicationExecutionState.Terminated);
-                    ExtendedSplash extendedSplash = new ExtendedSplash(e.SplashScreen, loadState);
-                    rootFrame.Content = extendedSplash;
-                    //Window.Current.Content = rootFrame;
+                    //bool loadState = (e.PreviousExecutionState == ApplicationExecutionState.Terminated);
+                    //ExtendedSplash extendedSplash = new ExtendedSplash(e.SplashScreen, loadState);
+                    //rootFrame.Content = extendedSplash;
                 }
 
                 // 将框架放在当前窗口中
@@ -96,13 +95,6 @@ namespace The_Paper
                     rootFrame.Navigate(typeof(MainPage), e.Arguments);
                 }
                 // 确保当前窗口处于活动状态
-
-                //if (e.PreviousExecutionState != ApplicationExecutionState.Running)
-                //{
-                //    bool loadState = (e.PreviousExecutionState == ApplicationExecutionState.Terminated);
-                //    ExtendedSplash extendedSplash = new ExtendedSplash(e.SplashScreen, loadState);
-                //    Window.Current.Content = extendedSplash;
-                //}
                 Window.Current.Activate();
             }          
 

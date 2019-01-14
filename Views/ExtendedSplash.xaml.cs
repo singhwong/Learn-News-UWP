@@ -35,26 +35,26 @@ namespace The_Paper.Views
 
         public ExtendedSplash(SplashScreen splashscreen, bool loadState)
         {
-            this.InitializeComponent();
-            Window.Current.SizeChanged += new WindowSizeChangedEventHandler(ExtendedSplash_OnResize);
+            //this.InitializeComponent();
+            //Window.Current.SizeChanged += new WindowSizeChangedEventHandler(ExtendedSplash_OnResize);
 
-            splash = splashscreen;
+            //splash = splashscreen;
 
-            if (splash != null)
-            {
-                splash.Dismissed += new TypedEventHandler<SplashScreen, Object>(DismissedEventHandler);
+            //if (splash != null)
+            //{
+            //    splash.Dismissed += new TypedEventHandler<SplashScreen, Object>(DismissedEventHandler);
 
-                splashImageRect = splash.ImageLocation;
-                PositionImage();
+            //    splashImageRect = splash.ImageLocation;
+            //    PositionImage();
 
-                PositionRing();
-            }
+            //    PositionRing();
+            //}
 
-            // Create a Frame to act as the navigation context
-            rootFrame = new Frame();
+            //// Create a Frame to act as the navigation context
+            //rootFrame = new Frame();
 
-            // Restore the saved session state if necessary
-            RestoreState(loadState);
+            //// Restore the saved session state if necessary
+            //RestoreState(loadState);
         }
         void RestoreState(bool loadState)
         {
@@ -73,17 +73,17 @@ namespace The_Paper.Views
 
         }
 
-        void ExtendedSplash_OnResize(Object sender, WindowSizeChangedEventArgs e)
-        {
-            // Safely update the extended splash screen image coordinates. This function will be fired in response to snapping, unsnapping, rotation, etc...
-            if (splash != null)
-            {
-                // Update the coordinates of the splash screen image.
-                splashImageRect = splash.ImageLocation;
-                PositionImage();
-                PositionRing();
-            }
-        }
+        //void ExtendedSplash_OnResize(Object sender, WindowSizeChangedEventArgs e)
+        //{
+        //    // Safely update the extended splash screen image coordinates. This function will be fired in response to snapping, unsnapping, rotation, etc...
+        //    if (splash != null)
+        //    {
+        //        // Update the coordinates of the splash screen image.
+        //        splashImageRect = splash.ImageLocation;
+        //        PositionImage();
+        //        PositionRing();
+        //    }
+        //}
 
         void PositionRing()
         {
@@ -105,10 +105,10 @@ namespace The_Paper.Views
             Window.Current.Content = rootFrame;
         }
 
-        private void DismissSplashButton_Click(object sender, RoutedEventArgs e)
-        {
-            DismissExtendedSplash();
-        }
+        //private void DismissSplashButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    DismissExtendedSplash();
+        //}
     }
     
 }

@@ -8,29 +8,26 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <!--<Page.Resources>
-        <Storyboard x:Name="main_storyBoard"
-                    
+        <Storyboard x:Name="main_storyBoard"                   
                     Completed="Main_storyBoard_Completed">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="splashProgressRing"
+            <DoubleAnimation Storyboard.TargetName="splashProgressRing"
                     Storyboard.TargetProperty="(splashProgressRing.IsActive)"
-                                            EnableDependentAnimation="True">
-                <DiscreteDoubleKeyFrame KeyTime="0:0:3"
-                                        Value="false"/>
-            </DoubleAnimationUsingKeyFrames>
+                             By="False">
+            </DoubleAnimation>
         </Storyboard>
     </Page.Resources>-->
     <Grid Background="Tan">
         <Canvas>
-            <Image x:ConnectionId='2' x:Name="extendedSplashImage"
+            <Image x:ConnectionId='1' x:Name="extendedSplashImage"
                    Source="/Assets/清明上河图.png"/>
-            <ProgressRing x:ConnectionId='3' Name="splashProgressRing" 
+            <ProgressRing x:ConnectionId='2' Name="splashProgressRing" 
                           IsActive="True" 
                           Width="30" 
                           HorizontalAlignment="Center"/>
         </Canvas>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom">
-            <Button x:ConnectionId='1' x:Name="DismissSplash" Content="Dismiss extended splash screen" HorizontalAlignment="Center"                                   />
-        </StackPanel>
+        <!--<StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <Button x:Name="DismissSplash" Content="Dismiss extended splash screen" HorizontalAlignment="Center" Click="DismissSplashButton_Click" />
+        </StackPanel>-->
     </Grid>
 </Page>
 

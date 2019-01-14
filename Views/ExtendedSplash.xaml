@@ -8,15 +8,12 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <!--<Page.Resources>
-        <Storyboard x:Name="main_storyBoard"
-                    
+        <Storyboard x:Name="main_storyBoard"                   
                     Completed="Main_storyBoard_Completed">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="splashProgressRing"
+            <DoubleAnimation Storyboard.TargetName="splashProgressRing"
                     Storyboard.TargetProperty="(splashProgressRing.IsActive)"
-                                            EnableDependentAnimation="True">
-                <DiscreteDoubleKeyFrame KeyTime="0:0:3"
-                                        Value="false"/>
-            </DoubleAnimationUsingKeyFrames>
+                             By="False">
+            </DoubleAnimation>
         </Storyboard>
     </Page.Resources>-->
     <Grid Background="Tan">
@@ -28,8 +25,8 @@
                           Width="30" 
                           HorizontalAlignment="Center"/>
         </Canvas>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom">
+        <!--<StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom">
             <Button x:Name="DismissSplash" Content="Dismiss extended splash screen" HorizontalAlignment="Center" Click="DismissSplashButton_Click" />
-        </StackPanel>
+        </StackPanel>-->
     </Grid>
 </Page>
