@@ -28,6 +28,11 @@ namespace The_Paper.Views
         private SplashScreen splash;
         internal bool dismissed = false;
         internal Frame rootFrame;
+        public ExtendedSplash()
+        {
+            this.InitializeComponent();
+        }
+
         public ExtendedSplash(SplashScreen splashscreen, bool loadState)
         {
             this.InitializeComponent();
@@ -54,7 +59,7 @@ namespace The_Paper.Views
         void RestoreState(bool loadState)
         {
             if (loadState)
-            {
+            {               
                 // TODO: write code to load state
             }
         }
@@ -89,7 +94,6 @@ namespace The_Paper.Views
         void DismissedEventHandler(SplashScreen sender, object e)
         {
             dismissed = true;
-
             // Complete app setup operations here...
         }
 
@@ -99,6 +103,11 @@ namespace The_Paper.Views
             rootFrame.Navigate(typeof(MainPage));
             // Place the frame in the current Window
             Window.Current.Content = rootFrame;
+        }
+
+        private void DismissSplashButton_Click(object sender, RoutedEventArgs e)
+        {
+            DismissExtendedSplash();
         }
     }
     

@@ -226,6 +226,7 @@ namespace The_Paper.thePaper_XamlTypeInfo
         }
 
         private object Activate_0_BlankPage() { return new global::The_Paper.Views.BlankPage(); }
+        private object Activate_3_ExtendedSplash() { return new global::The_Paper.Views.ExtendedSplash(); }
         private object Activate_4_LoginPage() { return new global::The_Paper.Views.LoginPage(); }
         private object Activate_5_MainPage() { return new global::The_Paper.MainPage(); }
         private object Activate_6_TabView() { return new global::The_Paper.Controls.TabView(); }
@@ -284,6 +285,7 @@ namespace The_Paper.thePaper_XamlTypeInfo
 
             case 3:   //  The_Paper.Views.ExtendedSplash
                 userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_3_ExtendedSplash;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

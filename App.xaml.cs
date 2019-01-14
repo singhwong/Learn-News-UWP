@@ -19,6 +19,9 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+using Windows.ApplicationModel;
+using Windows.ApplicationModel.Activation;
+
 namespace The_Paper
 {
     /// <summary>
@@ -32,6 +35,9 @@ namespace The_Paper
         /// </summary>
         public App()
         {
+            //Microsoft.ApplicationInsights.WindowsAppInitializer.InitializeAsync(
+            //Microsoft.ApplicationInsights.WindowsCollectors.Metadata |
+            //Microsoft.ApplicationInsights.WindowsCollectors.Session);
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
@@ -67,9 +73,13 @@ namespace The_Paper
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
+                if (e.PreviousExecutionState != ApplicationExecutionState.Running)
                 {
                     //TODO: 从之前挂起的应用程序加载状态
+                    bool loadState = (e.PreviousExecutionState == ApplicationExecutionState.Terminated);
+                    ExtendedSplash extendedSplash = new ExtendedSplash(e.SplashScreen, loadState);
+                    rootFrame.Content = extendedSplash;
+                    //Window.Current.Content = rootFrame;
                 }
 
                 // 将框架放在当前窗口中
@@ -86,16 +96,15 @@ namespace The_Paper
                     rootFrame.Navigate(typeof(MainPage), e.Arguments);
                 }
                 // 确保当前窗口处于活动状态
-                Window.Current.Activate();
-            }
-            if (e.PreviousExecutionState != ApplicationExecutionState.Running)
-            {
-                bool loadState = (e.PreviousExecutionState == ApplicationExecutionState.Terminated);
-                ExtendedSplash extendedSplash = new ExtendedSplash(e.SplashScreen, loadState);
-                Window.Current.Content = extendedSplash;
-            }
 
-            Window.Current.Activate();
+                //if (e.PreviousExecutionState != ApplicationExecutionState.Running)
+                //{
+                //    bool loadState = (e.PreviousExecutionState == ApplicationExecutionState.Terminated);
+                //    ExtendedSplash extendedSplash = new ExtendedSplash(e.SplashScreen, loadState);
+                //    Window.Current.Content = extendedSplash;
+                //}
+                Window.Current.Activate();
+            }          
 
         }
 

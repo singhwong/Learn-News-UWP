@@ -7,16 +7,30 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <!--<Page.Resources>
+        <Storyboard x:Name="main_storyBoard"
+                    
+                    Completed="Main_storyBoard_Completed">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="splashProgressRing"
+                    Storyboard.TargetProperty="(splashProgressRing.IsActive)"
+                                            EnableDependentAnimation="True">
+                <DiscreteDoubleKeyFrame KeyTime="0:0:3"
+                                        Value="false"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Page.Resources>-->
     <Grid Background="Tan">
         <Canvas>
-            <Image x:ConnectionId='1' x:Name="extendedSplashImage"
-                   Source="Assets/SplashScreen.scale-100.png"/>
-            <ProgressRing x:ConnectionId='2' Name="splashProgressRing" 
+            <Image x:ConnectionId='2' x:Name="extendedSplashImage"
+                   Source="/Assets/清明上河图.png"/>
+            <ProgressRing x:ConnectionId='3' Name="splashProgressRing" 
                           IsActive="True" 
-                          Width="20" 
+                          Width="30" 
                           HorizontalAlignment="Center"/>
         </Canvas>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <Button x:ConnectionId='1' x:Name="DismissSplash" Content="Dismiss extended splash screen" HorizontalAlignment="Center"                                   />
+        </StackPanel>
     </Grid>
 </Page>
 

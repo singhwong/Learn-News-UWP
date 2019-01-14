@@ -28,7 +28,7 @@
     <AppxPackagedFile Include="C:\Users\wang\source\repos\Learn-News-UWP\bin\x86\Debug\The Paper.exe">
       <PackagePath>entrypoint\The Paper.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wang\.nuget\packages\htmlagilitypack\1.8.11\lib\uap10.0\HtmlAgilityPack.dll">
+    <AppxPackagedFile Include="C:\Users\wang\.nuget\packages\htmlagilitypack\1.8.12\lib\uap10.0\HtmlAgilityPack.dll">
       <PackagePath>HtmlAgilityPack.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files\Microsoft SDKs\UWPNuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
@@ -561,6 +561,9 @@
     <AppxPackagedFile Include="C:\Users\wang\source\repos\Learn-News-UWP\Assets\Wide310x150Logo.scale-400.png">
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\wang\source\repos\Learn-News-UWP\Assets\清明上河图.png">
+      <PackagePath>Assets\清明上河图.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\wang\source\repos\Learn-News-UWP\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
