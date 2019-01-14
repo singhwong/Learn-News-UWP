@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using The_Paper.Data;
+using The_Paper.Views;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -87,6 +88,15 @@ namespace The_Paper
                 // 确保当前窗口处于活动状态
                 Window.Current.Activate();
             }
+            if (e.PreviousExecutionState != ApplicationExecutionState.Running)
+            {
+                bool loadState = (e.PreviousExecutionState == ApplicationExecutionState.Terminated);
+                ExtendedSplash extendedSplash = new ExtendedSplash(e.SplashScreen, loadState);
+                Window.Current.Content = extendedSplash;
+            }
+
+            Window.Current.Activate();
+
         }
 
         /// <summary>
