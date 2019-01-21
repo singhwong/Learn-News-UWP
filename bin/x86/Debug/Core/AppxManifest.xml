@@ -24,9 +24,9 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="The Paper.exe" EntryPoint="The_Paper.App">
-      <uap:VisualElements DisplayName="澎湃新闻UWP" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="专注时政与思想-ThePaper.cn" BackgroundColor="tan">
+      <uap:VisualElements DisplayName="thePaper" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="专注时政与思想-ThePaper.cn" BackgroundColor="tan">
         <uap:LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\BadgeLogo.png" />
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" ShortName="澎湃新闻" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png">
           <uap:ShowNameOnTiles>
             <uap:ShowOn Tile="square150x150Logo" />
           </uap:ShowNameOnTiles>
@@ -42,7 +42,7 @@
     <build:Item Name="TargetFrameworkMoniker" Value=".NETCore,Version=v5.0" />
     <build:Item Name="VisualStudio" Version="15.0" />
     <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Community 2017" />
-    <build:Item Name="OperatingSystem" Version="10.0.17763.289 (WinBuild.160101.0800)" />
+    <build:Item Name="OperatingSystem" Version="10.0.17134.582 (WinBuild.160101.0800)" />
     <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="15.0.28307.104" />
     <build:Item Name="ProjectGUID" Value="{AD4AC230-452D-485D-AB82-180AF4C93DED}" />
     <build:Item Name="OptimizingToolset" Value="None" />
