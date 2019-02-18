@@ -68,23 +68,23 @@
                     Margin="10,0,0,0"
                     Orientation="Horizontal">
             <UI:AdControl x:ConnectionId='31' x:Name="ad_contro"
-                      ApplicationId="9n6jvkjh4ffl"
-                      AdUnitId="1100039415"
+                      ApplicationId="9pcr0b34nft8"
+                      AdUnitId="1100039458"
                       Height="50"
                       Width="320"/>
             <UI:AdControl x:ConnectionId='32' x:Name="ad_control2"
-                      ApplicationId="9n6jvkjh4ffl"
-                      AdUnitId="1100039416"
+                      ApplicationId="9pcr0b34nft8"
+                      AdUnitId="1100039459"
                       Height="50"
                       Width="320"/>
             <UI:AdControl x:ConnectionId='33' x:Name="ad_control3"
-                      ApplicationId="9n6jvkjh4ffl"
-                      AdUnitId="1100039270"
+                      ApplicationId="9pcr0b34nft8"
+                      AdUnitId="1100039460"
                       Height="50"
                       Width="320"/>
             <UI:AdControl x:ConnectionId='34' x:Name="ad_control4"
-                      ApplicationId="9n6jvkjh4ffl"
-                      AdUnitId="1100039414"
+                      ApplicationId="9pcr0b34nft8"
+                      AdUnitId="1100039461"
                       Height="50"
                       Width="320"/>
         </StackPanel>

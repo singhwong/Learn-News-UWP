@@ -9,6 +9,7 @@ using The_Paper.Bases.ViewModels;
 using The_Paper.Data;
 using The_Paper.Models;
 using The_Paper.Services;
+using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
 
 namespace The_Paper.ViewModels
@@ -101,14 +102,15 @@ namespace The_Paper.ViewModels
             }
             catch
             {
-                ContentDialog content = new ContentDialog
-                {
-                    Title = "",
-                    Content = "获取数据失败",
-                    IsPrimaryButtonEnabled = true,
-                    PrimaryButtonText = "OK",
-                };
-                ContentDialogResult result = await content.ShowAsync();
+                MessageDialog content = new MessageDialog("获取数据失败");
+                await content.ShowAsync();
+                //{
+                //    Title = "",
+                //    Content = "获取数据失败",
+                //    IsPrimaryButtonEnabled = true,
+                //    PrimaryButtonText = "OK",
+                //};
+                //ContentDialogResult result = await content.ShowAsync();
             }
            
         }
