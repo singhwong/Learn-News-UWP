@@ -67,6 +67,18 @@ namespace The_Paper.thePaper_XamlTypeInfo
             {
                 xamlType = CreateXamlType(typeIndex);
             }
+            var userXamlType = xamlType as global::The_Paper.thePaper_XamlTypeInfo.XamlUserType;
+            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
+            {
+                global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForType(type);
+                if (libXamlType != null)
+                {
+                    if(libXamlType.IsConstructible || xamlType == null)
+                    {
+                        xamlType = libXamlType;
+                    }
+                }
+            }
             if (xamlType != null)
             {
                 _xamlTypeCacheByName.Add(xamlType.FullName, xamlType);
@@ -90,6 +102,18 @@ namespace The_Paper.thePaper_XamlTypeInfo
             if(typeIndex != -1)
             {
                 xamlType = CreateXamlType(typeIndex);
+            }
+            var userXamlType = xamlType as global::The_Paper.thePaper_XamlTypeInfo.XamlUserType;
+            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
+            {
+                global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForName(typeName);
+                if (libXamlType != null)
+                {
+                    if(libXamlType.IsConstructible || xamlType == null)
+                    {
+                        xamlType = libXamlType;
+                    }
+                }
             }
             if (xamlType != null)
             {
@@ -132,7 +156,7 @@ namespace The_Paper.thePaper_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[28];
+            _typeNameTable = new string[32];
             _typeNameTable[0] = "The_Paper.Views.BlankPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
@@ -158,11 +182,15 @@ namespace The_Paper.thePaper_XamlTypeInfo
             _typeNameTable[22] = "The_Paper.Converters.BoolToVisibilityConverter";
             _typeNameTable[23] = "The_Paper.Converters.BoolInvertConverter";
             _typeNameTable[24] = "The_Paper.Views.NewsDetailPage";
-            _typeNameTable[25] = "The_Paper.Views.NewsPage";
-            _typeNameTable[26] = "The_Paper.Views.VideoDetailPage";
-            _typeNameTable[27] = "The_Paper.Views.VideoPage";
+            _typeNameTable[25] = "Microsoft.Advertising.WinRT.UI.AdControl";
+            _typeNameTable[26] = "Windows.UI.Xaml.Controls.StackPanel";
+            _typeNameTable[27] = "Windows.UI.Xaml.Controls.Panel";
+            _typeNameTable[28] = "Boolean";
+            _typeNameTable[29] = "The_Paper.Views.NewsPage";
+            _typeNameTable[30] = "The_Paper.Views.VideoDetailPage";
+            _typeNameTable[31] = "The_Paper.Views.VideoPage";
 
-            _typeTable = new global::System.Type[28];
+            _typeTable = new global::System.Type[32];
             _typeTable[0] = typeof(global::The_Paper.Views.BlankPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
@@ -188,9 +216,13 @@ namespace The_Paper.thePaper_XamlTypeInfo
             _typeTable[22] = typeof(global::The_Paper.Converters.BoolToVisibilityConverter);
             _typeTable[23] = typeof(global::The_Paper.Converters.BoolInvertConverter);
             _typeTable[24] = typeof(global::The_Paper.Views.NewsDetailPage);
-            _typeTable[25] = typeof(global::The_Paper.Views.NewsPage);
-            _typeTable[26] = typeof(global::The_Paper.Views.VideoDetailPage);
-            _typeTable[27] = typeof(global::The_Paper.Views.VideoPage);
+            _typeTable[25] = typeof(global::Microsoft.Advertising.WinRT.UI.AdControl);
+            _typeTable[26] = typeof(global::Windows.UI.Xaml.Controls.StackPanel);
+            _typeTable[27] = typeof(global::Windows.UI.Xaml.Controls.Panel);
+            _typeTable[28] = typeof(global::System.Boolean);
+            _typeTable[29] = typeof(global::The_Paper.Views.NewsPage);
+            _typeTable[30] = typeof(global::The_Paper.Views.VideoDetailPage);
+            _typeTable[31] = typeof(global::The_Paper.Views.VideoPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -242,9 +274,10 @@ namespace The_Paper.thePaper_XamlTypeInfo
         private object Activate_22_BoolToVisibilityConverter() { return new global::The_Paper.Converters.BoolToVisibilityConverter(); }
         private object Activate_23_BoolInvertConverter() { return new global::The_Paper.Converters.BoolInvertConverter(); }
         private object Activate_24_NewsDetailPage() { return new global::The_Paper.Views.NewsDetailPage(); }
-        private object Activate_25_NewsPage() { return new global::The_Paper.Views.NewsPage(); }
-        private object Activate_26_VideoDetailPage() { return new global::The_Paper.Views.VideoDetailPage(); }
-        private object Activate_27_VideoPage() { return new global::The_Paper.Views.VideoPage(); }
+        private object Activate_25_AdControl() { return new global::Microsoft.Advertising.WinRT.UI.AdControl(); }
+        private object Activate_29_NewsPage() { return new global::The_Paper.Views.NewsPage(); }
+        private object Activate_30_VideoDetailPage() { return new global::The_Paper.Views.VideoDetailPage(); }
+        private object Activate_31_VideoPage() { return new global::The_Paper.Views.VideoPage(); }
         private void VectorAdd_9_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::System.String>)instance;
@@ -427,23 +460,51 @@ namespace The_Paper.thePaper_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 25:   //  The_Paper.Views.NewsPage
+            case 25:   //  Microsoft.Advertising.WinRT.UI.AdControl
+                userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.StackPanel"));
+                userType.Activator = Activate_25_AdControl;
+                userType.AddMemberName("ApplicationId");
+                userType.AddMemberName("AdUnitId");
+                userType.AddMemberName("HasAd");
+                userType.AddMemberName("IsSuspended");
+                userType.AddMemberName("PostalCode");
+                userType.AddMemberName("CountryOrRegion");
+                userType.AddMemberName("Keywords");
+                userType.AddMemberName("AutoRefreshIntervalInSeconds");
+                userType.AddMemberName("IsAutoRefreshEnabled");
+                userType.AddMemberName("IsEngaged");
+                xamlType = userType;
+                break;
+
+            case 26:   //  Windows.UI.Xaml.Controls.StackPanel
+                xamlType = new global::The_Paper.thePaper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 27:   //  Windows.UI.Xaml.Controls.Panel
+                xamlType = new global::The_Paper.thePaper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 28:   //  Boolean
+                xamlType = new global::The_Paper.thePaper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 29:   //  The_Paper.Views.NewsPage
                 userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_25_NewsPage;
+                userType.Activator = Activate_29_NewsPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 26:   //  The_Paper.Views.VideoDetailPage
+            case 30:   //  The_Paper.Views.VideoDetailPage
                 userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_26_VideoDetailPage;
+                userType.Activator = Activate_30_VideoDetailPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 27:   //  The_Paper.Views.VideoPage
+            case 31:   //  The_Paper.Views.VideoPage
                 userType = new global::The_Paper.thePaper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_27_VideoPage;
+                userType.Activator = Activate_31_VideoPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -451,6 +512,60 @@ namespace The_Paper.thePaper_XamlTypeInfo
             return xamlType;
         }
 
+        private global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider> _otherProviders;
+        private global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider> OtherProviders
+        {
+            get
+            {
+                if(_otherProviders == null)
+                {
+                    var otherProviders = new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider>();
+                    global::Windows.UI.Xaml.Markup.IXamlMetadataProvider provider;
+                    provider = new global::Microsoft.Advertising.MicrosoftAdvertising_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
+                    otherProviders.Add(provider); 
+                    _otherProviders = otherProviders;
+                }
+                return _otherProviders;
+            }
+        }
+
+        private global::Windows.UI.Xaml.Markup.IXamlType CheckOtherMetadataProvidersForName(string typeName)
+        {
+            global::Windows.UI.Xaml.Markup.IXamlType xamlType = null;
+            global::Windows.UI.Xaml.Markup.IXamlType foundXamlType = null;
+            foreach(global::Windows.UI.Xaml.Markup.IXamlMetadataProvider xmp in OtherProviders)
+            {
+                xamlType = xmp.GetXamlType(typeName);
+                if(xamlType != null)
+                {
+                    if(xamlType.IsConstructible)    // not Constructible means it might be a Return Type Stub
+                    {
+                        return xamlType;
+                    }
+                    foundXamlType = xamlType;
+                }
+            }
+            return foundXamlType;
+        }
+
+        private global::Windows.UI.Xaml.Markup.IXamlType CheckOtherMetadataProvidersForType(global::System.Type type)
+        {
+            global::Windows.UI.Xaml.Markup.IXamlType xamlType = null;
+            global::Windows.UI.Xaml.Markup.IXamlType foundXamlType = null;
+            foreach(global::Windows.UI.Xaml.Markup.IXamlMetadataProvider xmp in OtherProviders)
+            {
+                xamlType = xmp.GetXamlType(type);
+                if(xamlType != null)
+                {
+                    if(xamlType.IsConstructible)    // not Constructible means it might be a Return Type Stub
+                    {
+                        return xamlType;
+                    }
+                    foundXamlType = xamlType;
+                }
+            }
+            return foundXamlType;
+        }
 
         private object get_0_TabView_previousIndex(object instance)
         {
@@ -532,6 +647,91 @@ namespace The_Paper.thePaper_XamlTypeInfo
             var that = (global::The_Paper.Controls.CommentControl)instance;
             that.FloorBackground = (global::Windows.UI.Xaml.Media.Brush)Value;
         }
+        private object get_8_AdControl_ApplicationId(object instance)
+        {
+            var that = (global::Microsoft.Advertising.WinRT.UI.AdControl)instance;
+            return that.ApplicationId;
+        }
+        private void set_8_AdControl_ApplicationId(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.WinRT.UI.AdControl)instance;
+            that.ApplicationId = (global::System.String)Value;
+        }
+        private object get_9_AdControl_AdUnitId(object instance)
+        {
+            var that = (global::Microsoft.Advertising.WinRT.UI.AdControl)instance;
+            return that.AdUnitId;
+        }
+        private void set_9_AdControl_AdUnitId(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.WinRT.UI.AdControl)instance;
+            that.AdUnitId = (global::System.String)Value;
+        }
+        private object get_10_AdControl_HasAd(object instance)
+        {
+            var that = (global::Microsoft.Advertising.WinRT.UI.AdControl)instance;
+            return that.HasAd;
+        }
+        private object get_11_AdControl_IsSuspended(object instance)
+        {
+            var that = (global::Microsoft.Advertising.WinRT.UI.AdControl)instance;
+            return that.IsSuspended;
+        }
+        private object get_12_AdControl_PostalCode(object instance)
+        {
+            var that = (global::Microsoft.Advertising.WinRT.UI.AdControl)instance;
+            return that.PostalCode;
+        }
+        private void set_12_AdControl_PostalCode(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.WinRT.UI.AdControl)instance;
+            that.PostalCode = (global::System.String)Value;
+        }
+        private object get_13_AdControl_CountryOrRegion(object instance)
+        {
+            var that = (global::Microsoft.Advertising.WinRT.UI.AdControl)instance;
+            return that.CountryOrRegion;
+        }
+        private void set_13_AdControl_CountryOrRegion(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.WinRT.UI.AdControl)instance;
+            that.CountryOrRegion = (global::System.String)Value;
+        }
+        private object get_14_AdControl_Keywords(object instance)
+        {
+            var that = (global::Microsoft.Advertising.WinRT.UI.AdControl)instance;
+            return that.Keywords;
+        }
+        private void set_14_AdControl_Keywords(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.WinRT.UI.AdControl)instance;
+            that.Keywords = (global::System.String)Value;
+        }
+        private object get_15_AdControl_AutoRefreshIntervalInSeconds(object instance)
+        {
+            var that = (global::Microsoft.Advertising.WinRT.UI.AdControl)instance;
+            return that.AutoRefreshIntervalInSeconds;
+        }
+        private void set_15_AdControl_AutoRefreshIntervalInSeconds(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.WinRT.UI.AdControl)instance;
+            that.AutoRefreshIntervalInSeconds = (global::System.Int32)Value;
+        }
+        private object get_16_AdControl_IsAutoRefreshEnabled(object instance)
+        {
+            var that = (global::Microsoft.Advertising.WinRT.UI.AdControl)instance;
+            return that.IsAutoRefreshEnabled;
+        }
+        private void set_16_AdControl_IsAutoRefreshEnabled(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.WinRT.UI.AdControl)instance;
+            that.IsAutoRefreshEnabled = (global::System.Boolean)Value;
+        }
+        private object get_17_AdControl_IsEngaged(object instance)
+        {
+            var that = (global::Microsoft.Advertising.WinRT.UI.AdControl)instance;
+            return that.IsEngaged;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
@@ -593,6 +793,66 @@ namespace The_Paper.thePaper_XamlTypeInfo
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_7_CommentControl_FloorBackground;
                 xamlMember.Setter = set_7_CommentControl_FloorBackground;
+                break;
+            case "Microsoft.Advertising.WinRT.UI.AdControl.ApplicationId":
+                userType = (global::The_Paper.thePaper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.WinRT.UI.AdControl");
+                xamlMember = new global::The_Paper.thePaper_XamlTypeInfo.XamlMember(this, "ApplicationId", "String");
+                xamlMember.Getter = get_8_AdControl_ApplicationId;
+                xamlMember.Setter = set_8_AdControl_ApplicationId;
+                break;
+            case "Microsoft.Advertising.WinRT.UI.AdControl.AdUnitId":
+                userType = (global::The_Paper.thePaper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.WinRT.UI.AdControl");
+                xamlMember = new global::The_Paper.thePaper_XamlTypeInfo.XamlMember(this, "AdUnitId", "String");
+                xamlMember.Getter = get_9_AdControl_AdUnitId;
+                xamlMember.Setter = set_9_AdControl_AdUnitId;
+                break;
+            case "Microsoft.Advertising.WinRT.UI.AdControl.HasAd":
+                userType = (global::The_Paper.thePaper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.WinRT.UI.AdControl");
+                xamlMember = new global::The_Paper.thePaper_XamlTypeInfo.XamlMember(this, "HasAd", "Boolean");
+                xamlMember.Getter = get_10_AdControl_HasAd;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Microsoft.Advertising.WinRT.UI.AdControl.IsSuspended":
+                userType = (global::The_Paper.thePaper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.WinRT.UI.AdControl");
+                xamlMember = new global::The_Paper.thePaper_XamlTypeInfo.XamlMember(this, "IsSuspended", "Boolean");
+                xamlMember.Getter = get_11_AdControl_IsSuspended;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Microsoft.Advertising.WinRT.UI.AdControl.PostalCode":
+                userType = (global::The_Paper.thePaper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.WinRT.UI.AdControl");
+                xamlMember = new global::The_Paper.thePaper_XamlTypeInfo.XamlMember(this, "PostalCode", "String");
+                xamlMember.Getter = get_12_AdControl_PostalCode;
+                xamlMember.Setter = set_12_AdControl_PostalCode;
+                break;
+            case "Microsoft.Advertising.WinRT.UI.AdControl.CountryOrRegion":
+                userType = (global::The_Paper.thePaper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.WinRT.UI.AdControl");
+                xamlMember = new global::The_Paper.thePaper_XamlTypeInfo.XamlMember(this, "CountryOrRegion", "String");
+                xamlMember.Getter = get_13_AdControl_CountryOrRegion;
+                xamlMember.Setter = set_13_AdControl_CountryOrRegion;
+                break;
+            case "Microsoft.Advertising.WinRT.UI.AdControl.Keywords":
+                userType = (global::The_Paper.thePaper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.WinRT.UI.AdControl");
+                xamlMember = new global::The_Paper.thePaper_XamlTypeInfo.XamlMember(this, "Keywords", "String");
+                xamlMember.Getter = get_14_AdControl_Keywords;
+                xamlMember.Setter = set_14_AdControl_Keywords;
+                break;
+            case "Microsoft.Advertising.WinRT.UI.AdControl.AutoRefreshIntervalInSeconds":
+                userType = (global::The_Paper.thePaper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.WinRT.UI.AdControl");
+                xamlMember = new global::The_Paper.thePaper_XamlTypeInfo.XamlMember(this, "AutoRefreshIntervalInSeconds", "Int32");
+                xamlMember.Getter = get_15_AdControl_AutoRefreshIntervalInSeconds;
+                xamlMember.Setter = set_15_AdControl_AutoRefreshIntervalInSeconds;
+                break;
+            case "Microsoft.Advertising.WinRT.UI.AdControl.IsAutoRefreshEnabled":
+                userType = (global::The_Paper.thePaper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.WinRT.UI.AdControl");
+                xamlMember = new global::The_Paper.thePaper_XamlTypeInfo.XamlMember(this, "IsAutoRefreshEnabled", "Boolean");
+                xamlMember.Getter = get_16_AdControl_IsAutoRefreshEnabled;
+                xamlMember.Setter = set_16_AdControl_IsAutoRefreshEnabled;
+                break;
+            case "Microsoft.Advertising.WinRT.UI.AdControl.IsEngaged":
+                userType = (global::The_Paper.thePaper_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.WinRT.UI.AdControl");
+                xamlMember = new global::The_Paper.thePaper_XamlTypeInfo.XamlMember(this, "IsEngaged", "Boolean");
+                xamlMember.Getter = get_17_AdControl_IsEngaged;
+                xamlMember.SetIsReadOnly();
                 break;
             }
             return xamlMember;

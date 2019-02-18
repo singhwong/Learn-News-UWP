@@ -9,6 +9,7 @@
     xmlns:controls="using:Windows.UI.Xaml.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
     xmlns:local2="using:The_Paper.Models"
     mc:Ignorable="d"
                         >
@@ -59,17 +60,38 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        <Button x:ConnectionId='4' Name="back_button"
-                FontFamily="Segoe MDL2 Assets"
-                Content="&#xE72B;"
-                Grid.Column="1"
-                FontSize="20"
+        <StackPanel x:ConnectionId='4' x:Name="videoPage_ads"
+                    Orientation="Horizontal">
+            <Button x:ConnectionId='31' Name="back_button"
+                Content="返回"
+                FontSize="15"
                 Height="45"
                 HorizontalAlignment="Left"
                 FontWeight="Thin"
                 Visibility="Collapsed"
                 Style="{StaticResource CustomButtonStyle}"
                                          />
+            <UI:AdControl x:ConnectionId='32' x:Name="ad_contro5"
+                      ApplicationId="9n6jvkjh4ffl"
+                      AdUnitId="1100039415"
+                      Height="50"
+                      Width="320"/>
+            <UI:AdControl x:ConnectionId='33' x:Name="ad_control6"
+                      ApplicationId="9n6jvkjh4ffl"
+                      AdUnitId="1100039416"
+                      Height="50"
+                      Width="320"/>
+            <UI:AdControl x:ConnectionId='34' x:Name="ad_control7"
+                      ApplicationId="9n6jvkjh4ffl"
+                      AdUnitId="1100039417"
+                      Height="50"
+                      Width="320"/>
+            <UI:AdControl x:ConnectionId='35' x:Name="ad_control8"
+                      ApplicationId="9n6jvkjh4ffl"
+                      AdUnitId="1100039418"
+                      Height="50"
+                      Width="320"/>
+        </StackPanel>
         <local3:TabView x:ConnectionId='5' Name="TabView"
                         Grid.Row="1"
                         TabNameList="{Binding TabNameList}" 
@@ -78,14 +100,14 @@
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition x:ConnectionId='7' x:Name="videoRow_1"/>
-                        <RowDefinition/>
+                        <RowDefinition Height="2*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="2*" />
                         <ColumnDefinition x:ConnectionId='8' x:Name="colume_2"
                               Width="Auto" />
                     </Grid.ColumnDefinitions>
-                   
+
                     <Grid x:ConnectionId='9' Name="TopVideo"
                           Grid.ColumnSpan="2"    
                           RelativePanel.AlignHorizontalCenterWithPanel="True">
@@ -158,8 +180,8 @@
                             <MediaElement.TransportControls>
                                 <MediaTransportControls x:ConnectionId='24' x:Name="mediaElement_controls"
                                                         IsCompact="True"/>
-                                </MediaElement.TransportControls>
-                         </MediaElement>
+                            </MediaElement.TransportControls>
+                        </MediaElement>
                     </Grid>
                     <ScrollViewer x:ConnectionId='10'                                       
                                   Name="ScrollViewer"
@@ -172,11 +194,7 @@
                                                                       >
                                 <GridView.ItemTemplate>
                                     <DataTemplate                          >
-                                        <Grid x:ConnectionId='16' Height="315"
-                                              Width="280"
-                                              BorderBrush="White"
-                                              BorderThickness="1"
-                                              CornerRadius="5">
+                                        <Grid x:ConnectionId='16' Margin="5">
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="Auto"/>
                                                 <RowDefinition Height="Auto"/>
@@ -185,20 +203,19 @@
                                             </Grid.RowDefinitions>
                                             <Image x:ConnectionId='17' Name="image" 
                                                                          
-                                                Height="170"
-                                               Width="280"/>
+                                               Width="200"/>
                                             <TextBlock x:ConnectionId='18' Name="headLine" 
                                                                                
                                                        Margin="5,0"
                                                        Grid.Row="1"
                                                        FontSize="14"
-                                                       Width="270"
+                                                       Width="200"
                                                        FontWeight="Bold"
                                                        TextWrapping="WrapWholeWords"/>
                                             <TextBlock x:ConnectionId='19' Name="mainContent" 
                                                                                    
                                                        FontSize="13"
-                                                       Width="270"
+                                                       Width="200"
                                                        Height="70"
                                                        Grid.Row="2"
                                                        Margin="5,0"
@@ -235,7 +252,7 @@
                                     </DataTemplate>
                                 </GridView.ItemTemplate>
                             </GridView>
-                                <TextBlock x:ConnectionId='15' Name="videoStatus_textblock"
+                            <TextBlock x:ConnectionId='15' Name="videoStatus_textblock"
                                            RelativePanel.Below="VideoCards"
                                            RelativePanel.AlignHorizontalCenterWithPanel="True"
                                            FontSize="14" 
@@ -328,7 +345,14 @@
                 </Grid>
             </local3:TabView.View>
         </local3:TabView>
-        
+        <!--<UI:AdControl x:Name="ad_control2"
+                      Grid.Row="1"
+                      ApplicationId="9n6jvkjh4ffl"
+                      AdUnitId="1100039417"
+                      Height="50"
+                      Width="320"
+                      VerticalAlignment="Bottom"
+                      HorizontalAlignment="Right"/>-->
         <ProgressRing x:ConnectionId='6' Name="main_ProgressRing"
                       Width="100" Height="100" Grid.RowSpan="2" IsActive="{Binding Path=Loaded,Converter={StaticResource BIC}}" />
         

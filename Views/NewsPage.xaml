@@ -8,6 +8,7 @@
     xmlns:local2="using:The_Paper.Models"
     xmlns:local3="using:The_Paper.Controls"
     xmlns:local4="using:The_Paper.Converters"
+    xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
     mc:Ignorable="d"
     x:Name="News_Page">
 
@@ -41,15 +42,16 @@
                                       x:Name="Trigger" />-->
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="topNews_stackPanel.(Grid.Row)" Value="1"/>
+                        <!--<Setter Target="topNews_stackPanel.(Grid.Row)" Value="1"/>
                         <Setter Target="topNews_stackPanel.(Grid.Column)" Value="0"/>
-                        <Setter Target="topNewsImage.(Grid.ColumnSpan)" Value="2"/>
-                        <Setter Target="topNews_stackPanel.(Grid.ColumnSpan)" Value="2"/>
+                        <Setter Target="topNewsImage.(Grid.ColumnSpan)" Value="2"/>-->
+                        <!--<Setter Target="topNews_stackPanel.(Grid.ColumnSpan)" Value="2"/>-->
                         <Setter Target="topNewsHL.FontSize" Value="13"/>
                         <Setter Target="topNewsMC.FontSize" Value="13"/>
                         <Setter Target="topNewsTag.FontSize" Value="12"/>
                         <Setter Target="topNewsSplit.FontSize" Value="12"/>
                         <Setter Target="topNewsTime.FontSize" Value="12"/>
+                        <Setter Target="colume_one.Width" Value="200"/>
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Wide">
@@ -62,13 +64,36 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
+        <StackPanel x:Name="newsPage_ads"
+                    Margin="10,0,0,0"
+                    Orientation="Horizontal">
+            <UI:AdControl x:Name="ad_contro"
+                      ApplicationId="9n6jvkjh4ffl"
+                      AdUnitId="1100039415"
+                      Height="50"
+                      Width="320"/>
+            <UI:AdControl x:Name="ad_control2"
+                      ApplicationId="9n6jvkjh4ffl"
+                      AdUnitId="1100039416"
+                      Height="50"
+                      Width="320"/>
+            <UI:AdControl x:Name="ad_control3"
+                      ApplicationId="9n6jvkjh4ffl"
+                      AdUnitId="1100039270"
+                      Height="50"
+                      Width="320"/>
+            <UI:AdControl x:Name="ad_control4"
+                      ApplicationId="9n6jvkjh4ffl"
+                      AdUnitId="1100039414"
+                      Height="50"
+                      Width="320"/>
+        </StackPanel>
         <Button Name="back_button"
-                FontFamily="Segoe MDL2 Assets"
-                Content="&#xE72B;"
+                Content="返回"
                 Grid.Column="1"
                 HorizontalAlignment="Left"
                 FontWeight="Thin"
-                FontSize="20"
+                FontSize="15"
                 Height="45"
                 Visibility="Collapsed"
                 Style="{StaticResource CustomButtonStyle}"
@@ -88,15 +113,16 @@
                             <Grid Name="topNews_grid"
                                   Background="Tan">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
+                                    <ColumnDefinition x:Name="colume_one"/>
                                     <ColumnDefinition Width="2*"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
+                                    <!--<RowDefinition/>
+                                    <RowDefinition/>-->
                                 </Grid.RowDefinitions>
                                 <Image Name="topNewsImage" 
-                                       Source="{Binding TopNews.image}"/>
+                                       Source="{Binding TopNews.image}"
+                                       Margin="10,0,0,0"/>
                                 <StackPanel Name="topNews_stackPanel"
                                             Orientation="Vertical"
                                             Grid.Column="1">
@@ -148,11 +174,7 @@
                                 <DataTemplate x:DataType="local2:News">
                                     <!--<UserControl>-->
                                     <Grid Name="NewsCard"     
-                                          Height="315"
-                                          Width="280"
-                                          BorderBrush="White"
-                                          BorderThickness="1"
-                                          CornerRadius="5">
+                                          Margin="5">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto"/>
                                             <RowDefinition Height="Auto"/>
@@ -161,18 +183,17 @@
                                         </Grid.RowDefinitions>
                                         <Image Source="{x:Bind image}" 
                                                Name="image"
-                                               Height="170"
-                                               Width="280"/>
+                                               Width="200"/>
                                         <TextBlock Text="{x:Bind headLine}" 
                                                    Name="headLine"
                                                    FontWeight="Bold" 
                                                    TextWrapping="WrapWholeWords" 
-                                                   Width="270"
+                                                   Width="200"
                                                    FontSize="14"
                                                    Margin="5,0"
                                                    Grid.Row="1"/>
                                         <TextBlock Text="{x:Bind mainContent}" 
-                                                   Width="270"
+                                                   Width="200"
                                                    Height="70"
                                                    Grid.Row="2"
                                                    FontSize="13"
@@ -217,6 +238,14 @@
                 </ScrollViewer>
             </local3:TabView.View>
         </local3:TabView>
+        <!--<UI:AdControl x:Name="ad_control"
+                      Grid.Row="1"
+                      ApplicationId="9n6jvkjh4ffl"
+                      AdUnitId="1100039418"
+                      Height="600"
+                      Width="160"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Right"/>-->
         <Frame Name="NewsDetail"
                Grid.Row="1"
                Grid.Column="1"
