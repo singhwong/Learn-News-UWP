@@ -1,1 +1,1 @@
-C:\Users\Administrator\source\repos\Learn-News-UWP\bin\ARM\Release\Upload\thePaper_1.0.19.0\thePaper_1.0.19.0_x86_x64_arm.appxbundle
+D:\gitUWP\Learn-News-UWP\bin\ARM\Release\Upload\thePaper_1.0.23.0\thePaper_1.0.23.0_x86_x64_arm.appxbundle

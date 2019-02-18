@@ -63,7 +63,7 @@ namespace The_Paper.Controls
         private void LoadNewsDetail()
         {
             StackPanel panel = new StackPanel();
-            panel.Background = new SolidColorBrush(Colors.Tan);
+            panel.Background = new SolidColorBrush(Colors.WhiteSmoke);
             panel.Orientation = Orientation.Vertical;
             RichTextBlock richTextBlock = new RichTextBlock();
             richTextBlock.CharacterSpacing = 100;
@@ -99,6 +99,7 @@ namespace The_Paper.Controls
                     textBlock.FontSize = 12;
                     mediaElement.AreTransportControlsEnabled = true;
                     mediaElement.TransportControls = mtc;
+                    mediaElement.Volume = 0.5;
                     mediaElement.AutoPlay = false;
                     mediaElement.Source = new Uri(newsVideo.videoSrc);
                     stackPanel.Orientation = Orientation.Vertical;

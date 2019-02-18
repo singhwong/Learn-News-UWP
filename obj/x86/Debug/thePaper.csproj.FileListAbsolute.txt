@@ -703,8 +703,8 @@ D:\gitUWP\Learn-News-UWP\bin\x86\Debug\System.Xml.XDocument.dll
 D:\gitUWP\Learn-News-UWP\bin\x86\Debug\System.Xml.XmlDocument.dll
 D:\gitUWP\Learn-News-UWP\bin\x86\Debug\System.Xml.XmlSerializer.dll
 D:\gitUWP\Learn-News-UWP\bin\x86\Debug\System.Xml.XPath.dll
+D:\gitUWP\Learn-News-UWP\bin\x86\Debug\System.Xml.XPath.XDocument.dll
 D:\gitUWP\Learn-News-UWP\bin\x86\Debug\System.Xml.XPath.XmlDocument.dll
-D:\gitUWP\Learn-News-UWP\obj\x86\Debug\thePaper.csprojAssemblyReference.cache
 D:\gitUWP\Learn-News-UWP\obj\x86\Debug\App.g.i.cs
 D:\gitUWP\Learn-News-UWP\obj\x86\Debug\App.g.cs
 D:\gitUWP\Learn-News-UWP\obj\x86\Debug\Views\BlankPage.g.i.cs
@@ -825,6 +825,7 @@ D:\gitUWP\Learn-News-UWP\obj\x86\Debug\FxResources.System.Xml.XDocument.SR.resw
 D:\gitUWP\Learn-News-UWP\obj\x86\Debug\FxResources.System.Xml.XmlDocument.SR.resw
 D:\gitUWP\Learn-News-UWP\obj\x86\Debug\FxResources.System.Xml.XmlSerializer.SR.resw
 D:\gitUWP\Learn-News-UWP\obj\x86\Debug\FxResources.System.Xml.XPath.SR.resw
+D:\gitUWP\Learn-News-UWP\obj\x86\Debug\FxResources.System.Xml.XPath.XDocument.SR.resw
 D:\gitUWP\Learn-News-UWP\obj\x86\Debug\FxResources.System.Xml.XPath.XmlDocument.SR.resw
 D:\gitUWP\Learn-News-UWP\obj\x86\Debug\priconfig.xml
 D:\gitUWP\Learn-News-UWP\obj\x86\Debug\priconfig.xml.intermediate
@@ -845,5 +846,4 @@ D:\gitUWP\Learn-News-UWP\obj\x86\Debug\resources.en-us.resfiles
 D:\gitUWP\Learn-News-UWP\obj\x86\Debug\resources.en-us.resfiles.intermediate
 D:\gitUWP\Learn-News-UWP\obj\x86\Debug\HtmlAgilityPack.pri.xml
 D:\gitUWP\Learn-News-UWP\obj\x86\Debug\ProjectArchitectures.txt
-D:\gitUWP\Learn-News-UWP\bin\x86\Debug\System.Xml.XPath.XDocument.dll
-D:\gitUWP\Learn-News-UWP\obj\x86\Debug\FxResources.System.Xml.XPath.XDocument.SR.resw
+D:\gitUWP\Learn-News-UWP\obj\x86\Debug\thePaper.csprojAssemblyReference.cache

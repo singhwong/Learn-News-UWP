@@ -22,7 +22,7 @@
         </ResourceDictionary>
     </Page.Resources>
     <Grid x:ConnectionId='2' Name="Grid"
-          Background="Tan">
+          Background="WhiteSmoke">
         <Grid.RowDefinitions>
             <RowDefinition x:ConnectionId='3' x:Name="row_1"
                            Height="45"/>
@@ -67,22 +67,22 @@
         <StackPanel x:ConnectionId='9' x:Name="newsPage_ads"
                     Margin="10,0,0,0"
                     Orientation="Horizontal">
-            <UI:AdControl x:ConnectionId='31' x:Name="ad_contro"
+            <UI:AdControl x:ConnectionId='32' x:Name="ad_contro"
                       ApplicationId="9pcr0b34nft8"
                       AdUnitId="1100039458"
                       Height="50"
                       Width="320"/>
-            <UI:AdControl x:ConnectionId='32' x:Name="ad_control2"
+            <UI:AdControl x:ConnectionId='33' x:Name="ad_control2"
                       ApplicationId="9pcr0b34nft8"
                       AdUnitId="1100039459"
                       Height="50"
                       Width="320"/>
-            <UI:AdControl x:ConnectionId='33' x:Name="ad_control3"
+            <UI:AdControl x:ConnectionId='34' x:Name="ad_control3"
                       ApplicationId="9pcr0b34nft8"
                       AdUnitId="1100039460"
                       Height="50"
                       Width="320"/>
-            <UI:AdControl x:ConnectionId='34' x:Name="ad_control4"
+            <UI:AdControl x:ConnectionId='35' x:Name="ad_control4"
                       ApplicationId="9pcr0b34nft8"
                       AdUnitId="1100039461"
                       Height="50"
@@ -103,37 +103,37 @@
                                                      
                         TabNameList="{Binding TabNameList}">
             <local3:TabView.View>
-                <ScrollViewer x:ConnectionId='13' Name="scrollViewer" 
+                <ScrollViewer x:ConnectionId='14' Name="scrollViewer" 
                                                                     >
                     <RelativePanel>
-                        <GridViewItem x:ConnectionId='14' Name="topNews"
+                        <GridViewItem x:ConnectionId='15' Name="topNews"
                                       Style="{StaticResource NewsListItemStyle}"
                                       Visibility="{Binding Path=HasTopNews,Converter={StaticResource BTVC}}"
                                                              >
-                            <Grid x:ConnectionId='22' Name="topNews_grid"
-                                  Background="Tan">
+                            <Grid x:ConnectionId='23' Name="topNews_grid"
+                                  Background="WhiteSmoke">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition x:ConnectionId='23' x:Name="colume_one"/>
+                                    <ColumnDefinition x:ConnectionId='24' x:Name="colume_one"/>
                                     <ColumnDefinition Width="2*"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <!--<RowDefinition/>
                                     <RowDefinition/>-->
                                 </Grid.RowDefinitions>
-                                <Image x:ConnectionId='24' Name="topNewsImage" 
+                                <Image x:ConnectionId='25' Name="topNewsImage" 
                                        Source="{Binding TopNews.image}"
                                        Margin="10,0,0,0"/>
-                                <StackPanel x:ConnectionId='25' Name="topNews_stackPanel"
+                                <StackPanel x:ConnectionId='26' Name="topNews_stackPanel"
                                             Orientation="Vertical"
                                             Grid.Column="1">
-                                    <TextBlock x:ConnectionId='26' Name="topNewsHL"
+                                    <TextBlock x:ConnectionId='27' Name="topNewsHL"
                                            TextTrimming="WordEllipsis"
                                            Margin="10,10,10,10"
                                            FontWeight="Bold"
                                                FontSize="22"
                                            TextWrapping="WrapWholeWords"
                                            Text="{Binding TopNews.headLine}" />
-                                    <TextBlock x:ConnectionId='27' Name="topNewsMC" 
+                                    <TextBlock x:ConnectionId='28' Name="topNewsMC" 
                                            Margin="10,10,10,10"
                                            TextWrapping="WrapWholeWords"
                                            TextTrimming="WordEllipsis"
@@ -141,15 +141,15 @@
                                            Text="{Binding TopNews.mainContent}"/>
                                     <StackPanel Orientation="Horizontal"
                                                 Margin="0,0,0,3">
-                                        <TextBlock x:ConnectionId='28' Name="topNewsTag" 
+                                        <TextBlock x:ConnectionId='29' Name="topNewsTag" 
                                            Margin="10"
                                                FontSize="13"
                                            Text="{Binding TopNews.tag}" />
-                                        <TextBlock x:ConnectionId='29' Name="topNewsSplit" 
+                                        <TextBlock x:ConnectionId='30' Name="topNewsSplit" 
                                            Margin="5,9,5,11"
                                                FontSize="13"
                                            Text="|" />
-                                        <TextBlock x:ConnectionId='30' Name="topNewsTime" 
+                                        <TextBlock x:ConnectionId='31' Name="topNewsTime" 
                                            Margin="10"
                                                FontSize="13"
                                            Text="{Binding TopNews.time}" />
@@ -165,7 +165,7 @@
                                         Text="{Binding TopNews.commentCount}" />-->
                             </Grid>
                         </GridViewItem>
-                        <GridView x:ConnectionId='15' Name="NewsCards"
+                        <GridView x:ConnectionId='16' Name="NewsCards"
                                   ItemsSource="{Binding NewsList}"
                                   IsItemClickEnabled="True"
                                                                  
@@ -173,7 +173,7 @@
                             <GridView.ItemTemplate>
                                 <DataTemplate                         >
                                     <!--<UserControl>-->
-                                    <Grid x:ConnectionId='16' Name="NewsCard"     
+                                    <Grid x:ConnectionId='17' Name="NewsCard"     
                                           Margin="5">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto"/>
@@ -181,10 +181,10 @@
                                             <RowDefinition Height="Auto"/>
                                             <RowDefinition Height="*"/>
                                         </Grid.RowDefinitions>
-                                        <Image x:ConnectionId='17'                         
+                                        <Image x:ConnectionId='18'                         
                                                Name="image"
                                                Width="200"/>
-                                        <TextBlock x:ConnectionId='18'                          
+                                        <TextBlock x:ConnectionId='19'                          
                                                    Name="headLine"
                                                    FontWeight="Bold" 
                                                    TextWrapping="WrapWholeWords" 
@@ -192,7 +192,7 @@
                                                    FontSize="14"
                                                    Margin="5,0"
                                                    Grid.Row="1"/>
-                                        <TextBlock x:ConnectionId='19'                             
+                                        <TextBlock x:ConnectionId='20'                             
                                                    Width="200"
                                                    Height="70"
                                                    Grid.Row="2"
@@ -212,14 +212,14 @@
                                                     Grid.Row="3"
                                                     Margin="5,0"
                                                     VerticalAlignment="Bottom">
-                                            <TextBlock x:ConnectionId='20'                     
+                                            <TextBlock x:ConnectionId='21'                     
                                                        Name="tag" 
                                                        FontSize="12"/>
                                             <TextBlock Name="split" 
                                                        Text="|" 
                                                        Margin="5,0,5,0"
                                                        FontSize="10"/>
-                                            <TextBlock x:ConnectionId='21'                     
+                                            <TextBlock x:ConnectionId='22'                     
                                                        Name="time"
                                                        FontSize="12"/>
                                         </StackPanel>
@@ -238,15 +238,15 @@
                 </ScrollViewer>
             </local3:TabView.View>
         </local3:TabView>
-        <!--<UI:AdControl x:Name="ad_control"
+        <UI:AdControl x:ConnectionId='12' x:Name="ad_control9"
                       Grid.Row="1"
-                      ApplicationId="9n6jvkjh4ffl"
-                      AdUnitId="1100039418"
+                      ApplicationId="9pcr0b34nft8"
+                      AdUnitId="1100039458"
                       Height="600"
                       Width="160"
                       VerticalAlignment="Center"
-                      HorizontalAlignment="Right"/>-->
-        <Frame x:ConnectionId='12' Name="NewsDetail"
+                      HorizontalAlignment="Right"/>
+        <Frame x:ConnectionId='13' Name="NewsDetail"
                Grid.Row="1"
                Grid.Column="1"
                Visibility="Collapsed"/>

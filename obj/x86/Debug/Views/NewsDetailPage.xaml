@@ -18,8 +18,8 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Background="Tan">
-        <ScrollViewer Background="Tan">
+    <Grid Background="WhiteSmoke">
+        <ScrollViewer Background="WhiteSmoke">
             <RelativePanel x:ConnectionId='1' Name="newsContent_relativePanel">
                 <TextBlock x:ConnectionId='2' Name="headLine" 
                            TextWrapping="WrapWholeWords"

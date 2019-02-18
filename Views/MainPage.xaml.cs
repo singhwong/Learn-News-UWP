@@ -28,13 +28,13 @@ namespace The_Paper
         private void SetTitleBarColor()
         {
             var view = ApplicationView.GetForCurrentView();
-            view.TitleBar.BackgroundColor = Colors.Tan;
+            view.TitleBar.BackgroundColor = Colors.WhiteSmoke;
             view.TitleBar.ForegroundColor = Colors.Black;
-            view.TitleBar.InactiveBackgroundColor = Colors.Tan;
+            view.TitleBar.InactiveBackgroundColor = Colors.WhiteSmoke;
             view.TitleBar.InactiveForegroundColor = Colors.Black;
-            view.TitleBar.ButtonBackgroundColor = Colors.Tan;
+            view.TitleBar.ButtonBackgroundColor = Colors.WhiteSmoke;
             view.TitleBar.ButtonForegroundColor = Colors.Black;
-            view.TitleBar.ButtonInactiveBackgroundColor = Colors.Tan;
+            view.TitleBar.ButtonInactiveBackgroundColor = Colors.WhiteSmoke;
             view.TitleBar.ButtonInactiveForegroundColor = Colors.Black;
         }
 

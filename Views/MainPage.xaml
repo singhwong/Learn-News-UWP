@@ -22,7 +22,7 @@
                    OpenPaneLength="100"
                    CompactPaneLength="{Binding Path=ActualWidth,ElementName=Ham}">
             <SplitView.Pane>
-                <Grid Background="Tan">
+                <Grid Background="WhiteSmoke">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
@@ -53,7 +53,7 @@
                 </Grid>
             </SplitView.Pane>
             <SplitView.Content>
-                <Grid Background="Tan">
+                <Grid Background="WhiteSmoke">
                     <Frame Name="mainFrame"/>
                 </Grid>
             </SplitView.Content>

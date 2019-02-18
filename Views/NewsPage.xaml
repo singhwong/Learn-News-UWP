@@ -22,7 +22,7 @@
         </ResourceDictionary>
     </Page.Resources>
     <Grid Name="Grid"
-          Background="Tan">
+          Background="WhiteSmoke">
         <Grid.RowDefinitions>
             <RowDefinition x:Name="row_1"
                            Height="45"/>
@@ -111,7 +111,7 @@
                                       Visibility="{Binding Path=HasTopNews,Converter={StaticResource BTVC}}"
                                       Tapped="topNews_Tapped">
                             <Grid Name="topNews_grid"
-                                  Background="Tan">
+                                  Background="WhiteSmoke">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition x:Name="colume_one"/>
                                     <ColumnDefinition Width="2*"/>
@@ -238,14 +238,14 @@
                 </ScrollViewer>
             </local3:TabView.View>
         </local3:TabView>
-        <!--<UI:AdControl x:Name="ad_control"
+        <UI:AdControl x:Name="ad_control9"
                       Grid.Row="1"
-                      ApplicationId="9n6jvkjh4ffl"
-                      AdUnitId="1100039418"
+                      ApplicationId="9pcr0b34nft8"
+                      AdUnitId="1100039458"
                       Height="600"
                       Width="160"
                       VerticalAlignment="Center"
-                      HorizontalAlignment="Right"/>-->
+                      HorizontalAlignment="Right"/>
         <Frame Name="NewsDetail"
                Grid.Row="1"
                Grid.Column="1"

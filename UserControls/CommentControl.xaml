@@ -13,7 +13,7 @@
         <ResourceDictionary Source="/Resources/ControlStyle.xaml" />
     </UserControl.Resources>
     <StackPanel Orientation="Vertical" Name="RelativePanel"     
-                Background="Tan">
+                Background="WhiteSmoke">
         <!--<TextBox Name="EditBox" PlaceholderText="说点什么呢~"
                  Margin="0,0,0,10" Height="100" Width="{Binding Path=ActualWidth,ElementName=HotCommentBox}" />
         <Button Name="ReplyBtn" Margin="0,0,0,10" RelativePanel.AlignRightWithPanel="True" RelativePanel.Below="EditBox">回复</Button>-->
@@ -22,10 +22,10 @@
                    FontWeight="Bold"/>
         <ListBox Name="HotCommentBox" ItemsSource="{Binding HotComments}" 
                   ItemContainerStyle="{StaticResource CommentListBoxStyle}"
-                 Background="Tan">
+                 Background="WhiteSmoke">
             <ListBox.ItemTemplate>
                 <DataTemplate x:DataType="local2:Comment">
-                    <RelativePanel Name="HotCommentPanel" Background="Tan">
+                    <RelativePanel Name="HotCommentPanel" Background="WhiteSmoke">
                         <StackPanel Name="HotAvator">
                             <Ellipse Width="50" Height="50">
                                 <Ellipse.Fill>
@@ -60,11 +60,11 @@
         <TextBlock Name="New" Text="按时间" FontSize="14" FontWeight="Bold" 
                    Visibility="{Binding HasNewComments}"/>
         <ListBox Name="CommentBox" ItemContainerStyle="{StaticResource CommentListBoxStyle}"
-                 Background="Tan"
+                 Background="WhiteSmoke"
                  ItemsSource="{Binding NewComments}">
             <ListBox.ItemTemplate>
                 <DataTemplate x:DataType="local2:Comment">
-                    <RelativePanel Name="CommentPanel" Background="Tan">
+                    <RelativePanel Name="CommentPanel" Background="WhiteSmoke">
                         <StackPanel Name="Avator">
                             <Ellipse Width="50" Height="50">
                                 <Ellipse.Fill>

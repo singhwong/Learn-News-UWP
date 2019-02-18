@@ -13,7 +13,7 @@
         <ResourceDictionary Source="/Resources/ControlStyle.xaml" />
     </UserControl.Resources>
     <StackPanel x:ConnectionId='1' Orientation="Vertical" Name="RelativePanel"     
-                Background="Tan">
+                Background="WhiteSmoke">
         <!--<TextBox Name="EditBox" PlaceholderText="说点什么呢~"
                  Margin="0,0,0,10" Height="100" Width="{Binding Path=ActualWidth,ElementName=HotCommentBox}" />
         <Button Name="ReplyBtn" Margin="0,0,0,10" RelativePanel.AlignRightWithPanel="True" RelativePanel.Below="EditBox">回复</Button>-->
@@ -22,10 +22,10 @@
                    FontWeight="Bold"/>
         <ListBox x:ConnectionId='3' Name="HotCommentBox" ItemsSource="{Binding HotComments}" 
                   ItemContainerStyle="{StaticResource CommentListBoxStyle}"
-                 Background="Tan">
+                 Background="WhiteSmoke">
             <ListBox.ItemTemplate>
                 <DataTemplate                            >
-                    <RelativePanel x:ConnectionId='12' Name="HotCommentPanel" Background="Tan">
+                    <RelativePanel x:ConnectionId='12' Name="HotCommentPanel" Background="WhiteSmoke">
                         <StackPanel Name="HotAvator">
                             <Ellipse Width="50" Height="50">
                                 <Ellipse.Fill>
@@ -60,11 +60,11 @@
         <TextBlock x:ConnectionId='4' Name="New" Text="按时间" FontSize="14" FontWeight="Bold" 
                    Visibility="{Binding HasNewComments}"/>
         <ListBox x:ConnectionId='5' Name="CommentBox" ItemContainerStyle="{StaticResource CommentListBoxStyle}"
-                 Background="Tan"
+                 Background="WhiteSmoke"
                  ItemsSource="{Binding NewComments}">
             <ListBox.ItemTemplate>
                 <DataTemplate                            >
-                    <RelativePanel x:ConnectionId='6' Name="CommentPanel" Background="Tan">
+                    <RelativePanel x:ConnectionId='6' Name="CommentPanel" Background="WhiteSmoke">
                         <StackPanel Name="Avator">
                             <Ellipse Width="50" Height="50">
                                 <Ellipse.Fill>

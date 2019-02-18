@@ -25,7 +25,7 @@
     </Page.Resources>
 
     <Grid Name="RootGrid"
-          Background="Tan">
+          Background="WhiteSmoke">
         <Grid.RowDefinitions>
             <RowDefinition x:Name="row_1"
                            Height="45"/>
@@ -78,7 +78,7 @@
                       Width="320"/>
             <UI:AdControl x:Name="ad_control6"
                       ApplicationId="9pcr0b34nft8"
-                      AdUnitId="11100039459"
+                      AdUnitId="1100039459"
                       Height="50"
                       Width="320"/>
             <UI:AdControl x:Name="ad_control7"
@@ -175,7 +175,8 @@
                                       Visibility="{Binding IsOpen, Converter={StaticResource BTVC}}"
                                       PointerExited="mediaElement_PointerExited"
                                       PointerEntered="mediaElement_PointerEntered"
-                                      Name="mediaElement"                                     
+                                      Name="mediaElement"         
+                                      Volume="0.5"
                                       AreTransportControlsEnabled="True">
                             <MediaElement.TransportControls>
                                 <MediaTransportControls x:Name="mediaElement_controls"
@@ -332,7 +333,7 @@
                         </Grid.RowDefinitions>
                         <Button Name="close_button"
                                 Content="关闭评论"
-                                Background="Tan"
+                                Background="WhiteSmoke"
                                 Height="30"
                                 FontWeight="Thin"
                                 FontSize="12"
@@ -345,14 +346,14 @@
                 </Grid>
             </local3:TabView.View>
         </local3:TabView>
-        <!--<UI:AdControl x:Name="ad_control2"
+        <UI:AdControl x:Name="ad_control10"
                       Grid.Row="1"
-                      ApplicationId="9n6jvkjh4ffl"
-                      AdUnitId="1100039417"
+                      ApplicationId="9pcr0b34nft8"
+                      AdUnitId="1100039459"
                       Height="50"
                       Width="320"
                       VerticalAlignment="Bottom"
-                      HorizontalAlignment="Right"/>-->
+                      HorizontalAlignment="Right"/>
         <ProgressRing Name="main_ProgressRing"
                       Width="100" Height="100" Grid.RowSpan="2" IsActive="{Binding Path=Loaded,Converter={StaticResource BIC}}" />
         
