@@ -15,7 +15,9 @@ namespace The_Paper.Views
         global::Windows.UI.Xaml.Markup.IComponentConnector,
         global::Windows.UI.Xaml.Markup.IComponentConnector2
     {
-        internal class XamlBindingSetters
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private static class XamlBindingSetters
         {
             public static void Set_Windows_UI_Xaml_Controls_TextBlock_Text(global::Windows.UI.Xaml.Controls.TextBlock obj, global::System.String value, string targetNullValue)
             {
@@ -43,8 +45,12 @@ namespace The_Paper.Views
             }
         };
 
-        private class CommentPage_obj6_Bindings :
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private class CommentPage_obj7_Bindings :
             global::Windows.UI.Xaml.IDataTemplateExtension,
+            global::Windows.UI.Xaml.Markup.IDataTemplateComponent,
+            global::Windows.UI.Xaml.Markup.IXamlBindScopeDiagnostics,
             global::Windows.UI.Xaml.Markup.IComponentConnector,
             ICommentPage_Bindings
         {
@@ -55,11 +61,28 @@ namespace The_Paper.Views
             private bool removedDataContextHandler = false;
 
             // Fields for each control that has bindings.
-            private global::Windows.UI.Xaml.Controls.TextBlock obj7;
+            private global::System.WeakReference obj7;
             private global::Windows.UI.Xaml.Controls.TextBlock obj8;
+            private global::Windows.UI.Xaml.Controls.TextBlock obj9;
 
-            public CommentPage_obj6_Bindings()
+            // Static fields for each binding's enabled/disabled state
+            private static bool isobj8TextDisabled = false;
+            private static bool isobj9TextDisabled = false;
+
+            public CommentPage_obj7_Bindings()
             {
+            }
+
+            public void Disable(int lineNumber, int columnNumber)
+            {
+                if (lineNumber == 30 && columnNumber == 52)
+                {
+                    isobj8TextDisabled = true;
+                }
+                else if (lineNumber == 31 && columnNumber == 52)
+                {
+                    isobj9TextDisabled = true;
+                }
             }
 
             // IComponentConnector
@@ -68,11 +91,14 @@ namespace The_Paper.Views
             {
                 switch(connectionId)
                 {
-                    case 7:
-                        this.obj7 = (global::Windows.UI.Xaml.Controls.TextBlock)target;
+                    case 7: // Views\CommentPage.xaml line 29
+                        this.obj7 = new global::System.WeakReference((global::Windows.UI.Xaml.Controls.StackPanel)target);
                         break;
-                    case 8:
+                    case 8: // Views\CommentPage.xaml line 30
                         this.obj8 = (global::Windows.UI.Xaml.Controls.TextBlock)target;
+                        break;
+                    case 9: // Views\CommentPage.xaml line 31
+                        this.obj9 = (global::Windows.UI.Xaml.Controls.TextBlock)target;
                         break;
                     default:
                         break;
@@ -81,13 +107,10 @@ namespace The_Paper.Views
 
             public void DataContextChangedHandler(global::Windows.UI.Xaml.FrameworkElement sender, global::Windows.UI.Xaml.DataContextChangedEventArgs args)
             {
-                 global::The_Paper.Models.CommentFloor data = args.NewValue as global::The_Paper.Models.CommentFloor;
-                 if (args.NewValue != null && data == null)
+                 if (this.SetDataRoot(args.NewValue))
                  {
-                    throw new global::System.ArgumentException("Incorrect type passed into template. Based on the x:DataType global::The_Paper.Models.CommentFloor was expected.");
+                    this.Update();
                  }
-                 this.SetDataRoot(data);
-                 this.Update();
             }
 
             // IDataTemplateExtension
@@ -100,24 +123,37 @@ namespace The_Paper.Views
             public int ProcessBindings(global::Windows.UI.Xaml.Controls.ContainerContentChangingEventArgs args)
             {
                 int nextPhase = -1;
-                switch(args.Phase)
-                {
-                    case 0:
-                        nextPhase = -1;
-                        this.SetDataRoot(args.Item as global::The_Paper.Models.CommentFloor);
-                        if (!removedDataContextHandler)
-                        {
-                            removedDataContextHandler = true;
-                            ((global::Windows.UI.Xaml.Controls.StackPanel)args.ItemContainer.ContentTemplateRoot).DataContextChanged -= this.DataContextChangedHandler;
-                        }
-                        this.initialized = true;
-                        break;
-                }
-                this.Update_((global::The_Paper.Models.CommentFloor) args.Item, 1 << (int)args.Phase);
+                ProcessBindings(args.Item, args.ItemIndex, (int)args.Phase, out nextPhase);
                 return nextPhase;
             }
 
             public void ResetTemplate()
+            {
+                Recycle();
+            }
+
+            // IDataTemplateComponent
+
+            public void ProcessBindings(global::System.Object item, int itemIndex, int phase, out int nextPhase)
+            {
+                nextPhase = -1;
+                switch(phase)
+                {
+                    case 0:
+                        nextPhase = -1;
+                        this.SetDataRoot(item);
+                        if (!removedDataContextHandler)
+                        {
+                            removedDataContextHandler = true;
+                            (this.obj7.Target as global::Windows.UI.Xaml.Controls.StackPanel).DataContextChanged -= this.DataContextChangedHandler;
+                        }
+                        this.initialized = true;
+                        break;
+                }
+                this.Update_((global::The_Paper.Models.CommentFloor) item, 1 << phase);
+            }
+
+            public void Recycle()
             {
             }
 
@@ -141,11 +177,19 @@ namespace The_Paper.Views
             {
             }
 
-            // CommentPage_obj6_Bindings
-
-            public void SetDataRoot(global::The_Paper.Models.CommentFloor newDataRoot)
+            public void DisconnectUnloadedObject(int connectionId)
             {
-                this.dataRoot = newDataRoot;
+                throw new global::System.ArgumentException("No unloadable elements to disconnect.");
+            }
+
+            public bool SetDataRoot(global::System.Object newDataRoot)
+            {
+                if (newDataRoot != null)
+                {
+                    this.dataRoot = (global::The_Paper.Models.CommentFloor)newDataRoot;
+                    return true;
+                }
+                return false;
             }
 
             // Update methods for each path node used in binding steps.
@@ -162,22 +206,34 @@ namespace The_Paper.Views
             }
             private void Update_userName(global::System.String obj, int phase)
             {
-                if((phase & ((1 << 0) | NOT_PHASED )) != 0)
+                if ((phase & ((1 << 0) | NOT_PHASED )) != 0)
                 {
-                    XamlBindingSetters.Set_Windows_UI_Xaml_Controls_TextBlock_Text(this.obj7, obj, null);
+                    // Views\CommentPage.xaml line 30
+                    if (!isobj8TextDisabled)
+                    {
+                        XamlBindingSetters.Set_Windows_UI_Xaml_Controls_TextBlock_Text(this.obj8, obj, null);
+                    }
                 }
             }
             private void Update_content(global::System.String obj, int phase)
             {
-                if((phase & ((1 << 0) | NOT_PHASED )) != 0)
+                if ((phase & ((1 << 0) | NOT_PHASED )) != 0)
                 {
-                    XamlBindingSetters.Set_Windows_UI_Xaml_Controls_TextBlock_Text(this.obj8, obj, null);
+                    // Views\CommentPage.xaml line 31
+                    if (!isobj9TextDisabled)
+                    {
+                        XamlBindingSetters.Set_Windows_UI_Xaml_Controls_TextBlock_Text(this.obj9, obj, null);
+                    }
                 }
             }
         }
 
-        private class CommentPage_obj1_Bindings :
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private class CommentPage_obj2_Bindings :
             global::Windows.UI.Xaml.IDataTemplateExtension,
+            global::Windows.UI.Xaml.Markup.IDataTemplateComponent,
+            global::Windows.UI.Xaml.Markup.IXamlBindScopeDiagnostics,
             global::Windows.UI.Xaml.Markup.IComponentConnector,
             ICommentPage_Bindings
         {
@@ -188,14 +244,46 @@ namespace The_Paper.Views
             private bool removedDataContextHandler = false;
 
             // Fields for each control that has bindings.
-            private global::Windows.UI.Xaml.Controls.TextBlock obj2;
+            private global::System.WeakReference obj2;
             private global::Windows.UI.Xaml.Controls.TextBlock obj3;
-            private global::Windows.UI.Xaml.Controls.ListView obj4;
-            private global::Windows.UI.Xaml.Controls.TextBlock obj5;
-            private global::Windows.UI.Xaml.Media.ImageBrush obj9;
+            private global::Windows.UI.Xaml.Controls.TextBlock obj4;
+            private global::Windows.UI.Xaml.Controls.ListView obj5;
+            private global::Windows.UI.Xaml.Controls.TextBlock obj6;
+            private global::Windows.UI.Xaml.Media.ImageBrush obj10;
 
-            public CommentPage_obj1_Bindings()
+            // Static fields for each binding's enabled/disabled state
+            private static bool isobj3TextDisabled = false;
+            private static bool isobj4TextDisabled = false;
+            private static bool isobj5ItemsSourceDisabled = false;
+            private static bool isobj6TextDisabled = false;
+            private static bool isobj10ImageSourceDisabled = false;
+
+            public CommentPage_obj2_Bindings()
             {
+            }
+
+            public void Disable(int lineNumber, int columnNumber)
+            {
+                if (lineNumber == 23 && columnNumber == 36)
+                {
+                    isobj3TextDisabled = true;
+                }
+                else if (lineNumber == 24 && columnNumber == 36)
+                {
+                    isobj4TextDisabled = true;
+                }
+                else if (lineNumber == 25 && columnNumber == 77)
+                {
+                    isobj5ItemsSourceDisabled = true;
+                }
+                else if (lineNumber == 36 && columnNumber == 36)
+                {
+                    isobj6TextDisabled = true;
+                }
+                else if (lineNumber == 19 && columnNumber == 49)
+                {
+                    isobj10ImageSourceDisabled = true;
+                }
             }
 
             // IComponentConnector
@@ -204,20 +292,23 @@ namespace The_Paper.Views
             {
                 switch(connectionId)
                 {
-                    case 2:
-                        this.obj2 = (global::Windows.UI.Xaml.Controls.TextBlock)target;
+                    case 2: // Views\CommentPage.xaml line 15
+                        this.obj2 = new global::System.WeakReference((global::Windows.UI.Xaml.Controls.RelativePanel)target);
                         break;
-                    case 3:
+                    case 3: // Views\CommentPage.xaml line 23
                         this.obj3 = (global::Windows.UI.Xaml.Controls.TextBlock)target;
                         break;
-                    case 4:
-                        this.obj4 = (global::Windows.UI.Xaml.Controls.ListView)target;
+                    case 4: // Views\CommentPage.xaml line 24
+                        this.obj4 = (global::Windows.UI.Xaml.Controls.TextBlock)target;
                         break;
-                    case 5:
-                        this.obj5 = (global::Windows.UI.Xaml.Controls.TextBlock)target;
+                    case 5: // Views\CommentPage.xaml line 25
+                        this.obj5 = (global::Windows.UI.Xaml.Controls.ListView)target;
                         break;
-                    case 9:
-                        this.obj9 = (global::Windows.UI.Xaml.Media.ImageBrush)target;
+                    case 6: // Views\CommentPage.xaml line 36
+                        this.obj6 = (global::Windows.UI.Xaml.Controls.TextBlock)target;
+                        break;
+                    case 10: // Views\CommentPage.xaml line 19
+                        this.obj10 = (global::Windows.UI.Xaml.Media.ImageBrush)target;
                         break;
                     default:
                         break;
@@ -226,13 +317,10 @@ namespace The_Paper.Views
 
             public void DataContextChangedHandler(global::Windows.UI.Xaml.FrameworkElement sender, global::Windows.UI.Xaml.DataContextChangedEventArgs args)
             {
-                 global::The_Paper.Models.Comment data = args.NewValue as global::The_Paper.Models.Comment;
-                 if (args.NewValue != null && data == null)
+                 if (this.SetDataRoot(args.NewValue))
                  {
-                    throw new global::System.ArgumentException("Incorrect type passed into template. Based on the x:DataType global::The_Paper.Models.Comment was expected.");
+                    this.Update();
                  }
-                 this.SetDataRoot(data);
-                 this.Update();
             }
 
             // IDataTemplateExtension
@@ -245,24 +333,37 @@ namespace The_Paper.Views
             public int ProcessBindings(global::Windows.UI.Xaml.Controls.ContainerContentChangingEventArgs args)
             {
                 int nextPhase = -1;
-                switch(args.Phase)
-                {
-                    case 0:
-                        nextPhase = -1;
-                        this.SetDataRoot(args.Item as global::The_Paper.Models.Comment);
-                        if (!removedDataContextHandler)
-                        {
-                            removedDataContextHandler = true;
-                            ((global::Windows.UI.Xaml.Controls.RelativePanel)args.ItemContainer.ContentTemplateRoot).DataContextChanged -= this.DataContextChangedHandler;
-                        }
-                        this.initialized = true;
-                        break;
-                }
-                this.Update_((global::The_Paper.Models.Comment) args.Item, 1 << (int)args.Phase);
+                ProcessBindings(args.Item, args.ItemIndex, (int)args.Phase, out nextPhase);
                 return nextPhase;
             }
 
             public void ResetTemplate()
+            {
+                Recycle();
+            }
+
+            // IDataTemplateComponent
+
+            public void ProcessBindings(global::System.Object item, int itemIndex, int phase, out int nextPhase)
+            {
+                nextPhase = -1;
+                switch(phase)
+                {
+                    case 0:
+                        nextPhase = -1;
+                        this.SetDataRoot(item);
+                        if (!removedDataContextHandler)
+                        {
+                            removedDataContextHandler = true;
+                            (this.obj2.Target as global::Windows.UI.Xaml.Controls.RelativePanel).DataContextChanged -= this.DataContextChangedHandler;
+                        }
+                        this.initialized = true;
+                        break;
+                }
+                this.Update_((global::The_Paper.Models.Comment) item, 1 << phase);
+            }
+
+            public void Recycle()
             {
             }
 
@@ -286,11 +387,19 @@ namespace The_Paper.Views
             {
             }
 
-            // CommentPage_obj1_Bindings
-
-            public void SetDataRoot(global::The_Paper.Models.Comment newDataRoot)
+            public void DisconnectUnloadedObject(int connectionId)
             {
-                this.dataRoot = newDataRoot;
+                throw new global::System.ArgumentException("No unloadable elements to disconnect.");
+            }
+
+            public bool SetDataRoot(global::System.Object newDataRoot)
+            {
+                if (newDataRoot != null)
+                {
+                    this.dataRoot = (global::The_Paper.Models.Comment)newDataRoot;
+                    return true;
+                }
+                return false;
             }
 
             // Update methods for each path node used in binding steps.
@@ -310,75 +419,100 @@ namespace The_Paper.Views
             }
             private void Update_userName(global::System.String obj, int phase)
             {
-                if((phase & ((1 << 0) | NOT_PHASED )) != 0)
+                if ((phase & ((1 << 0) | NOT_PHASED )) != 0)
                 {
-                    XamlBindingSetters.Set_Windows_UI_Xaml_Controls_TextBlock_Text(this.obj2, obj, null);
+                    // Views\CommentPage.xaml line 23
+                    if (!isobj3TextDisabled)
+                    {
+                        XamlBindingSetters.Set_Windows_UI_Xaml_Controls_TextBlock_Text(this.obj3, obj, null);
+                    }
                 }
             }
             private void Update_time(global::System.String obj, int phase)
             {
-                if((phase & ((1 << 0) | NOT_PHASED )) != 0)
+                if ((phase & ((1 << 0) | NOT_PHASED )) != 0)
                 {
-                    XamlBindingSetters.Set_Windows_UI_Xaml_Controls_TextBlock_Text(this.obj3, obj, null);
+                    // Views\CommentPage.xaml line 24
+                    if (!isobj4TextDisabled)
+                    {
+                        XamlBindingSetters.Set_Windows_UI_Xaml_Controls_TextBlock_Text(this.obj4, obj, null);
+                    }
                 }
             }
             private void Update_commentFloors(global::System.Collections.Generic.List<global::The_Paper.Models.CommentFloor> obj, int phase)
             {
-                if((phase & ((1 << 0) | NOT_PHASED )) != 0)
+                if ((phase & ((1 << 0) | NOT_PHASED )) != 0)
                 {
-                    XamlBindingSetters.Set_Windows_UI_Xaml_Controls_ItemsControl_ItemsSource(this.obj4, obj, null);
+                    // Views\CommentPage.xaml line 25
+                    if (!isobj5ItemsSourceDisabled)
+                    {
+                        XamlBindingSetters.Set_Windows_UI_Xaml_Controls_ItemsControl_ItemsSource(this.obj5, obj, null);
+                    }
                 }
             }
             private void Update_content(global::System.String obj, int phase)
             {
-                if((phase & ((1 << 0) | NOT_PHASED )) != 0)
+                if ((phase & ((1 << 0) | NOT_PHASED )) != 0)
                 {
-                    XamlBindingSetters.Set_Windows_UI_Xaml_Controls_TextBlock_Text(this.obj5, obj, null);
+                    // Views\CommentPage.xaml line 36
+                    if (!isobj6TextDisabled)
+                    {
+                        XamlBindingSetters.Set_Windows_UI_Xaml_Controls_TextBlock_Text(this.obj6, obj, null);
+                    }
                 }
             }
             private void Update_avatarSrc(global::System.String obj, int phase)
             {
-                if((phase & ((1 << 0) | NOT_PHASED )) != 0)
+                if ((phase & ((1 << 0) | NOT_PHASED )) != 0)
                 {
-                    XamlBindingSetters.Set_Windows_UI_Xaml_Media_ImageBrush_ImageSource(this.obj9, (global::Windows.UI.Xaml.Media.ImageSource) global::Windows.UI.Xaml.Markup.XamlBindingHelper.ConvertValue(typeof(global::Windows.UI.Xaml.Media.ImageSource), obj), null);
+                    // Views\CommentPage.xaml line 19
+                    if (!isobj10ImageSourceDisabled)
+                    {
+                        XamlBindingSetters.Set_Windows_UI_Xaml_Media_ImageBrush_ImageSource(this.obj10, (global::Windows.UI.Xaml.Media.ImageSource) global::Windows.UI.Xaml.Markup.XamlBindingHelper.ConvertValue(typeof(global::Windows.UI.Xaml.Media.ImageSource), obj), null);
+                    }
                 }
             }
         }
         /// <summary>
         /// Connect()
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public void Connect(int connectionId, object target)
         {
             this._contentLoaded = true;
         }
 
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
+        /// <summary>
+        /// GetBindingConnector(int connectionId, object target)
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::Windows.UI.Xaml.Markup.IComponentConnector GetBindingConnector(int connectionId, object target)
         {
             global::Windows.UI.Xaml.Markup.IComponentConnector returnValue = null;
             switch(connectionId)
             {
-            case 1:
-                {
-                    global::Windows.UI.Xaml.Controls.RelativePanel element1 = (global::Windows.UI.Xaml.Controls.RelativePanel)target;
-                    CommentPage_obj1_Bindings bindings = new CommentPage_obj1_Bindings();
+            case 2: // Views\CommentPage.xaml line 15
+                {                    
+                    global::Windows.UI.Xaml.Controls.RelativePanel element2 = (global::Windows.UI.Xaml.Controls.RelativePanel)target;
+                    CommentPage_obj2_Bindings bindings = new CommentPage_obj2_Bindings();
                     returnValue = bindings;
-                    bindings.SetDataRoot((global::The_Paper.Models.Comment) element1.DataContext);
-                    element1.DataContextChanged += bindings.DataContextChangedHandler;
-                    global::Windows.UI.Xaml.DataTemplate.SetExtensionInstance(element1, bindings);
+                    bindings.SetDataRoot(element2.DataContext);
+                    element2.DataContextChanged += bindings.DataContextChangedHandler;
+                    global::Windows.UI.Xaml.DataTemplate.SetExtensionInstance(element2, bindings);
+                    global::Windows.UI.Xaml.Markup.XamlBindingHelper.SetDataTemplateComponent(element2, bindings);
                 }
                 break;
-            case 6:
-                {
-                    global::Windows.UI.Xaml.Controls.StackPanel element6 = (global::Windows.UI.Xaml.Controls.StackPanel)target;
-                    CommentPage_obj6_Bindings bindings = new CommentPage_obj6_Bindings();
+            case 7: // Views\CommentPage.xaml line 29
+                {                    
+                    global::Windows.UI.Xaml.Controls.StackPanel element7 = (global::Windows.UI.Xaml.Controls.StackPanel)target;
+                    CommentPage_obj7_Bindings bindings = new CommentPage_obj7_Bindings();
                     returnValue = bindings;
-                    bindings.SetDataRoot((global::The_Paper.Models.CommentFloor) element6.DataContext);
-                    element6.DataContextChanged += bindings.DataContextChangedHandler;
-                    global::Windows.UI.Xaml.DataTemplate.SetExtensionInstance(element6, bindings);
+                    bindings.SetDataRoot(element7.DataContext);
+                    element7.DataContextChanged += bindings.DataContextChangedHandler;
+                    global::Windows.UI.Xaml.DataTemplate.SetExtensionInstance(element7, bindings);
+                    global::Windows.UI.Xaml.Markup.XamlBindingHelper.SetDataTemplateComponent(element7, bindings);
                 }
                 break;
             }

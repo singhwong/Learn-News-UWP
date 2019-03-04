@@ -5,7 +5,7 @@
     <UseEmulator>true</UseEmulator>
   </PropertyGroup>
   <PropertyGroup>
-    <MediumTileSource>C:\Users\wang\Desktop\未命名_副本.png</MediumTileSource>
+    <MediumTileSource>D:\gitUWP\Learn-News-UWP\news_72px_547983_easyicon.net.png</MediumTileSource>
     <AppxPackageIsForStore>True</AppxPackageIsForStore>
     <AppxShowAllApps>False</AppxShowAllApps>
     <AppxBuildConfigurationSelection>x86|x64|arm</AppxBuildConfigurationSelection>

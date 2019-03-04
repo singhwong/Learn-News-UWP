@@ -18,9 +18,9 @@
     </Page.Resources>-->
     <Grid Background="Tan">
         <Canvas>
-            <Image x:ConnectionId='1' x:Name="extendedSplashImage"
+            <Image x:ConnectionId='2' x:Name="extendedSplashImage"
                    Source="/Assets/清明上河图.png"/>
-            <ProgressRing x:ConnectionId='2' Name="splashProgressRing" 
+            <ProgressRing x:ConnectionId='3' Name="splashProgressRing" 
                           IsActive="True" 
                           Width="30" 
                           HorizontalAlignment="Center"/>

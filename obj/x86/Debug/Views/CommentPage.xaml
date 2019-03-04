@@ -12,28 +12,28 @@
         <ListBox ItemsSource="{Binding Comments}">
             <ListBox.ItemTemplate>
                 <DataTemplate                            >
-                    <RelativePanel x:ConnectionId='1' Name="CommentPanel" Margin="10,10,10,10">
+                    <RelativePanel x:ConnectionId='2' Name="CommentPanel" Margin="10,10,10,10">
                         <StackPanel Name="Avator">
                             <Ellipse Width="50" Height="50">
                                 <Ellipse.Fill>
-                                    <ImageBrush x:ConnectionId='9'                                  />
+                                    <ImageBrush x:ConnectionId='10'                                  />
                                 </Ellipse.Fill>
                             </Ellipse>
                         </StackPanel>
-                        <TextBlock x:ConnectionId='2'                          Name="UserName" FontSize="12" Foreground="Blue" RelativePanel.RightOf="Avator" Margin="5,0,0,0"/>
-                        <TextBlock x:ConnectionId='3'                      Name="Time" FontSize="12" RelativePanel.RightOf="UserName" Margin="10,0,0,0" />
-                        <ListView x:ConnectionId='4' Background="LightGray"  Margin="30,5,5,5"                                     
+                        <TextBlock x:ConnectionId='3'                          Name="UserName" FontSize="12" Foreground="Blue" RelativePanel.RightOf="Avator" Margin="5,0,0,0"/>
+                        <TextBlock x:ConnectionId='4'                      Name="Time" FontSize="12" RelativePanel.RightOf="UserName" Margin="10,0,0,0" />
+                        <ListView x:ConnectionId='5' Background="LightGray"  Margin="30,5,5,5"                                     
                             IsItemClickEnabled="False" Name="Floor" RelativePanel.RightOf="Avator" RelativePanel.Below="UserName">
                             <ListView.ItemTemplate>
                                 <DataTemplate                                 >
-                                    <StackPanel x:ConnectionId='6' Orientation="Vertical" Margin="5,5,5,5">
-                                        <TextBlock x:ConnectionId='7'                          FontSize="12" Foreground="Blue"/>
-                                        <TextBlock x:ConnectionId='8'                         FontSize="14" MaxLines="2" TextWrapping="Wrap"/>
+                                    <StackPanel x:ConnectionId='7' Orientation="Vertical" Margin="5,5,5,5">
+                                        <TextBlock x:ConnectionId='8'                          FontSize="12" Foreground="Blue"/>
+                                        <TextBlock x:ConnectionId='9'                         FontSize="14" MaxLines="2" TextWrapping="Wrap"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                        <TextBlock x:ConnectionId='5'                         FontSize="15" RelativePanel.Below="Floor" RelativePanel.RightOf="Avator" Margin="20,5,5,5"/>
+                        <TextBlock x:ConnectionId='6'                         FontSize="15" RelativePanel.Below="Floor" RelativePanel.RightOf="Avator" Margin="20,5,5,5"/>
                     </RelativePanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

@@ -18,18 +18,16 @@ namespace The_Paper.Views
         /// <summary>
         /// Connect()
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public void Connect(int connectionId, object target)
         {
             switch(connectionId)
             {
-            case 1:
+            case 2: // Views\VideoDetailPage.xaml line 15
                 {
-                    global::Windows.UI.Xaml.Controls.ScrollViewer element1 = (global::Windows.UI.Xaml.Controls.ScrollViewer)(target);
-                    #line 15 "..\..\..\Views\VideoDetailPage.xaml"
-                    ((global::Windows.UI.Xaml.Controls.ScrollViewer)element1).ViewChanged += this.ScrollViewer_ViewChanged;
-                    #line default
+                    global::Windows.UI.Xaml.Controls.ScrollViewer element2 = (global::Windows.UI.Xaml.Controls.ScrollViewer)(target);
+                    ((global::Windows.UI.Xaml.Controls.ScrollViewer)element2).ViewChanged += this.ScrollViewer_ViewChanged;
                 }
                 break;
             default:
@@ -38,7 +36,10 @@ namespace The_Paper.Views
             this._contentLoaded = true;
         }
 
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
+        /// <summary>
+        /// GetBindingConnector(int connectionId, object target)
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::Windows.UI.Xaml.Markup.IComponentConnector GetBindingConnector(int connectionId, object target)
         {

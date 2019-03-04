@@ -1,7 +1,11 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 using The_Paper.Data;
+using The_Paper.Models;
 using The_Paper.ViewModels;
 using The_Paper.Views;
+using Windows.Storage;
 using Windows.UI;
 using Windows.UI.Core;
 using Windows.UI.ViewManagement;
@@ -18,11 +22,18 @@ namespace The_Paper
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private ApplicationDataContainer local_systemSound = ApplicationData.Current.LocalSettings;
+        private ObservableCollection<SettingItem> setting_list;
         private MainPageVM mainPageVM;
         public MainPage()
         {
             this.InitializeComponent();
+            this.NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
             SetTitleBarColor();
+            setting_list = new ObservableCollection<SettingItem>();
+            SetIsElementSoundPlayerIsOn();
+            setting_list.Add(new SettingItem("设置"));
+            mainFrame.Navigate(typeof(NewsPage), ChannelsData.Channels[0]);
         }
 
         private void SetTitleBarColor()
@@ -47,15 +58,25 @@ namespace The_Paper
 
         private void Ham_Click(object sender, RoutedEventArgs e)
         {
-            splitView.IsPaneOpen = !splitView.IsPaneOpen;
+            splitView.IsPaneOpen =! splitView.IsPaneOpen;
         }
 
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {           
+            
+        }
+
+        private void Menu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            setting_listView.SelectedItem = null;
             int index = (sender as ListView).SelectedIndex;
-            switch(index)
+            switch (index)
             {
-                case 0: case 2: case 3: case 4: case 5:
+                case 0:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
                 case 6:
                     mainFrame.Navigate(typeof(NewsPage), ChannelsData.Channels[index]);
                     break;
@@ -63,13 +84,34 @@ namespace The_Paper
                     mainFrame.Navigate(typeof(VideoPage), ChannelsData.Channels[index]);
                     break;
             }
-            
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private void Setting_listView_ItemClick(object sender, ItemClickEventArgs e)
         {
-           
-            mainFrame.Navigate(typeof(NewsPage), ChannelsData.Channels[0]);
+            Menu.SelectedItem = null;
+            Frame.Navigate(typeof(SettingPage));
+        }
+
+        private void SetIsElementSoundPlayerIsOn()
+        {
+            try
+            {
+                string isOn_str = local_systemSound.Values["IsSoundOn"].ToString();
+                switch (isOn_str)
+                {
+                    case "On":
+                        ElementSoundPlayer.State = ElementSoundPlayerState.On;
+                        break;
+                    case "Off":
+                        ElementSoundPlayer.State = ElementSoundPlayerState.Off;
+                        break;
+                }
+            }
+            catch
+            {
+                ElementSoundPlayer.State = ElementSoundPlayerState.On;
+            }
+            ElementSoundPlayer.Volume = 0.1;
         }
     }
 }

@@ -9,10 +9,10 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <RelativePanel>
-            <TextBlock x:ConnectionId='1' Text="用户名"  Name="LabelUsername"/>
-            <TextBox x:ConnectionId='2' Name="Username" RelativePanel.RightOf="LabelUsername" />
-            <TextBlock x:ConnectionId='3' Text="密码" Name="LabelPassword" RelativePanel.Below="LabelUsername"/>
-            <PasswordBox x:ConnectionId='4' Name="Password" RelativePanel.RightOf="LabelPassword" RelativePanel.Below="Username" />
+            <TextBlock x:ConnectionId='2' Text="用户名"  Name="LabelUsername"/>
+            <TextBox x:ConnectionId='3' Name="Username" RelativePanel.RightOf="LabelUsername" />
+            <TextBlock x:ConnectionId='4' Text="密码" Name="LabelPassword" RelativePanel.Below="LabelUsername"/>
+            <PasswordBox x:ConnectionId='5' Name="Password" RelativePanel.RightOf="LabelPassword" RelativePanel.Below="Username" />
         </RelativePanel>
     </Grid>
 </Page>

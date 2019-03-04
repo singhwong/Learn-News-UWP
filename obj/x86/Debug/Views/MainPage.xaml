@@ -7,6 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local2="using:The_Paper.Models"
     mc:Ignorable="d"
+    Background="{ThemeResource SystemControlAcrylicWindowBrush}"
                         >
     <Page.Resources>
         <ResourceDictionary>
@@ -17,19 +18,23 @@
     </Page.Resources>
 
     <Grid>
+        <!--CompactPaneLength="{Binding Path=ActualWidth,ElementName=Ham}"-->
         <SplitView x:ConnectionId='2' Name="splitView"
-                   DisplayMode="CompactOverlay"
+                   DisplayMode="CompactInline"
                    OpenPaneLength="100"
-                   CompactPaneLength="{Binding Path=ActualWidth,ElementName=Ham}">
+                   CompactPaneLength="40"
+                   >
             <SplitView.Pane>
                 <Grid Background="WhiteSmoke">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <Button x:ConnectionId='3' FontSize="20"
                             Name="Ham"
-                            Height="45"
+                            Height="40"
+                            Width="40"
                             FontFamily="Segoe MDL2 Assets"
                             Content="&#xE700;" 
                             Style="{StaticResource CustomButtonStyle}"
@@ -37,15 +42,31 @@
                     <ListView x:ConnectionId='4' ItemsSource="{Binding ChannelList}" 
                               Name="Menu"
                               Grid.Row="1"
-                                                                         >
+                                                                      >
                         <ListView.ItemTemplate>
                             <DataTemplate                            >
-                                <StackPanel x:ConnectionId='5' Orientation="Horizontal">
-                                    <FontIcon x:ConnectionId='6' FontFamily="Segoe MDL2 Assets"
+                                <StackPanel x:ConnectionId='8' Orientation="Horizontal">
+                                    <FontIcon x:ConnectionId='9' FontFamily="Segoe MDL2 Assets"
                                                                     
-                                              Margin="-2,0,0,0"/>
-                                    <TextBlock x:ConnectionId='7'                     
-                                               Margin="15,0,0,0" />
+                                              Margin="-2,0,15,0"/>
+                                    <TextBlock x:ConnectionId='10'                     />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <ListView x:ConnectionId='5' x:Name="setting_listView"
+                              Grid.Row="2"
+                              IsItemClickEnabled="True"
+                                                                 
+                                                                    >
+                        <ListView.ItemTemplate>
+                            <DataTemplate                                >
+                                <StackPanel x:ConnectionId='6' Orientation="Horizontal">
+                                    <TextBlock FontFamily="Segoe MDL2 Assets"
+                                               Text="&#xE713;"
+                                               FontSize="20"
+                                               Margin="-2,0,15,0"/>
+                                    <TextBlock x:ConnectionId='7'                             />
                                 </StackPanel>
                             </DataTemplate>
                         </ListView.ItemTemplate>
@@ -54,7 +75,7 @@
             </SplitView.Pane>
             <SplitView.Content>
                 <Grid Background="WhiteSmoke">
-                    <Frame x:ConnectionId='8' Name="mainFrame"/>
+                    <Frame x:ConnectionId='11' Name="mainFrame"/>
                 </Grid>
             </SplitView.Content>
         </SplitView>

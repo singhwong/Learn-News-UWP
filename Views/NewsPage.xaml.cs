@@ -62,8 +62,14 @@ namespace The_Paper.Views
             //Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
             //Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(2, GridUnitType.Star) });
             //NewsDetail.SetValue(Grid.ColumnProperty, 1);
-
-            colume_1.Width = new GridLength(0);
+            ad_control9.Visibility = Visibility.Collapsed;
+            topNewsImage.Visibility = Visibility.Collapsed;
+            topNewsHL.FontSize = 14;
+            topNewsMC.FontSize = 13;
+            topNewsTag.FontSize = 12;
+            topNewsSplit.FontSize = 12;
+            topNewsTime.FontSize = 12;
+            colume_1.Width = new GridLength(230);
             back_button.Visibility = Visibility.Visible;
             row_1.Height = new GridLength(45);
             colume_2.Width = new GridLength(3, GridUnitType.Star);
@@ -75,6 +81,13 @@ namespace The_Paper.Views
 
         private void Back_button_Click(object sender, RoutedEventArgs e)
         {
+            ad_control9.Visibility = Visibility.Visible;
+            topNewsImage.Visibility = Visibility.Visible;
+            topNewsHL.FontSize = 22;
+            topNewsMC.FontSize = 16;
+            topNewsTag.FontSize = 13;
+            topNewsSplit.FontSize = 13;
+            topNewsTime.FontSize = 13;
             colume_1.Width = new GridLength(1, GridUnitType.Star);
             colume_2.Width = new GridLength(0);
             back_button.Visibility = Visibility.Collapsed;
@@ -85,7 +98,14 @@ namespace The_Paper.Views
 
         private void NewsCards_ItemClick(object sender, ItemClickEventArgs e)
         {
-            colume_1.Width = new GridLength(0);
+            ad_control9.Visibility = Visibility.Collapsed;
+            topNewsImage.Visibility = Visibility.Collapsed;
+            topNewsHL.FontSize = 14;
+            topNewsMC.FontSize = 13;
+            topNewsTag.FontSize = 12;
+            topNewsSplit.FontSize = 12;
+            topNewsTime.FontSize = 12;
+            colume_1.Width = new GridLength(230);
             back_button.Visibility = Visibility.Visible;
             colume_2.Width = new GridLength(3, GridUnitType.Star);
             NewsDetail.Visibility = Visibility.Visible;

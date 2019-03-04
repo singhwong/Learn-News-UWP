@@ -117,7 +117,10 @@ namespace The_Paper.Services
                     if (isRecommend != null)
                         newsListModel.TopCids += news.cid + ',';
                 }
-                newsListModel.NewsList.Add(news);
+                if (news.tag.Trim() != "七环视频" && news.tag.Trim() != "上直播")
+                {
+                    newsListModel.NewsList.Add(news);
+                }
                 ++count;
             }
             return count;

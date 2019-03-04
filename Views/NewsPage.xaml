@@ -51,7 +51,7 @@
                         <Setter Target="topNewsTag.FontSize" Value="12"/>
                         <Setter Target="topNewsSplit.FontSize" Value="12"/>
                         <Setter Target="topNewsTime.FontSize" Value="12"/>
-                        <Setter Target="colume_one.Width" Value="200"/>
+                        <Setter Target="topNewsImage.Width" Value="200"/>
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Wide">
@@ -89,15 +89,54 @@
                       Width="320"/>
         </StackPanel>
         <Button Name="back_button"
-                Content="返回"
                 Grid.Column="1"
                 HorizontalAlignment="Left"
-                FontWeight="Thin"
                 FontSize="15"
-                Height="45"
                 Visibility="Collapsed"
-                Style="{StaticResource CustomButtonStyle}"
-                Click="Back_button_Click"/>
+                AutomationProperties.Name="Custom appearance"
+                Padding="4,-3,4,-3" 
+                BorderThickness="1"
+                FontWeight="Bold"
+                CornerRadius="10"
+                Margin="10,0,0,0"
+                Click="Back_button_Click">
+            <Button.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.ThemeDictionaries>
+                        <ResourceDictionary x:Key="Default">
+                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBackground">
+                                <GradientStop Color="Black" Offset="0.0"/>
+                                <GradientStop Color="DarkGray" Offset="1.0"/>
+                            </LinearGradientBrush>
+                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBorderBrush">
+                                <GradientStop Color="White" Offset="0.0"/>
+                                <GradientStop Color="Gray" Offset="1.0"/>
+                            </LinearGradientBrush>
+
+                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBackgroundPointerOver">
+                                <GradientStop Color="WhiteSmoke" Offset="0.0"/>
+                                <GradientStop Color="Gray" Offset="1.0"/>
+                            </LinearGradientBrush>
+                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBorderBrushPointerOver">
+                                <GradientStop Color="LightBlue" Offset="0.0"/>
+                                <GradientStop Color="White" Offset="1.0"/>
+                            </LinearGradientBrush>
+
+                            <SolidColorBrush x:Key="ButtonForeground" Color="White"/>
+                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                            <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
+                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="DimGray"/>
+                        </ResourceDictionary>
+                    </ResourceDictionary.ThemeDictionaries>
+                </ResourceDictionary>
+            </Button.Resources>
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <FontIcon Glyph="&#xE8BB;" Margin="0,10,0,10" FontSize="15" FontWeight="{x:Bind FontWeight}"/>
+                    <TextBlock Text="关  闭" Margin="10, 7, 0, 0"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
         <local3:TabView x:Name="TabView"
                         Grid.Row="1"
                         TabSwitch="TabView_TabSwitch"
@@ -113,14 +152,15 @@
                             <Grid Name="topNews_grid"
                                   Background="WhiteSmoke">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition x:Name="colume_one"/>
-                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="Auto" x:Name="colume_one"/>
+                                    <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <!--<RowDefinition/>
                                     <RowDefinition/>-->
                                 </Grid.RowDefinitions>
                                 <Image Name="topNewsImage" 
+                                       Width="300"
                                        Source="{Binding TopNews.image}"
                                        Margin="10,0,0,0"/>
                                 <StackPanel Name="topNews_stackPanel"
@@ -174,11 +214,12 @@
                                 <DataTemplate x:DataType="local2:News">
                                     <!--<UserControl>-->
                                     <Grid Name="NewsCard"     
-                                          Margin="5">
+                                          Margin="5"
+                                          Height="245">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto"/>
                                             <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="55"/>
                                             <RowDefinition Height="*"/>
                                         </Grid.RowDefinitions>
                                         <Image Source="{x:Bind image}" 
@@ -189,12 +230,11 @@
                                                    FontWeight="Bold" 
                                                    TextWrapping="WrapWholeWords" 
                                                    Width="200"
-                                                   FontSize="14"
+                                                   FontSize="13"
                                                    Margin="5,0"
                                                    Grid.Row="1"/>
                                         <TextBlock Text="{x:Bind mainContent}" 
                                                    Width="200"
-                                                   Height="70"
                                                    Grid.Row="2"
                                                    FontSize="13"
                                                    Name="mainContent" 

@@ -12,7 +12,7 @@
     <Grid Background="WhiteSmoke">
         <!--<local2:TabView TabNameList="{Binding TabNameList}">
             <local2:TabView.View>-->
-                <ScrollViewer x:ConnectionId='1'                                       >
+                <ScrollViewer x:ConnectionId='2'                                       >
                     <RelativePanel>
                         <local3:CommentControl  Margin="10,10,10,10" Name="cc"/>
                         <TextBlock Text="{Binding LoadCommentStatus}"

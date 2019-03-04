@@ -21,6 +21,7 @@ using Windows.UI.Xaml.Navigation;
 
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.UI.Core;
 
 namespace The_Paper
 {
@@ -80,7 +81,6 @@ namespace The_Paper
                     //ExtendedSplash extendedSplash = new ExtendedSplash(e.SplashScreen, loadState);
                     //rootFrame.Content = extendedSplash;
                 }
-
                 // 将框架放在当前窗口中
                 Window.Current.Content = rootFrame;
             }
@@ -96,9 +96,28 @@ namespace The_Paper
                 }
                 // 确保当前窗口处于活动状态
                 Window.Current.Activate();
-            }          
-
+            }
+            rootFrame.Navigated += OnNavigated;
+            SystemNavigationManager.GetForCurrentView().BackRequested += BackRequested;
         }
+
+        private void BackRequested(object sender, BackRequestedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+            if (rootFrame == null)
+                return;
+            if (rootFrame.CanGoBack && e.Handled == false)
+            {
+                e.Handled = true;
+                rootFrame.GoBack();
+            }
+        }
+        private void OnNavigated(object sender, NavigationEventArgs e)
+        {
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = ((Frame)sender).CanGoBack ?
+                AppViewBackButtonVisibility.Visible : AppViewBackButtonVisibility.Collapsed;
+        }
+
 
         /// <summary>
         /// 导航到特定页失败时调用
