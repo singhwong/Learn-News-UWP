@@ -117,7 +117,7 @@ namespace The_Paper.Services
                     if (isRecommend != null)
                         newsListModel.TopCids += news.cid + ',';
                 }
-                if (news.tag.Trim() != "七环视频" && news.tag.Trim() != "上直播")
+                if (news.tag != "七环视频" && news.tag != "上直播"&&news.tag != "@所有人")
                 {
                     newsListModel.NewsList.Add(news);
                 }

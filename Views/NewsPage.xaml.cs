@@ -77,6 +77,7 @@ namespace The_Paper.Views
             newsPageVM.IsOpen = true;
             NewsDetail.Navigate(typeof(NewsDetailPage),
                 (newsPageVM.TopNews.uri));
+            ad_stackPanel.Visibility = Visibility.Collapsed;
         }
 
         private void Back_button_Click(object sender, RoutedEventArgs e)
@@ -93,6 +94,7 @@ namespace The_Paper.Views
             back_button.Visibility = Visibility.Collapsed;
             newsPageVM.IsOpen = false;
             NewsDetail.Navigate(typeof(BlankPage));//导航到一个空白页，使非video页面，播放video时click关闭按钮，视频播放停止
+            ad_stackPanel.Visibility = Visibility.Visible;
             //(未找到该mediaElement控件，暂时用该方法实现停止播放)
         }
 
@@ -112,6 +114,17 @@ namespace The_Paper.Views
             newsPageVM.IsOpen = true;
             NewsDetail.Navigate(typeof(NewsDetailPage),
                 ((News)(e.ClickedItem))?.uri);
+            ad_stackPanel.Visibility = Visibility.Collapsed;
+        }
+
+        private void CloseAd_button_Click(object sender, RoutedEventArgs e)
+        {
+            ad_stackPanel.Visibility = Visibility.Collapsed;
+        }
+
+        private void News_Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            ad_stackPanel.Visibility = Visibility.Visible;
         }
 
         //private void CoreWindow_KeyDown(CoreWindow sender, KeyEventArgs args)

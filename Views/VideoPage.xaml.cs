@@ -56,16 +56,16 @@ namespace The_Paper.Views
             #endregion
             if (index == 0)
             {
-                videoRow_1.Height = new GridLength(1, GridUnitType.Star);
+                //videoRow_1.Height = new GridLength(1, GridUnitType.Star);
             }
             else
             {
-                videoRow_1.Height = new GridLength(1, GridUnitType.Auto);
+                //videoRow_1.Height = new GridLength(1, GridUnitType.Auto);
             }
             VideoDetail_grid.Visibility = Visibility.Collapsed;
             //右上角显示videoStatus_textblock文本bug
             await videoPageVM.LoadColumn(index);
-            videoStatus_textblock.Visibility = Visibility.Visible;
+            videoStatus_textblock.Visibility = Visibility.Visible;         
         }
 
         private void mediaElement_PointerEntered(object sender, PointerRoutedEventArgs e)
@@ -95,11 +95,11 @@ namespace The_Paper.Views
             VideoDetail_grid.Visibility = Visibility.Collapsed;
             if (index == 0)
             {
-                videoRow_1.Height = new GridLength(1, GridUnitType.Star);
+                //videoRow_1.Height = new GridLength(1, GridUnitType.Star);
             }
             else
             {
-                videoRow_1.Height = new GridLength(1, GridUnitType.Auto);
+                //videoRow_1.Height = new GridLength(1, GridUnitType.Auto);
             }
         }
 
@@ -109,18 +109,24 @@ namespace The_Paper.Views
             VideoDetail.Navigate(typeof(VideoDetailPage), ((Video)(e.ClickedItem)).uri);
             back_button.Visibility = Visibility.Visible;
             colume_2.Width = new GridLength(1,GridUnitType.Auto);
-            videoRow_1.Height = new GridLength(1, GridUnitType.Star);
+            //videoRow_1.Height = new GridLength(1, GridUnitType.Star);
             mediaElement.Visibility = Visibility.Visible;
             VideoDetail_grid.Visibility = Visibility.Visible;
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            ad_stackPanel.Visibility = Visibility.Visible;
         }
 
         private void Close_button_Click(object sender, RoutedEventArgs e)
         {
             VideoDetail_grid.Visibility = Visibility.Collapsed;           
+        }
+
+        private void CloseAd_button_Click(object sender, RoutedEventArgs e)
+        {
+            ad_stackPanel.Visibility = Visibility.Collapsed;
         }
     }
 }

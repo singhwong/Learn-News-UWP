@@ -19,24 +19,24 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>D:\gitUWP\Learn-News-UWP\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>FFF75AE195364FF2205B8B7554BDCE92AF67649D38386A661B33BFABFE85A390</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>14523wongsoft.6397904DAF804_1.0.34.0_x86__pscw7et81htc4</RegisteredPackageMoniker>
+    <RegisteredManifestChecksum>AB14ECC26E67CBD2C08EACEB351094E7987FE0F46A7576AE0A00AA1DABA50F38</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>14523wongsoft.6397904DAF804_1.0.37.0_x86__pscw7et81htc4</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>14523wongsoft.6397904DAF804_pscw7et81htc4!App</RegisteredUserModeAppID>
     <RegisteredPackageID>14523wongsoft.6397904DAF804</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=142C2F57-E79D-408C-83F9-E14BC50B8D43</RegisteredPackagePublisher>
-    <RegisteredVersion>1.0.34.0</RegisteredVersion>
+    <RegisteredVersion>1.0.37.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-03-04T11:40:33.859</Modified>
+      <Modified>2019-03-06T23:15:25.390</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\The Paper.exe">
       <PackagePath>entrypoint\The Paper.exe</PackagePath>
-      <Modified>2019-03-04T11:32:52.019</Modified>
+      <Modified>2019-03-06T23:15:23.249</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\singh\.nuget\packages\htmlagilitypack\1.8.13\lib\uap10.0\HtmlAgilityPack.dll">
       <PackagePath>HtmlAgilityPack.dll</PackagePath>
@@ -784,22 +784,22 @@
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-02-18T13:45:22.609</Modified>
+      <Modified>2019-03-06T22:21:45.001</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\Assets\SplashScreen.scale-125.png">
       <PackagePath>Assets\SplashScreen.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-02-18T13:45:22.643</Modified>
+      <Modified>2019-03-06T22:21:45.034</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\Assets\SplashScreen.scale-150.png">
       <PackagePath>Assets\SplashScreen.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-02-18T13:45:22.689</Modified>
+      <Modified>2019-03-06T22:21:45.078</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\Assets\SplashScreen.scale-400.png">
       <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-02-18T13:45:23.038</Modified>
+      <Modified>2019-03-06T22:21:45.424</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\Assets\Square150x150Logo.scale-100.png">
       <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
@@ -942,7 +942,7 @@
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-02-18T13:45:22.769</Modified>
+      <Modified>2019-03-06T22:21:45.152</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
@@ -974,71 +974,71 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\The Paper.xr.xml">
       <PackagePath>The Paper.xr.xml</PackagePath>
-      <Modified>2019-03-04T10:45:12.266</Modified>
+      <Modified>2019-03-06T22:24:36.941</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-03-04T11:40:32.618</Modified>
+      <Modified>2019-03-06T23:15:22.914</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Views\BlankPage.xbf">
       <PackagePath>Views\BlankPage.xbf</PackagePath>
-      <Modified>2019-03-04T11:40:32.618</Modified>
+      <Modified>2019-03-06T23:15:22.914</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Views\buttonStyle.xbf">
       <PackagePath>Views\buttonStyle.xbf</PackagePath>
-      <Modified>2019-03-04T11:40:32.618</Modified>
+      <Modified>2019-03-06T23:15:22.914</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Views\buttonStyle_2.xbf">
       <PackagePath>Views\buttonStyle_2.xbf</PackagePath>
-      <Modified>2019-03-04T11:40:32.618</Modified>
+      <Modified>2019-03-06T23:15:22.914</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Views\ExtendedSplash.xbf">
       <PackagePath>Views\ExtendedSplash.xbf</PackagePath>
-      <Modified>2019-03-04T11:40:32.618</Modified>
+      <Modified>2019-03-06T23:15:22.914</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Views\LoginPage.xbf">
       <PackagePath>Views\LoginPage.xbf</PackagePath>
-      <Modified>2019-03-04T11:40:32.619</Modified>
+      <Modified>2019-03-06T23:15:22.914</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Views\MainPage.xbf">
       <PackagePath>Views\MainPage.xbf</PackagePath>
-      <Modified>2019-03-04T11:40:32.619</Modified>
+      <Modified>2019-03-06T23:15:22.920</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Resources\ControlStyle.xbf">
       <PackagePath>Resources\ControlStyle.xbf</PackagePath>
-      <Modified>2019-03-04T11:40:32.593</Modified>
+      <Modified>2019-03-06T23:15:22.884</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Themes\Generic.xbf">
       <PackagePath>Themes\Generic.xbf</PackagePath>
-      <Modified>2019-03-04T11:40:32.618</Modified>
+      <Modified>2019-03-06T23:15:22.914</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\UserControls\CommentControl.xbf">
       <PackagePath>UserControls\CommentControl.xbf</PackagePath>
-      <Modified>2019-03-04T11:40:32.619</Modified>
+      <Modified>2019-03-06T23:15:22.920</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Views\CommentPage.xbf">
       <PackagePath>Views\CommentPage.xbf</PackagePath>
-      <Modified>2019-03-04T11:40:32.619</Modified>
+      <Modified>2019-03-06T23:15:22.920</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Views\NewsDetailPage.xbf">
       <PackagePath>Views\NewsDetailPage.xbf</PackagePath>
-      <Modified>2019-03-04T11:40:32.619</Modified>
+      <Modified>2019-03-06T23:15:22.920</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Views\NewsPage.xbf">
       <PackagePath>Views\NewsPage.xbf</PackagePath>
-      <Modified>2019-03-04T11:40:32.607</Modified>
+      <Modified>2019-03-06T23:15:22.907</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Views\SettingPage.xbf">
       <PackagePath>Views\SettingPage.xbf</PackagePath>
-      <Modified>2019-03-04T11:40:32.619</Modified>
+      <Modified>2019-03-06T23:15:22.920</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Views\VideoDetailPage.xbf">
       <PackagePath>Views\VideoDetailPage.xbf</PackagePath>
-      <Modified>2019-03-04T11:40:32.620</Modified>
+      <Modified>2019-03-06T23:15:22.920</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Views\VideoPage.xbf">
       <PackagePath>Views\VideoPage.xbf</PackagePath>
-      <Modified>2019-03-04T11:40:32.617</Modified>
+      <Modified>2019-03-06T23:15:22.914</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.17763.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -1050,11 +1050,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2019-03-04T11:40:33.229</Modified>
+      <Modified>2019-03-06T23:15:24.622</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\Learn-News-UWP\bin\x86\Debug\Core\The Paper.exe">
       <PackagePath>The Paper.exe</PackagePath>
-      <Modified>2019-03-04T11:40:33.855</Modified>
+      <Modified>2019-03-06T23:15:25.390</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

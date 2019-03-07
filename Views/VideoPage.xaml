@@ -19,7 +19,6 @@
             <local4:BoolInvertConverter x:Key="BIC" />
             <local4:BoolToVisibilityConverter x:Key="BTVC" />
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="buttonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
@@ -73,29 +72,33 @@
                     CornerRadius="10"
                 Click="Back_button_Click">
                 <Button.Resources>
-                    <ResourceDictionary x:Key="Default">
-                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBackground">
-                            <GradientStop Color="Black" Offset="0.0"/>
-                            <GradientStop Color="DarkGray" Offset="1.0"/>
-                        </LinearGradientBrush>
-                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBorderBrush">
-                            <GradientStop Color="White" Offset="0.0"/>
-                            <GradientStop Color="Gray" Offset="1.0"/>
-                        </LinearGradientBrush>
+                    <ResourceDictionary>
+                        <ResourceDictionary.ThemeDictionaries>
+                            <ResourceDictionary x:Key="Default">
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBackground">
+                                    <GradientStop Color="Black" Offset="0.0"/>
+                                    <GradientStop Color="DarkGray" Offset="1.0"/>
+                                </LinearGradientBrush>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBorderBrush">
+                                    <GradientStop Color="White" Offset="0.0"/>
+                                    <GradientStop Color="Gray" Offset="1.0"/>
+                                </LinearGradientBrush>
 
-                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBackgroundPointerOver">
-                            <GradientStop Color="WhiteSmoke" Offset="0.0"/>
-                            <GradientStop Color="Gray" Offset="1.0"/>
-                        </LinearGradientBrush>
-                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBorderBrushPointerOver">
-                            <GradientStop Color="LightBlue" Offset="0.0"/>
-                            <GradientStop Color="White" Offset="1.0"/>
-                        </LinearGradientBrush>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBackgroundPointerOver">
+                                    <GradientStop Color="WhiteSmoke" Offset="0.0"/>
+                                    <GradientStop Color="Gray" Offset="1.0"/>
+                                </LinearGradientBrush>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBorderBrushPointerOver">
+                                    <GradientStop Color="LightGray" Offset="0.0"/>
+                                    <GradientStop Color="White" Offset="1.0"/>
+                                </LinearGradientBrush>
 
-                        <SolidColorBrush x:Key="ButtonForeground" Color="White"/>
-                        <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
-                        <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
-                        <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="DimGray"/>
+                                <SolidColorBrush x:Key="ButtonForeground" Color="White"/>
+                                <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                                <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
+                                <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="DimGray"/>
+                            </ResourceDictionary>
+                        </ResourceDictionary.ThemeDictionaries>
                     </ResourceDictionary>
                 </Button.Resources>
                 <Button.Content>
@@ -131,39 +134,43 @@
                         TabNameList="{Binding TabNameList}" 
                         TabSwitch="TabView_TabSwitch">
             <local3:TabView.View>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition x:Name="videoRow_1"/>
-                        <RowDefinition Height="2*"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*" />
-                        <ColumnDefinition x:Name="colume_2"
+                <ScrollViewer ViewChanged="ScrollViewer_ViewChanged"
+                                  Name="ScrollViewer"
+                                  RelativePanel.Below="TopVideo">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition x:Name="videoRow_1"
+                                       Height="330"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition x:Name="colume_2"
                               Width="Auto" />
-                    </Grid.ColumnDefinitions>
+                        </Grid.ColumnDefinitions>
 
-                    <Grid Name="TopVideo"
+                        <Grid Name="TopVideo"
                           Grid.ColumnSpan="2"    
                           RelativePanel.AlignHorizontalCenterWithPanel="True">
-                        <Grid Name="TopThumb"                                
+                            <Grid Name="TopThumb"                                
                               Visibility="{Binding Path=HasTopVideo,Converter={StaticResource BTVC}}">
-                            <Image Source="{Binding TopVideo.imageSrc}"
+                                <Image Source="{Binding TopVideo.imageSrc}"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    Stretch="UniformToFill"/>
-                            <Canvas>
-                                <Canvas.Background>
-                                    <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
-                                        <GradientStop Offset="0.0" Color="#80000000" />
-                                        <GradientStop Offset="0.25" Color="#40000000" />
-                                        <GradientStop Offset="0.5" Color="#20000000" />
-                                        <GradientStop Offset="0.75" Color="#40000000" />
-                                        <GradientStop Offset="1.0" Color="#80000000" />
-                                    </LinearGradientBrush>
-                                </Canvas.Background>
-                            </Canvas>
-                            <RelativePanel VerticalAlignment="Center">
-                                <FontIcon Name="playButton" 
+                                <Canvas>
+                                    <Canvas.Background>
+                                        <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                            <GradientStop Offset="0.0" Color="#80000000" />
+                                            <GradientStop Offset="0.25" Color="#40000000" />
+                                            <GradientStop Offset="0.5" Color="#20000000" />
+                                            <GradientStop Offset="0.75" Color="#40000000" />
+                                            <GradientStop Offset="1.0" Color="#80000000" />
+                                        </LinearGradientBrush>
+                                    </Canvas.Background>
+                                </Canvas>
+                                <RelativePanel VerticalAlignment="Center">
+                                    <FontIcon Name="playButton" 
                                           FontFamily="Segoe MDL2 Assets" 
                                           Tapped="playButton_Tapped"
                                           Margin="5,5,5,5"
@@ -172,7 +179,7 @@
                                           Foreground="White"
                                           FontSize="40" 
                                           Glyph="&#xE102;" />
-                                <TextBlock Name="topVideoHeadLine"
+                                    <TextBlock Name="topVideoHeadLine"
                                            Text="{Binding TopVideo.headLine}" 
                                            Margin="5,5,5,5"
                                            Foreground="White"
@@ -181,51 +188,39 @@
                                            TextWrapping="Wrap"
                                            RelativePanel.AlignHorizontalCenterWithPanel="True"
                                            RelativePanel.Below="playButton"/>
-                                <TextBlock Name="topVideoLength" Text="{Binding TopVideo.length}"
+                                    <TextBlock Name="topVideoLength" Text="{Binding TopVideo.length}"
                                            FontWeight="Medium"
                                            Margin="5,5,5,5"
                                            Foreground="White"
                                            RelativePanel.AlignHorizontalCenterWithPanel="True"
                                            RelativePanel.Below="topVideoHeadLine"/>
-                                <StackPanel Name="topVideo_stackPanel"
+                                    <StackPanel Name="topVideo_stackPanel"
                                             Orientation="Horizontal" 
                                             Margin="5,5,5,5"
                                             RelativePanel.AlignHorizontalCenterWithPanel="True"
                                             RelativePanel.Below="topVideoLength">
-                                    <TextBlock Name="topVideoTag" 
+                                        <TextBlock Name="topVideoTag" 
                                                Text="{Binding TopVideo.tag}"
                                                FontWeight="Medium"
                                                Margin="5,0,5,0"
                                                Foreground="White"/>
-                                    <TextBlock Name="topVideoTime"
+                                        <TextBlock Name="topVideoTime"
                                                Text="{Binding TopVideo.time}"
                                                FontWeight="Medium"
                                                Margin="5,0,5,0"
                                                Foreground="White"/>
-                                </StackPanel>
-                            </RelativePanel>
+                                    </StackPanel>
+                                </RelativePanel>
+                            </Grid>
                         </Grid>
-                        <MediaElement Source="{Binding VideoDetail.playURL}" 
-                                      Visibility="{Binding IsOpen, Converter={StaticResource BTVC}}"
-                                      PointerExited="mediaElement_PointerExited"
-                                      PointerEntered="mediaElement_PointerEntered"
-                                      Name="mediaElement"         
-                                      Volume="0.5"
-                                      AreTransportControlsEnabled="True">
-                            <MediaElement.TransportControls>
-                                <MediaTransportControls x:Name="mediaElement_controls"
-                                                        IsCompact="True"/>
-                            </MediaElement.TransportControls>
-                        </MediaElement>
-                    </Grid>
-                    <ScrollViewer ViewChanged="ScrollViewer_ViewChanged"
-                                  Name="ScrollViewer"
-                                  Grid.Row="1"
-                                  RelativePanel.Below="TopVideo">
-                        <RelativePanel>
+
+                        <RelativePanel Grid.Row="1">
                             <GridView Name="VideoCards"    
                                       ItemsSource="{Binding VideoList}"
                                       IsItemClickEnabled="True"
+                                      AllowDrop="True"
+                              CanReorderItems="True"
+                              IsSwipeEnabled="True"
                                       ItemClick="VideoCards_ItemClick">
                                 <GridView.ItemTemplate>
                                     <DataTemplate x:DataType="local2:Video">
@@ -295,8 +290,7 @@
                                            Margin="0,0,0,10"
                                            Foreground="Gray"/>
                         </RelativePanel>
-                    </ScrollViewer>
-                    <!--<Grid RelativePanel.Below="TopVideo" Visibility="Collapsed"
+                        <!--<Grid RelativePanel.Below="TopVideo" Visibility="Collapsed"
                           Width="{Binding Path=ActualWidth,ElementName=mediaElement}"                        
                           Name="VideoInfo">
                         <Grid.ColumnDefinitions>
@@ -348,7 +342,7 @@
                                            Name="VideoEditor" RelativePanel.Below="VideoSource" RelativePanel.RightOf="VideoAbout" Margin="5,5,5,0" />
                         </RelativePanel>
                     </Grid>-->
-                    <!--<Grid.Resources>
+                        <!--<Grid.Resources>
                         <Storyboard x:Name="EnterAnim">
                             <FadeInThemeAnimation Storyboard.TargetName="VideoInfo"/>
                         </Storyboard>
@@ -356,40 +350,75 @@
                             <FadeOutThemeAnimation Storyboard.TargetName="VideoInfo"/>
                         </Storyboard>
                     </Grid.Resources>-->
-                    <Grid Name="VideoDetail_grid"
-                                Width="240"
-                                Grid.Row="1"
-                                 Grid.Column="1"
-                          Visibility="Collapsed">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Button Name="close_button"
-                                Content="关闭评论"
-                                Background="WhiteSmoke"
-                                Height="30"
-                                FontWeight="Thin"
-                                FontSize="12"
-                                Style="{StaticResource CustomButtonStyle}"
-                                Click="Close_button_Click">
-                        </Button>
-                        <Frame Name="VideoDetail"
-                               Grid.Row="1"/>
                     </Grid>
-                </Grid>
+                </ScrollViewer>
             </local3:TabView.View>
         </local3:TabView>
-        <UI:AdControl x:Name="ad_control10"
-                      Grid.Row="1"
-                      ApplicationId="9pcr0b34nft8"
-                      AdUnitId="1100039459"
-                      Height="50"
-                      Width="320"
-                      VerticalAlignment="Bottom"
-                      HorizontalAlignment="Right"/>
         <ProgressRing Name="main_ProgressRing"
                       Width="100" Height="100" Grid.RowSpan="2" IsActive="{Binding Path=Loaded,Converter={StaticResource BIC}}" />
-        
+        <MediaElement Grid.Row="1"
+                      VerticalAlignment="Top"
+                      HorizontalAlignment="Stretch"
+                      Height="330"
+                      Margin="0,30,0,0"
+            Source="{Binding VideoDetail.playURL}" 
+                                      Visibility="{Binding IsOpen, Converter={StaticResource BTVC}}"
+                                      PointerExited="mediaElement_PointerExited"
+                                      PointerEntered="mediaElement_PointerEntered"
+                                      Name="mediaElement"         
+                                      Volume="0.5"
+                                      AreTransportControlsEnabled="True">
+            <MediaElement.TransportControls>
+                <MediaTransportControls x:Name="mediaElement_controls"
+                                                        IsCompact="True"/>
+            </MediaElement.TransportControls>
+        </MediaElement>
+        <Grid Name="VideoDetail_grid"
+              Width="240"
+              Height="500"
+              Grid.Row="1"
+              HorizontalAlignment="Right"
+              VerticalAlignment="Bottom"
+              Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button Name="close_button"
+                    FontFamily="Segoe MDL2 Assets"
+                    Content="&#xE8BB;"
+                    FontSize="10"
+                    Style="{StaticResource button_Style_2}"
+                    Click="Close_button_Click">
+            </Button>
+            <Frame Name="VideoDetail"
+                               Grid.Row="1"/>
+        </Grid>
+        <StackPanel x:Name="ad_stackPanel"
+                    Grid.Row="1"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right">
+            <Button x:Name="closeAd_button"
+                    Style="{StaticResource button_Style_2}"
+                    Click="CloseAd_button_Click">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal"
+                                Margin="-7,0,0,-5">
+                        <FontIcon Glyph="&#xE8BB;"
+                                  FontSize="8"
+                                  VerticalAlignment="Center"
+                                  Margin="0,0,5,0"/>
+                        <TextBlock Text="Close"
+                                   VerticalAlignment="Center"
+                                   FontSize="10"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+            <UI:AdControl x:Name="ad_control10"
+                      ApplicationId="9pcr0b34nft8"
+                      AdUnitId="1100039459"
+                      Height="600"
+                      Width="160"/>
+        </StackPanel>
     </Grid>
 </Page>

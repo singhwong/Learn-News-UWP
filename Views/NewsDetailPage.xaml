@@ -8,7 +8,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local2="using:The_Paper.Controls"
-    mc:Ignorable="d">
+    xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
+    mc:Ignorable="d"
+    Loaded="Page_Loaded">
 
     <Page.Resources>
         <ResourceDictionary>
@@ -61,5 +63,28 @@
         </ScrollViewer>
         <!--<ProgressRing Background="Transparent" IsActive="{Binding Path=Loaded,Converter={StaticResource BIC}}"
                           Width="75" Height="75"/>-->
+        <StackPanel x:Name="ad_stackPanel"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right">
+            <Button x:Name="closeAd_button"                  
+                    Style="{StaticResource button_Style_2}"
+                    Click="CloseAd_button_Click">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal"
+                                Margin="-7,0,0,-5">
+                        <FontIcon Glyph="&#xE8BB;"
+                                  FontSize="8"
+                                  Margin="0,0,5,0"/>
+                        <TextBlock Text="Close"
+                                   FontSize="10"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+            <UI:AdControl x:Name="ad_control9"
+                      ApplicationId="9pcr0b34nft8"
+                      AdUnitId="1100039461"
+                      Height="600"
+                      Width="160"/>
+        </StackPanel>
         </Grid>
 </Page>

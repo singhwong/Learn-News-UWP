@@ -10,12 +10,12 @@
     xmlns:local4="using:The_Paper.Converters"
     xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
     mc:Ignorable="d"
-    x:Name="News_Page">
+    x:Name="News_Page"
+                             >
 
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-            <ResourceDictionary Source="buttonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <local4:BoolToVisibilityConverter x:Key="BTVC" />
             <local4:BoolInvertConverter x:Key="BIC" />
@@ -67,22 +67,22 @@
         <StackPanel x:ConnectionId='9' x:Name="newsPage_ads"
                     Margin="10,0,0,0"
                     Orientation="Horizontal">
-            <UI:AdControl x:ConnectionId='33' x:Name="ad_contro"
+            <UI:AdControl x:ConnectionId='35' x:Name="ad_contro"
                       ApplicationId="9pcr0b34nft8"
                       AdUnitId="1100039458"
                       Height="50"
                       Width="320"/>
-            <UI:AdControl x:ConnectionId='34' x:Name="ad_control2"
+            <UI:AdControl x:ConnectionId='36' x:Name="ad_control2"
                       ApplicationId="9pcr0b34nft8"
                       AdUnitId="1100039459"
                       Height="50"
                       Width="320"/>
-            <UI:AdControl x:ConnectionId='35' x:Name="ad_control3"
+            <UI:AdControl x:ConnectionId='37' x:Name="ad_control3"
                       ApplicationId="9pcr0b34nft8"
                       AdUnitId="1100039460"
                       Height="50"
                       Width="320"/>
-            <UI:AdControl x:ConnectionId='36' x:Name="ad_control4"
+            <UI:AdControl x:ConnectionId='38' x:Name="ad_control4"
                       ApplicationId="9pcr0b34nft8"
                       AdUnitId="1100039461"
                       Height="50"
@@ -118,7 +118,7 @@
                                 <GradientStop Color="Gray" Offset="1.0"/>
                             </LinearGradientBrush>
                             <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBorderBrushPointerOver">
-                                <GradientStop Color="LightBlue" Offset="0.0"/>
+                                <GradientStop Color="LightGray" Offset="0.0"/>
                                 <GradientStop Color="White" Offset="1.0"/>
                             </LinearGradientBrush>
 
@@ -132,7 +132,7 @@
             </Button.Resources>
             <Button.Content>
                 <StackPanel Orientation="Horizontal">
-                    <FontIcon x:ConnectionId='32' Glyph="&#xE8BB;" Margin="0,10,0,10" FontSize="15"                                 />
+                    <FontIcon x:ConnectionId='34' Glyph="&#xE8BB;" Margin="0,10,0,10" FontSize="15"                                 />
                     <TextBlock Text="关  闭" Margin="10, 7, 0, 0"/>
                 </StackPanel>
             </Button.Content>
@@ -142,38 +142,38 @@
                                                      
                         TabNameList="{Binding TabNameList}">
             <local3:TabView.View>
-                <ScrollViewer x:ConnectionId='14' Name="scrollViewer" 
+                <ScrollViewer x:ConnectionId='16' Name="scrollViewer" 
                                                                     >
                     <RelativePanel>
-                        <GridViewItem x:ConnectionId='15' Name="topNews"
+                        <GridViewItem x:ConnectionId='17' Name="topNews"
                                       Style="{StaticResource NewsListItemStyle}"
                                       Visibility="{Binding Path=HasTopNews,Converter={StaticResource BTVC}}"
                                                              >
-                            <Grid x:ConnectionId='23' Name="topNews_grid"
+                            <Grid x:ConnectionId='25' Name="topNews_grid"
                                   Background="WhiteSmoke">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition x:ConnectionId='24' Width="Auto" x:Name="colume_one"/>
+                                    <ColumnDefinition x:ConnectionId='26' Width="Auto" x:Name="colume_one"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <!--<RowDefinition/>
                                     <RowDefinition/>-->
                                 </Grid.RowDefinitions>
-                                <Image x:ConnectionId='25' Name="topNewsImage" 
+                                <Image x:ConnectionId='27' Name="topNewsImage" 
                                        Width="300"
                                        Source="{Binding TopNews.image}"
                                        Margin="10,0,0,0"/>
-                                <StackPanel x:ConnectionId='26' Name="topNews_stackPanel"
+                                <StackPanel x:ConnectionId='28' Name="topNews_stackPanel"
                                             Orientation="Vertical"
                                             Grid.Column="1">
-                                    <TextBlock x:ConnectionId='27' Name="topNewsHL"
+                                    <TextBlock x:ConnectionId='29' Name="topNewsHL"
                                            TextTrimming="WordEllipsis"
                                            Margin="10,10,10,10"
                                            FontWeight="Bold"
                                                FontSize="22"
                                            TextWrapping="WrapWholeWords"
                                            Text="{Binding TopNews.headLine}" />
-                                    <TextBlock x:ConnectionId='28' Name="topNewsMC" 
+                                    <TextBlock x:ConnectionId='30' Name="topNewsMC" 
                                            Margin="10,10,10,10"
                                            TextWrapping="WrapWholeWords"
                                            TextTrimming="WordEllipsis"
@@ -181,15 +181,15 @@
                                            Text="{Binding TopNews.mainContent}"/>
                                     <StackPanel Orientation="Horizontal"
                                                 Margin="0,0,0,3">
-                                        <TextBlock x:ConnectionId='29' Name="topNewsTag" 
+                                        <TextBlock x:ConnectionId='31' Name="topNewsTag" 
                                            Margin="10"
                                                FontSize="13"
                                            Text="{Binding TopNews.tag}" />
-                                        <TextBlock x:ConnectionId='30' Name="topNewsSplit" 
+                                        <TextBlock x:ConnectionId='32' Name="topNewsSplit" 
                                            Margin="5,9,5,11"
                                                FontSize="13"
                                            Text="|" />
-                                        <TextBlock x:ConnectionId='31' Name="topNewsTime" 
+                                        <TextBlock x:ConnectionId='33' Name="topNewsTime" 
                                            Margin="10"
                                                FontSize="13"
                                            Text="{Binding TopNews.time}" />
@@ -205,7 +205,7 @@
                                         Text="{Binding TopNews.commentCount}" />-->
                             </Grid>
                         </GridViewItem>
-                        <GridView x:ConnectionId='16' Name="NewsCards"
+                        <GridView x:ConnectionId='18' Name="NewsCards"
                                   ItemsSource="{Binding NewsList}"
                                   IsItemClickEnabled="True"
                                                                  
@@ -213,7 +213,7 @@
                             <GridView.ItemTemplate>
                                 <DataTemplate                         >
                                     <!--<UserControl>-->
-                                    <Grid x:ConnectionId='17' Name="NewsCard"     
+                                    <Grid x:ConnectionId='19' Name="NewsCard"     
                                           Margin="5"
                                           Height="245">
                                         <Grid.RowDefinitions>
@@ -222,10 +222,10 @@
                                             <RowDefinition Height="55"/>
                                             <RowDefinition Height="*"/>
                                         </Grid.RowDefinitions>
-                                        <Image x:ConnectionId='18'                         
+                                        <Image x:ConnectionId='20'                         
                                                Name="image"
                                                Width="200"/>
-                                        <TextBlock x:ConnectionId='19'                          
+                                        <TextBlock x:ConnectionId='21'                          
                                                    Name="headLine"
                                                    FontWeight="Bold" 
                                                    TextWrapping="WrapWholeWords" 
@@ -233,7 +233,7 @@
                                                    FontSize="13"
                                                    Margin="5,0"
                                                    Grid.Row="1"/>
-                                        <TextBlock x:ConnectionId='20'                             
+                                        <TextBlock x:ConnectionId='22'                             
                                                    Width="200"
                                                    Grid.Row="2"
                                                    FontSize="13"
@@ -252,14 +252,14 @@
                                                     Grid.Row="3"
                                                     Margin="5,0"
                                                     VerticalAlignment="Bottom">
-                                            <TextBlock x:ConnectionId='21'                     
+                                            <TextBlock x:ConnectionId='23'                     
                                                        Name="tag" 
                                                        FontSize="12"/>
                                             <TextBlock Name="split" 
                                                        Text="|" 
                                                        Margin="5,0,5,0"
                                                        FontSize="10"/>
-                                            <TextBlock x:ConnectionId='22'                     
+                                            <TextBlock x:ConnectionId='24'                     
                                                        Name="time"
                                                        FontSize="12"/>
                                         </StackPanel>
@@ -278,14 +278,31 @@
                 </ScrollViewer>
             </local3:TabView.View>
         </local3:TabView>
-        <UI:AdControl x:ConnectionId='12' x:Name="ad_control9"
-                      Grid.Row="1"
+        <StackPanel x:ConnectionId='12' x:Name="ad_stackPanel"
+                    Grid.Row="1"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right">
+            <Button x:ConnectionId='14' x:Name="closeAd_button"                  
+                    Style="{StaticResource button_Style_2}"
+                                                >
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal"
+                                Margin="-7,0,0,-5">
+                        <FontIcon Glyph="&#xE8BB;"
+                                  FontSize="8"
+                                  Margin="0,0,5,0"/>
+                        <TextBlock Text="Close"
+                                   FontSize="10"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+            <UI:AdControl x:ConnectionId='15' x:Name="ad_control9"
                       ApplicationId="9pcr0b34nft8"
                       AdUnitId="1100039458"
                       Height="600"
-                      Width="160"
-                      VerticalAlignment="Center"
-                      HorizontalAlignment="Right"/>
+                      Width="160"/>
+        </StackPanel>
+        
         <Frame x:ConnectionId='13' Name="NewsDetail"
                Grid.Row="1"
                Grid.Column="1"
