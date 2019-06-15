@@ -62,7 +62,7 @@ namespace The_Paper.Views
             //Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
             //Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(2, GridUnitType.Star) });
             //NewsDetail.SetValue(Grid.ColumnProperty, 1);
-            ad_control9.Visibility = Visibility.Collapsed;
+            //ad_control9.Visibility = Visibility.Collapsed;
             topNewsImage.Visibility = Visibility.Collapsed;
             topNewsHL.FontSize = 14;
             topNewsMC.FontSize = 13;
@@ -71,18 +71,18 @@ namespace The_Paper.Views
             topNewsTime.FontSize = 12;
             colume_1.Width = new GridLength(230);
             back_button.Visibility = Visibility.Visible;
-            row_1.Height = new GridLength(45);
+            //row_1.Height = new GridLength(45);
             colume_2.Width = new GridLength(3, GridUnitType.Star);
             NewsDetail.Visibility = Visibility.Visible;
             newsPageVM.IsOpen = true;
             NewsDetail.Navigate(typeof(NewsDetailPage),
                 (newsPageVM.TopNews.uri));
-            ad_stackPanel.Visibility = Visibility.Collapsed;
+            //ad_stackPanel.Visibility = Visibility.Collapsed;
         }
 
         private void Back_button_Click(object sender, RoutedEventArgs e)
         {
-            ad_control9.Visibility = Visibility.Visible;
+            //ad_control9.Visibility = Visibility.Visible;
             topNewsImage.Visibility = Visibility.Visible;
             topNewsHL.FontSize = 22;
             topNewsMC.FontSize = 16;
@@ -94,13 +94,13 @@ namespace The_Paper.Views
             back_button.Visibility = Visibility.Collapsed;
             newsPageVM.IsOpen = false;
             NewsDetail.Navigate(typeof(BlankPage));//导航到一个空白页，使非video页面，播放video时click关闭按钮，视频播放停止
-            ad_stackPanel.Visibility = Visibility.Visible;
+            //ad_stackPanel.Visibility = Visibility.Visible;
             //(未找到该mediaElement控件，暂时用该方法实现停止播放)
         }
 
         private void NewsCards_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ad_control9.Visibility = Visibility.Collapsed;
+            //ad_control9.Visibility = Visibility.Collapsed;
             topNewsImage.Visibility = Visibility.Collapsed;
             topNewsHL.FontSize = 14;
             topNewsMC.FontSize = 13;
@@ -114,17 +114,17 @@ namespace The_Paper.Views
             newsPageVM.IsOpen = true;
             NewsDetail.Navigate(typeof(NewsDetailPage),
                 ((News)(e.ClickedItem))?.uri);
-            ad_stackPanel.Visibility = Visibility.Collapsed;
+            //ad_stackPanel.Visibility = Visibility.Collapsed;
         }
 
         private void CloseAd_button_Click(object sender, RoutedEventArgs e)
         {
-            ad_stackPanel.Visibility = Visibility.Collapsed;
+            //ad_stackPanel.Visibility = Visibility.Collapsed;
         }
 
         private void News_Page_Loaded(object sender, RoutedEventArgs e)
         {
-            ad_stackPanel.Visibility = Visibility.Visible;
+            //ad_stackPanel.Visibility = Visibility.Visible;
         }
 
         //private void CoreWindow_KeyDown(CoreWindow sender, KeyEventArgs args)

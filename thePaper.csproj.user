@@ -5,19 +5,20 @@
     <UseEmulator>true</UseEmulator>
   </PropertyGroup>
   <PropertyGroup>
-    <MediumTileSource>D:\gitUWP\Learn-News-UWP\news_72px_547983_easyicon.net.png</MediumTileSource>
+    <MediumTileSource>C:\Users\singh\Desktop\news_72px.png</MediumTileSource>
     <AppxPackageIsForStore>True</AppxPackageIsForStore>
     <AppxShowAllApps>False</AppxShowAllApps>
     <AppxBuildConfigurationSelection>x86|x64|arm</AppxBuildConfigurationSelection>
     <PackageOptionalProjectsInIdeBuilds>False</PackageOptionalProjectsInIdeBuilds>
-    <Source>C:\Users\wang\Desktop\未命名_副本.png</Source>
-    <SmallTileSource>C:\Users\wang\Desktop\256256.png</SmallTileSource>
-    <WideTileSource>C:\Users\wang\Desktop\未命名_副本.png</WideTileSource>
-    <LargeTileSource>C:\Users\wang\Desktop\未命名_副本.png</LargeTileSource>
-    <AppIconSource>C:\Users\wang\Desktop\未命名_副本.png</AppIconSource>
-    <SplashScreenSource>D:\gitUWP\Learn-News-UWP\Assets\Square44x44Logo.scale-400.png</SplashScreenSource>
-    <BadgeLogoSource>C:\Users\wang\Desktop\未命名_副本.png</BadgeLogoSource>
-    <PackageLogoSource>C:\Users\wang\Desktop\未命名_副本.png</PackageLogoSource>
+    <Source>C:\Users\singh\Desktop\news_72px.png</Source>
+    <SmallTileSource>C:\Users\singh\Desktop\news_72px.png</SmallTileSource>
+    <WideTileSource>C:\Users\singh\Desktop\news_72px.png</WideTileSource>
+    <LargeTileSource>C:\Users\singh\Desktop\news_72px.png</LargeTileSource>
+    <AppIconSource>C:\Users\singh\Desktop\news_72px.png</AppIconSource>
+    <SplashScreenSource>C:\Users\singh\Desktop\news_72px.png</SplashScreenSource>
+    <BadgeLogoSource>C:\Users\singh\Desktop\news_72px.png</BadgeLogoSource>
+    <PackageLogoSource>C:\Users\singh\Desktop\news_72px.png</PackageLogoSource>
+    <UapAppxPackageBuildMode>StoreOnly</UapAppxPackageBuildMode>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
     <DeviceId>30F105C9-681E-420b-A277-7C086EAD8A4E</DeviceId>

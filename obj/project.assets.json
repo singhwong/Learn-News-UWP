@@ -18092,11 +18092,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\gitUWP\\Learn-News-UWP\\thePaper.csproj",
+      "projectUniqueName": "C:\\Users\\singh\\Documents\\GitHub\\Learn-News-UWP\\thePaper.csproj",
       "projectName": "thePaper",
-      "projectPath": "D:\\gitUWP\\Learn-News-UWP\\thePaper.csproj",
+      "projectPath": "C:\\Users\\singh\\Documents\\GitHub\\Learn-News-UWP\\thePaper.csproj",
       "packagesPath": "C:\\Users\\singh\\.nuget\\packages\\",
-      "outputPath": "D:\\gitUWP\\Learn-News-UWP\\obj\\",
+      "outputPath": "C:\\Users\\singh\\Documents\\GitHub\\Learn-News-UWP\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [

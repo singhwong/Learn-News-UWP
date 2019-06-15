@@ -92,6 +92,7 @@ namespace The_Paper.Controls
                     InlineUIContainer container = new InlineUIContainer();
                     StackPanel stackPanel = new StackPanel();
                     TextBlock textBlock = new TextBlock();
+                    textBlock.TextWrapping = TextWrapping.WrapWholeWords;
                     textBlock.Text = newsVideo.desc;
                     textBlock.TextAlignment = TextAlignment.Center;
                     textBlock.Foreground = new SolidColorBrush(Colors.Black);
@@ -120,6 +121,7 @@ namespace The_Paper.Controls
                     NewsImage newsImage = content.content as NewsImage;
                     Image image = new Image();
                     TextBlock textBlock = new TextBlock();
+                    textBlock.TextWrapping = TextWrapping.WrapWholeWords;
                     StackPanel stackPanel = new StackPanel();
                     BitmapImage bitMap = new BitmapImage();
                     Paragraph paragraph = new Paragraph();

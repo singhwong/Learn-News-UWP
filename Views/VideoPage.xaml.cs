@@ -116,7 +116,7 @@ namespace The_Paper.Views
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            ad_stackPanel.Visibility = Visibility.Visible;
+            //ad_stackPanel.Visibility = Visibility.Visible;
         }
 
         private void Close_button_Click(object sender, RoutedEventArgs e)
@@ -126,7 +126,7 @@ namespace The_Paper.Views
 
         private void CloseAd_button_Click(object sender, RoutedEventArgs e)
         {
-            ad_stackPanel.Visibility = Visibility.Collapsed;
+            //ad_stackPanel.Visibility = Visibility.Collapsed;
         }
     }
 }

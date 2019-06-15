@@ -11,6 +11,36 @@
     Loaded="Page_Loaded">
     
     <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Default">
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBackground">
+                        <GradientStop Color="Black" Offset="0.0"/>
+                        <GradientStop Color="DarkGray" Offset="1.0"/>
+                    </LinearGradientBrush>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBorderBrush">
+                        <GradientStop Color="White" Offset="0.0"/>
+                        <GradientStop Color="Gray" Offset="1.0"/>
+                    </LinearGradientBrush>
+
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBackgroundPointerOver">
+                        <GradientStop Color="WhiteSmoke" Offset="0.0"/>
+                        <GradientStop Color="Gray" Offset="1.0"/>
+                    </LinearGradientBrush>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBorderBrushPointerOver">
+                        <GradientStop Color="LightGray" Offset="0.0"/>
+                        <GradientStop Color="White" Offset="1.0"/>
+                    </LinearGradientBrush>
+
+                    <SolidColorBrush x:Key="ButtonForeground" Color="White"/>
+                    <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                    <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
+                    <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="DimGray"/>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
@@ -24,36 +54,6 @@
                      FontWeight="Bold"
                      Width="200"
                      Click="Email_button_Click">
-                <Button.Resources>
-                    <ResourceDictionary>
-                        <ResourceDictionary.ThemeDictionaries>
-                            <ResourceDictionary x:Key="Default">
-                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBackground">
-                                    <GradientStop Color="Black" Offset="0.0"/>
-                                    <GradientStop Color="DarkGray" Offset="1.0"/>
-                                </LinearGradientBrush>
-                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBorderBrush">
-                                    <GradientStop Color="White" Offset="0.0"/>
-                                    <GradientStop Color="Gray" Offset="1.0"/>
-                                </LinearGradientBrush>
-
-                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBackgroundPointerOver">
-                                    <GradientStop Color="WhiteSmoke" Offset="0.0"/>
-                                    <GradientStop Color="Gray" Offset="1.0"/>
-                                </LinearGradientBrush>
-                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBorderBrushPointerOver">
-                                    <GradientStop Color="LightGray" Offset="0.0"/>
-                                    <GradientStop Color="White" Offset="1.0"/>
-                                </LinearGradientBrush>
-
-                                <SolidColorBrush x:Key="ButtonForeground" Color="White"/>
-                                <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
-                                <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
-                                <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="DimGray"/>
-                            </ResourceDictionary>
-                        </ResourceDictionary.ThemeDictionaries>
-                    </ResourceDictionary>
-                </Button.Resources>
                 <Button.Content>
                     <StackPanel Orientation="Horizontal">
                         <FontIcon Glyph="&#xE715;" Margin="0,10,0,10" FontSize="15" FontWeight="{x:Bind FontWeight}"
@@ -63,7 +63,6 @@
 
                 </Button.Content>
             </Button>
-
             <Button  x:Name="comment_button"
                      Margin="0,20"
                      AutomationProperties.Name="Custom appearance"
@@ -73,36 +72,6 @@
                      FontWeight="Bold"
                      Width="200"
                      Click="Comment_button_Click">
-                <Button.Resources>
-                    <ResourceDictionary>
-                        <ResourceDictionary.ThemeDictionaries>
-                            <ResourceDictionary x:Key="Default">
-                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBackground">
-                                    <GradientStop Color="Black" Offset="0.0"/>
-                                    <GradientStop Color="DarkGray" Offset="1.0"/>
-                                </LinearGradientBrush>
-                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBorderBrush">
-                                    <GradientStop Color="White" Offset="0.0"/>
-                                    <GradientStop Color="Gray" Offset="1.0"/>
-                                </LinearGradientBrush>
-
-                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBackgroundPointerOver">
-                                    <GradientStop Color="WhiteSmoke" Offset="0.0"/>
-                                    <GradientStop Color="Gray" Offset="1.0"/>
-                                </LinearGradientBrush>
-                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBorderBrushPointerOver">
-                                    <GradientStop Color="LightGray" Offset="0.0"/>
-                                    <GradientStop Color="White" Offset="1.0"/>
-                                </LinearGradientBrush>
-
-                                <SolidColorBrush x:Key="ButtonForeground" Color="White"/>
-                                <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
-                                <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
-                                <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="DimGray"/>
-                            </ResourceDictionary>
-                        </ResourceDictionary.ThemeDictionaries>
-                    </ResourceDictionary>
-                </Button.Resources>
                 <Button.Content>
                     <StackPanel Orientation="Horizontal">
                         <FontIcon Glyph="&#xE90A;" Margin="0,10,0,10" FontSize="15" FontWeight="{x:Bind FontWeight}"/>
@@ -111,7 +80,23 @@
 
                 </Button.Content>
             </Button>
-            <StackPanel Orientation="Horizontal">
+            <Button  x:Name="more_button"
+                     AutomationProperties.Name="Custom appearance"
+                     CornerRadius="10"
+                     Padding="4,-3,4,-3" 
+                     BorderThickness="1"
+                     FontWeight="Bold"
+                     Width="200"
+                     Tapped="More_button_Tapped">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <FontIcon Glyph="&#xE71D;" Margin="0,10,0,10" FontSize="15" FontWeight="{x:Bind FontWeight}"/>
+                        <TextBlock Text="更多应用" Margin="10, 7, 0, 0"/>
+                    </StackPanel>
+
+                </Button.Content>
+            </Button>
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
                 <TextBlock Text="系统音效"
                            Margin="0,0,20,0"
                            VerticalAlignment="Center"/>
@@ -119,11 +104,11 @@
                               Toggled="Setting_toggleSwitch_Toggled"/>
             </StackPanel>
         </StackPanel>
-        <UI:AdControl x:Name="ad_contro"
+        <!--<UI:AdControl x:Name="ad_contro"
                       Grid.Row="1"
                       ApplicationId="9pcr0b34nft8"
                       AdUnitId="1100039458"
                       Height="100"
-                      Width="640"/>
+                      Width="640"/>-->
     </Grid>
 </Page>

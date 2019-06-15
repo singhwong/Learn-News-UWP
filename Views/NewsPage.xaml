@@ -25,7 +25,7 @@
           Background="WhiteSmoke">
         <Grid.RowDefinitions>
             <RowDefinition x:Name="row_1"
-                           Height="45"/>
+                           Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -64,7 +64,7 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        <StackPanel x:Name="newsPage_ads"
+        <!--<StackPanel x:Name="newsPage_ads"
                     Margin="10,0,0,0"
                     Orientation="Horizontal">
             <UI:AdControl x:Name="ad_contro"
@@ -87,7 +87,7 @@
                       AdUnitId="1100039461"
                       Height="50"
                       Width="320"/>
-        </StackPanel>
+        </StackPanel>-->
         <Button Name="back_button"
                 Grid.Column="1"
                 HorizontalAlignment="Left"
@@ -210,12 +210,22 @@
                                   IsItemClickEnabled="True"
                                   ItemClick="NewsCards_ItemClick"
                                   RelativePanel.Below="topNews">
+                            <!--<GridView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <ItemsWrapGrid Orientation="Horizontal" HorizontalAlignment="Center"/>
+                                </ItemsPanelTemplate>
+                            </GridView.ItemsPanel>-->
+                            <GridView.ItemContainerStyle>
+                                <Style TargetType="GridViewItem">
+                                    <Setter Property="Margin" Value="0,0,20,20"/>
+                                </Style>
+                            </GridView.ItemContainerStyle>
                             <GridView.ItemTemplate>
                                 <DataTemplate x:DataType="local2:News">
                                     <!--<UserControl>-->
-                                    <Grid Name="NewsCard"     
-                                          Margin="5"
-                                          Height="245">
+                                    <Grid Name="NewsCard"    
+                                          Height="245"
+                                          Padding="-5,0">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto"/>
                                             <RowDefinition Height="Auto"/>
@@ -278,7 +288,7 @@
                 </ScrollViewer>
             </local3:TabView.View>
         </local3:TabView>
-        <StackPanel x:Name="ad_stackPanel"
+        <!--<StackPanel x:Name="ad_stackPanel"
                     Grid.Row="1"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Right">
@@ -301,7 +311,7 @@
                       AdUnitId="1100039458"
                       Height="600"
                       Width="160"/>
-        </StackPanel>
+        </StackPanel>-->
         
         <Frame Name="NewsDetail"
                Grid.Row="1"

@@ -80,5 +80,10 @@ namespace The_Paper.Views
         {
             SetIsToggleSwitchIsOn();
         }
+
+        private async void More_button_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://publisher/?name=singhwong"));
+        }
     }
 }

@@ -63,7 +63,7 @@
         </ScrollViewer>
         <!--<ProgressRing Background="Transparent" IsActive="{Binding Path=Loaded,Converter={StaticResource BIC}}"
                           Width="75" Height="75"/>-->
-        <StackPanel x:Name="ad_stackPanel"
+        <!--<StackPanel x:Name="ad_stackPanel"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Right">
             <Button x:Name="closeAd_button"                  
@@ -85,6 +85,6 @@
                       AdUnitId="1100039461"
                       Height="600"
                       Width="160"/>
-        </StackPanel>
+        </StackPanel>-->
         </Grid>
 </Page>

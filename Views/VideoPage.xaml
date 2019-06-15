@@ -27,7 +27,7 @@
           Background="WhiteSmoke">
         <Grid.RowDefinitions>
             <RowDefinition x:Name="row_1"
-                           Height="45"/>
+                           Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <VisualStateManager.VisualStateGroups>
@@ -108,7 +108,7 @@
                     </StackPanel>
                 </Button.Content>
             </Button>
-            <UI:AdControl x:Name="ad_contro5"
+            <!--<UI:AdControl x:Name="ad_contro5"
                       ApplicationId="9pcr0b34nft8"
                       AdUnitId="1100039458"
                       Height="50"
@@ -127,7 +127,7 @@
                       ApplicationId="99pcr0b34nft8"
                       AdUnitId="1100039461"
                       Height="50"
-                      Width="320"/>
+                      Width="320"/>-->
         </StackPanel>
         <local3:TabView Name="TabView"
                         Grid.Row="1"
@@ -222,9 +222,14 @@
                               CanReorderItems="True"
                               IsSwipeEnabled="True"
                                       ItemClick="VideoCards_ItemClick">
+                                <GridView.ItemContainerStyle>
+                                    <Style TargetType="GridViewItem">
+                                        <Setter Property="Margin" Value="0,0,20,20"/>
+                                    </Style>
+                                </GridView.ItemContainerStyle>
                                 <GridView.ItemTemplate>
                                     <DataTemplate x:DataType="local2:Video">
-                                        <Grid Margin="5"
+                                        <Grid Padding="-5,0"
                                               Height="245">
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="Auto"/>
@@ -394,7 +399,7 @@
             <Frame Name="VideoDetail"
                                Grid.Row="1"/>
         </Grid>
-        <StackPanel x:Name="ad_stackPanel"
+        <!--<StackPanel x:Name="ad_stackPanel"
                     Grid.Row="1"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Right">
@@ -419,6 +424,6 @@
                       AdUnitId="1100039459"
                       Height="600"
                       Width="160"/>
-        </StackPanel>
+        </StackPanel>-->
     </Grid>
 </Page>
