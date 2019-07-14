@@ -1,9 +1,0 @@
-﻿"C:\Users\singh\Documents\GitHub\Learn-News-UWP\obj\x86\Release\ilc\in\HtmlAgilityPack.dll"
-"C:\Users\singh\Documents\GitHub\Learn-News-UWP\obj\x86\Release\ilc\in\The Paper.exe"
-/Lib:"C:\Users\singh\Documents\GitHub\Learn-News-UWP\obj\x86\Release\ilc\in"
-/Lib:"C:\Users\singh\.nuget\packages\runtime.win10-x86.microsoft.net.native.compiler\2.1.8\tools\x86\ilc\lib\Private"
-/WinMD:"C:\Users\singh\Documents\GitHub\Learn-News-UWP\obj\x86\Release\ilc\in\WinMetadata\Microsoft.Advertising.winmd"
-/WinMD:"C:\Users\singh\Documents\GitHub\Learn-News-UWP\obj\x86\Release\ilc\in\WinMetadata\Windows.winmd"
-/VSTelemetrySessionSettings:"{"IsOptedIn":true,"HostName":"Dev14","AppInsightsInstrumentationKey":"f144292e-e3b2-4011-ac90-20e5c03fbce5","AsimovInstrumentationKey":"AIF-312cbd79-9dbb-4c48-a7da-3cc2a931cb70","AppId":1001,"UserId":"4bbcea99-0aa3-45cb-b274-b0fdbefa359f","Id":"d9ced782-987b-4862-914f-deebe530bdd9","ProcessStartTime":636962221880090965}"
-/RdXmlPath:"C:\Users\singh\.nuget\packages\microsoft.net.native.compiler\2.1.8\tools\LibraryXML"
-/RunOnlyPreDR

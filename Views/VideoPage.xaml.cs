@@ -91,7 +91,7 @@ namespace The_Paper.Views
         {
             back_button.Visibility = Visibility.Collapsed;
             mediaElement.Visibility = Visibility.Collapsed;
-            mediaElement.Stop();
+            mediaElement.Pause();
             VideoDetail_grid.Visibility = Visibility.Collapsed;
             if (index == 0)
             {
@@ -105,6 +105,7 @@ namespace The_Paper.Views
 
         private void VideoCards_ItemClick(object sender, ItemClickEventArgs e)
         {
+            mediaElement.AutoPlay = true;
             videoPageVM.Play((Video)(e.ClickedItem));
             VideoDetail.Navigate(typeof(VideoDetailPage), ((Video)(e.ClickedItem)).uri);
             back_button.Visibility = Visibility.Visible;
@@ -117,6 +118,7 @@ namespace The_Paper.Views
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             //ad_stackPanel.Visibility = Visibility.Visible;
+            mediaElement.AutoPlay = false;
         }
 
         private void Close_button_Click(object sender, RoutedEventArgs e)
@@ -126,7 +128,7 @@ namespace The_Paper.Views
 
         private void CloseAd_button_Click(object sender, RoutedEventArgs e)
         {
-            //ad_stackPanel.Visibility = Visibility.Collapsed;
+            ad_stackPanel.Visibility = Visibility.Collapsed;
         }
     }
 }

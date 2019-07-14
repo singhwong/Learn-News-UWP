@@ -5,19 +5,19 @@
     <UseEmulator>true</UseEmulator>
   </PropertyGroup>
   <PropertyGroup>
-    <MediumTileSource>C:\Users\singh\Desktop\news_72px.png</MediumTileSource>
+    <MediumTileSource>C:\Users\singh\Pictures\mzl.xnccinvb.png</MediumTileSource>
     <AppxPackageIsForStore>True</AppxPackageIsForStore>
     <AppxShowAllApps>False</AppxShowAllApps>
     <AppxBuildConfigurationSelection>x86|x64|arm</AppxBuildConfigurationSelection>
     <PackageOptionalProjectsInIdeBuilds>False</PackageOptionalProjectsInIdeBuilds>
-    <Source>C:\Users\singh\Desktop\news_72px.png</Source>
-    <SmallTileSource>C:\Users\singh\Desktop\news_72px.png</SmallTileSource>
-    <WideTileSource>C:\Users\singh\Desktop\news_72px.png</WideTileSource>
-    <LargeTileSource>C:\Users\singh\Desktop\news_72px.png</LargeTileSource>
-    <AppIconSource>C:\Users\singh\Desktop\news_72px.png</AppIconSource>
-    <SplashScreenSource>C:\Users\singh\Desktop\news_72px.png</SplashScreenSource>
-    <BadgeLogoSource>C:\Users\singh\Desktop\news_72px.png</BadgeLogoSource>
-    <PackageLogoSource>C:\Users\singh\Desktop\news_72px.png</PackageLogoSource>
+    <Source>C:\Users\singh\Pictures\mzl.xnccinvb.png</Source>
+    <SmallTileSource>C:\Users\singh\Pictures\mzl.xnccinvb.png</SmallTileSource>
+    <WideTileSource>C:\Users\singh\Pictures\mzl.xnccinvb.png</WideTileSource>
+    <LargeTileSource>C:\Users\singh\Pictures\mzl.xnccinvb.png</LargeTileSource>
+    <AppIconSource>C:\Users\singh\Pictures\mzl.xnccinvb.png</AppIconSource>
+    <SplashScreenSource>C:\Users\singh\Pictures\mzl.xnccinvb.png</SplashScreenSource>
+    <BadgeLogoSource>C:\Users\singh\Pictures\mzl.xnccinvb.png</BadgeLogoSource>
+    <PackageLogoSource>C:\Users\singh\Pictures\mzl.xnccinvb.png</PackageLogoSource>
     <UapAppxPackageBuildMode>StoreOnly</UapAppxPackageBuildMode>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">

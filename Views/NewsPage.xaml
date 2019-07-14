@@ -288,10 +288,10 @@
                 </ScrollViewer>
             </local3:TabView.View>
         </local3:TabView>
-        <!--<StackPanel x:Name="ad_stackPanel"
+        <StackPanel x:Name="ad_stackPanel"
                     Grid.Row="1"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Right">
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Center">
             <Button x:Name="closeAd_button"                  
                     Style="{StaticResource button_Style_2}"
                     Click="CloseAd_button_Click">
@@ -306,12 +306,35 @@
                     </StackPanel>
                 </Button.Content>
             </Button>
-            <UI:AdControl x:Name="ad_control9"
+            <!--<UI:AdControl x:Name="ad_control9"
                       ApplicationId="9pcr0b34nft8"
                       AdUnitId="1100039458"
                       Height="600"
-                      Width="160"/>
-        </StackPanel>-->
+                      Width="160"/>-->
+            <StackPanel Orientation="Horizontal">
+                <UI:AdControl x:Name="ad_contro"
+                      ApplicationId="9pcr0b34nft8"
+                      AdUnitId="1100039458"
+                      Height="50"
+                      Width="320"/>
+                <UI:AdControl x:Name="ad_control2"
+                      ApplicationId="9pcr0b34nft8"
+                      AdUnitId="1100039459"
+                      Height="50"
+                      Width="320" Margin="3,0"/>
+                <UI:AdControl x:Name="ad_control3"
+                      ApplicationId="9pcr0b34nft8"
+                      AdUnitId="1100039460"
+                      Height="50"
+                      Width="320"/>
+                <UI:AdControl x:Name="ad_control4"
+                      ApplicationId="9pcr0b34nft8"
+                      AdUnitId="1100039461"
+                      Height="50"
+                      Width="320" Margin="3,0,0,0"/>
+            </StackPanel>
+            
+        </StackPanel>
         
         <Frame Name="NewsDetail"
                Grid.Row="1"
