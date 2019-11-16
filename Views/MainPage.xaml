@@ -8,7 +8,8 @@
     xmlns:local2="using:The_Paper.Models"
     mc:Ignorable="d"
     Background="{ThemeResource SystemControlAcrylicWindowBrush}"
-    Loaded="Page_Loaded">
+    Loaded="Page_Loaded"
+    RequestedTheme="Dark">
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -22,10 +23,9 @@
         <SplitView Name="splitView"
                    DisplayMode="CompactInline"
                    OpenPaneLength="100"
-                   CompactPaneLength="40"
-                   >
+                   CompactPaneLength="40">
             <SplitView.Pane>
-                <Grid Background="WhiteSmoke">
+                <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>

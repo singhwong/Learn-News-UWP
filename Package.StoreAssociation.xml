@@ -241,6 +241,8 @@
     <Language Code="no-no" InMinimumRequirementSet="true" />
     <Language Code="nso" InMinimumRequirementSet="true" />
     <Language Code="nso-za" InMinimumRequirementSet="true" />
+    <Language Code="om" InMinimumRequirementSet="false" />
+    <Language Code="om-et" InMinimumRequirementSet="false" />
     <Language Code="or" InMinimumRequirementSet="true" />
     <Language Code="or-in" InMinimumRequirementSet="true" />
     <Language Code="pa" InMinimumRequirementSet="true" />
@@ -362,6 +364,9 @@
     <MainPackageIdentityName>14523wongsoft.6397904DAF804</MainPackageIdentityName>
     <ReservedNames>
       <ReservedName>澎湃新闻速览版</ReservedName>
+      <ReservedName>时政新闻UWP</ReservedName>
+      <ReservedName>澎湃新闻第三方客户端UWP</ReservedName>
+      <ReservedName>The Paper News</ReservedName>
     </ReservedNames>
   </ProductReservedInfo>
   <AccountPackageIdentityNames>
@@ -371,6 +376,9 @@
     <MainPackageIdentityName>14523wongsoft.Thesoundofnature</MainPackageIdentityName>
     <MainPackageIdentityName>14523wongsoft.UMusicPlayer</MainPackageIdentityName>
     <MainPackageIdentityName>14523wongsoft.UsefulWeather</MainPackageIdentityName>
+    <MainPackageIdentityName>14523wongsoft.VLCPlayerDemo</MainPackageIdentityName>
+    <MainPackageIdentityName>14523wongsoft.2277735827688</MainPackageIdentityName>
+    <MainPackageIdentityName>14523wongsoft.15210ECD21987</MainPackageIdentityName>
   </AccountPackageIdentityNames>
   <PackageInfoList LandingUrl="https://developer.microsoft.com/dashboard/Application?appId=9PCR0B34NFT8" />
 </StoreAssociation>

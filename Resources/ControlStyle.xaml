@@ -453,7 +453,7 @@
     
     <!--Custom Style For CommentListBox-->
     <Style TargetType="ListBoxItem" x:Key="CommentListBoxStyle">
-        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Background" Value="{ThemeResource SystemControlAcrylicWindowBrush}" />
         <Setter Property="TabNavigation" Value="Local" />
         <Setter Property="Padding" Value="12,11,12,13" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />

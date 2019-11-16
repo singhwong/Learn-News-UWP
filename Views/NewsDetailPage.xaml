@@ -10,7 +10,9 @@
     xmlns:local2="using:The_Paper.Controls"
     xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
     mc:Ignorable="d"
-    Loaded="Page_Loaded">
+    Loaded="Page_Loaded"
+    RequestedTheme="Dark"
+    Background="{ThemeResource SystemControlAcrylicWindowBrush}">
 
     <Page.Resources>
         <ResourceDictionary>
@@ -20,8 +22,8 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Background="WhiteSmoke">
-        <ScrollViewer Background="WhiteSmoke">
+    <Grid>
+        <ScrollViewer>
             <RelativePanel Name="newsContent_relativePanel">
                 <TextBlock Name="headLine" 
                            TextWrapping="WrapWholeWords"
@@ -34,7 +36,7 @@
                 <TextBlock Name="About" 
                            Margin="20,20,20,5"
                            RelativePanel.Below="headLine"
-                           FontSize="14"
+                           FontSize="20"
                            Foreground="Gray"
                            Text="{Binding NewsDetail.about}" />
                 <TextBlock Name="Time" 
@@ -49,8 +51,9 @@
                         BorderThickness="0,1,0,1">
                     <local2:NewsDetailView x:Name="newsContent"
                                            Margin="20,20,20,20"          
-                                           FontFamily="宋体"
-                                           NewsDetail="{Binding NewsDetail}" />
+                                           
+                                           NewsDetail="{Binding NewsDetail}" 
+                                           FontSize="20"/>
                 </Border>
                 <TextBlock 
                            Name="Editor" 
@@ -58,7 +61,7 @@
                            Margin="20,10,20,20"
                            RelativePanel.Below="newsContentBorder"
                            Text="{Binding NewsDetail.editor}" />
-                <uc:CommentControl RelativePanel.Below="Editor" Margin="20,10,20,10" />
+                <uc:CommentControl RelativePanel.Below="Editor" Margin="20,10,20,10"/>
             </RelativePanel>
         </ScrollViewer>
         <!--<ProgressRing Background="Transparent" IsActive="{Binding Path=Loaded,Converter={StaticResource BIC}}"

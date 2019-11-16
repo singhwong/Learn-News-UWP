@@ -5,19 +5,19 @@
     <UseEmulator>true</UseEmulator>
   </PropertyGroup>
   <PropertyGroup>
-    <MediumTileSource>C:\Users\singh\Desktop\news_174.62251655629px_1156842_easyicon.net.png</MediumTileSource>
+    <MediumTileSource>C:\Users\singh\Pictures\news_black_72px_1114831_easyicon.net.png</MediumTileSource>
     <AppxPackageIsForStore>True</AppxPackageIsForStore>
-    <AppxShowAllApps>False</AppxShowAllApps>
+    <AppxShowAllApps>True</AppxShowAllApps>
     <AppxBuildConfigurationSelection>x86|x64|arm</AppxBuildConfigurationSelection>
     <PackageOptionalProjectsInIdeBuilds>False</PackageOptionalProjectsInIdeBuilds>
-    <Source>C:\Users\singh\Desktop\news_174.62251655629px_1156842_easyicon.net.png</Source>
-    <SmallTileSource>C:\Users\singh\Desktop\news_174.62251655629px_1156842_easyicon.net.png</SmallTileSource>
-    <WideTileSource>C:\Users\singh\Desktop\news_174.62251655629px_1156842_easyicon.net.png</WideTileSource>
-    <LargeTileSource>C:\Users\singh\Desktop\news_174.62251655629px_1156842_easyicon.net.png</LargeTileSource>
-    <AppIconSource>C:\Users\singh\Desktop\news_174.62251655629px_1156842_easyicon.net.png</AppIconSource>
-    <SplashScreenSource>C:\Users\singh\Desktop\news_174.62251655629px_1156842_easyicon.net.png</SplashScreenSource>
-    <BadgeLogoSource>C:\Users\singh\Desktop\news_174.62251655629px_1156842_easyicon.net.png</BadgeLogoSource>
-    <PackageLogoSource>C:\Users\singh\Desktop\news_174.62251655629px_1156842_easyicon.net.png</PackageLogoSource>
+    <Source>C:\Users\singh\Pictures\news_black_72px_1114831_easyicon.net.png</Source>
+    <SmallTileSource>C:\Users\singh\Pictures\news_black_72px_1114831_easyicon.net.png</SmallTileSource>
+    <WideTileSource>C:\Users\singh\Pictures\news_black_72px_1114831_easyicon.net.png</WideTileSource>
+    <LargeTileSource>C:\Users\singh\Pictures\news_black_72px_1114831_easyicon.net.png</LargeTileSource>
+    <AppIconSource>C:\Users\singh\Pictures\news_black_72px_1114831_easyicon.net.png</AppIconSource>
+    <SplashScreenSource>C:\Users\singh\Pictures\news_black_72px_1114831_easyicon.net.png</SplashScreenSource>
+    <BadgeLogoSource>C:\Users\singh\Pictures\news_black_72px_1114831_easyicon.net.png</BadgeLogoSource>
+    <PackageLogoSource>C:\Users\singh\Pictures\news_black_72px_1114831_easyicon.net.png</PackageLogoSource>
     <UapAppxPackageBuildMode>StoreOnly</UapAppxPackageBuildMode>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">

@@ -51,7 +51,7 @@ namespace The_Paper.Views
             mediaElement.Visibility = Visibility.Collapsed;
             mediaElement.Stop();
             #region 优化点击顶部标题烂选项，右边会出现 NewsDetail Page bug,尚不知为何会出现这种情况
-            colume_2.Width = new GridLength(0);
+            //colume_2.Width = new GridLength(0);
             back_button.Visibility = Visibility.Collapsed;
             #endregion
             if (index == 0)
@@ -109,7 +109,7 @@ namespace The_Paper.Views
             videoPageVM.Play((Video)(e.ClickedItem));
             VideoDetail.Navigate(typeof(VideoDetailPage), ((Video)(e.ClickedItem)).uri);
             back_button.Visibility = Visibility.Visible;
-            colume_2.Width = new GridLength(1,GridUnitType.Auto);
+            //colume_2.Width = new GridLength(1,GridUnitType.Auto);
             //videoRow_1.Height = new GridLength(1, GridUnitType.Star);
             mediaElement.Visibility = Visibility.Visible;
             VideoDetail_grid.Visibility = Visibility.Visible;

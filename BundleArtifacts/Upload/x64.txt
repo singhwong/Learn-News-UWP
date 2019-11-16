@@ -1,2 +1,2 @@
-MainPackage=D:\GitHubFile\Learn-News-UWP\bin\x64\Release\Upload\thePaper_1.1.10.0_x64.msix
-SymbolPackage=D:\GitHubFile\Learn-News-UWP\bin\x64\Release\Upload\thePaper_1.1.10.0\thePaper_1.1.10.0_x64.appxsym
+MainPackage=D:\GithubUwp\Learn-News-UWP\bin\x64\Release\Upload\thePaper_1.1.11.0_x64.msix
+SymbolPackage=D:\GithubUwp\Learn-News-UWP\bin\x64\Release\Upload\thePaper_1.1.11.0\thePaper_1.1.11.0_x64.appxsym

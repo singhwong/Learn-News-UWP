@@ -11,8 +11,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
     xmlns:local2="using:The_Paper.Models"
+    Background="{ThemeResource SystemControlAcrylicWindowBrush}"
     mc:Ignorable="d"
-    Loaded="Page_Loaded">
+    Loaded="Page_Loaded"
+    RequestedTheme="Dark">
 
     <Page.Resources>
         <ResourceDictionary>
@@ -23,13 +25,7 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Name="RootGrid"
-          Background="WhiteSmoke">
-        <Grid.RowDefinitions>
-            <RowDefinition x:Name="row_1"
-                           Height="Auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
+    <Grid Name="RootGrid">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
                 <VisualState>
@@ -59,78 +55,7 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        <StackPanel x:Name="videoPage_ads"
-                    Orientation="Horizontal">
-            <Button Name="back_button"
-                FontSize="15"
-                HorizontalAlignment="Left"
-                FontWeight="Bold"
-                Visibility="Collapsed"
-                AutomationProperties.Name="Custom appearance"
-                Padding="4,-3,4,-3" 
-                BorderThickness="1"
-                    CornerRadius="10"
-                Click="Back_button_Click">
-                <Button.Resources>
-                    <ResourceDictionary>
-                        <ResourceDictionary.ThemeDictionaries>
-                            <ResourceDictionary x:Key="Default">
-                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBackground">
-                                    <GradientStop Color="Black" Offset="0.0"/>
-                                    <GradientStop Color="DarkGray" Offset="1.0"/>
-                                </LinearGradientBrush>
-                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBorderBrush">
-                                    <GradientStop Color="White" Offset="0.0"/>
-                                    <GradientStop Color="Gray" Offset="1.0"/>
-                                </LinearGradientBrush>
-
-                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBackgroundPointerOver">
-                                    <GradientStop Color="WhiteSmoke" Offset="0.0"/>
-                                    <GradientStop Color="Gray" Offset="1.0"/>
-                                </LinearGradientBrush>
-                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBorderBrushPointerOver">
-                                    <GradientStop Color="LightGray" Offset="0.0"/>
-                                    <GradientStop Color="White" Offset="1.0"/>
-                                </LinearGradientBrush>
-
-                                <SolidColorBrush x:Key="ButtonForeground" Color="White"/>
-                                <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
-                                <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
-                                <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="DimGray"/>
-                            </ResourceDictionary>
-                        </ResourceDictionary.ThemeDictionaries>
-                    </ResourceDictionary>
-                </Button.Resources>
-                <Button.Content>
-                    <StackPanel Orientation="Horizontal">
-                        <FontIcon Glyph="&#xE8BB;" Margin="0,10,0,10" FontSize="15" FontWeight="{x:Bind FontWeight}"/>
-                        <TextBlock Text="关  闭" Margin="10, 7, 0, 0"/>
-                    </StackPanel>
-                </Button.Content>
-            </Button>
-            <!--<UI:AdControl x:Name="ad_contro5"
-                      ApplicationId="9pcr0b34nft8"
-                      AdUnitId="1100039458"
-                      Height="50"
-                      Width="320"/>
-            <UI:AdControl x:Name="ad_control6"
-                      ApplicationId="9pcr0b34nft8"
-                      AdUnitId="1100039459"
-                      Height="50"
-                      Width="320"/>
-            <UI:AdControl x:Name="ad_control7"
-                      ApplicationId="9pcr0b34nft8"
-                      AdUnitId="1100039460"
-                      Height="50"
-                      Width="320"/>
-            <UI:AdControl x:Name="ad_control8"
-                      ApplicationId="99pcr0b34nft8"
-                      AdUnitId="1100039461"
-                      Height="50"
-                      Width="320"/>-->
-        </StackPanel>
         <local3:TabView Name="TabView"
-                        Grid.Row="1"
                         TabNameList="{Binding TabNameList}" 
                         TabSwitch="TabView_TabSwitch">
             <local3:TabView.View>
@@ -140,24 +65,20 @@
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition x:Name="videoRow_1"
-                                       Height="330"/>
+                                       Height="Auto"/>
                             <RowDefinition Height="2*"/>
                         </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2*" />
-                            <ColumnDefinition x:Name="colume_2"
-                              Width="Auto" />
-                        </Grid.ColumnDefinitions>
-
                         <Grid Name="TopVideo"
                           Grid.ColumnSpan="2"    
                           RelativePanel.AlignHorizontalCenterWithPanel="True">
                             <Grid Name="TopThumb"                                
-                              Visibility="{Binding Path=HasTopVideo,Converter={StaticResource BTVC}}">
+                              Visibility="{Binding Path=HasTopVideo,Converter={StaticResource BTVC}}"
+                                  CornerRadius="2" Margin="5">
                                 <Image Source="{Binding TopVideo.imageSrc}"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   Stretch="UniformToFill"/>
+                                   Stretch="UniformToFill"
+                                       Height="330"/>
                                 <Canvas>
                                     <Canvas.Background>
                                         <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
@@ -224,7 +145,8 @@
                                       ItemClick="VideoCards_ItemClick">
                                 <GridView.ItemContainerStyle>
                                     <Style TargetType="GridViewItem">
-                                        <Setter Property="Margin" Value="0,0,20,20"/>
+                                        <Setter Property="Margin" Value="13"/>
+                                        <Setter Property="Background" Value="{ThemeResource SystemControlAcrylicElementBrush}"/>
                                     </Style>
                                 </GridView.ItemContainerStyle>
                                 <GridView.ItemTemplate>
@@ -361,11 +283,8 @@
         </local3:TabView>
         <ProgressRing Name="main_ProgressRing"
                       Width="100" Height="100" Grid.RowSpan="2" IsActive="{Binding Path=Loaded,Converter={StaticResource BIC}}" />
-        <MediaElement Grid.Row="1"
-                      VerticalAlignment="Top"
-                      HorizontalAlignment="Stretch"
-                      Height="330"
-                      Margin="0,30,0,0"
+        <Grid VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="330">
+            <MediaElement 
                       AutoPlay="False"
             Source="{Binding VideoDetail.playURL}" 
                                       Visibility="{Binding IsOpen, Converter={StaticResource BTVC}}"
@@ -374,18 +293,67 @@
                                       Name="mediaElement"         
                                       Volume="0.5"
                                       AreTransportControlsEnabled="True">
-            <MediaElement.TransportControls>
-                <MediaTransportControls x:Name="mediaElement_controls"
+                <MediaElement.TransportControls>
+                    <MediaTransportControls x:Name="mediaElement_controls"
                                                         IsCompact="True"/>
-            </MediaElement.TransportControls>
-        </MediaElement>
+                </MediaElement.TransportControls>
+            </MediaElement>
+            <Button Name="back_button"
+                FontSize="15"
+                    Visibility="{Binding IsOpen, Converter={StaticResource BTVC}}"
+                HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                FontWeight="Bold"
+                AutomationProperties.Name="Custom appearance"
+                Padding="4,-3,4,-3" 
+                BorderThickness="1"
+                    CornerRadius="10"
+                Click="Back_button_Click">
+                <Button.Resources>
+                    <ResourceDictionary>
+                        <ResourceDictionary.ThemeDictionaries>
+                            <ResourceDictionary x:Key="Default">
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBackground">
+                                    <GradientStop Color="Black" Offset="0.0"/>
+                                    <GradientStop Color="DarkGray" Offset="1.0"/>
+                                </LinearGradientBrush>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBorderBrush">
+                                    <GradientStop Color="White" Offset="0.0"/>
+                                    <GradientStop Color="Gray" Offset="1.0"/>
+                                </LinearGradientBrush>
+
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBackgroundPointerOver">
+                                    <GradientStop Color="WhiteSmoke" Offset="0.0"/>
+                                    <GradientStop Color="Gray" Offset="1.0"/>
+                                </LinearGradientBrush>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBorderBrushPointerOver">
+                                    <GradientStop Color="LightGray" Offset="0.0"/>
+                                    <GradientStop Color="White" Offset="1.0"/>
+                                </LinearGradientBrush>
+
+                                <SolidColorBrush x:Key="ButtonForeground" Color="White"/>
+                                <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                                <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
+                                <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="DimGray"/>
+                            </ResourceDictionary>
+                        </ResourceDictionary.ThemeDictionaries>
+                    </ResourceDictionary>
+                </Button.Resources>
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <FontIcon Glyph="&#xE8BB;" Margin="0,10,0,10" FontSize="15" FontWeight="{x:Bind FontWeight}"/>
+                        <TextBlock Text="关  闭" Margin="10, 7, 0, 0"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+        </Grid>
         <Grid Name="VideoDetail_grid"
               Width="240"
               Height="500"
-              Grid.Row="1"
               HorizontalAlignment="Right"
               VerticalAlignment="Bottom"
-              Visibility="Collapsed">
+              Visibility="Collapsed"
+              CornerRadius="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
@@ -398,7 +366,8 @@
                     Click="Close_button_Click">
             </Button>
             <Frame Name="VideoDetail"
-                               Grid.Row="1"/>
+                               Grid.Row="1"
+                   CornerRadius="2"/>
         </Grid>
         <!--<StackPanel x:Name="ad_stackPanel"
                     Grid.Row="1"
@@ -427,7 +396,6 @@
                       Width="160"/>
         </StackPanel>-->
         <StackPanel x:Name="ad_stackPanel"
-                    Grid.Row="1"
                     VerticalAlignment="Bottom"
                     HorizontalAlignment="Center">
             <Button x:Name="closeAd_button"                  

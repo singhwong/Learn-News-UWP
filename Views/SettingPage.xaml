@@ -8,6 +8,7 @@
     xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
     mc:Ignorable="d"
     Background="{ThemeResource SystemControlAcrylicWindowBrush}"
+    RequestedTheme="Dark"
     Loaded="Page_Loaded">
     
     <Grid>

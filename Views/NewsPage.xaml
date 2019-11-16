@@ -11,7 +11,9 @@
     xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
     mc:Ignorable="d"
     x:Name="News_Page"
-    Loaded="News_Page_Loaded">
+    Loaded="News_Page_Loaded"
+    RequestedTheme="Dark"
+    Background="{ThemeResource SystemControlAcrylicWindowBrush}">
 
     <Page.Resources>
         <ResourceDictionary>
@@ -21,13 +23,7 @@
             <local4:BoolInvertConverter x:Key="BIC" />
         </ResourceDictionary>
     </Page.Resources>
-    <Grid Name="Grid"
-          Background="WhiteSmoke">
-        <Grid.RowDefinitions>
-            <RowDefinition x:Name="row_1"
-                           Height="Auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
+    <Grid Name="Grid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition x:Name="colume_1"/>
             <ColumnDefinition x:Name="colume_2"
@@ -88,57 +84,8 @@
                       Height="50"
                       Width="320"/>
         </StackPanel>-->
-        <Button Name="back_button"
-                Grid.Column="1"
-                HorizontalAlignment="Left"
-                FontSize="15"
-                Visibility="Collapsed"
-                AutomationProperties.Name="Custom appearance"
-                Padding="4,-3,4,-3" 
-                BorderThickness="1"
-                FontWeight="Bold"
-                CornerRadius="10"
-                Margin="10,0,0,0"
-                Click="Back_button_Click">
-            <Button.Resources>
-                <ResourceDictionary>
-                    <ResourceDictionary.ThemeDictionaries>
-                        <ResourceDictionary x:Key="Default">
-                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBackground">
-                                <GradientStop Color="Black" Offset="0.0"/>
-                                <GradientStop Color="DarkGray" Offset="1.0"/>
-                            </LinearGradientBrush>
-                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBorderBrush">
-                                <GradientStop Color="White" Offset="0.0"/>
-                                <GradientStop Color="Gray" Offset="1.0"/>
-                            </LinearGradientBrush>
-
-                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBackgroundPointerOver">
-                                <GradientStop Color="WhiteSmoke" Offset="0.0"/>
-                                <GradientStop Color="Gray" Offset="1.0"/>
-                            </LinearGradientBrush>
-                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBorderBrushPointerOver">
-                                <GradientStop Color="LightGray" Offset="0.0"/>
-                                <GradientStop Color="White" Offset="1.0"/>
-                            </LinearGradientBrush>
-
-                            <SolidColorBrush x:Key="ButtonForeground" Color="White"/>
-                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
-                            <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
-                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="DimGray"/>
-                        </ResourceDictionary>
-                    </ResourceDictionary.ThemeDictionaries>
-                </ResourceDictionary>
-            </Button.Resources>
-            <Button.Content>
-                <StackPanel Orientation="Horizontal">
-                    <FontIcon Glyph="&#xE8BB;" Margin="0,10,0,10" FontSize="15" FontWeight="{x:Bind FontWeight}"/>
-                    <TextBlock Text="关  闭" Margin="10, 7, 0, 0"/>
-                </StackPanel>
-            </Button.Content>
-        </Button>
+        
         <local3:TabView x:Name="TabView"
-                        Grid.Row="1"
                         TabSwitch="TabView_TabSwitch"
                         TabNameList="{Binding TabNameList}">
             <local3:TabView.View>
@@ -146,11 +93,11 @@
                               ViewChanged="ScrollViewer_ViewChanged">
                     <RelativePanel>
                         <GridViewItem Name="topNews"
+                                      Margin="10"
                                       Style="{StaticResource NewsListItemStyle}"
                                       Visibility="{Binding Path=HasTopNews,Converter={StaticResource BTVC}}"
                                       Tapped="topNews_Tapped">
-                            <Grid Name="topNews_grid"
-                                  Background="WhiteSmoke">
+                            <Grid Name="topNews_grid" Background="{ThemeResource SystemControlAcrylicWindowBrush}">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto" x:Name="colume_one"/>
                                     <ColumnDefinition Width="*"/>
@@ -162,7 +109,7 @@
                                 <Image Name="topNewsImage" 
                                        Width="300"
                                        Source="{Binding TopNews.image}"
-                                       Margin="10,0,0,0"/>
+                                       Margin="0,0,0,0"/>
                                 <StackPanel Name="topNews_stackPanel"
                                             Orientation="Vertical"
                                             Grid.Column="1">
@@ -217,7 +164,8 @@
                             </GridView.ItemsPanel>-->
                             <GridView.ItemContainerStyle>
                                 <Style TargetType="GridViewItem">
-                                    <Setter Property="Margin" Value="0,0,20,20"/>
+                                    <Setter Property="Margin" Value="13"/>
+                                    <Setter Property="Background" Value="{ThemeResource SystemControlAcrylicElementBrush}"/>
                                 </Style>
                             </GridView.ItemContainerStyle>
                             <GridView.ItemTemplate>
@@ -225,7 +173,8 @@
                                     <!--<UserControl>-->
                                     <Grid Name="NewsCard"    
                                           Height="245"
-                                          Padding="-5,0">
+                                          Padding="-5,0"
+                                          CornerRadius="2">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto"/>
                                             <RowDefinition Height="Auto"/>
@@ -289,7 +238,6 @@
             </local3:TabView.View>
         </local3:TabView>
         <StackPanel x:Name="ad_stackPanel"
-                    Grid.Row="1"
                     VerticalAlignment="Bottom"
                     HorizontalAlignment="Center">
             <Button x:Name="closeAd_button"                  
@@ -335,14 +283,68 @@
             </StackPanel>
             
         </StackPanel>
-        
-        <Frame Name="NewsDetail"
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Name="back_button"
+                HorizontalAlignment="Left"
+                FontSize="15"
+                Visibility="Collapsed"
+                AutomationProperties.Name="Custom appearance"
+                Padding="4,-3,4,-3" 
+                BorderThickness="1"
+                FontWeight="Bold"
+                CornerRadius="10"
+                Margin="10,0,0,0"
+                Click="Back_button_Click">
+                <Button.Resources>
+                    <ResourceDictionary>
+                        <ResourceDictionary.ThemeDictionaries>
+                            <ResourceDictionary x:Key="Default">
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBackground">
+                                    <GradientStop Color="Black" Offset="0.0"/>
+                                    <GradientStop Color="DarkGray" Offset="1.0"/>
+                                </LinearGradientBrush>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBorderBrush">
+                                    <GradientStop Color="White" Offset="0.0"/>
+                                    <GradientStop Color="Gray" Offset="1.0"/>
+                                </LinearGradientBrush>
+
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBackgroundPointerOver">
+                                    <GradientStop Color="WhiteSmoke" Offset="0.0"/>
+                                    <GradientStop Color="Gray" Offset="1.0"/>
+                                </LinearGradientBrush>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBorderBrushPointerOver">
+                                    <GradientStop Color="LightGray" Offset="0.0"/>
+                                    <GradientStop Color="White" Offset="1.0"/>
+                                </LinearGradientBrush>
+
+                                <SolidColorBrush x:Key="ButtonForeground" Color="White"/>
+                                <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                                <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
+                                <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="DimGray"/>
+                            </ResourceDictionary>
+                        </ResourceDictionary.ThemeDictionaries>
+                    </ResourceDictionary>
+                </Button.Resources>
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <FontIcon Glyph="&#xE8BB;" Margin="0,10,0,10" FontSize="15" FontWeight="{x:Bind FontWeight}"/>
+                        <TextBlock Text="关  闭" Margin="10, 7, 0, 0"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+            <Frame Name="NewsDetail"
                Grid.Row="1"
-               Grid.Column="1"
                Visibility="Collapsed"/>
-        <ProgressRing Width="100"
+            <ProgressRing Width="100"
                       Height="100" 
                       Grid.RowSpan="2"                     
-                      IsActive="{Binding Path=Loaded,Converter={StaticResource BIC}}" />
+                      IsActive="{Binding Path=Loaded,Converter={StaticResource BIC}}" 
+                      HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        
     </Grid>
 </Page>

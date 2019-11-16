@@ -63,7 +63,9 @@ namespace The_Paper.Controls
         private void LoadNewsDetail()
         {
             StackPanel panel = new StackPanel();
-            panel.Background = new SolidColorBrush(Colors.WhiteSmoke);
+            panel.RequestedTheme = ElementTheme.Dark;
+            panel.Background = new SolidColorBrush(Colors.DimGray);
+            panel.CornerRadius = new CornerRadius(2);
             panel.Orientation = Orientation.Vertical;
             RichTextBlock richTextBlock = new RichTextBlock();
             richTextBlock.CharacterSpacing = 100;

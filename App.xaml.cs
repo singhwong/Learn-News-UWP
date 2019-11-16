@@ -8,6 +8,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Core;
+using Windows.ApplicationModel.Core;
 
 namespace The_Paper
 {
@@ -85,8 +86,19 @@ namespace The_Paper
             }
             rootFrame.Navigated += OnNavigated;
             SystemNavigationManager.GetForCurrentView().BackRequested += BackRequested;
+            ExtendAcrylicIntoTitleBar();
         }
-
+        private void ExtendAcrylicIntoTitleBar()
+        {
+            //CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
+            ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
+            titleBar.ButtonBackgroundColor = Colors.Black;
+            titleBar.ButtonInactiveBackgroundColor = Colors.Black;
+            titleBar.ButtonForegroundColor = Colors.WhiteSmoke;
+            titleBar.ButtonInactiveForegroundColor = Colors.Gray;
+            titleBar.BackgroundColor = Colors.Black;
+            titleBar.InactiveBackgroundColor = Colors.Black;
+        }
         private void BackRequested(object sender, BackRequestedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;

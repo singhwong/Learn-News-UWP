@@ -1,6 +1,6 @@
-MainPackage=D:\GitHubFile\Learn-News-UWP\bin\ARM\Release\thePaper_1.1.10.0_ARM.msix
-SymbolPackage=D:\GitHubFile\Learn-News-UWP\obj\ARM\Release\Symbols\thePaper_1.1.10.0_ARM.appxsym
-ResourcePack=D:\GitHubFile\Learn-News-UWP\bin\ARM\Release\thePaper_1.1.10.0_scale-100.msix
-ResourcePack=D:\GitHubFile\Learn-News-UWP\bin\ARM\Release\thePaper_1.1.10.0_scale-125.msix
-ResourcePack=D:\GitHubFile\Learn-News-UWP\bin\ARM\Release\thePaper_1.1.10.0_scale-150.msix
-ResourcePack=D:\GitHubFile\Learn-News-UWP\bin\ARM\Release\thePaper_1.1.10.0_scale-400.msix
+MainPackage=D:\GithubUwp\Learn-News-UWP\bin\ARM\Release\thePaper_1.1.11.0_ARM.msix
+SymbolPackage=D:\GithubUwp\Learn-News-UWP\obj\ARM\Release\Symbols\thePaper_1.1.11.0_ARM.appxsym
+ResourcePack=D:\GithubUwp\Learn-News-UWP\bin\ARM\Release\thePaper_1.1.11.0_scale-100.msix
+ResourcePack=D:\GithubUwp\Learn-News-UWP\bin\ARM\Release\thePaper_1.1.11.0_scale-125.msix
+ResourcePack=D:\GithubUwp\Learn-News-UWP\bin\ARM\Release\thePaper_1.1.11.0_scale-150.msix
+ResourcePack=D:\GithubUwp\Learn-News-UWP\bin\ARM\Release\thePaper_1.1.11.0_scale-400.msix
